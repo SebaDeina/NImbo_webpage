@@ -10,6 +10,38 @@ function typingDelay(text) {
   return Math.min(1400, 500 + text.length * 12)
 }
 
+function ChatBubbleText({ text }) {
+  const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
+  const nodes = []
+  let bullets = []
+
+  const flushBullets = () => {
+    if (!bullets.length) return
+    nodes.push(
+      <ul key={`ul-${nodes.length}`} className="chat-ul">
+        {bullets.map((line, j) => (
+          <li key={j}>{line.replace(/^•\s*/, '')}</li>
+        ))}
+      </ul>
+    )
+    bullets = []
+  }
+
+  for (const line of lines) {
+    if (line.startsWith('•')) {
+      bullets.push(line)
+    } else {
+      flushBullets()
+      nodes.push(
+        <p key={`p-${nodes.length}`}>{line}</p>
+      )
+    }
+  }
+  flushBullets()
+
+  return nodes
+}
+
 export default function Chatbot() {
   const { t } = useLang()
   const { openContact } = useContact()
@@ -118,11 +150,7 @@ export default function Chatbot() {
           <div className="chat-body" ref={bodyRef}>
             {messages.map((msg, i) => (
               <div key={i} className={`chat-bubble chat-bubble--${msg.role}`}>
-                {msg.text.split('\n').map((line, j) => (
-                  <p key={j} className={line.startsWith('•') ? 'chat-li' : undefined}>
-                    {line || '\u00A0'}
-                  </p>
-                ))}
+                <ChatBubbleText text={msg.text} />
                 {msg.role === 'bot' && (msg.intent === 'contact' || msg.intent === 'schedule') && (
                   <Link to="/contacto" className="chat-cta" onClick={onContact}>
                     {t('chat.contactCta')}

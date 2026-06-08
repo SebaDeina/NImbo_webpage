@@ -161,7 +161,7 @@ export const I18N = {
 
     "chat.ans.welcome": "Hola, soy el asistente de NIMBO. Puedo ayudarte con servicios, plazos, presupuestos y cómo empezar un proyecto. ¿Qué te gustaría saber?",
     "chat.ans.greeting": "¡Hola! Bienvenido/a a NIMBO. Estoy acá para responder consultas frecuentes sobre nuestros servicios y proceso. ¿En qué te puedo ayudar?",
-    "chat.ans.services": "Somos un estudio digital integral. Todo bajo un mismo techo:\n\n• Branding — identidad, naming y sistemas de marca\n• Web — sitios, e-commerce y web apps\n• Datos — dashboards, analítica y reporting\n• IA — chatbots, agentes e integraciones\n\nAsí tu idea avanza en paralelo, sin fricción entre proveedores.",
+    "chat.ans.services": "Somos un estudio digital integral. Todo bajo un mismo techo:\n• Branding — identidad, naming y sistemas de marca\n• Web — sitios, e-commerce y web apps\n• Datos — dashboards, analítica y reporting\n• IA — chatbots, agentes e integraciones\nAsí tu idea avanza en paralelo, sin fricción entre proveedores.",
     "chat.ans.branding": "En Branding hacemos naming, identidad visual, sistemas de diseño y guidelines. Creamos marcas que se recuerdan y escalan con tu negocio.",
     "chat.ans.web": "Desarrollamos sitios, e-commerce, landing pages y web apps optimizadas para conversión (CRO) y velocidad. Pensadas para transformar visitas en clientes.",
     "chat.ans.data": "Conectamos tu negocio con datos: dashboards, tracking, analítica, automatización y reporting. Convertimos números dispersos en decisiones claras.",
@@ -343,7 +343,7 @@ export const I18N = {
 
     "chat.ans.welcome": "Hi, I'm NIMBO's assistant. I can help with services, timelines, budgets and how to start a project. What would you like to know?",
     "chat.ans.greeting": "Hello! Welcome to NIMBO. I'm here to answer common questions about our services and process. How can I help?",
-    "chat.ans.services": "We're a full-service digital studio. All under one roof:\n\n• Branding — identity, naming and brand systems\n• Web — sites, e-commerce and web apps\n• Data — dashboards, analytics and reporting\n• AI — chatbots, agents and integrations\n\nSo your idea moves forward in parallel, without friction between vendors.",
+    "chat.ans.services": "We're a full-service digital studio. All under one roof:\n• Branding — identity, naming and brand systems\n• Web — sites, e-commerce and web apps\n• Data — dashboards, analytics and reporting\n• AI — chatbots, agents and integrations\nSo your idea moves forward in parallel, without friction between vendors.",
     "chat.ans.branding": "For Branding we do naming, visual identity, design systems and guidelines. We build brands people remember that scale with your business.",
     "chat.ans.web": "We build sites, e-commerce, landing pages and web apps optimized for conversion (CRO) and speed — designed to turn visits into customers.",
     "chat.ans.data": "We connect your business with data: dashboards, tracking, analytics, automation and reporting. We turn scattered numbers into clear decisions.",
