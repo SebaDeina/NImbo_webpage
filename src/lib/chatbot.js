@@ -73,10 +73,20 @@ const INTENTS = [
     ],
   },
   {
+    id: 'schedule',
+    keywords: [
+      'agendar', 'agenda', 'agendame', 'agendá', 'agendanos', 'agendános',
+      'llamada', 'llamadas', 'llamar', 'me llaman', 'me llamen', 'por telefono', 'por teléfono',
+      'videollamada', 'videollamadas', 'zoom', 'meet', 'google meet', 'cita', 'turno', 'coordinar',
+      'schedule', 'book a call', 'book call', 'arrange a call', 'set up a call', 'video call',
+      'phone call', 'speak with', 'talk to someone',
+    ],
+  },
+  {
     id: 'contact',
     keywords: [
-      'contacto', 'contactar', 'hablar', 'reunion', 'reunión', 'llamar', 'email', 'mail', 'consulta',
-      'contact', 'talk', 'call', 'meeting', 'reach', 'quote', 'proposal',
+      'contacto', 'contactar', 'hablar', 'reunion', 'reunión', 'email', 'mail', 'consulta', 'escribir',
+      'contact', 'talk', 'reach', 'quote', 'proposal', 'get in touch', 'write to',
     ],
   },
   {
@@ -116,4 +126,4 @@ export function matchFaq(message) {
   return best.score > 0 ? best.id : 'fallback'
 }
 
-export const SUGGESTIONS = ['services', 'pricing', 'process', 'contact']
+export const SUGGESTIONS = ['services', 'pricing', 'schedule', 'contact']

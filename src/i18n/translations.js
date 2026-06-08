@@ -157,6 +157,7 @@ export const I18N = {
     "chat.suggest.pricing": "¿Cuánto cuesta un proyecto?",
     "chat.suggest.process": "¿Cómo es el proceso?",
     "chat.suggest.contact": "Quiero hablar con ustedes",
+    "chat.suggest.schedule": "¿Puedo agendar una llamada?",
 
     "chat.ans.welcome": "Hola, soy el asistente de NIMBO. Puedo ayudarte con servicios, plazos, presupuestos y cómo empezar un proyecto. ¿Qué te gustaría saber?",
     "chat.ans.greeting": "¡Hola! Bienvenido/a a NIMBO. Estoy acá para responder consultas frecuentes sobre nuestros servicios y proceso. ¿En qué te puedo ayudar?",
@@ -171,6 +172,7 @@ export const I18N = {
     "chat.ans.location": "Somos un estudio de Argentina, 100% remoto. Trabajamos con clientes de cualquier país en español e inglés.",
     "chat.ans.portfolio": "Podés ver nuestros trabajos en la sección Resultados de la web. Ahí encontrás casos como WODSI y otros proyectos que diseñamos y lanzamos.",
     "chat.ans.about": "NIMBO baja las ideas a tierra: tomamos algo intangible y lo convertimos en productos digitales reales con diseño, tecnología, datos e IA.",
+    "chat.ans.schedule": "¡Por supuesto! Dejanos tu consulta en el formulario con tu teléfono y disponibilidad. Te respondemos en menos de 24 h y coordinamos una llamada o videollamada sin cargo.",
     "chat.ans.contact": "¡Genial! Dejanos tu idea en el formulario de contacto. Te respondemos en menos de 24 horas con un plan para convertirla en algo tangible.",
     "chat.ans.fallback": "No estoy seguro de entender esa consulta. Probá preguntarme por servicios, precios, proceso o cómo contactarnos — o usá el formulario y el equipo te responde personalmente."
   },
@@ -331,6 +333,7 @@ export const I18N = {
     "chat.suggest.pricing": "How much does a project cost?",
     "chat.suggest.process": "What's your process?",
     "chat.suggest.contact": "I'd like to talk to you",
+    "chat.suggest.schedule": "Can I schedule a call?",
 
     "chat.ans.welcome": "Hi, I'm NIMBO's assistant. I can help with services, timelines, budgets and how to start a project. What would you like to know?",
     "chat.ans.greeting": "Hello! Welcome to NIMBO. I'm here to answer common questions about our services and process. How can I help?",
@@ -345,6 +348,7 @@ export const I18N = {
     "chat.ans.location": "We're a studio based in Argentina, fully remote. We work with clients worldwide in Spanish and English.",
     "chat.ans.portfolio": "Check our Work section on the site. You'll find cases like WODSI and other products we designed and shipped.",
     "chat.ans.about": "NIMBO brings ideas down to earth: we take something intangible and turn it into real digital products with design, technology, data and AI.",
+    "chat.ans.schedule": "Absolutely! Send us your question via the contact form with your phone number and availability. We'll reply within 24 h and set up a free call or video call.",
     "chat.ans.contact": "Great! Leave your idea in the contact form. We reply within 24 hours with a plan to make it tangible.",
     "chat.ans.fallback": "I'm not sure I understood that. Try asking about services, pricing, process or how to contact us — or use the form and our team will reply personally."
   }
