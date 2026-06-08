@@ -1079,6 +1079,9 @@ a.ci-v:hover{color:var(--accent)}
   to{opacity:1;transform:none}
 }
 .chat-bubble p{margin:0;white-space:pre-wrap}
+.chat-bubble p + p{margin-top:4px}
+.chat-bubble .chat-li{margin-top:6px;padding-left:2px}
+.chat-bubble .chat-li:first-of-type{margin-top:10px}
 .chat-bubble--bot{
   align-self:flex-start;background:var(--glass);
   border:1px solid var(--line-soft);color:var(--text-dim);

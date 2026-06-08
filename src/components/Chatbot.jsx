@@ -118,7 +118,11 @@ export default function Chatbot() {
           <div className="chat-body" ref={bodyRef}>
             {messages.map((msg, i) => (
               <div key={i} className={`chat-bubble chat-bubble--${msg.role}`}>
-                <p>{msg.text}</p>
+                {msg.text.split('\n').map((line, j) => (
+                  <p key={j} className={line.startsWith('•') ? 'chat-li' : undefined}>
+                    {line || '\u00A0'}
+                  </p>
+                ))}
                 {msg.role === 'bot' && (msg.intent === 'contact' || msg.intent === 'schedule') && (
                   <Link to="/contacto" className="chat-cta" onClick={onContact}>
                     {t('chat.contactCta')}
