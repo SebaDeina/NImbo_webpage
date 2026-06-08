@@ -4,7 +4,7 @@ import { useLang } from '../i18n/LangContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 import CloudMark from './CloudMark'
-import { matchFaq, SUGGESTIONS } from '../lib/chatbot'
+import { matchFaq, pickInsultVariant, SUGGESTIONS } from '../lib/chatbot'
 
 function typingDelay(text) {
   return Math.min(1400, 500 + text.length * 12)
@@ -44,7 +44,10 @@ export default function Chatbot() {
   }, [open, isMobile])
 
   const botReply = async (intentId) => {
-    const text = t(`chat.ans.${intentId}`)
+    const text =
+      intentId === 'insult'
+        ? t(`chat.ans.insult.${pickInsultVariant()}`)
+        : t(`chat.ans.${intentId}`)
     setTyping(true)
     await new Promise((r) => setTimeout(r, typingDelay(text)))
     setTyping(false)

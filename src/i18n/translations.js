@@ -174,7 +174,13 @@ export const I18N = {
     "chat.ans.about": "NIMBO baja las ideas a tierra: tomamos algo intangible y lo convertimos en productos digitales reales con diseño, tecnología, datos e IA.",
     "chat.ans.schedule": "¡Por supuesto! Dejanos tu consulta en el formulario con tu teléfono y disponibilidad. Te respondemos en menos de 24 h y coordinamos una llamada o videollamada sin cargo.",
     "chat.ans.contact": "¡Genial! Dejanos tu idea en el formulario de contacto. Te respondemos en menos de 24 horas con un plan para convertirla en algo tangible.",
-    "chat.ans.fallback": "No estoy seguro de entender esa consulta. Probá preguntarme por servicios, precios, proceso o cómo contactarnos — o usá el formulario y el equipo te responde personalmente."
+    "chat.ans.fallback": "No estoy seguro de entender esa consulta. Probá preguntarme por servicios, precios, proceso o cómo contactarnos — o usá el formulario y el equipo te responde personalmente.",
+
+    "chat.ans.insult.1": "Uy, re botón de pánico. Yo solo sé de nubes y código — ¿te cuento de nuestros servicios con mejor onda?",
+    "chat.ans.insult.2": "Insultar a una nube no la hace más densa, pero sí más dramática. ¿Querés info de verdad o seguimos con el roast?",
+    "chat.ans.insult.3": "Registrado: usuario enojado. Técnica de contención — ofrecerte ayuda útil. ¿Servicios, precios o proceso?",
+    "chat.ans.insult.4": "Soy un asistente, no un terapeuta. Pero si tenés un proyecto, soy muy bueno escuchando ideas. ¿Arrancamos?",
+    "chat.ans.insult.5": "Ok ok, perdí esa ronda. ¿Revancha con una consulta sobre branding, web o IA?"
   },
   en: {
     "nav.services": "Services",
@@ -350,6 +356,12 @@ export const I18N = {
     "chat.ans.about": "NIMBO brings ideas down to earth: we take something intangible and turn it into real digital products with design, technology, data and AI.",
     "chat.ans.schedule": "Absolutely! Send us your question via the contact form with your phone number and availability. We'll reply within 24 h and set up a free call or video call.",
     "chat.ans.contact": "Great! Leave your idea in the contact form. We reply within 24 hours with a plan to make it tangible.",
-    "chat.ans.fallback": "I'm not sure I understood that. Try asking about services, pricing, process or how to contact us — or use the form and our team will reply personally."
+    "chat.ans.fallback": "I'm not sure I understood that. Try asking about services, pricing, process or how to contact us — or use the form and our team will reply personally.",
+
+    "chat.ans.insult.1": "Whoa, panic button pressed. I only know clouds and code — want the friendly tour of our services?",
+    "chat.ans.insult.2": "Insulting a cloud doesn't make it denser, just more dramatic. Real info, or shall we keep roasting?",
+    "chat.ans.insult.3": "Logged: grumpy user. Containment protocol — offer useful help. Services, pricing or process?",
+    "chat.ans.insult.4": "I'm an assistant, not a therapist. But for projects, I'm a great listener. Shall we start?",
+    "chat.ans.insult.5": "Fair enough, you win that round. Rematch with a question about branding, web or AI?"
   }
 };

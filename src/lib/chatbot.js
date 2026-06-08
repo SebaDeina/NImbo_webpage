@@ -1,5 +1,15 @@
 /* Matcher local de FAQs — sin API, sin costo. */
 
+const INSULT_KEYWORDS = [
+  'gil', 'giles', 'boludo', 'boluda', 'boludos', 'pelotudo', 'pelotuda', 'pelotudos',
+  'idiota', 'idiotas', 'estupido', 'estupida', 'estupidos', 'tarado', 'tarada',
+  'imbecil', 'imbeciles', 'forro', 'forra', 'mogolico', 'tonto', 'tonta', 'huevon', 'huevona',
+  'pelmazo', 'baboso', 'inutil', 'inútil', 'mierda', 'puto', 'puta', 'concha',
+  'stupid', 'idiot', 'dumb', 'moron', 'jerk', 'asshole', 'suck', 'sucks', 'trash', 'useless',
+]
+
+const INSULT_VARIANTS = 5
+
 const INTENTS = [
   {
     id: 'services',
@@ -106,9 +116,28 @@ function normalize(text) {
     .replace(/[^\w\s]/g, ' ')
 }
 
+function isInsult(message) {
+  const norm = normalize(message)
+  const words = norm.trim().split(/\s+/).filter(Boolean)
+  if (!words.length || words.length > 8) return false
+
+  return INSULT_KEYWORDS.some((kw) => {
+    const nkw = normalize(kw)
+    return nkw.includes(' ')
+      ? norm.includes(nkw)
+      : new RegExp(`\\b${nkw}\\b`).test(norm)
+  })
+}
+
+export function pickInsultVariant() {
+  return Math.floor(Math.random() * INSULT_VARIANTS) + 1
+}
+
 export function matchFaq(message) {
   const norm = normalize(message)
   if (!norm.trim()) return 'fallback'
+
+  if (isInsult(message)) return 'insult'
 
   let best = { id: 'fallback', score: 0 }
 
