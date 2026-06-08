@@ -1,6 +1,6 @@
 # NIMBO
 
-Sitio del estudio NIMBO — React + Vite (frontend) con Strapi como CMS para los proyectos.
+Sitio del estudio NIMBO — React + Vite, deploy en Vercel.
 
 Estructura inspirada en la plantilla *Peak* (creative studio), con identidad propia de Nimbo
 (estética cinematográfica "de las nubes al mundo real").
@@ -8,9 +8,11 @@ Estructura inspirada en la plantilla *Peak* (creative studio), con identidad pro
 ## Stack
 
 - **Frontend:** React 18 + Vite + React Router. Bilingüe ES/EN.
-- **CMS:** Strapi 5 (carpeta `cms/`) — content-type **Proyecto**. Requiere **Node 20–22**.
-- El frontend lee los proyectos de Strapi si `VITE_STRAPI_URL` está definido; si no, usa el
-  seed local de `src/data/projects.js`. Así la web funciona con o sin el CMS encendido.
+- **Proyectos:** `src/data/projects.js` — editás el archivo y pusheás; Vercel redeploya.
+- **Contacto:** Vercel Function `/api/contact` → Slack (+ email opcional vía Resend).
+- **Costo:** $0 (Vercel hobby + Slack gratis).
+
+La carpeta `cms/` (Strapi) quedó archivada; ya no se usa en producción.
 
 ## Páginas
 
@@ -21,42 +23,57 @@ Estructura inspirada en la plantilla *Peak* (creative studio), con identidad pro
 
 ## Correr en local
 
-### 1. Frontend
-
 ```bash
 npm install
-npm run dev          # http://localhost:5173
+cp .env.example .env   # completar SLACK_WEBHOOK_URL (y Resend si querés email)
+npm run dev            # http://localhost:5173
 ```
 
-Copiá `.env.example` a `.env` para apuntar al CMS:
-
-```
-VITE_STRAPI_URL=http://localhost:1337
-```
-
-### 2. CMS (Strapi)
-
-Strapi necesita Node ≤ 22. Si usás `fnm`/`nvm`, la carpeta ya trae `.node-version`:
-
-```bash
-cd cms
-fnm use            # o: nvm use   (selecciona Node 22)
-npm run develop    # http://localhost:1337/admin
-```
-
-- En el **primer arranque** se crean automáticamente: los permisos públicos de lectura
-  (`find`/`findOne`) y el **seed** de proyectos (WODSI + 3 plantillas).
-- Entrá a `http://localhost:1337/admin`, creá tu usuario admin y administrá los proyectos
-  desde **Content Manager → Proyecto**.
+El dev server incluye `/api/contact` para probar el formulario sin Vercel.
 
 ## Administrar proyectos
 
-Cada proyecto tiene: `title`, `slug`, `client`, `year`, `accent` (hex), `live` (URL),
-`cover` (imagen), `gallery` (imágenes), y campos JSON bilingües
-`category` / `summary` / `description` / `placeholder` con forma `{ "es": ..., "en": ... }`
-(`description` admite arrays de párrafos), más `services` y `tags` (arrays).
+Editá `src/data/projects.js`. Cada proyecto tiene:
 
-Para editar sin CMS, modificá `src/data/projects.js` (misma forma).
+- `slug`, `title`, `client`, `year`
+- `cover` / `gallery` — rutas en `/public` (o `null` → placeholder)
+- `live` — URL del proyecto (o `null` → "Próximamente")
+- `category` / `summary` / `description` / `placeholder` — objetos `{ es, en }`
+- `services` y `tags` — arrays de strings
+
+Hacé commit + push → Vercel redeploya automáticamente.
+
+## Deploy en Vercel
+
+1. Conectá el repo `SebaDeina/NImbo_webpage`
+2. Framework: **Vite** (auto-detectado)
+3. Agregá las variables de entorno:
+
+| Variable | Requerida | Descripción |
+|----------|-----------|-------------|
+| `SLACK_WEBHOOK_URL` | Sí* | Webhook de Slack para alertas |
+| `RESEND_API_KEY` | No | API key de Resend para email |
+| `RESEND_FROM` | No | Remitente verificado en Resend |
+| `CONTACT_NOTIFY_EMAIL` | No | Destino del email |
+
+\* Al menos Slack o Resend tiene que estar configurado.
+
+4. Deploy. Listo.
+
+## Notificaciones de contacto
+
+Cuando alguien envía el formulario, `/api/contact` dispara en paralelo:
+
+- **Slack** vía `SLACK_WEBHOOK_URL`
+- **Email** vía Resend (si `RESEND_API_KEY` está definida)
+
+Si una variable no está definida, ese canal se omite. Falla solo si todos los canales configurados fallan.
+
+### Configurar Slack
+
+1. Slack → **Apps → Incoming Webhooks → Add to Slack**
+2. Elegí el canal (ej. `#consultas-nimbo`)
+3. Copiá la URL en `.env` (local) o en Vercel → Environment Variables
 
 ## Build
 

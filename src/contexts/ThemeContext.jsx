@@ -5,9 +5,9 @@ const ThemeContext = createContext(null)
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.getItem('nimbo_theme') || 'dark'
+      return localStorage.getItem('nimbo_theme') || 'light'
     } catch {
-      return 'dark'
+      return 'light'
     }
   })
 

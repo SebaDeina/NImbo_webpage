@@ -4,8 +4,10 @@
   <script>
     try {
       var t = localStorage.getItem('nimbo_theme');
-      if (t) document.documentElement.dataset.theme = t;
-    } catch (e) {}
+      document.documentElement.dataset.theme = t || 'light';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

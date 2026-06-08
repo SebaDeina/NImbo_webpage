@@ -1,5 +1,6 @@
 // import type { Core } from '@strapi/strapi';
 import { sendContactNotification } from './lib/contact-email';
+import { sendContactSlackNotification } from './lib/contact-slack';
 
 const SEED = [
   {
@@ -161,6 +162,10 @@ export default {
       sendContactNotification(result)
         .then(() => strapi.log.info(`[contacto] Email enviado para ${result.email}`))
         .catch((err) => strapi.log.error(`[contacto] Error al enviar email: ${err.message}`));
+
+      sendContactSlackNotification(result)
+        .then(() => strapi.log.info(`[contacto] Slack notificado para ${result.email}`))
+        .catch((err) => strapi.log.error(`[contacto] Error al notificar Slack: ${err.message}`));
       return result;
     });
   },

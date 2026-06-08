@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const TOPIC_LABELS: Record<string, string> = {
+export const TOPIC_LABELS: Record<string, string> = {
   branding: 'Branding',
   web: 'Web / E-commerce',
   datos: 'Datos / Dashboards',
@@ -8,7 +8,7 @@ const TOPIC_LABELS: Record<string, string> = {
   otro: 'Otro',
 };
 
-const BUDGET_LABELS: Record<string, string> = {
+export const BUDGET_LABELS: Record<string, string> = {
   u10: 'Menos de $10K',
   '10-25': '$10K - $25K',
   '25-50': '$25K - $50K',
@@ -18,7 +18,7 @@ const BUDGET_LABELS: Record<string, string> = {
   na: 'N/A',
 };
 
-type ContactEntry = {
+export type ContactEntry = {
   firstName: string;
   lastName?: string | null;
   email: string;
