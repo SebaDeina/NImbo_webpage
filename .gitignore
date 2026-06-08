@@ -5,6 +5,3 @@ dist
 .env
 .env.*
 !.env.example
-cms/.env
-cms/.env.*
-!cms/.env.example

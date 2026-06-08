@@ -12,8 +12,6 @@ Estructura inspirada en la plantilla *Peak* (creative studio), con identidad pro
 - **Contacto:** Vercel Function `/api/contact` → Slack (+ email opcional vía Resend).
 - **Costo:** $0 (Vercel hobby + Slack gratis).
 
-La carpeta `cms/` (Strapi) quedó archivada; ya no se usa en producción.
-
 ## Páginas
 
 - `/` — Home (Hero → Trabajos → Nosotros → Servicios → CTA)

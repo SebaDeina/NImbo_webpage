@@ -1,8 +1,6 @@
 /* ============================================================
-   NIMBO — proyectos del portfolio (fallback / seed local).
-   Esta es la MISMA forma que entrega Strapi (ver src/lib/cms.js).
-   Si Strapi está disponible (VITE_STRAPI_URL), la web lee de ahí;
-   si no, usa este archivo. Para editar sin CMS, tocá este array.
+   NIMBO — proyectos del portfolio.
+   Editá este archivo y pusheá; Vercel redeploya automáticamente.
 
    Campos:
    - slug:      identificador en la URL (/trabajos/<slug>)
@@ -58,8 +56,8 @@ export const PROJECTS = [
       en: 'A fast site or store that turns visits into customers.',
     },
     description: {
-      es: ['Espacio reservado para tu próximo proyecto web. Reemplazá este contenido desde Strapi cuando esté listo.'],
-      en: ['Reserved for your next web project. Replace this content from Strapi when ready.'],
+      es: ['Espacio reservado para tu próximo proyecto web.'],
+      en: ['Reserved for your next web project.'],
     },
     services: ['Diseño web', 'Desarrollo', 'CRO', 'SEO'],
     tags: ['Next.js', 'UI/UX', 'CRO', 'SEO'],
