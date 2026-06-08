@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
@@ -42,9 +42,12 @@ function ChatBubbleText({ text }) {
   return nodes
 }
 
+const CONTACT_INTENTS = new Set(['contact', 'schedule', 'pricing'])
+
 export default function Chatbot() {
   const { t } = useLang()
   const { openContact } = useContact()
+  const navigate = useNavigate()
   const isMobile = useIsMobile()
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
@@ -112,12 +115,21 @@ export default function Chatbot() {
     send(input)
   }
 
-  const onContact = (e) => {
+  const goToContact = () => {
+    setOpen(false)
     if (isMobile) {
-      e.preventDefault()
-      setOpen(false)
       openContact()
+    } else {
+      navigate('/contacto')
     }
+  }
+
+  const onSuggest = (id) => {
+    if (id === 'contact' || id === 'schedule') {
+      goToContact()
+      return
+    }
+    send(t(`chat.suggest.${id}`))
   }
 
   return (
@@ -151,10 +163,10 @@ export default function Chatbot() {
             {messages.map((msg, i) => (
               <div key={i} className={`chat-bubble chat-bubble--${msg.role}`}>
                 <ChatBubbleText text={msg.text} />
-                {msg.role === 'bot' && (msg.intent === 'contact' || msg.intent === 'schedule') && (
-                  <Link to="/contacto" className="chat-cta" onClick={onContact}>
+                {msg.role === 'bot' && CONTACT_INTENTS.has(msg.intent) && (
+                  <button type="button" className="chat-cta" onClick={goToContact}>
                     {t('chat.contactCta')}
-                  </Link>
+                  </button>
                 )}
               </div>
             ))}
@@ -174,7 +186,7 @@ export default function Chatbot() {
                     key={id}
                     type="button"
                     className="chat-chip"
-                    onClick={() => send(t(`chat.suggest.${id}`))}
+                    onClick={() => onSuggest(id)}
                   >
                     {t(`chat.suggest.${id}`)}
                   </button>

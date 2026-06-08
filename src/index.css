@@ -1095,12 +1095,13 @@ a.ci-v:hover{color:var(--accent)}
   border-bottom-right-radius:6px;
 }
 .chat-cta{
+  appearance:none;border:0;cursor:pointer;
   display:inline-flex;margin-top:10px;padding:8px 14px;border-radius:100px;
   background:var(--accent);color:var(--btn-on-accent);
-  font-size:13px;font-weight:600;text-decoration:none;
-  transition:opacity .25s var(--ease);
+  font-family:var(--font-body);font-size:13px;font-weight:600;text-decoration:none;
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
 }
-.chat-cta:hover{opacity:.9}
+.chat-cta:hover{opacity:.9;transform:translateY(-1px)}
 
 .chat-typing{
   display:inline-flex;align-items:center;gap:5px;padding:14px 16px;
