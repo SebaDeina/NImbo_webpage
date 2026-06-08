@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import Reveal from './Reveal'
 import ServiceCloud from './ServiceCloud'
+import { IconMinus, IconPlus } from './Icons'
 
 const SERVICES = [
   { key: 'svc1' },
@@ -45,7 +46,9 @@ export default function Services() {
                   >
                     <ServiceCloud variant={key} shape="pill" />
                     <span className="svc-acc-title">{t(`${key}.name`)}</span>
-                    <span className="svc-acc-icon" aria-hidden="true">+</span>
+                    <span className="svc-acc-icon" aria-hidden="true">
+                      <IconPlus size={22} />
+                    </span>
                   </button>
                 ) : (
                   <div className="svc-acc-card">
@@ -57,7 +60,9 @@ export default function Services() {
                     >
                       <ServiceCloud variant={key} shape="square" />
                       <span className="svc-acc-title">{t(`${key}.name`)}</span>
-                      <span className="svc-acc-icon" aria-hidden="true">−</span>
+                      <span className="svc-acc-icon" aria-hidden="true">
+                        <IconMinus size={22} />
+                      </span>
                     </button>
                     <div className="svc-acc-card-body">
                       <p className="svc-acc-line">{t(`${key}.line`)}</p>

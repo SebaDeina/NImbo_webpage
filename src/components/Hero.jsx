@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
+import { IconArrowRight } from './Icons'
 
 export default function Hero() {
   const { t } = useLang()
@@ -48,7 +49,7 @@ export default function Hero() {
         <div className="hero-meta in" data-reveal="" data-delay="2">
           <div className="hero-cta">
             <a href="#contacto" className="btn btn-primary">
-              <span>{t('hero.cta1')}</span> <span className="arr">→</span>
+              <span>{t('hero.cta1')}</span> <IconArrowRight size={18} className="arr" />
             </a>
             <a href="#servicios" className="btn btn-ghost">
               {t('hero.cta2')}

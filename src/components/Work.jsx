@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import Reveal from './Reveal'
+import { IconArrowUpRight } from './Icons'
 import { useProjects } from '../hooks/useProjects'
 
 export default function Work() {
@@ -58,7 +59,7 @@ export default function Work() {
                     <p className="proj-meta-line">{metaLine}</p>
                   </div>
                   <span className="proj-go" aria-hidden="true">
-                    ↗
+                    <IconArrowUpRight size={22} />
                   </span>
                 </div>
               </Reveal>

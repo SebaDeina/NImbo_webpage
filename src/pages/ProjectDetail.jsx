@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { useProject } from '../hooks/useProjects'
+import { IconArrowLeft, IconArrowRight, IconArrowUpRight } from '../components/Icons'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -21,7 +22,7 @@ export default function ProjectDetail() {
         <div className="wrap project-state">
           <h1 className="display">{t('proj.notfound')}</h1>
           <Link to="/" className="btn btn-ghost">
-            ← {t('proj.back')}
+            <IconArrowLeft size={16} /> {t('proj.back')}
           </Link>
         </div>
       </main>
@@ -35,7 +36,7 @@ export default function ProjectDetail() {
       <div className="project-glow" aria-hidden="true" />
       <article className="wrap">
         <Link to={{ pathname: '/', hash: '#trabajos' }} className="project-back">
-          ← {t('proj.back')}
+          <IconArrowLeft size={16} /> {t('proj.back')}
         </Link>
 
         <header className="project-head">
@@ -66,7 +67,7 @@ export default function ProjectDetail() {
 
           {project.live && (
             <a className="btn btn-primary project-visit" href={project.live} target="_blank" rel="noopener noreferrer">
-              <span>{t('proj.visit')}</span> <span className="arr">↗</span>
+              <span>{t('proj.visit')}</span> <IconArrowUpRight size={18} className="arr" />
             </a>
           )}
         </header>
@@ -113,10 +114,10 @@ export default function ProjectDetail() {
 
         <div className="project-foot">
           <Link to={{ pathname: '/', hash: '#trabajos' }} className="btn btn-ghost">
-            ← {t('proj.back')}
+            <IconArrowLeft size={16} /> {t('proj.back')}
           </Link>
           <Link to="/contacto" className="btn btn-primary">
-            <span>{t('cta.btn')}</span> <span className="arr">→</span>
+            <span>{t('cta.btn')}</span> <IconArrowRight size={18} className="arr" />
           </Link>
         </div>
       </article>

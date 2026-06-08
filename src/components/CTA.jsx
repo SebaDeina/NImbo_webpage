@@ -3,6 +3,7 @@ import { useLang } from '../i18n/LangContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 import Reveal from './Reveal'
+import { IconArrowRight } from './Icons'
 
 export default function CTA() {
   const { t } = useLang()
@@ -30,7 +31,7 @@ export default function CTA() {
         </Reveal>
         <Reveal delay={2} className="cta-actions">
           <Link to="/contacto" className="btn btn-primary" onClick={onContact}>
-            <span>{t('cta.btn')}</span> <span className="arr">→</span>
+            <span>{t('cta.btn')}</span> <IconArrowRight size={18} className="arr" />
           </Link>
         </Reveal>
         <Reveal as="p" delay={3} className="cta-note">

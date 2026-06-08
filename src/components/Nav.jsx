@@ -5,6 +5,7 @@ import { useTheme } from '../contexts/ThemeContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 import CloudMark from './CloudMark'
+import { IconArrowRight, IconMoon, IconSun } from './Icons'
 
 export default function Nav() {
   const { t, lang, setLang } = useLang()
@@ -72,26 +73,7 @@ export default function Nav() {
               onClick={toggleTheme}
               aria-label={theme === 'dark' ? t('theme.light') : t('theme.dark')}
             >
-              {theme === 'dark' ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.5" />
-                  <path
-                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M21 14.5A7.5 7.5 0 0 1 9.5 3 6.5 6.5 0 1 0 21 14.5Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              )}
+              {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
             </button>
             <div className="lang" role="group" aria-label="Idioma">
               <button className={lang === 'es' ? 'active' : ''} onClick={() => setLang('es')}>
@@ -150,7 +132,7 @@ export default function Nav() {
               </button>
             </div>
             <Link to="/contacto" className="btn btn-primary" onClick={onContact}>
-              {t('nav.cta')} <span className="arr">→</span>
+              {t('nav.cta')} <IconArrowRight size={18} className="arr" />
             </Link>
           </div>
         </div>

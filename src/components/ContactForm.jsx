@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { submitContact } from '../lib/cms'
+import { IconArrowLeft, IconArrowRight, IconCheck } from './Icons'
 
 const STEPS = 3
 
 const COUNTRIES = [
-  { cc: '+54', flag: '🇦🇷' },
-  { cc: '+1', flag: '🇺🇸' },
-  { cc: '+34', flag: '🇪🇸' },
-  { cc: '+52', flag: '🇲🇽' },
-  { cc: '+55', flag: '🇧🇷' },
-  { cc: '+56', flag: '🇨🇱' },
-  { cc: '+57', flag: '🇨🇴' },
-  { cc: '+51', flag: '🇵🇪' },
-  { cc: '+598', flag: '🇺🇾' },
-  { cc: '+44', flag: '🇬🇧' },
+  { cc: '+54', iso: 'AR' },
+  { cc: '+1', iso: 'US' },
+  { cc: '+34', iso: 'ES' },
+  { cc: '+52', iso: 'MX' },
+  { cc: '+55', iso: 'BR' },
+  { cc: '+56', iso: 'CL' },
+  { cc: '+57', iso: 'CO' },
+  { cc: '+51', iso: 'PE' },
+  { cc: '+598', iso: 'UY' },
+  { cc: '+44', iso: 'GB' },
 ]
 
 const TOPICS = [
@@ -105,7 +106,9 @@ export default function ContactForm({ onSubmitted }) {
   if (sent) {
     return (
       <div className="cform-done">
-        <div className="cform-check">✓</div>
+        <div className="cform-check">
+          <IconCheck size={28} />
+        </div>
         <p className="lead">{t('contact.sent')}</p>
       </div>
     )
@@ -151,7 +154,7 @@ export default function ContactForm({ onSubmitted }) {
               <select value={data.cc} onChange={set('cc')} aria-label="código de país">
                 {COUNTRIES.map((c) => (
                   <option key={c.cc} value={c.cc}>
-                    {c.flag} {c.cc}
+                    {c.iso} {c.cc}
                   </option>
                 ))}
               </select>
@@ -210,7 +213,7 @@ export default function ContactForm({ onSubmitted }) {
       <div className="cform-actions">
         {step > 0 ? (
           <button type="button" className="btn btn-ghost" onClick={back}>
-            ← {t('contact.back')}
+            <IconArrowLeft size={16} /> {t('contact.back')}
           </button>
         ) : (
           <span />
@@ -219,7 +222,7 @@ export default function ContactForm({ onSubmitted }) {
           <span>
             {sending ? t('contact.sending') : step < STEPS - 1 ? t('contact.next') : t('contact.send')}
           </span>{' '}
-          {!sending && <span className="arr">→</span>}
+          {!sending && <IconArrowRight size={18} className="arr" />}
         </button>
       </div>
     </form>
