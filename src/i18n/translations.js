@@ -143,7 +143,36 @@ export const I18N = {
     "contact.fTopicPh": "Elegí un tema",
     "contact.fBudget": "Presupuesto",
     "contact.fBudgetPh": "Seleccioná un rango",
-    "contact.optional": "opcional"
+    "contact.optional": "opcional",
+
+    "chat.open": "Abrir asistente",
+    "chat.close": "Cerrar asistente",
+    "chat.title": "Nimbo",
+    "chat.subtitle": "Asistente digital",
+    "chat.placeholder": "Escribí tu consulta…",
+    "chat.send": "Enviar",
+    "chat.contactCta": "Ir al formulario de contacto",
+
+    "chat.suggest.services": "¿Qué servicios ofrecen?",
+    "chat.suggest.pricing": "¿Cuánto cuesta un proyecto?",
+    "chat.suggest.process": "¿Cómo es el proceso?",
+    "chat.suggest.contact": "Quiero hablar con ustedes",
+
+    "chat.ans.welcome": "Hola, soy el asistente de NIMBO. Puedo ayudarte con servicios, plazos, presupuestos y cómo empezar un proyecto. ¿Qué te gustaría saber?",
+    "chat.ans.greeting": "¡Hola! Bienvenido/a a NIMBO. Estoy acá para responder consultas frecuentes sobre nuestros servicios y proceso. ¿En qué te puedo ayudar?",
+    "chat.ans.services": "Somos un estudio digital integral: Branding, Web, Datos e Inteligencia Artificial. Todo bajo un mismo techo, para que tu idea avance en paralelo sin fricción entre proveedores.",
+    "chat.ans.branding": "En Branding hacemos naming, identidad visual, sistemas de diseño y guidelines. Creamos marcas que se recuerdan y escalan con tu negocio.",
+    "chat.ans.web": "Desarrollamos sitios, e-commerce, landing pages y web apps optimizadas para conversión (CRO) y velocidad. Pensadas para transformar visitas en clientes.",
+    "chat.ans.data": "Conectamos tu negocio con datos: dashboards, tracking, analítica, automatización y reporting. Convertimos números dispersos en decisiones claras.",
+    "chat.ans.ai": "Potenciamos productos con IA: chatbots, agentes, integraciones y asistentes a medida que automatizan tareas y atienden 24/7.",
+    "chat.ans.pricing": "Cada proyecto es distinto. Trabajamos por rangos según alcance y complejidad. Contanos tu idea en el formulario de contacto y te respondemos en menos de 24 h con un plan y presupuesto orientativo.",
+    "chat.ans.process": "Trabajamos en 4 pasos: Descubrimiento → Estrategia → Diseño & Build → Lanzamiento & Crecimiento. Lanzar es el comienzo: después medimos y optimizamos.",
+    "chat.ans.timeline": "Los plazos dependen del alcance. Un landing puede estar en semanas; un producto más complejo lleva más tiempo. En la primera consulta te damos un cronograma realista.",
+    "chat.ans.location": "Somos un estudio de Argentina, 100% remoto. Trabajamos con clientes de cualquier país en español e inglés.",
+    "chat.ans.portfolio": "Podés ver nuestros trabajos en la sección Resultados de la web. Ahí encontrás casos como WODSI y otros proyectos que diseñamos y lanzamos.",
+    "chat.ans.about": "NIMBO baja las ideas a tierra: tomamos algo intangible y lo convertimos en productos digitales reales con diseño, tecnología, datos e IA.",
+    "chat.ans.contact": "¡Genial! Dejanos tu idea en el formulario de contacto. Te respondemos en menos de 24 horas con un plan para convertirla en algo tangible.",
+    "chat.ans.fallback": "No estoy seguro de entender esa consulta. Probá preguntarme por servicios, precios, proceso o cómo contactarnos — o usá el formulario y el equipo te responde personalmente."
   },
   en: {
     "nav.services": "Services",
@@ -288,6 +317,35 @@ export const I18N = {
     "contact.fTopicPh": "Select a topic",
     "contact.fBudget": "Project budget",
     "contact.fBudgetPh": "Select a range",
-    "contact.optional": "optional"
+    "contact.optional": "optional",
+
+    "chat.open": "Open assistant",
+    "chat.close": "Close assistant",
+    "chat.title": "Nimbo",
+    "chat.subtitle": "Digital assistant",
+    "chat.placeholder": "Type your question…",
+    "chat.send": "Send",
+    "chat.contactCta": "Go to contact form",
+
+    "chat.suggest.services": "What services do you offer?",
+    "chat.suggest.pricing": "How much does a project cost?",
+    "chat.suggest.process": "What's your process?",
+    "chat.suggest.contact": "I'd like to talk to you",
+
+    "chat.ans.welcome": "Hi, I'm NIMBO's assistant. I can help with services, timelines, budgets and how to start a project. What would you like to know?",
+    "chat.ans.greeting": "Hello! Welcome to NIMBO. I'm here to answer common questions about our services and process. How can I help?",
+    "chat.ans.services": "We're a full-service digital studio: Branding, Web, Data and Artificial Intelligence — all under one roof so your idea moves forward in parallel.",
+    "chat.ans.branding": "For Branding we do naming, visual identity, design systems and guidelines. We build brands people remember that scale with your business.",
+    "chat.ans.web": "We build sites, e-commerce, landing pages and web apps optimized for conversion (CRO) and speed — designed to turn visits into customers.",
+    "chat.ans.data": "We connect your business with data: dashboards, tracking, analytics, automation and reporting. We turn scattered numbers into clear decisions.",
+    "chat.ans.ai": "We supercharge products with AI: chatbots, agents, integrations and custom assistants that automate tasks and serve 24/7.",
+    "chat.ans.pricing": "Every project is different. We work in ranges based on scope and complexity. Tell us your idea via the contact form and we'll reply within 24 h with a plan and ballpark budget.",
+    "chat.ans.process": "We work in 4 steps: Discovery → Strategy → Design & Build → Launch & Growth. Launch is the beginning — then we measure and optimize.",
+    "chat.ans.timeline": "Timelines depend on scope. A landing page can take weeks; a more complex product takes longer. On the first call we give you a realistic schedule.",
+    "chat.ans.location": "We're a studio based in Argentina, fully remote. We work with clients worldwide in Spanish and English.",
+    "chat.ans.portfolio": "Check our Work section on the site. You'll find cases like WODSI and other products we designed and shipped.",
+    "chat.ans.about": "NIMBO brings ideas down to earth: we take something intangible and turn it into real digital products with design, technology, data and AI.",
+    "chat.ans.contact": "Great! Leave your idea in the contact form. We reply within 24 hours with a plan to make it tangible.",
+    "chat.ans.fallback": "I'm not sure I understood that. Try asking about services, pricing, process or how to contact us — or use the form and our team will reply personally."
   }
 };

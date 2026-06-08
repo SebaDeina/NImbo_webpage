@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
 import Nosotros from './pages/Nosotros'
 import Contacto from './pages/Contacto'
+import Chatbot from './components/Chatbot'
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
+        <Chatbot />
       </ContactProvider>
     </LangProvider>
     </ThemeProvider>
