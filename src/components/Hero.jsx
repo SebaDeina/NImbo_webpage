@@ -71,7 +71,7 @@ export default function Hero() {
             className="hero-media"
             width={HERO_IMG.width}
             height={HERO_IMG.height}
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="sync"
             sizes="100vw"
           />

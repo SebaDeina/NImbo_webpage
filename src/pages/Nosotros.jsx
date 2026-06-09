@@ -2,7 +2,6 @@ import { useLang } from '../i18n/LangContext'
 import Reveal from '../components/Reveal'
 import History from '../components/History'
 import Manifesto from '../components/Manifesto'
-import Team from '../components/Team'
 import Process from '../components/Process'
 import CTA from '../components/CTA'
 
@@ -40,7 +39,6 @@ export default function Nosotros() {
 
       <div className="about-story">
         <Manifesto eyebrowKey="mf.manifestoEyebrow" variant="about" />
-        <Team variant="about" />
       </div>
 
       <Process />

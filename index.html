@@ -28,6 +28,13 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     #lcp-hero{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+    #splash{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
+      background:oklch(0.98 0.010 250);transition:opacity .45s cubic-bezier(.22,1,.36,1)}
+    :root[data-theme="dark"] #splash{background:oklch(0.185 0.042 256)}
+    #splash.done{opacity:0;pointer-events:none}
+    .splash-word{margin:0;font-family:system-ui,-apple-system,sans-serif;font-size:clamp(52px,14vw,96px);
+      font-weight:800;letter-spacing:-.045em;color:#6665ff;animation:splash-in .7s cubic-bezier(.22,1,.36,1) both}
+    @keyframes splash-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
     #root{position:relative;z-index:1}
   </style>
 </head>
@@ -41,6 +48,9 @@
     fetchpriority="high"
     decoding="sync"
   />
+  <div id="splash" aria-live="polite" aria-busy="true">
+    <p class="splash-word">Nimbo</p>
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

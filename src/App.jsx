@@ -1,10 +1,11 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { LangProvider } from './i18n/LangContext'
 import { ContactProvider } from './contexts/ContactContext'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import SplashScreen from './components/SplashScreen'
 import Home from './pages/Home'
 
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
@@ -30,9 +31,12 @@ function ScrollManager() {
 }
 
 export default function App() {
+  const [ready, setReady] = useState(false)
   const [showChat, setShowChat] = useState(false)
+  const onSplashDone = useCallback(() => setReady(true), [])
 
   useEffect(() => {
+    if (!ready) return
     const id = window.requestIdleCallback
       ? window.requestIdleCallback(() => setShowChat(true), { timeout: 2200 })
       : window.setTimeout(() => setShowChat(true), 1200)
@@ -40,12 +44,13 @@ export default function App() {
       if (window.requestIdleCallback) window.cancelIdleCallback(id)
       else window.clearTimeout(id)
     }
-  }, [])
+  }, [ready])
 
   return (
     <ThemeProvider>
     <LangProvider>
       <ContactProvider>
+        {!ready && <SplashScreen onDone={onSplashDone} />}
         <div className="app-shell">
           <div className="grain" aria-hidden="true" />
           <ScrollManager />
