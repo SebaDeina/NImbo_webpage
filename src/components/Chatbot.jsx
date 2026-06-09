@@ -11,12 +11,17 @@ import {
 } from '../../lib/chat-limits.js'
 import { submitContact } from '../lib/cms'
 import {
+  BUDGETS,
   buildSummary,
+  budgetLabel,
   emptyIntake,
+  inferTopicFromText,
   isConfirm,
   isDeny,
+  isReadyForIntake,
   isSkip,
-  nextStep,
+  nextIntakeStep,
+  parseBudget,
   parseTopic,
   splitName,
   TOPICS,
@@ -264,7 +269,7 @@ export default function Chatbot() {
     t('chat.suggest.schedule'),
   ]), [t])
 
-  const startIntake = useCallback(async (userLabel, { skipUserBubble = false } = {}) => {
+  const startIntake = useCallback(async (userLabel, { skipUserBubble = false, contextText = '' } = {}) => {
     const label = userLabel ?? t('chat.convertCta')
     if (!skipUserBubble) {
       setMessages((m) => [...m, { role: 'user', text: label }])
@@ -275,8 +280,12 @@ export default function Chatbot() {
       .filter((msg) => msg.role === 'user')
       .map((msg) => msg.text)
       .filter((text) => !triggers.has(text) && text !== label)
+    if (skipUserBubble && contextText && !userTexts.includes(contextText)) {
+      userTexts.push(contextText)
+    }
     const prefilled = userTexts.length ? userTexts.join('\n') : ''
-    const data = { ...emptyIntake(), message: prefilled }
+    const topic = inferTopicFromText(prefilled) ?? ''
+    const data = { ...emptyIntake(), message: prefilled, topic }
 
     setIntakeData(data)
     setIntakeStep('firstName')
@@ -336,7 +345,8 @@ export default function Chatbot() {
 
     let label = answer
     if (step === 'topic' && chipValue) label = topicLabel(chipValue, lang)
-    if (isSkip(answer) && (step === 'phone' || step === 'company')) {
+    if (step === 'budget' && chipValue) label = budgetLabel(chipValue, lang)
+    if (isSkip(answer) && (step === 'phone' || step === 'company' || step === 'budget')) {
       label = t('chat.intake.skipped')
     }
 
@@ -373,6 +383,15 @@ export default function Chatbot() {
         if (answer.length < 3) errKey = 'message'
         else updates = { message: answer }
         break
+      case 'budget': {
+        if (isSkip(answer)) updates = { budget: '' }
+        else {
+          const budget = chipValue ?? parseBudget(answer)
+          if (!budget) errKey = 'budget'
+          else updates = { budget }
+        }
+        break
+      }
       default:
         break
     }
@@ -388,11 +407,7 @@ export default function Chatbot() {
     }
 
     const newData = { ...intakeData, ...updates }
-    let following = nextStep(step)
-
-    if (step === 'topic' && newData.message.trim().length >= 3) {
-      following = 'confirm'
-    }
+    const following = nextIntakeStep(step, newData)
 
     setIntakeData(newData)
     setIntakeStep(following)
@@ -471,7 +486,12 @@ export default function Chatbot() {
       return
     }
     if (INTAKE_INTENTS.has(localIntent)) {
-      await startIntake(trimmed, { skipUserBubble: true })
+      await startIntake(trimmed, { skipUserBubble: true, contextText: trimmed })
+      return
+    }
+
+    if (isReadyForIntake(trimmed)) {
+      await startIntake(trimmed, { skipUserBubble: true, contextText: trimmed })
       return
     }
 
@@ -488,7 +508,7 @@ export default function Chatbot() {
     if (INTAKE_INTENTS.has(id)) {
       const label = t(`chat.suggest.${id}`)
       setMessages((m) => [...m, { role: 'user', text: label }])
-      startIntake(label, { skipUserBubble: true })
+      startIntake(label, { skipUserBubble: true, contextText: label })
       return
     }
     send(t(`chat.suggest.${id}`))
@@ -568,6 +588,19 @@ export default function Chatbot() {
                     {o[lang]}
                   </button>
                 ))}
+              </div>
+            )}
+
+            {intakeStep === 'budget' && !typing && (
+              <div className="chat-suggestions">
+                {BUDGETS.map((o) => (
+                  <button key={o.v} type="button" className="chat-chip" onClick={() => onIntakeChip(o.v)}>
+                    {o[lang]}
+                  </button>
+                ))}
+                <button type="button" className="chat-chip" onClick={() => onIntakeChip('skip')}>
+                  {t('chat.intake.skip')}
+                </button>
               </div>
             )}
 

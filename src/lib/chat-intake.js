@@ -5,6 +5,7 @@ export const INTAKE_STEPS = [
   'company',
   'topic',
   'message',
+  'budget',
   'confirm',
 ]
 
@@ -28,12 +29,24 @@ const CONFIRM_RE = /^(si|sí|dale|ok|confirmo|enviar|yes|yep|confirm)$/i
 const DENY_RE = /^(no|corregir|volver|editar|cambiar)$/i
 
 const TOPIC_ALIASES = {
-  branding: ['branding', 'marca', 'identidad', 'logo', 'naming'],
-  web: ['web', 'sitio', 'pagina', 'página', 'ecommerce', 'e-commerce', 'tienda', 'website'],
-  datos: ['datos', 'dato', 'dashboard', 'analitica', 'analítica', 'data', 'analytics'],
-  ia: ['ia', 'ai', 'inteligencia artificial', 'chatbot', 'agente'],
+  branding: ['branding', 'marca', 'identidad', 'logo', 'naming', 'rebranding', 'rediseño', 'redesign'],
+  web: ['web', 'sitio', 'pagina', 'página', 'ecommerce', 'e-commerce', 'tienda', 'website', 'landing'],
+  datos: ['datos', 'dato', 'dashboard', 'analitica', 'analítica', 'data', 'analytics', 'panel'],
+  ia: ['ia', 'ai', 'inteligencia artificial', 'chatbot', 'agente', 'bot', 'automatizacion', 'automatización'],
   otro: ['otro', 'other', 'varios', 'multiple'],
 }
+
+const DELIVERABLE_KEYWORDS = [
+  'landing', 'landing page', 'one page', 'one-page',
+  'e-commerce', 'ecommerce', 'tienda online', 'tienda virtual', 'online store',
+  'web app', 'webapp', 'aplicacion web', 'aplicación web',
+  'dashboard', 'panel de control', 'chatbot', 'agente de ia',
+  'rediseño', 'redesign', 'rebranding', 'identidad visual',
+  'sitio web', 'página web', 'pagina web', 'sitio completo', 'sitio informativo',
+]
+
+const INFO_QUESTION_RE = /^(cuanto|cuánto|precio|costo|plazo|tiempo|como|cómo|que es|qué es|how much|price|cost|timeline|what is)\b/i
+const INTENT_VERB_RE = /(quiero|necesito|busco|me interesa|por el momento|arranco con|want|need|looking for|for now)/
 
 const BUDGET_ALIASES = {
   u500k: ['u500k', 'menos de 500 mil', 'under 500k', '500 mil'],
@@ -110,6 +123,48 @@ export function splitName(text) {
 export function nextStep(step) {
   const i = INTAKE_STEPS.indexOf(step)
   return i >= 0 && i < INTAKE_STEPS.length - 1 ? INTAKE_STEPS[i + 1] : null
+}
+
+export function nextIntakeStep(step, data) {
+  let following = nextStep(step)
+  while (following) {
+    if (following === 'topic' && data.topic) {
+      following = nextStep('topic')
+      continue
+    }
+    if (following === 'message' && data.message?.trim().length >= 3) {
+      following = nextStep('message')
+      continue
+    }
+    break
+  }
+  return following
+}
+
+export function inferTopicFromText(text) {
+  return parseTopic(text)
+}
+
+export function isReadyForIntake(text) {
+  const norm = normalize(text)
+  if (!norm.trim()) return false
+
+  if (INFO_QUESTION_RE.test(norm.trim()) && !INTENT_VERB_RE.test(norm)) {
+    return false
+  }
+
+  const hasDeliverable = DELIVERABLE_KEYWORDS.some((kw) => {
+    const nkw = normalize(kw)
+    return nkw.includes(' ')
+      ? norm.includes(nkw)
+      : new RegExp(`\\b${nkw}\\b`).test(norm)
+  })
+  if (!hasDeliverable) return false
+
+  const wordCount = norm.trim().split(/\s+/).length
+  if (wordCount <= 10) return true
+
+  return INTENT_VERB_RE.test(norm)
 }
 
 export function topicLabel(value, lang) {

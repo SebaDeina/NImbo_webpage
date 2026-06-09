@@ -16,20 +16,20 @@ export default function Footer() {
             <p>{t('foot.tagline')}</p>
           </div>
           <div className="foot-col">
-            <h5>{t('foot.c1')}</h5>
+            <h3 className="foot-col-title">{t('foot.c1')}</h3>
             <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc1.name')}</Link>
             <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc2.name')}</Link>
             <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc3.name')}</Link>
             <Link to={{ pathname: '/', hash: '#servicios' }}>IA</Link>
           </div>
           <div className="foot-col">
-            <h5>{t('foot.c2')}</h5>
+            <h3 className="foot-col-title">{t('foot.c2')}</h3>
             <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('foot.work')}</Link>
             <Link to="/nosotros">{t('foot.about')}</Link>
             <Link to="/contacto">{t('nav.contact')}</Link>
           </div>
           <div className="foot-col">
-            <h5>{t('foot.c3')}</h5>
+            <h3 className="foot-col-title">{t('foot.c3')}</h3>
             <a href="mailto:contacto@nimbodata.com">{t('foot.email')}</a>
             <span className="foot-static">{t('foot.loc')}</span>
             <Link to="/contacto">{t('nav.cta')}</Link>

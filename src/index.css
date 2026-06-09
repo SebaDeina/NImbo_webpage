@@ -29,7 +29,7 @@
 
   --text: oklch(0.22 0.04 256);
   --text-dim: oklch(0.40 0.035 252);
-  --text-mute: oklch(0.54 0.03 250);
+  --text-mute: oklch(0.46 0.035 252);
 
   --accent: var(--brand);
   --accent-bright: #5251e6;
@@ -120,8 +120,7 @@ body{
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
-.app-shell{opacity:0}
-.app-shell--ready{opacity:1;transition:opacity .35s var(--ease)}
+.app-shell{opacity:1}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -337,7 +336,10 @@ button{font:inherit}
 }
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg .ph{position:absolute;inset:0;border-radius:0;border:0}
-.hero-bg .hero-media{position:absolute;inset:0;z-index:0;background:var(--storm-1) center/cover no-repeat}
+.hero-bg .hero-media{
+  position:absolute;inset:0;z-index:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;background:var(--storm-1);
+}
 .hero-bg::after{
   content:"";position:absolute;inset:0;z-index:1;
   background:
@@ -360,12 +362,12 @@ button{font:inherit}
 .hero-inner .eyebrow,.hero-sub,.hero-word,.hero .scroll-cue{
   text-shadow:var(--hero-text-shadow);
 }
-.hero-inner .eyebrow{color:var(--text-dim)}
+.hero-inner .eyebrow{color:oklch(0.90 0.02 250)}
 .hero-top{
   display:flex;justify-content:space-between;align-items:flex-end;
   gap:40px;margin-bottom:clamp(18px,3vh,34px);flex-wrap:wrap;
 }
-.hero-sub{max-width:46ch;color:var(--text-dim);font-size:clamp(16px,1.25vw,19px)}
+.hero-sub{max-width:46ch;color:oklch(0.93 0.015 250);font-size:clamp(16px,1.25vw,19px)}
 .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
 .hero-word{
   font-family:var(--font-display);
@@ -393,6 +395,7 @@ button{font:inherit}
   color:var(--text-dim);padding:7px 13px;border-radius:100px;
   border:1px solid var(--line-soft);background:var(--tag-bg);
 }
+.hero .scroll-cue{color:oklch(0.88 0.02 250)}
 .scroll-cue{display:flex;align-items:center;gap:10px;color:var(--text-mute);
   font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase}
 .scroll-cue .dot{width:18px;height:28px;border:1px solid var(--line);border-radius:100px;
@@ -708,7 +711,7 @@ section{position:relative}
 .foot-brand .brand{margin-bottom:18px;font-size:24px}
 .foot-brand .brand svg{width:40px}
 .foot-brand p{color:var(--text-mute);max-width:34ch;font-size:15px}
-.foot-col h5{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.14em;
+.foot-col-title{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.14em;
   text-transform:uppercase;color:var(--text-mute);margin-bottom:18px}
 .foot-col a{display:block;color:var(--text-dim);font-size:15px;padding:6px 0;transition:.25s var(--ease)}
 .foot-col a:hover{color:var(--accent);transform:translateX(3px)}

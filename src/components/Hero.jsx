@@ -1,9 +1,16 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 import { IconArrowRight, IconStar } from './Icons'
+
+const HERO_IMG = {
+  src: '/hero-nubes.jpg',
+  alt: 'Mar de nubes al atardecer visto desde el cielo, con cielo azul despejado en el horizonte',
+  width: 1024,
+  height: 572,
+}
 
 export default function Hero() {
   const { t } = useLang()
@@ -11,6 +18,8 @@ export default function Hero() {
   const isMobile = useIsMobile()
   const mediaRef = useRef(null)
   const glowRef = useRef(null)
+  const bgRef = useRef(null)
+  const [needsImg, setNeedsImg] = useState(true)
 
   const onContact = (e) => {
     if (isMobile) {
@@ -18,6 +27,22 @@ export default function Hero() {
       openContact()
     }
   }
+
+  // Reuse the static LCP <img> from index.html — avoids a second download and keeps LCP stable.
+  useEffect(() => {
+    const bg = bgRef.current
+    const staticImg = document.getElementById('lcp-hero')
+    if (!bg || !staticImg) return
+    staticImg.classList.add('hero-media')
+    staticImg.removeAttribute('id')
+    staticImg.style.position = ''
+    staticImg.style.inset = ''
+    staticImg.style.zIndex = ''
+    staticImg.style.pointerEvents = ''
+    bg.prepend(staticImg)
+    mediaRef.current = staticImg
+    setNeedsImg(false)
+  }, [])
 
   // Light parallax on hero glow + background as you scroll.
   useEffect(() => {
@@ -37,14 +62,20 @@ export default function Hero() {
 
   return (
     <header className="hero" id="top" data-screen-label="Hero">
-      <div className="hero-bg">
-        <div
-          ref={mediaRef}
-          className="hero-media"
-          role="img"
-          aria-label="Mar de nubes al atardecer visto desde el cielo, con cielo azul despejado en el horizonte"
-          style={{ backgroundImage: "url('/hero-nubes.jpg')" }}
-        />
+      <div className="hero-bg" ref={bgRef}>
+        {needsImg && (
+          <img
+            ref={mediaRef}
+            src={HERO_IMG.src}
+            alt={HERO_IMG.alt}
+            className="hero-media"
+            width={HERO_IMG.width}
+            height={HERO_IMG.height}
+            fetchPriority="high"
+            decoding="sync"
+            sizes="100vw"
+          />
+        )}
       </div>
       <div className="hero-glow" ref={glowRef} aria-hidden="true" />
 
