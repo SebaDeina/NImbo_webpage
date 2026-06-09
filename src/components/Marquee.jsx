@@ -1,3 +1,5 @@
+import { IconStar } from './Icons'
+
 const ITEMS = ['Web', 'Datos', 'Inteligencia Artificial', 'Branding', 'Estrategia', 'Automatización']
 
 export default function Marquee() {
@@ -5,7 +7,10 @@ export default function Marquee() {
     <div className="marquee" aria-hidden="true">
       <div className="marquee-track">
         {[...ITEMS, ...ITEMS].map((item, i) => (
-          <span key={i}>{item}</span>
+          <span key={i}>
+            {item}
+            <IconStar className="marquee-star" />
+          </span>
         ))}
       </div>
     </div>

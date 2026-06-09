@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
-import { IconArrowRight } from './Icons'
+import { IconArrowRight, IconStar } from './Icons'
 
 export default function Hero() {
   const { t } = useLang()
@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-word in" data-reveal="" data-delay="1">
-          Nimbo<span className="star">✳</span>
+          Nimbo<span className="star"><IconStar size="100%" /></span>
         </h1>
 
         <div className="hero-meta in" data-reveal="" data-delay="2">

@@ -123,3 +123,17 @@ export function IconMoon({ size = 18, className = '' }) {
     </Svg>
   )
 }
+
+/** Asterisco de 8 puntas (sustituto del carácter ✳ — mismo aspecto en iOS/Android/desktop). */
+export function IconStar({ size = 18, className = '' }) {
+  return (
+    <Svg size={size} className={className}>
+      <path
+        d="M12 2v20M2 12h20M5.64 5.64l12.72 12.72M18.36 5.64L5.64 18.36"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </Svg>
+  )
+}

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { IconStar } from './Icons'
 
 const ORBS = [
   { top: '12%', left: '-6%', w: 340, h: 340, speed: 0.07, opacity: 0.55 },
@@ -91,9 +92,9 @@ export default function ScrollAmbient() {
           key={`star-${i}`}
           className="ambient-star"
           data-speed={s.speed}
-          style={{ top: s.top, left: s.left, fontSize: s.size }}
+          style={{ top: s.top, left: s.left }}
         >
-          ✳
+          <IconStar size={s.size} />
         </span>
       ))}
     </div>
