@@ -72,7 +72,7 @@ export default function Hero() {
             width={HERO_IMG.width}
             height={HERO_IMG.height}
             fetchpriority="high"
-            decoding="sync"
+            decoding="async"
             sizes="100vw"
           />
         )}

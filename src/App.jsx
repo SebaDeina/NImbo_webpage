@@ -38,8 +38,8 @@ export default function App() {
   useEffect(() => {
     if (!ready) return
     const id = window.requestIdleCallback
-      ? window.requestIdleCallback(() => setShowChat(true), { timeout: 2200 })
-      : window.setTimeout(() => setShowChat(true), 1200)
+      ? window.requestIdleCallback(() => setShowChat(true), { timeout: 3500 })
+      : window.setTimeout(() => setShowChat(true), 2500)
     return () => {
       if (window.requestIdleCallback) window.cancelIdleCallback(id)
       else window.clearTimeout(id)

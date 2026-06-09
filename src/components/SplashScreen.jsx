@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const MIN_MS = 750
+const MIN_MS = 420
 
 export default function SplashScreen({ onDone }) {
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function SplashScreen({ onDone }) {
           el.classList.add('done')
           el.setAttribute('aria-busy', 'false')
         }
-        window.setTimeout(onDone, 450)
+        window.setTimeout(onDone, 280)
       }, wait)
     }
 

@@ -1,22 +1,9 @@
 import { useEffect, useState } from 'react'
-import { getProjects, getProject } from '../lib/cms'
+import { PROJECTS } from '../data/projects'
+import { getProject } from '../lib/cms'
 
 export function useProjects() {
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    let alive = true
-    getProjects().then((p) => {
-      if (alive) {
-        setProjects(p)
-        setLoading(false)
-      }
-    })
-    return () => {
-      alive = false
-    }
-  }, [])
-  return { projects, loading }
+  return { projects: PROJECTS, loading: false }
 }
 
 export function useProject(slug) {
