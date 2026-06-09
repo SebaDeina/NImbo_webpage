@@ -134,8 +134,10 @@ button{font:inherit}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 :root[data-grain="off"] .grain{display:none}
 :root[data-theme="light"] .grain{mix-blend-mode:multiply}
-@media (max-width: 760px){
-  .grain{opacity:calc(var(--grain-opacity) * 0.45)}
+@media (pointer: coarse), (max-width: 760px){
+  /* El grain es un overlay fijo a pantalla completa con mix-blend-mode:
+     re-mezcla todo el viewport en cada frame de scroll → traba en móvil. */
+  .grain{display:none}
 }
 @media (prefers-reduced-motion: reduce){
   .grain{display:none}
@@ -183,6 +185,12 @@ button{font:inherit}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   [data-reveal]{opacity:1;transform:none;transition:none}
+}
+/* En móvil/táctil el will-change permanente de cada elemento revelado
+   promueve decenas de capas a GPU y, al bajar rápido, todas animan a la
+   vez y traban. Mostramos el contenido al instante, sin capas extra. */
+@media (pointer: coarse), (max-width: 760px){
+  [data-reveal]{opacity:1;transform:none;transition:none;will-change:auto}
 }
 
 /* image placeholder */
@@ -890,6 +898,13 @@ section{position:relative}
     filter:none;
     animation:none;
   }
+  /* ServiceCloud: por cada servicio hay wisps con blur + animación
+     infinita, un glow con mix-blend-mode:screen animado y un grain con
+     blend overlay. Congelamos todo y sacamos blur/blend/will-change;
+     el degradé de color (sky + body) se mantiene. */
+  .svc-cloud__wisp,.svc-cloud__glow{animation:none;filter:none;will-change:auto}
+  .svc-cloud__glow{mix-blend-mode:normal}
+  .svc-cloud__grain{display:none}
 }
 
 /* ============================================================
