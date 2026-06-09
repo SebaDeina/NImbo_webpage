@@ -1,8 +1,53 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import Reveal from './Reveal'
+import ProjectCover from './ProjectCover'
 import { IconArrowUpRight } from './Icons'
 import { useProjects } from '../hooks/useProjects'
+import { useReveal } from '../hooks/useReveal'
+
+function ProjectCard({ p, i, lang, metaLine }) {
+  const [ref, shown] = useReveal({ rootMargin: '0px 0px -2% 0px' })
+  const eager = i < 2
+
+  return (
+    <Link
+      ref={ref}
+      to={`/trabajos/${p.slug}`}
+      className="proj"
+      aria-label={p.title}
+    >
+      <div className="proj-media">
+        {p.cover ? (
+          <ProjectCover
+            src={p.cover}
+            alt={p.title}
+            eager={eager}
+            priority={i === 0}
+          />
+        ) : (
+          <div className="ph">
+            <div className="ph-tag">
+              <b>[ {p.title} ]</b>
+              <br />
+              {p.placeholder?.[lang]}
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="proj-shade" />
+      <div className={`proj-overlay${shown ? ' in' : ''}`}>
+        <div className="proj-info">
+          <h3>{p.title}</h3>
+          <p className="proj-meta-line">{metaLine}</p>
+        </div>
+        <span className="proj-go" aria-hidden="true">
+          <IconArrowUpRight size={22} />
+        </span>
+      </div>
+    </Link>
+  )
+}
 
 export default function Work() {
   const { t, lang } = useLang()
@@ -31,38 +76,13 @@ export default function Work() {
                 : p.category?.[lang]
             const metaLine = [disciplines, p.year].filter(Boolean).join(' — ')
             return (
-              <Reveal
-                as={Link}
+              <ProjectCard
                 key={p.slug}
-                to={`/trabajos/${p.slug}`}
-                delay={i % 2 ? 1 : 0}
-                className="proj"
-                aria-label={p.title}
-              >
-                <div className="proj-media">
-                  {p.cover ? (
-                    <img src={p.cover} alt={p.title} loading="lazy" decoding="async" />
-                  ) : (
-                    <div className="ph">
-                      <div className="ph-tag">
-                        <b>[ {p.title} ]</b>
-                        <br />
-                        {p.placeholder?.[lang]}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="proj-shade" />
-                <div className="proj-overlay">
-                  <div className="proj-info">
-                    <h3>{p.title}</h3>
-                    <p className="proj-meta-line">{metaLine}</p>
-                  </div>
-                  <span className="proj-go" aria-hidden="true">
-                    <IconArrowUpRight size={22} />
-                  </span>
-                </div>
-              </Reveal>
+                p={p}
+                i={i}
+                lang={lang}
+                metaLine={metaLine}
+              />
             )
           })}
         </div>

@@ -1,20 +1,13 @@
 import { useParams, Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { useProject } from '../hooks/useProjects'
+import ProjectCover from '../components/ProjectCover'
 import { IconArrowLeft, IconArrowRight, IconArrowUpRight } from '../components/Icons'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
   const { t, lang } = useLang()
   const project = useProject(slug)
-
-  if (project === undefined) {
-    return (
-      <main className="page project-page">
-        <div className="wrap project-state">{t('proj.loading')}</div>
-      </main>
-    )
-  }
 
   if (project === null) {
     return (
@@ -74,7 +67,7 @@ export default function ProjectDetail() {
 
         <div className="project-cover">
           {project.cover ? (
-            <img src={project.cover} alt={project.title} />
+            <ProjectCover src={project.cover} alt={project.title} eager priority />
           ) : (
             <div className="ph">
               <div className="ph-tag">
