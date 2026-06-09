@@ -14,12 +14,25 @@
   <meta name="format-detection" content="telephone=no" />
   <meta name="theme-color" content="#6665ff" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" as="image" href="/hero-nubes.jpg" fetchpriority="high" />
   <title>NIMBO — Estudio digital · Web · Datos · IA · Branding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    #splash{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
+      background:oklch(0.98 0.010 250);transition:opacity .45s cubic-bezier(.22,1,.36,1),visibility .45s}
+    :root[data-theme="dark"] #splash{background:oklch(0.185 0.042 256)}
+    #splash.done{opacity:0;visibility:hidden;pointer-events:none}
+    .splash-word{margin:0;font-family:system-ui,-apple-system,sans-serif;font-size:clamp(52px,14vw,96px);
+      font-weight:800;letter-spacing:-.045em;color:#6665ff;animation:splash-in .7s cubic-bezier(.22,1,.36,1) both}
+    @keyframes splash-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+  </style>
 </head>
 <body>
+  <div id="splash" aria-live="polite" aria-busy="true">
+    <p class="splash-word">Nimbo</p>
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

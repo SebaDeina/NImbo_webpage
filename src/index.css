@@ -120,6 +120,8 @@ body{
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
+.app-shell{opacity:0}
+.app-shell--ready{opacity:1;transition:opacity .35s var(--ease)}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -745,8 +747,8 @@ section{position:relative}
   .hero-sub{font-size:16px}
   .hero-word{font-size:clamp(56px,17vw,102px)}
   .hero-meta{flex-direction:column;align-items:stretch;gap:18px}
-  .hero-cta{width:100%}
-  .hero-cta .btn{flex:1;justify-content:center;min-width:0}
+  .hero-cta{flex-direction:column;width:100%}
+  .hero-cta .btn{width:100%;justify-content:center;white-space:nowrap}
   .scroll-cue{display:none}
   .steps{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr;gap:32px}

@@ -17,12 +17,10 @@ export const TOPICS = [
 ]
 
 export const BUDGETS = [
-  { v: 'u10', es: 'Menos de $10K', en: 'Under $10K' },
-  { v: '10-25', es: '$10K - $25K', en: '$10K - $25K' },
-  { v: '25-50', es: '$25K - $50K', en: '$25K - $50K' },
-  { v: '50-100', es: '$50K - $100K', en: '$50K - $100K' },
-  { v: '100-500', es: '$100K - $500K', en: '$100K - $500K' },
-  { v: '500+', es: '$500K+', en: '$500K+' },
+  { v: 'u500k', es: 'Menos de 500 mil', en: 'Under ARS 500K' },
+  { v: '500k-1.5m', es: 'Entre 500 mil y 1,5 millones', en: 'ARS 500K – 1.5M' },
+  { v: '1.5m-3m', es: 'Entre 1,5 y 3 millones', en: 'ARS 1.5M – 3M' },
+  { v: '3m+', es: 'Más de 3 millones', en: 'Over ARS 3M' },
 ]
 
 const SKIP_RE = /^(saltar|skip|no|ninguno|n\/a|na|-|—|omitir)$/i
@@ -38,12 +36,10 @@ const TOPIC_ALIASES = {
 }
 
 const BUDGET_ALIASES = {
-  u10: ['u10', '10k', 'menos de 10', 'under 10'],
-  '10-25': ['10-25', '10 a 25', '10k-25k'],
-  '25-50': ['25-50', '25 a 50', '25k-50k'],
-  '50-100': ['50-100', '50 a 100', '50k-100k'],
-  '100-500': ['100-500', '100 a 500', '100k-500k'],
-  '500+': ['500+', '500k', 'mas de 500', 'más de 500'],
+  u500k: ['u500k', 'menos de 500 mil', 'under 500k', '500 mil'],
+  '500k-1.5m': ['500k-1.5m', '500 mil', '1.5 millones', 'entre 500 mil y 1.5'],
+  '1.5m-3m': ['1.5m-3m', '1.5 millones', '3 millones', 'entre 1.5 y 3'],
+  '3m+': ['3m+', 'mas de 3 millones', 'más de 3 millones', 'over 3m'],
 }
 
 export function emptyIntake() {
@@ -136,7 +132,9 @@ export function buildSummary(data, t, lang) {
     lines.push(`• ${t('chat.intake.summary.company')}: ${data.company}`)
   }
   lines.push(`• ${t('chat.intake.summary.topic')}: ${topicLabel(data.topic, lang)}`)
-  lines.push(`• ${t('chat.intake.summary.message')}: ${data.message}`)
+  if (data.message?.trim()) {
+    lines.push(`• ${t('chat.intake.summary.message')}: ${data.message}`)
+  }
   if (data.budget) {
     lines.push(`• ${t('chat.intake.summary.budget')}: ${budgetLabel(data.budget, lang)}`)
   }
@@ -153,7 +151,7 @@ export function toContactPayload(data, lang) {
     company: data.company?.trim() || undefined,
     topic: data.topic,
     budget: data.budget || undefined,
-    message: data.message.trim(),
+    message: data.message?.trim() || undefined,
     lang,
     source: 'chat',
   }

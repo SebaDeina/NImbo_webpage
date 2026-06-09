@@ -1,11 +1,23 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
+import { useContact } from '../contexts/ContactContext'
+import { useIsMobile } from '../hooks/useIsMobile'
 import { IconArrowRight, IconStar } from './Icons'
 
 export default function Hero() {
   const { t } = useLang()
+  const { openContact } = useContact()
+  const isMobile = useIsMobile()
   const mediaRef = useRef(null)
   const glowRef = useRef(null)
+
+  const onContact = (e) => {
+    if (isMobile) {
+      e.preventDefault()
+      openContact()
+    }
+  }
 
   // Light parallax on hero glow + background as you scroll.
   useEffect(() => {
@@ -31,7 +43,7 @@ export default function Hero() {
           className="hero-media"
           role="img"
           aria-label="Mar de nubes al atardecer visto desde el cielo, con cielo azul despejado en el horizonte"
-          style={{ backgroundImage: "url('/hero-nubes.png')" }}
+          style={{ backgroundImage: "url('/hero-nubes.jpg')" }}
         />
       </div>
       <div className="hero-glow" ref={glowRef} aria-hidden="true" />
@@ -48,9 +60,9 @@ export default function Hero() {
 
         <div className="hero-meta in" data-reveal="" data-delay="2">
           <div className="hero-cta">
-            <a href="#contacto" className="btn btn-primary">
+            <Link to="/contacto" className="btn btn-primary" onClick={onContact}>
               <span>{t('hero.cta1')}</span> <IconArrowRight size={18} className="arr" />
-            </a>
+            </Link>
             <a href="#servicios" className="btn btn-ghost">
               {t('hero.cta2')}
             </a>

@@ -41,7 +41,7 @@ export default function Work() {
               >
                 <div className="proj-media">
                   {p.cover ? (
-                    <img src={p.cover} alt={p.title} loading="lazy" />
+                    <img src={p.cover} alt={p.title} loading="lazy" decoding="async" />
                   ) : (
                     <div className="ph">
                       <div className="ph-tag">

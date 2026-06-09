@@ -27,13 +27,10 @@ const TOPICS = [
 ]
 
 const BUDGETS = [
-  { v: 'u10', es: 'Menos de $10K', en: 'Under $10K' },
-  { v: '10-25', es: '$10K - $25K', en: '$10K - $25K' },
-  { v: '25-50', es: '$25K - $50K', en: '$25K - $50K' },
-  { v: '50-100', es: '$50K - $100K', en: '$50K - $100K' },
-  { v: '100-500', es: '$100K - $500K', en: '$100K - $500K' },
-  { v: '500+', es: '$500K+', en: '$500K+' },
-  { v: 'na', es: 'N/A', en: 'N/A' },
+  { v: 'u500k', es: 'Menos de 500 mil', en: 'Under ARS 500K' },
+  { v: '500k-1.5m', es: 'Entre 500 mil y 1,5 millones', en: 'ARS 500K – 1.5M' },
+  { v: '1.5m-3m', es: 'Entre 1,5 y 3 millones', en: 'ARS 1.5M – 3M' },
+  { v: '3m+', es: 'Más de 3 millones', en: 'Over ARS 3M' },
 ]
 
 const EMPTY = {
@@ -61,8 +58,7 @@ export default function ContactForm({ onSubmitted }) {
 
   const validStep = () => {
     if (step === 0) return data.firstName.trim() && data.email.trim() && emailOk
-    if (step === 1) return !!data.topic
-    if (step === 2) return data.message.trim().length > 0
+    if (step === 1) return !!data.topic && !!data.budget
     return true
   }
 
@@ -90,8 +86,8 @@ export default function ContactForm({ onSubmitted }) {
         phone: data.phone.trim() || undefined,
         company: data.company.trim() || undefined,
         topic: data.topic,
-        budget: data.budget || undefined,
-        message: data.message.trim(),
+        budget: data.budget,
+        message: data.message.trim() || undefined,
         lang,
       })
       setSent(true)
@@ -184,7 +180,9 @@ export default function ContactForm({ onSubmitted }) {
             </select>
           </label>
           <label className="field span2">
-            <span>{t('contact.fBudget')}</span>
+            <span>
+              {t('contact.fBudget')} <i className="req">*</i>
+            </span>
             <select value={data.budget} onChange={set('budget')} className={data.budget ? '' : 'is-empty'}>
               <option value="">{t('contact.fBudgetPh')}</option>
               {BUDGETS.map((o) => (
@@ -200,9 +198,7 @@ export default function ContactForm({ onSubmitted }) {
       {step === 2 && (
         <div className="cform-grid">
           <label className="field span2">
-            <span>
-              {t('contact.fMsg')} <i className="req">*</i>
-            </span>
+            <span>{t('contact.fMsg')}</span>
             <textarea rows={6} value={data.message} onChange={set('message')} placeholder={t('contact.fMsgPh')} />
           </label>
         </div>
