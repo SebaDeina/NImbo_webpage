@@ -34,14 +34,13 @@ const BUDGETS = [
 ]
 
 const EMPTY = {
-  firstName: '',
-  lastName: '',
+  topic: '',
+  fullName: '',
   email: '',
   cc: '+54',
   phone: '',
-  company: '',
-  topic: '',
   budget: '',
+  company: '',
   message: '',
 }
 
@@ -57,9 +56,9 @@ export default function ContactForm({ onSubmitted }) {
   const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)
 
   const validStep = () => {
-    if (step === 0) return data.firstName.trim() && data.email.trim() && emailOk
-    if (step === 1) return !!data.topic && !!data.budget
-    return true
+    if (step === 0) return !!data.topic
+    if (step === 1) return data.fullName.trim() && data.email.trim() && emailOk
+    return !!data.budget
   }
 
   const next = () => {
@@ -77,10 +76,13 @@ export default function ContactForm({ onSubmitted }) {
     if (!validStep()) return setError(t('contact.err'))
     setSending(true)
     setError('')
+    const nameParts = data.fullName.trim().split(/\s+/)
+    const firstName = nameParts.shift() || ''
+    const lastName = nameParts.join(' ') || undefined
     try {
       await submitContact({
-        firstName: data.firstName.trim(),
-        lastName: data.lastName.trim() || undefined,
+        firstName,
+        lastName,
         email: data.email.trim(),
         countryCode: data.cc,
         phone: data.phone.trim() || undefined,
@@ -128,15 +130,29 @@ export default function ContactForm({ onSubmitted }) {
 
       {step === 0 && (
         <div className="cform-grid">
-          <label className="field">
+          <label className="field span2">
             <span>
-              {t('contact.fFirst')} <i className="req">*</i>
+              {t('contact.fTopic')} <i className="req">*</i>
             </span>
-            <input value={data.firstName} onChange={set('firstName')} placeholder={t('contact.fFirstPh')} />
+            <select value={data.topic} onChange={set('topic')} className={data.topic ? '' : 'is-empty'}>
+              <option value="">{t('contact.fTopicPh')}</option>
+              {TOPICS.map((o) => (
+                <option key={o.v} value={o.v}>
+                  {o[lang]}
+                </option>
+              ))}
+            </select>
           </label>
-          <label className="field">
-            <span>{t('contact.fLast')}</span>
-            <input value={data.lastName} onChange={set('lastName')} placeholder={t('contact.fLastPh')} />
+        </div>
+      )}
+
+      {step === 1 && (
+        <div className="cform-grid">
+          <label className="field span2">
+            <span>
+              {t('contact.fFull')} <i className="req">*</i>
+            </span>
+            <input value={data.fullName} onChange={set('fullName')} placeholder={t('contact.fFullPh')} />
           </label>
           <label className="field span2">
             <span>
@@ -157,28 +173,11 @@ export default function ContactForm({ onSubmitted }) {
               <input type="tel" value={data.phone} onChange={set('phone')} placeholder={t('contact.fPhonePh')} />
             </div>
           </label>
-          <label className="field span2">
-            <span>{t('contact.fCompany')}</span>
-            <input value={data.company} onChange={set('company')} placeholder={t('contact.fCompanyPh')} />
-          </label>
         </div>
       )}
 
-      {step === 1 && (
+      {step === 2 && (
         <div className="cform-grid">
-          <label className="field span2">
-            <span>
-              {t('contact.fTopic')} <i className="req">*</i>
-            </span>
-            <select value={data.topic} onChange={set('topic')} className={data.topic ? '' : 'is-empty'}>
-              <option value="">{t('contact.fTopicPh')}</option>
-              {TOPICS.map((o) => (
-                <option key={o.v} value={o.v}>
-                  {o[lang]}
-                </option>
-              ))}
-            </select>
-          </label>
           <label className="field span2">
             <span>
               {t('contact.fBudget')} <i className="req">*</i>
@@ -192,14 +191,13 @@ export default function ContactForm({ onSubmitted }) {
               ))}
             </select>
           </label>
-        </div>
-      )}
-
-      {step === 2 && (
-        <div className="cform-grid">
+          <label className="field span2">
+            <span>{t('contact.fCompany')}</span>
+            <input value={data.company} onChange={set('company')} placeholder={t('contact.fCompanyPh')} />
+          </label>
           <label className="field span2">
             <span>{t('contact.fMsg')}</span>
-            <textarea rows={6} value={data.message} onChange={set('message')} placeholder={t('contact.fMsgPh')} />
+            <textarea rows={5} value={data.message} onChange={set('message')} placeholder={t('contact.fMsgPh')} />
           </label>
         </div>
       )}
