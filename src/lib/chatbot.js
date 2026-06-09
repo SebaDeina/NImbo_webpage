@@ -1,3 +1,7 @@
+import { MAX_CHAT_USER_MESSAGES } from '../../lib/chat-limits.js'
+
+export { MAX_CHAT_USER_MESSAGES }
+
 /* Matcher local de FAQs — sin API, sin costo. */
 
 const INSULT_KEYWORDS = [
@@ -9,6 +13,19 @@ const INSULT_KEYWORDS = [
 ]
 
 const INSULT_VARIANTS = 5
+const JOKE_VARIANTS = 5
+
+const JOKE_PATTERNS = [
+  /\bchiste\b/,
+  /\bchistes\b/,
+  /\bjoke\b/,
+  /\bjokes\b/,
+  /contame un chiste/,
+  /cuentame un chiste/,
+  /contas un chiste/,
+  /decime un chiste/,
+  /tell me a joke/,
+]
 
 const INTENTS = [
   {
@@ -95,8 +112,11 @@ const INTENTS = [
   {
     id: 'contact',
     keywords: [
-      'contacto', 'contactar', 'hablar', 'reunion', 'reunión', 'email', 'mail', 'consulta', 'escribir',
-      'contact', 'talk', 'reach', 'quote', 'proposal', 'get in touch', 'write to',
+      'contacto', 'contactar', 'contactarlos', 'contactanos', 'contactános', 'como me contacto',
+      'como los contacto', 'como contactarlos', 'hablar', 'reunion', 'reunión', 'email', 'mail',
+      'consulta', 'escribir', 'formulario',
+      'contact', 'talk', 'reach', 'quote', 'proposal', 'get in touch', 'write to', 'how to contact',
+      'how do i contact', 'contact form',
     ],
   },
   {
@@ -133,11 +153,21 @@ export function pickInsultVariant() {
   return Math.floor(Math.random() * INSULT_VARIANTS) + 1
 }
 
+export function pickJokeVariant() {
+  return Math.floor(Math.random() * JOKE_VARIANTS) + 1
+}
+
+function isJoke(message) {
+  const norm = normalize(message)
+  return JOKE_PATTERNS.some((p) => p.test(norm))
+}
+
 export function matchFaq(message) {
   const norm = normalize(message)
   if (!norm.trim()) return 'fallback'
 
   if (isInsult(message)) return 'insult'
+  if (isJoke(message)) return 'joke'
 
   let best = { id: 'fallback', score: 0 }
 
@@ -156,3 +186,23 @@ export function matchFaq(message) {
 }
 
 export const SUGGESTIONS = ['services', 'pricing', 'schedule', 'contact']
+
+/** Tiempo mínimo para leer la última respuesta antes de empezar a contar inactividad. */
+export const NUDGE_READ_GRACE_MS = 60_000
+/** Inactividad adicional (sin escribir) después del grace period. */
+export const IDLE_NUDGE_MS = 50_000
+export const MAX_IDLE_NUDGES = 1
+export const NUDGE_VARIANTS = 3
+export const TEASER_DELAY_MS = 4_500
+export const TEASER_STORAGE_KEY = 'nimbo_chat_teaser_dismissed'
+
+/** Intents locales que muestran CTA al formulario (solo alta intención de conversión). */
+export const CTA_INTENTS = new Set(['contact', 'schedule', 'limit'])
+
+export function localIntentShowsCta(intentId) {
+  return CTA_INTENTS.has(intentId)
+}
+
+export function pickNudgeVariant() {
+  return Math.floor(Math.random() * NUDGE_VARIANTS) + 1
+}

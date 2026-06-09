@@ -20,8 +20,8 @@ export const PROJECTS = [
     title: 'WODSI',
     client: 'WODSI',
     year: '2025',
-    cover: null,
-    gallery: [],
+    cover: '/wodsi-cover.png',
+    gallery: ['/wodsi-cover.png'],
     live: 'https://wodsi.com.ar/',
     category: { es: 'Aplicación SaaS', en: 'SaaS App' },
     summary: {
@@ -41,6 +41,33 @@ export const PROJECTS = [
     services: ['Producto digital', 'Web App', 'Automatización', 'IA'],
     tags: ['React', 'Firebase', 'WhatsApp API', 'IA'],
     placeholder: { es: 'captura de la app WODSI', en: 'WODSI app screenshot' },
+  },
+  {
+    slug: 'psifrantadioli',
+    title: 'psi.frantadioli',
+    client: 'Francisca Dioli',
+    year: '2026',
+    cover: '/psifrantadioli-cover.png',
+    gallery: ['/psifrantadioli-hero.png', '/psifrantadioli-cover.png'],
+    live: 'https://www.psifrantadioli.com/',
+    category: { es: 'Web · Salud', en: 'Web · Health' },
+    summary: {
+      es: 'Sitio para psicóloga: contención, turnos online y presencia profesional en mobile.',
+      en: 'Psychologist website: emotional care, online booking and a professional mobile presence.',
+    },
+    description: {
+      es: [
+        'Sitio web para Francisca Dioli, psicóloga: un espacio digital de contención y bienestar profesional, con identidad cálida y clara.',
+        'Diseñamos y desarrollamos la experiencia mobile-first —hero, servicios, testimonios y flujo de agendamiento de turnos— pensada para convertir visitas en primeras sesiones.',
+      ],
+      en: [
+        'Website for Francisca Dioli, psychologist: a digital space for emotional care and professional wellbeing, with a warm and clear identity.',
+        'We designed and built a mobile-first experience —hero, services, testimonials and appointment booking— built to turn visits into first sessions.',
+      ],
+    },
+    services: ['Diseño web', 'UI/UX', 'Desarrollo', 'CRO'],
+    tags: ['React', 'UI/UX', 'Mobile-first', 'Agendamiento'],
+    placeholder: { es: 'captura del sitio psi.frantadioli', en: 'psi.frantadioli site screenshot' },
   },
   {
     slug: 'proximo-sitio',

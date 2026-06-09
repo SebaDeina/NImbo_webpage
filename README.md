@@ -10,7 +10,8 @@ Estructura inspirada en la plantilla *Peak* (creative studio), con identidad pro
 - **Frontend:** React 18 + Vite + React Router. Bilingüe ES/EN.
 - **Proyectos:** `src/data/projects.js` — editás el archivo y pusheás; Vercel redeploya.
 - **Contacto:** Vercel Function `/api/contact` → Slack (+ email opcional vía Resend).
-- **Costo:** $0 (Vercel hobby + Slack gratis).
+- **Chatbot:** Vercel Function `/api/chat` → OpenAI (`gpt-4o-mini`, tokens limitados). Fallback local si no hay API key.
+- **Costo:** Vercel hobby + Slack gratis; OpenAI según uso del chat (~centavos por conversación).
 
 ## Páginas
 
@@ -27,7 +28,7 @@ cp .env.example .env   # completar SLACK_WEBHOOK_URL (y Resend si querés email)
 npm run dev            # http://localhost:5173
 ```
 
-El dev server incluye `/api/contact` para probar el formulario sin Vercel.
+El dev server incluye `/api/contact` y `/api/chat` para probar sin Vercel.
 
 ## Administrar proyectos
 
@@ -53,8 +54,11 @@ Hacé commit + push → Vercel redeploya automáticamente.
 | `RESEND_API_KEY` | No | API key de Resend para email |
 | `RESEND_FROM` | No | Remitente verificado en Resend |
 | `CONTACT_NOTIFY_EMAIL` | No | Destino del email |
+| `OPENAI_API_KEY` | No* | API key de OpenAI para el chatbot con IA |
 
-\* Al menos Slack o Resend tiene que estar configurado.
+\* Al menos Slack o Resend tiene que estar configurado para el formulario de contacto.
+
+\* Sin `OPENAI_API_KEY` el chatbot usa respuestas locales (FAQs). Con la key, usa IA limitada a temas NIMBO y orientada a conversión.
 
 4. Deploy. Listo.
 

@@ -1020,6 +1020,40 @@ a.ci-v:hover{color:var(--accent)}
   animation:chat-pulse 3s ease-in-out infinite;
 }
 .chat-fab.open .chat-fab-glow{display:none}
+
+.chat-teaser{
+  position:relative;max-width:min(280px, calc(100vw - 56px));
+  padding:14px 38px 12px 16px;
+  background:linear-gradient(165deg, var(--surface), var(--storm-1));
+  border:1px solid var(--line-soft);border-radius:16px;
+  box-shadow:0 14px 44px -14px color-mix(in oklab, var(--storm-0) 38%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--accent) 10%, transparent);
+  animation:chat-teaser-in .45s var(--ease);
+}
+.chat-teaser::after{
+  content:"";position:absolute;bottom:-7px;right:24px;width:14px;height:14px;
+  background:var(--storm-1);border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  transform:rotate(45deg);
+}
+@keyframes chat-teaser-in{
+  from{opacity:0;transform:translateY(8px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+.chat-teaser-close{
+  position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--line-soft);background:var(--glass);color:var(--text-mute);
+  font-size:16px;line-height:1;cursor:pointer;transition:.25s var(--ease);
+}
+.chat-teaser-close:hover{color:var(--text);background:var(--glass-hover)}
+.chat-teaser-text{margin:0;font-size:13px;line-height:1.5;color:var(--text-dim)}
+.chat-teaser-cta{
+  appearance:none;border:0;margin-top:10px;padding:7px 14px;border-radius:100px;
+  background:var(--accent);color:var(--btn-on-accent);
+  font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+}
+.chat-teaser-cta:hover{opacity:.92;transform:translateY(-1px)}
+
 @keyframes chat-pulse{
   0%,100%{opacity:.45;transform:scale(1)}
   50%{opacity:.85;transform:scale(1.08)}
@@ -1079,6 +1113,7 @@ a.ci-v:hover{color:var(--accent)}
   to{opacity:1;transform:none}
 }
 .chat-bubble p{margin:0;line-height:1.5}
+.chat-bubble strong{font-weight:600;color:var(--text)}
 .chat-bubble p + p{margin-top:8px}
 .chat-ul{margin:6px 0 0;padding:0 0 0 1.15em;list-style:disc}
 .chat-ul li{margin:0;line-height:1.45}
