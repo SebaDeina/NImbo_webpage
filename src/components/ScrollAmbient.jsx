@@ -32,6 +32,10 @@ export default function ScrollAmbient() {
     if (!root) return
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // El parallax reescribe transform sobre capas grandes con blur en cada frame:
+    // en móvil/táctil eso traba el scroll. Lo dejamos solo en desktop apuntador fino.
+    const desktop = window.matchMedia('(min-width: 900px) and (pointer: fine)').matches
+    if (reduced || !desktop) return
     const items = root.querySelectorAll('[data-speed]')
     let raf = null
 

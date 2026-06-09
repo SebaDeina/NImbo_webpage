@@ -23,7 +23,7 @@ export default function ProjectCover({
         height={682}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority={priority ? 'high' : undefined}
+        {...(priority ? { fetchpriority: 'high' } : {})}
         sizes="(max-width: 760px) 100vw, 50vw"
       />
     </picture>
