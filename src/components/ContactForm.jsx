@@ -1,9 +1,29 @@
 import { useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { submitContact } from '../lib/cms'
-import { IconArrowLeft, IconArrowRight, IconCheck } from './Icons'
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconCheck,
+  IconGlobe,
+  IconBolt,
+  IconCalendar,
+  IconChat,
+  IconBrush,
+  IconPlus,
+} from './Icons'
 
 const STEPS = 3
+
+/* Servicios para la variante con iconos (landing de venta). Multi-selección. */
+const SERVICE_OPTIONS = [
+  { v: 'web', Icon: IconGlobe, es: 'Web', en: 'Website' },
+  { v: 'automatizaciones', Icon: IconBolt, es: 'Automatizaciones', en: 'Automations' },
+  { v: 'turnos', Icon: IconCalendar, es: 'Turnos / Reservas', en: 'Bookings' },
+  { v: 'chatbot', Icon: IconChat, es: 'Chatbot', en: 'Chatbot' },
+  { v: 'branding', Icon: IconBrush, es: 'Branding', en: 'Branding' },
+  { v: 'otro', Icon: IconPlus, es: 'Otro', en: 'Other' },
+]
 
 const COUNTRIES = [
   { cc: '+54', iso: 'AR' },
@@ -35,6 +55,7 @@ const BUDGETS = [
 
 const EMPTY = {
   topic: '',
+  topics: [],
   fullName: '',
   email: '',
   cc: '+54',
@@ -44,7 +65,7 @@ const EMPTY = {
   message: '',
 }
 
-export default function ContactForm({ onSubmitted }) {
+export default function ContactForm({ onSubmitted, serviceIcons = false }) {
   const { t, lang } = useLang()
   const [step, setStep] = useState(0)
   const [data, setData] = useState(EMPTY)
@@ -53,10 +74,15 @@ export default function ContactForm({ onSubmitted }) {
   const [sending, setSending] = useState(false)
 
   const set = (k) => (e) => setData((d) => ({ ...d, [k]: e.target.value }))
+  const toggleTopic = (v) =>
+    setData((d) => ({
+      ...d,
+      topics: d.topics.includes(v) ? d.topics.filter((x) => x !== v) : [...d.topics, v],
+    }))
   const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)
 
   const validStep = () => {
-    if (step === 0) return !!data.topic
+    if (step === 0) return serviceIcons ? data.topics.length > 0 : !!data.topic
     if (step === 1) return data.fullName.trim() && data.email.trim() && emailOk
     return !!data.budget
   }
@@ -87,7 +113,7 @@ export default function ContactForm({ onSubmitted }) {
         countryCode: data.cc,
         phone: data.phone.trim() || undefined,
         company: data.company.trim() || undefined,
-        topic: data.topic,
+        topic: serviceIcons ? data.topics.join(', ') : data.topic,
         budget: data.budget,
         message: data.message.trim() || undefined,
         lang,
@@ -128,7 +154,34 @@ export default function ContactForm({ onSubmitted }) {
         </div>
       </div>
 
-      {step === 0 && (
+      {step === 0 && serviceIcons && (
+        <div className="field span2">
+          <span>
+            {t('contact.fTopic')} <i className="req">*</i>
+          </span>
+          <div className="svc-pick" role="group" aria-label={t('contact.fTopic')}>
+            {SERVICE_OPTIONS.map(({ v, Icon, ...labels }) => {
+              const on = data.topics.includes(v)
+              return (
+                <button
+                  type="button"
+                  key={v}
+                  className={`svc-pick-item${on ? ' is-on' : ''}`}
+                  onClick={() => toggleTopic(v)}
+                  aria-pressed={on}
+                >
+                  <span className="svc-pick-icon" aria-hidden="true">
+                    <Icon size={28} />
+                  </span>
+                  <span className="svc-pick-label">{labels[lang]}</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {step === 0 && !serviceIcons && (
         <div className="cform-grid">
           <label className="field span2">
             <span>

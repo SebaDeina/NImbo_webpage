@@ -4,7 +4,7 @@ import ContactForm from './ContactForm'
 
 /* Bottom-sheet para móvil: sube desde abajo. En desktop no se usa
    (el contacto es la página /contacto inline). */
-export default function ContactSheet({ open, resetKey, onClose }) {
+export default function ContactSheet({ open, resetKey, onClose, serviceIcons = false }) {
   const { t } = useLang()
 
   // Bloquear scroll del fondo mientras está abierto + cerrar con Escape.
@@ -35,7 +35,9 @@ export default function ContactSheet({ open, resetKey, onClose }) {
           </button>
         </div>
         <div className="sheet-body">
-          {open && <ContactForm key={resetKey} onSubmitted={() => setTimeout(onClose, 2000)} />}
+          {open && (
+            <ContactForm key={resetKey} serviceIcons={serviceIcons} onSubmitted={() => setTimeout(onClose, 2000)} />
+          )}
         </div>
       </div>
     </div>

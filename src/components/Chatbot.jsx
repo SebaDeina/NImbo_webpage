@@ -105,10 +105,13 @@ function ChatBubbleText({ text }) {
 
 const INTAKE_INTENTS = new Set(['contact', 'schedule'])
 
-export default function Chatbot() {
+let embedMountGen = 0
+
+export default function Chatbot({ variant = 'floating' }) {
+  const embedded = variant === 'embed'
   const { t, lang } = useLang()
   const isMobile = useIsMobile()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(embedded)
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)
   const [messages, setMessages] = useState([])
@@ -119,6 +122,7 @@ export default function Chatbot() {
   const [intakeDone, setIntakeDone] = useState(false)
   const bodyRef = useRef(null)
   const inputRef = useRef(null)
+  const greetingRef = useRef(false)
   const nudgeCountRef = useRef(0)
   const idleTimerRef = useRef(null)
   const lastBotAtRef = useRef(0)
@@ -137,10 +141,11 @@ export default function Chatbot() {
   }, [messages, typing, open])
 
   useEffect(() => {
+    if (embedded) return undefined
     if (sessionStorage.getItem(TEASER_STORAGE_KEY)) return undefined
     const timer = window.setTimeout(() => setShowTeaser(true), TEASER_DELAY_MS)
     return () => window.clearTimeout(timer)
-  }, [])
+  }, [embedded])
 
   useEffect(() => {
     if (!open) {
@@ -200,7 +205,7 @@ export default function Chatbot() {
   }
 
   useEffect(() => {
-    if (!open) return
+    if (!open || embedded) return undefined
     const prev = document.body.style.overflow
     if (isMobile) document.body.style.overflow = 'hidden'
     const onKey = (e) => e.key === 'Escape' && setOpen(false)
@@ -209,7 +214,7 @@ export default function Chatbot() {
       document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey)
     }
-  }, [open, isMobile])
+  }, [open, isMobile, embedded])
 
   const pushBot = (text, intent, showCta = localIntentShowsCta(intent)) => {
     lastBotAtRef.current = Date.now()
@@ -449,7 +454,8 @@ export default function Chatbot() {
   }
 
   const greet = async () => {
-    if (booted) return
+    if (booted || greetingRef.current) return
+    greetingRef.current = true
     setBooted(true)
     await localBotReply('welcome')
   }
@@ -460,6 +466,22 @@ export default function Chatbot() {
     greet()
     setTimeout(() => inputRef.current?.focus(), 300)
   }
+
+  useEffect(() => {
+    if (!embedded) return undefined
+    const mountId = ++embedMountGen
+    greetingRef.current = false
+    setBooted(false)
+    setMessages([])
+
+    const timer = window.setTimeout(() => {
+      if (mountId !== embedMountGen) return
+      greet()
+      inputRef.current?.focus()
+    }, 0)
+
+    return () => window.clearTimeout(timer)
+  }, [embedded, lang])
 
   const send = async (text) => {
     const trimmed = text.trim()
@@ -519,130 +541,138 @@ export default function Chatbot() {
     processIntakeAnswer('', value)
   }
 
-  return (
-    <div className={`chat-root${open ? ' open' : ''}`}>
-      {open && (
-        <div
-          className="chat-panel"
-          role="dialog"
-          aria-label={t('chat.title')}
-          aria-modal="true"
-        >
-          <header className="chat-head">
-            <div className="chat-avatar" aria-hidden="true">
-              <CloudMark />
-            </div>
-            <div className="chat-head-text">
-              <strong>{t('chat.title')}</strong>
-              <span>{t('chat.subtitle')}</span>
-            </div>
-            <button
-              type="button"
-              className="chat-close"
-              onClick={() => setOpen(false)}
-              aria-label={t('chat.close')}
-            >
-              ×
-            </button>
-          </header>
+  const panel = (
+    <div
+      className={`chat-panel${embedded ? ' chat-panel--embed' : ''}`}
+      role={embedded ? undefined : 'dialog'}
+      aria-label={embedded ? undefined : t('chat.title')}
+      aria-modal={embedded ? undefined : 'true'}
+    >
+      <header className="chat-head">
+        <div className="chat-avatar" aria-hidden="true">
+          <CloudMark />
+        </div>
+        <div className="chat-head-text">
+          <strong>{t('chat.title')}</strong>
+          <span>{t('chat.subtitle')}</span>
+        </div>
+        {!embedded && (
+          <button
+            type="button"
+            className="chat-close"
+            onClick={() => setOpen(false)}
+            aria-label={t('chat.close')}
+          >
+            ×
+          </button>
+        )}
+      </header>
 
-          <div className="chat-body" ref={bodyRef}>
-            {messages.map((msg, i) => (
-              <div key={i} className={`chat-bubble chat-bubble--${msg.role}`}>
-                <ChatBubbleText text={msg.text} />
-                {msg.role === 'bot' && msg.showCta && !intakeStep && !intakeDone && (
-                  <button type="button" className="chat-cta" onClick={() => startIntake(t('chat.convertCta'))}>
-                    {t('chat.convertCta')}
-                  </button>
-                )}
-              </div>
-            ))}
-
-            {typing && (
-              <div className="chat-bubble chat-bubble--bot chat-typing" aria-live="polite">
-                <span />
-                <span />
-                <span />
-              </div>
-            )}
-
-            {messages.length <= 1 && !typing && !locked && !intakeStep && (
-              <div className="chat-suggestions">
-                {SUGGESTIONS.map((id) => (
-                  <button
-                    key={id}
-                    type="button"
-                    className="chat-chip"
-                    onClick={() => onSuggest(id)}
-                  >
-                    {t(`chat.suggest.${id}`)}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {intakeStep === 'topic' && !typing && (
-              <div className="chat-suggestions">
-                {TOPICS.map((o) => (
-                  <button key={o.v} type="button" className="chat-chip" onClick={() => onIntakeChip(o.v)}>
-                    {o[lang]}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {intakeStep === 'budget' && !typing && (
-              <div className="chat-suggestions">
-                {BUDGETS.map((o) => (
-                  <button key={o.v} type="button" className="chat-chip" onClick={() => onIntakeChip(o.v)}>
-                    {o[lang]}
-                  </button>
-                ))}
-                <button type="button" className="chat-chip" onClick={() => onIntakeChip('skip')}>
-                  {t('chat.intake.skip')}
-                </button>
-              </div>
-            )}
-
-            {intakeStep === 'confirm' && !typing && (
-              <div className="chat-suggestions">
-                <button type="button" className="chat-chip" onClick={() => onIntakeChip('yes')}>
-                  {t('chat.intake.confirmYes')}
-                </button>
-                <button type="button" className="chat-chip" onClick={() => onIntakeChip('no')}>
-                  {t('chat.intake.confirmNo')}
-                </button>
-              </div>
+      <div className="chat-body" ref={bodyRef}>
+        {messages.map((msg, i) => (
+          <div key={i} className={`chat-bubble chat-bubble--${msg.role}`}>
+            <ChatBubbleText text={msg.text} />
+            {msg.role === 'bot' && msg.showCta && !intakeStep && !intakeDone && (
+              <button type="button" className="chat-cta" onClick={() => startIntake(t('chat.convertCta'))}>
+                {t('chat.convertCta')}
+              </button>
             )}
           </div>
+        ))}
 
-          <form className="chat-input" onSubmit={onSubmit}>
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder={t(
-                intakeDone
-                  ? 'chat.placeholderDone'
-                  : intakeStep
-                    ? 'chat.intake.placeholder'
-                    : locked
-                      ? 'chat.placeholderLocked'
-                      : 'chat.placeholder'
-              )}
-              autoComplete="off"
-              maxLength={280}
-              disabled={inputDisabled}
-            />
-            <button type="submit" disabled={!input.trim() || inputDisabled} aria-label={t('chat.send')}>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+        {typing && (
+          <div className="chat-bubble chat-bubble--bot chat-typing" aria-live="polite">
+            <span />
+            <span />
+            <span />
+          </div>
+        )}
+
+        {messages.length <= 1 && !typing && !locked && !intakeStep && (
+          <div className="chat-suggestions">
+            {SUGGESTIONS.map((id) => (
+              <button
+                key={id}
+                type="button"
+                className="chat-chip"
+                onClick={() => onSuggest(id)}
+              >
+                {t(`chat.suggest.${id}`)}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {intakeStep === 'topic' && !typing && (
+          <div className="chat-suggestions">
+            {TOPICS.map((o) => (
+              <button key={o.v} type="button" className="chat-chip" onClick={() => onIntakeChip(o.v)}>
+                {o[lang]}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {intakeStep === 'budget' && !typing && (
+          <div className="chat-suggestions">
+            {BUDGETS.map((o) => (
+              <button key={o.v} type="button" className="chat-chip" onClick={() => onIntakeChip(o.v)}>
+                {o[lang]}
+              </button>
+            ))}
+            <button type="button" className="chat-chip" onClick={() => onIntakeChip('skip')}>
+              {t('chat.intake.skip')}
             </button>
-          </form>
-        </div>
-      )}
+          </div>
+        )}
+
+        {intakeStep === 'confirm' && !typing && (
+          <div className="chat-suggestions">
+            <button type="button" className="chat-chip" onClick={() => onIntakeChip('yes')}>
+              {t('chat.intake.confirmYes')}
+            </button>
+            <button type="button" className="chat-chip" onClick={() => onIntakeChip('no')}>
+              {t('chat.intake.confirmNo')}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <form className="chat-input" onSubmit={onSubmit}>
+        <input
+          ref={inputRef}
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={t(
+            intakeDone
+              ? 'chat.placeholderDone'
+              : intakeStep
+                ? 'chat.intake.placeholder'
+                : locked
+                  ? 'chat.placeholderLocked'
+                  : 'chat.placeholder'
+          )}
+          autoComplete="off"
+          maxLength={280}
+          disabled={inputDisabled}
+        />
+        <button type="submit" disabled={!input.trim() || inputDisabled} aria-label={t('chat.send')}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  )
+
+  if (embedded) {
+    return <div className="chat-embed">{panel}</div>
+  }
+
+  return (
+    <div className={`chat-root${open ? ' open' : ''}`}>
+      {open && panel}
 
       {!open && showTeaser && (
         <div className="chat-teaser" role="status">

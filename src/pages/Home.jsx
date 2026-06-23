@@ -1,27 +1,23 @@
-import { lazy, Suspense } from 'react'
 import Hero from '../components/Hero'
 import Marquee from '../components/Marquee'
-import Work from '../components/Work'
-import Manifesto from '../components/Manifesto'
 import Services from '../components/Services'
-import CTA from '../components/CTA'
+import ChatShowcase from '../components/ChatShowcase'
+import StickyScroll from '../components/StickyScroll'
+import Work from '../components/Work'
+import Testimonios from '../components/Testimonios'
+import FAQ from '../components/FAQ'
 
-const ScrollAmbient = lazy(() => import('../components/ScrollAmbient'))
-
-/* Estructura tipo Peak (con identidad Nimbo):
-   Hero → Trabajos → Nosotros (manifiesto) → Servicios → CTA. */
 export default function Home() {
   return (
     <div className="home">
-      <Suspense fallback={null}>
-        <ScrollAmbient />
-      </Suspense>
       <Hero />
       <Marquee />
-      <Work />
-      <Manifesto />
       <Services />
-      <CTA />
+      <ChatShowcase />
+      <StickyScroll />
+      <Work />
+      <Testimonios />
+      <FAQ />
     </div>
   )
 }

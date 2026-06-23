@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nombre del negocio — Propuesta web</title>
+  <meta name="description" content="Sitio web de propuesta diseñado por Nimbo." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">Nombre del negocio</a>
+    <nav class="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Bienvenidos</p>
+      <h1>Tu negocio, online y listo para crecer</h1>
+      <p class="lead">
+        Reemplazá este texto con el pitch del cliente: qué hacen, a quién le hablan
+        y por qué deberían elegirlos.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contacto">Pedir presupuesto</a>
+        <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <p class="eyebrow">Servicios</p>
+      <h2>Lo que ofrecemos</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Servicio 1</h3>
+          <p>Descripción breve del servicio o producto principal.</p>
+        </article>
+        <article class="card">
+          <h3>Servicio 2</h3>
+          <p>Segundo beneficio o línea de negocio.</p>
+        </article>
+        <article class="card">
+          <h3>Servicio 3</h3>
+          <p>Tercer punto que refuerza confianza o diferencial.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="nosotros">
+      <p class="eyebrow">Nosotros</p>
+      <h2>Más de X años haciendo [lo que hacen]</h2>
+      <p class="lead">
+        Historia del negocio, valores, zona de cobertura o lo que genere confianza.
+        Personalizá con fotos reales del local o equipo cuando tengas.
+      </p>
+    </section>
+
+    <section class="section" id="contacto">
+      <p class="eyebrow">Contacto</p>
+      <h2>Escribinos</h2>
+      <p class="lead">WhatsApp, teléfono o formulario — adaptá a cómo atiende el cliente.</p>
+      <a class="btn btn-primary" href="https://wa.me/5490000000000" target="_blank" rel="noopener noreferrer">
+        Escribir por WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Nombre del negocio</p>
+    <p class="footer-credit">Propuesta web por <a href="https://nimbodata.com" target="_blank" rel="noopener">Nimbo</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+  </script>
+</body>
+</html>

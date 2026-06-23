@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
-import { useTheme } from '../contexts/ThemeContext'
 import { useContact } from '../contexts/ContactContext'
 import { useIsMobile } from '../hooks/useIsMobile'
 import CloudMark from './CloudMark'
-import { IconArrowRight, IconMoon, IconSun } from './Icons'
+import { IconArrowRight } from './Icons'
 
 export default function Nav() {
   const { t, lang, setLang } = useLang()
-  const { theme, toggleTheme } = useTheme()
   const { openContact } = useContact()
   const isMobile = useIsMobile()
   const location = useLocation()
@@ -56,26 +54,15 @@ export default function Nav() {
         <div className="nav-inner">
           <Link className="brand" to="/" aria-label="NIMBO" onClick={closeMenu}>
             <CloudMark />
-            <span>NIMBO</span>
           </Link>
           <div className="nav-links">
-            <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('nav.portfolio')}</Link>
             <Link to={{ pathname: '/', hash: '#servicios' }}>{t('nav.services')}</Link>
+            <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('nav.portfolio')}</Link>
             <Link to="/nosotros">{t('nav.about')}</Link>
-            <Link to="/contacto" onClick={onContact}>
-              {t('nav.contact')}
-            </Link>
+            <Link to={{ pathname: '/', hash: '#testimonios' }}>{t('nav.testimonials')}</Link>
           </div>
           <div className="nav-right">
-            <button
-              type="button"
-              className="theme-toggle"
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? t('theme.light') : t('theme.dark')}
-            >
-              {theme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
-            </button>
-            <div className="lang" role="group" aria-label="Idioma">
+            <div className="lang" role="group" aria-label={t('nav.langLabel')}>
               <button className={lang === 'es' ? 'active' : ''} onClick={() => setLang('es')}>
                 ES
               </button>
@@ -109,21 +96,21 @@ export default function Nav() {
         <div className="nav-menu-backdrop" onClick={closeMenu} />
         <div className="nav-menu-panel" role="dialog" aria-modal="true" aria-label={t('nav.menuOpen')}>
           <div className="nav-menu-links">
-            <Link to={{ pathname: '/', hash: '#trabajos' }} onClick={closeMenu}>
-              {t('nav.portfolio')}
-            </Link>
             <Link to={{ pathname: '/', hash: '#servicios' }} onClick={closeMenu}>
               {t('nav.services')}
+            </Link>
+            <Link to={{ pathname: '/', hash: '#trabajos' }} onClick={closeMenu}>
+              {t('nav.portfolio')}
             </Link>
             <Link to="/nosotros" onClick={closeMenu}>
               {t('nav.about')}
             </Link>
-            <Link to="/contacto" onClick={onContact}>
-              {t('nav.contact')}
+            <Link to={{ pathname: '/', hash: '#testimonios' }} onClick={closeMenu}>
+              {t('nav.testimonials')}
             </Link>
           </div>
           <div className="nav-menu-foot">
-            <div className="lang" role="group" aria-label="Idioma">
+            <div className="lang" role="group" aria-label={t('nav.langLabel')}>
               <button className={lang === 'es' ? 'active' : ''} onClick={() => setLang('es')}>
                 ES
               </button>

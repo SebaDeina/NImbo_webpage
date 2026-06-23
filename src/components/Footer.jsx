@@ -6,39 +6,18 @@ export default function Footer() {
   const { t } = useLang()
   return (
     <footer className="foot">
-      <div className="wrap">
-        <div className="foot-top">
-          <div className="foot-brand">
-            <div className="brand">
-              <CloudMark />
-              <span>NIMBO</span>
-            </div>
-            <p>{t('foot.tagline')}</p>
-          </div>
-          <div className="foot-col">
-            <h3 className="foot-col-title">{t('foot.c1')}</h3>
-            <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc1.name')}</Link>
-            <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc2.name')}</Link>
-            <Link to={{ pathname: '/', hash: '#servicios' }}>{t('svc3.name')}</Link>
-            <Link to={{ pathname: '/', hash: '#servicios' }}>IA</Link>
-          </div>
-          <div className="foot-col">
-            <h3 className="foot-col-title">{t('foot.c2')}</h3>
-            <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('foot.work')}</Link>
-            <Link to="/nosotros">{t('foot.about')}</Link>
-            <Link to="/contacto">{t('nav.contact')}</Link>
-          </div>
-          <div className="foot-col">
-            <h3 className="foot-col-title">{t('foot.c3')}</h3>
-            <a href="mailto:contacto@nimbodata.com">{t('foot.email')}</a>
-            <span className="foot-static">{t('foot.loc')}</span>
-            <Link to="/contacto">{t('nav.cta')}</Link>
-          </div>
-        </div>
-        <div className="foot-bot">
-          <p>{t('foot.rights')}</p>
-          <p>{t('foot.made')}</p>
-        </div>
+      <div className="foot-inner">
+        <Link to="/" className="foot-brand-logo" aria-label="NIMBO">
+          <CloudMark />
+        </Link>
+        <p className="foot-tagline">{t('foot.tagline')}</p>
+        <nav className="foot-links" aria-label={t('foot.navLabel')}>
+          <Link to="/contacto">{t('nav.contact')}</Link>
+          <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('foot.work')}</Link>
+          <Link to="/nosotros">{t('foot.about')}</Link>
+          <a href={`mailto:${t('foot.email')}`}>{t('foot.email')}</a>
+        </nav>
+        <p className="foot-copy">{t('foot.rights')}</p>
       </div>
     </footer>
   )

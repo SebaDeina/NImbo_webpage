@@ -2,16 +2,16 @@ import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { LangProvider } from './i18n/LangContext'
 import { ContactProvider } from './contexts/ContactContext'
-import { ThemeProvider } from './contexts/ThemeContext'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
+import WhatsAppFab from './components/WhatsAppFab'
 import Home from './pages/Home'
 
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
 const Contacto = lazy(() => import('./pages/Contacto'))
-const Chatbot = lazy(() => import('./components/Chatbot'))
+const Propuesta = lazy(() => import('./pages/Propuesta'))
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -32,47 +32,34 @@ function ScrollManager() {
 
 export default function App() {
   const [ready, setReady] = useState(false)
-  const [showChat, setShowChat] = useState(false)
   const onSplashDone = useCallback(() => setReady(true), [])
 
-  useEffect(() => {
-    if (!ready) return
-    const id = window.requestIdleCallback
-      ? window.requestIdleCallback(() => setShowChat(true), { timeout: 3500 })
-      : window.setTimeout(() => setShowChat(true), 2500)
-    return () => {
-      if (window.requestIdleCallback) window.cancelIdleCallback(id)
-      else window.clearTimeout(id)
-    }
-  }, [ready])
+  // La landing de venta (/propuesta) es una página enfocada: sin nav, footer ni chat.
+  const { pathname } = useLocation()
+  const isLanding = pathname.startsWith('/propuesta')
 
   return (
-    <ThemeProvider>
     <LangProvider>
       <ContactProvider>
         {!ready && <SplashScreen onDone={onSplashDone} />}
         <div className="app-shell">
-          <div className="grain" aria-hidden="true" />
           <ScrollManager />
-          <Nav />
+          {!isLanding && <Nav />}
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/trabajos/:slug" element={<ProjectDetail />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
+              <Route path="/propuesta/:slug" element={<Propuesta />} />
+              <Route path="/propuesta" element={<Propuesta />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>
-          <Footer />
-          {showChat && (
-            <Suspense fallback={null}>
-              <Chatbot />
-            </Suspense>
-          )}
+          {!isLanding && <Footer />}
+          {!isLanding && ready && <WhatsAppFab />}
         </div>
       </ContactProvider>
     </LangProvider>
-    </ThemeProvider>
   )
 }
