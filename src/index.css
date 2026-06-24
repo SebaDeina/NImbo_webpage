@@ -2219,3 +2219,12 @@ a.ci-v:hover{color:var(--accent)}
 .links-item--primary .links-item-desc{color:rgba(255,255,255,.8)}
 
 .links-foot{font-size:12px;color:var(--text-dim);opacity:.6}
+
+.links-logo--purple .cloud{fill:var(--brand)}
+
+.links-socials{display:flex;gap:10px;margin-top:8px}
+.links-social-btn{display:flex;align-items:center;gap:7px;padding:9px 16px;
+  border-radius:100px;border:1px solid var(--line);background:var(--surface);
+  font-size:13px;font-weight:600;color:var(--text);text-decoration:none;
+  transition:border-color .2s,background .2s,transform .15s}
+.links-social-btn:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-1px)}
