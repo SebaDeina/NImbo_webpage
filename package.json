@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npx react-snap",
+    "build": "vite build",
+    "snap": "npx react-snap",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -24,7 +25,8 @@
       "/blog",
       "/blog/por-que-tu-negocio-necesita-una-pagina-web",
       "/blog/ia-para-pymes-argentinas-guia-2026",
-      "/blog/seo-local-argentina-como-aparecer-en-google"
+      "/blog/seo-local-argentina-como-aparecer-en-google",
+      "/links"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
     "skipThirdPartyRequests": true,
