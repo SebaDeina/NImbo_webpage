@@ -54,6 +54,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), apiPlugin(env)],
     build: {
+      target: ['chrome72', 'es2019'],
       rollupOptions: {
         output: {
           manualChunks: {

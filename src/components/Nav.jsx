@@ -60,6 +60,7 @@ export default function Nav() {
             <Link to={{ pathname: '/', hash: '#trabajos' }}>{t('nav.portfolio')}</Link>
             <Link to="/nosotros">{t('nav.about')}</Link>
             <Link to={{ pathname: '/', hash: '#testimonios' }}>{t('nav.testimonials')}</Link>
+            <Link to="/blog">Blog</Link>
           </div>
           <div className="nav-right">
             <div className="lang" role="group" aria-label={t('nav.langLabel')}>
@@ -108,6 +109,7 @@ export default function Nav() {
             <Link to={{ pathname: '/', hash: '#testimonios' }} onClick={closeMenu}>
               {t('nav.testimonials')}
             </Link>
+            <Link to="/blog" onClick={closeMenu}>Blog</Link>
           </div>
           <div className="nav-menu-foot">
             <div className="lang" role="group" aria-label={t('nav.langLabel')}>

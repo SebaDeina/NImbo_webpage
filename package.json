@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npx react-snap",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,8 +14,26 @@
     "react-router-dom": "^6.30.4",
     "resend": "^6.12.4"
   },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "include": [
+      "/",
+      "/nosotros",
+      "/contacto",
+      "/blog",
+      "/blog/por-que-tu-negocio-necesita-una-pagina-web",
+      "/blog/ia-para-pymes-argentinas-guia-2026",
+      "/blog/seo-local-argentina-como-aparecer-en-google"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "skipThirdPartyRequests": true,
+    "headless": true
+  },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11"
+    "react-snap": "^1.23.0",
+    "vite": "^5.4.11",
+    "vite-plugin-prerender": "^1.0.8"
   }
 }

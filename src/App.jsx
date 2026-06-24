@@ -12,6 +12,9 @@ const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
 const Contacto = lazy(() => import('./pages/Contacto'))
 const Propuesta = lazy(() => import('./pages/Propuesta'))
+const Blog = lazy(() => import('./pages/Blog'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
+const Links = lazy(() => import('./pages/Links'))
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -36,7 +39,7 @@ export default function App() {
 
   // La landing de venta (/propuesta) es una página enfocada: sin nav, footer ni chat.
   const { pathname } = useLocation()
-  const isLanding = pathname.startsWith('/propuesta')
+  const isLanding = pathname.startsWith('/propuesta') || pathname === '/links'
 
   return (
     <LangProvider>
@@ -53,6 +56,9 @@ export default function App() {
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/propuesta/:slug" element={<Propuesta />} />
               <Route path="/propuesta" element={<Propuesta />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/links" element={<Links />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>
