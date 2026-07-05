@@ -6,6 +6,8 @@ import StickyScroll from '../components/StickyScroll'
 import Work from '../components/Work'
 import Testimonios from '../components/Testimonios'
 import FAQ from '../components/FAQ'
+import BlogTeaser from '../components/BlogTeaser'
+import CTA from '../components/CTA'
 import { useSeo } from '../hooks/useSeo'
 
 export default function Home() {
@@ -25,6 +27,8 @@ export default function Home() {
       <Work />
       <Testimonios />
       <FAQ />
+      <BlogTeaser />
+      <CTA />
     </div>
   )
 }

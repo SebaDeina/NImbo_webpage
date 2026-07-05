@@ -2247,6 +2247,9 @@ a.ci-v:hover{color:var(--accent)}
 .blog-related{margin-top:72px;padding-top:48px;border-top:1px solid var(--line)}
 .blog-related-title{font-size:clamp(18px,1.8vw,24px);font-weight:700;margin:0 0 8px}
 
+/* Teaser de blog en la home */
+.blog-teaser-more{display:flex;justify-content:center;margin-top:clamp(32px,5vh,52px)}
+
 @media(max-width:640px){
   .blog-grid{grid-template-columns:1fr}
   .blog-card-link{padding:20px}
