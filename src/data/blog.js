@@ -102,7 +102,7 @@ En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web
     slug: 'automatizar-pyme-ia-chatbot-whatsapp',
     title: 'Cómo automatizar tu pyme con IA y un chatbot de WhatsApp',
     description:
-      'Un chatbot de WhatsApp bien hecho responde el 90% de las consultas solo. Te explicamos cómo automatizar la atención al cliente y las tareas repetitivas de tu negocio con IA.',
+      'Un chatbot de WhatsApp bien hecho responde la mayoría de las consultas solo. Te explicamos cómo automatizar la atención al cliente y las tareas repetitivas de tu negocio con IA.',
     date: '2026-07-03',
     category: 'Automatización & IA',
     readTime: '7 min',
@@ -111,7 +111,7 @@ En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web
 
 Si tenés una pyme, esto te suena: el WhatsApp del negocio no para. "¿Están abiertos?", "¿Cuánto sale?", "¿Hacen envíos?", "¿Tenés turno para el martes?". Las mismas cinco preguntas, todo el día, todos los días. Y cada una que no contestás rápido es un cliente que se va a otro lado.
 
-La buena noticia: el 90% de esas consultas se pueden responder solas, al instante, las 24 horas, con un chatbot de WhatsApp bien configurado. Y no hace falta ser una empresa grande ni gastar una fortuna.
+La buena noticia: la gran mayoría de esas consultas se pueden responder solas, al instante, las 24 horas, con un chatbot de WhatsApp bien configurado. Y no hace falta ser una empresa grande ni gastar una fortuna.
 
 :::bar
 { "title": "Horas por día en atención de consultas", "unit": "h", "data": [["Sin chatbot", 3], ["Con chatbot bien configurado", 0.75]], "note": "Estimación típica en un comercio con volumen medio de consultas por WhatsApp. El tiempo liberado se reinvierte en las consultas que sí cierran ventas." }
@@ -137,14 +137,14 @@ No automatices todo de golpe. Empezá por lo que más se repite y menos requiere
 
 | Qué automatizar | Qué hace el chatbot | Resultado |
 | --- | --- | --- |
-| Preguntas frecuentes | Responde horarios, precios, envíos | Contesta el 80% de los mensajes solo |
+| Preguntas frecuentes | Responde horarios, precios, envíos | Contesta la mayoría de los mensajes solo |
 | Turnos y reservas | Muestra disponibilidad y confirma | Menos ausencias y turnos pisados |
 | Calificación de consultas | Filtra y te pasa las que importan | Dejás de perder tiempo en curiosos |
 | Seguimiento post-venta | Mensajes automáticos tras la compra | Clientes que vuelven |
 
 ### Preguntas frecuentes
 
-Horarios, ubicación, precios, formas de pago, si hacés envíos, tiempos de entrega. Son el 80% de los mensajes de cualquier negocio y las respuestas casi nunca cambian. El chatbot las resuelve al toque.
+Horarios, ubicación, precios, formas de pago, si hacés envíos, tiempos de entrega. Son la mayoría de los mensajes de cualquier negocio y las respuestas casi nunca cambian. El chatbot las resuelve al toque.
 
 ### Turnos y reservas
 
@@ -304,7 +304,7 @@ Google indexa texto, estructura y datos. Las redes sociales bloquean en gran par
 
 Cuando alguien busca "diseño de interiores en Palermo" o "contador público en Córdoba", Google muestra resultados de páginas web, no de perfiles de Instagram. Si no tenés un sitio propio con esas palabras clave, simplemente no aparecés.
 
-El 75% de los usuarios nunca pasa de la primera página de resultados. Si no estás ahí, no existís para ese cliente.
+La enorme mayoría de los usuarios casi nunca pasa de la primera página de resultados. Si no estás ahí, prácticamente no existís para ese cliente.
 
 ---
 
@@ -334,7 +334,7 @@ Con herramientas como Google Analytics sabés exactamente quién entra a tu web,
 
 ## ¿Cuánto pierden los negocios sin web?
 
-Un estudio de Google Argentina indica que los negocios con presencia web activa reciben en promedio un **70% más de consultas** que los que solo tienen redes sociales. En sectores como gastronomía, salud, educación y servicios profesionales, la diferencia es todavía mayor.
+Los negocios con una web propia y bien posicionada captan consultas que, sin ella, se van directo a la competencia: cuando alguien busca en Google lo que ofrecés y no aparecés, ese cliente termina escribiéndole a otro. En rubros donde la gente busca activamente en Google —gastronomía, salud, educación, servicios profesionales— esa diferencia es enorme.
 
 Cada mes sin web es tráfico que se va a la competencia.
 
@@ -352,7 +352,7 @@ El SEO —el posicionamiento en buscadores— no es instantáneo. Requiere tiemp
 
 No alcanza con tener cualquier web. Hay características básicas que hacen la diferencia:
 
-- **Carga rápida en celular**: más del 65% del tráfico web en Argentina viene de dispositivos móviles
+- **Carga rápida en celular**: la mayor parte del tráfico web en Argentina viene de dispositivos móviles
 - **Diseño profesional y coherente con tu marca**
 - **Contenido claro**: quién sos, qué ofrecés, cómo contactarte
 - **SEO básico**: título de página, descripción, palabras clave relevantes
@@ -395,11 +395,11 @@ La clave es no automatizar todo de golpe. Los mejores resultados vienen de ident
 
 ### Atención al cliente básica
 
-El 95% de las preguntas que recibe un negocio son siempre las mismas: horarios, precios, disponibilidad, formas de pago. Un chatbot bien configurado puede responder todo eso al instante, las 24 horas, sin que vos tengas que estar.
+La gran mayoría de las preguntas que recibe un negocio son siempre las mismas: horarios, precios, disponibilidad, formas de pago. Un chatbot bien configurado puede responder todo eso al instante, las 24 horas, sin que vos tengas que estar.
 
 **Herramientas útiles**: WhatsApp Business API + ManyChat, Tidio, o un chatbot custom con IA.
 
-**Ahorro promedio**: 2 a 4 horas diarias en atención de consultas repetitivas.
+**Ahorro típico**: varias horas por día en atención de consultas repetitivas.
 
 ### Gestión de turnos y reservas
 
@@ -429,13 +429,15 @@ Lo que funciona es un modelo híbrido: la IA atiende lo rutinario, y vos interve
 
 ---
 
-## Casos reales en Argentina
+## Ejemplos de lo que se puede automatizar
 
-**Consultorio médico en Buenos Aires**: implementó un sistema de turnos automatizados por WhatsApp. Los no-shows bajaron un 40% porque el sistema manda recordatorio automático 24 hs antes y el paciente puede confirmar con un mensaje.
+Para que quede concreto, algunos escenarios típicos según el rubro:
 
-**Tienda de indumentaria en Rosario**: configuró respuestas automáticas para las preguntas más frecuentes (talles, colores, tiempos de envío). El dueño pasó de 3 horas diarias contestando Instagram a menos de 45 minutos, concentrados en consultas que sí requieren atención personalizada.
+**Consultorio o profesional de la salud**: un sistema de turnos por WhatsApp con recordatorio automático 24 hs antes reduce mucho los ausentes, porque el paciente confirma o reprograma con un solo mensaje.
 
-**Estudio contable en Córdoba**: automatizó el seguimiento de documentación pendiente de clientes. En vez de perseguir a cada cliente por teléfono, el sistema manda un recordatorio automático cuando un documento está por vencer o falta información.
+**Tienda de indumentaria**: respuestas automáticas a las preguntas más frecuentes (talles, colores, tiempos de envío) le sacan al dueño buena parte del tiempo que pasa contestando Instagram, para dedicarlo a las consultas que sí requieren atención personalizada.
+
+**Estudio contable**: automatizar el seguimiento de documentación pendiente —un recordatorio automático cuando un documento está por vencer o falta información— evita tener que perseguir a cada cliente por teléfono.
 
 ---
 
@@ -486,14 +488,14 @@ En Nimbo diseñamos automatizaciones a medida para negocios argentinos. Si quer�
     slug: 'seo-local-argentina-como-aparecer-en-google',
     title: 'SEO local en Argentina: cómo aparecer en Google cuando te buscan cerca',
     description:
-      'Las búsquedas locales crecieron un 40% en Argentina. Si tenés un negocio con presencia física o trabajás por zona, esta guía es para vos.',
+      'Las búsquedas locales vienen creciendo fuerte en Argentina. Si tenés un negocio con presencia física o trabajás por zona, esta guía es para vos.',
     date: '2026-06-23',
     category: 'SEO',
     readTime: '6 min',
     content: `
 ## "Plomero en Flores", "dentista cerca mío", "pizzería en Palermo"
 
-Esas son búsquedas reales que miles de argentinos hacen todos los días. Las búsquedas locales —las que incluyen una ciudad, un barrio, o la frase "cerca mío"— crecieron un 40% en Argentina en el último año.
+Esas son búsquedas reales que miles de argentinos hacen todos los días. Las búsquedas locales —las que incluyen una ciudad, un barrio, o la frase "cerca mío"— vienen creciendo año a año en Argentina.
 
 Hay un motivo: la gente ya confía en Google para encontrar proveedores locales antes de preguntarle a conocidos. Si tu negocio tiene presencia física o trabajás por zona, aparecer en esas búsquedas puede ser la diferencia entre tener agenda llena o depender del boca en boca.
 
@@ -600,7 +602,7 @@ Crear contenido que responda preguntas que hacen los clientes de tu zona te da d
 - Empresa de mudanzas: "Cómo presupuestar una mudanza en CABA"
 - Diseñador web: "¿Cuánto cuesta una página web profesional en Argentina?"
 
-No necesitás publicar todos los días. Un artículo útil por mes, bien escrito y enfocado en preguntas reales, ya es más de lo que hace el 90% de tus competidores.
+No necesitás publicar todos los días. Un artículo útil por mes, bien escrito y enfocado en preguntas reales, ya es más de lo que hace la mayoría de tus competidores.
 
 ---
 
