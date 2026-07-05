@@ -24,8 +24,8 @@ Hace unos años, digitalizar un proceso en una pyme argentina era caro y complej
 
 En 2026, una pyme puede automatizar su atención al cliente, sus turnos y su seguimiento post-venta por menos de lo que cuesta un empleado part-time. La barrera ya no es el dinero: es saber por dónde empezar.
 
-:::line
-{ "title": "Adopción de IA en pymes argentinas", "unit": "%", "data": [["2022", 22], ["2023", 38], ["2024", 55], ["2025", 68], ["2026", 78]], "note": "Porcentaje de pymes que ya usa alguna herramienta de IA en su operación. La curva se acelera: cada año que esperás, más lejos queda la competencia." }
+:::bar
+{ "title": "Adopción de IA en pymes argentinas, por sector (2025)", "unit": "%", "highlightIndex": 0, "data": [["Software / IT", 85.4], ["Textil", 47.4], ["Metalmecánica", 40.6], ["Madera y papel", 35.1], ["Química y plástico", 34.7], ["Alimentos", 29.9], ["Minerales", 16.3]], "note": "En promedio, el 41,6% de las pymes argentinas ya usa alguna herramienta de IA, y más del 85% empezó entre 2024 y 2025. Fuente: Encuesta Nacional de Adopción de IA en PyMEs — nadIA (CEPE-UTDT y Fundar, con apoyo del BID), 2025." }
 :::
 
 ---
@@ -374,14 +374,14 @@ En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en 
     slug: 'ia-para-pymes-argentinas-guia-2026',
     title: 'IA para pymes argentinas: cómo automatizar tu negocio sin gastar una fortuna',
     description:
-      'El 75% de las empresas argentinas ya usa IA. Te mostramos qué herramientas existen, cuáles sirven de verdad para pymes, y cómo empezar sin riesgos.',
+      'El 41,6% de las pymes argentinas ya usa IA, y la mayoría empezó en el último año. Te mostramos qué herramientas existen, cuáles sirven de verdad para pymes, y cómo empezar sin riesgos.',
     date: '2026-06-17',
     category: 'Automatización & IA',
     readTime: '7 min',
     content: `
 ## Ya no es ciencia ficción
 
-Hace tres años, hablar de inteligencia artificial para una pyme argentina sonaba a algo lejano, caro o directamente innecesario. Hoy la foto es completamente distinta: el 75% de las empresas argentinas ya reemplazó alguna tarea con IA, y el costo de implementar un sistema básico bajó drásticamente.
+Hace tres años, hablar de inteligencia artificial para una pyme argentina sonaba a algo lejano, caro o directamente innecesario. Hoy la foto es completamente distinta: el 41,6% de las pymes argentinas ya usa alguna herramienta de IA —y más del 85% empezó entre 2024 y 2025—, y el costo de implementar un sistema básico bajó drásticamente.
 
 En 2026, una PyME puede tener un sistema de IA funcional por menos de 100 dólares mensuales. Lo que antes requería un equipo de tecnología, hoy se puede configurar en días.
 

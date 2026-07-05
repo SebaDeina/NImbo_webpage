@@ -6,8 +6,9 @@
     { "title": "Consultas mensuales", "unit": "", "data": [["Solo redes", 100], ["Con web", 170]] }
     :::
 */
-export default function BarChart({ title, data = [], unit = '', note }) {
+export default function BarChart({ title, data = [], unit = '', note, highlightIndex }) {
   const max = Math.max(...data.map((d) => Number(d[1]) || 0), 1)
+  const hi = typeof highlightIndex === 'number' ? highlightIndex : data.length - 1
 
   return (
     <figure className="blog-viz blog-bar">
@@ -15,7 +16,7 @@ export default function BarChart({ title, data = [], unit = '', note }) {
       <div className="blog-bar-rows" role="img" aria-label={title || 'Gráfico de barras'}>
         {data.map(([label, value], i) => {
           const pct = (Number(value) / max) * 100
-          const highlight = i === data.length - 1
+          const highlight = i === hi
           return (
             <div className="blog-bar-row" key={i}>
               <span className="blog-bar-label">{label}</span>
