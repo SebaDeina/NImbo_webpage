@@ -95,7 +95,7 @@ La transformación digital no es un proyecto gigante ni un gasto de lujo. Es una
 
 Lo importante es empezar por el cuello de botella real, resolver una cosa a la vez, y medir. El resto viene solo.
 
-En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web y datos, un paso a la vez. Si querés que veamos juntos por dónde te conviene empezar, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo charlamos sin compromiso.
+En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web y datos, un paso a la vez. Si querés que veamos juntos por dónde te conviene empezar, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo charlamos sin compromiso.
     `.trim(),
   },
   {
@@ -203,7 +203,7 @@ Automatizar la atención de tu pyme no es reemplazarte con un robot: es sacarte 
 
 Lo importante es empezar por lo que más se repite, mantener siempre la opción de hablar con una persona, e ir mejorando con el uso.
 
-En Nimbo armamos automatizaciones y chatbots de WhatsApp a medida para pymes argentinas. Si querés ver qué se podría automatizar en tu caso, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo analizamos juntos.
+En Nimbo armamos automatizaciones y chatbots de WhatsApp a medida para pymes argentinas. Si querés ver qué se podría automatizar en tu caso, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo analizamos juntos.
     `.trim(),
   },
   {
@@ -278,7 +278,7 @@ Aprender a escribir buenas prompts es el primer paso. El siguiente, para un nego
 
 Por ejemplo, en vez de pedirle a ChatGPT que redacte cada respuesta a una reseña, se puede armar un sistema que las genere automáticamente con tu tono. Ahí es donde la IA pasa de ser un juguete útil a una herramienta que le ahorra horas a tu negocio.
 
-En Nimbo ayudamos a pymes argentinas a llevar la IA de "probé ChatGPT" a "tengo procesos que funcionan solos". Si te da curiosidad qué se podría automatizar en tu negocio, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo vemos juntos.
+En Nimbo ayudamos a pymes argentinas a llevar la IA de "probé ChatGPT" a "tengo procesos que funcionan solos". Si te da curiosidad qué se podría automatizar en tu negocio, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo vemos juntos.
     `.trim(),
   },
   {
@@ -367,7 +367,7 @@ Si estás leyendo esto y todavía no tenés web, el mejor momento para empezar e
 
 Una página web profesional no es un gasto: es una inversión que trabaja por tu negocio todos los días, que te da visibilidad donde tus clientes te buscan activamente, y que construye credibilidad que ningún perfil de Instagram puede igualar.
 
-En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en serio. Si querés saber cómo podemos ayudarte, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y charlamos sin compromiso.
+En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en serio. Si querés saber cómo podemos ayudarte, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y charlamos sin compromiso.
     `.trim(),
   },
   {
@@ -479,7 +479,7 @@ La IA no es el futuro. Es el presente. Y en Argentina, las pymes que están apro
 
 Lo importante no es implementar la tecnología más sofisticada. Es identificar dónde perdés tiempo todos los días y resolver eso primero.
 
-En Nimbo diseñamos automatizaciones a medida para negocios argentinos. Si querés saber qué podríamos automatizar en tu caso específico, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo analizamos juntos.
+En Nimbo diseñamos automatizaciones a medida para negocios argentinos. Si querés saber qué podríamos automatizar en tu caso específico, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo analizamos juntos.
     `.trim(),
   },
   {
@@ -622,7 +622,7 @@ El SEO local es una de las estrategias de marketing digital con mejor relación 
 
 Los tres pilares son simples: Google Business optimizado, reseñas activas, y una web que hable de quién sos y dónde estás.
 
-En Nimbo ayudamos a negocios argentinos a aparecer donde sus clientes los buscan. Si querés que analicemos la presencia digital de tu negocio, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y te contamos qué podríamos mejorar.
+En Nimbo ayudamos a negocios argentinos a aparecer donde sus clientes los buscan. Si querés que analicemos la presencia digital de tu negocio, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y te contamos qué podríamos mejorar.
     `.trim(),
   },
 ]
