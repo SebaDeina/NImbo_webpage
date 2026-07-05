@@ -4,11 +4,18 @@ import History from '../components/History'
 import Manifesto from '../components/Manifesto'
 import Process from '../components/Process'
 import CTA from '../components/CTA'
+import { useSeo } from '../hooks/useSeo'
 
 const VALUES = ['v1', 'v2', 'v3']
 
 export default function Nosotros() {
   const { t } = useLang()
+  useSeo({
+    title: 'Nosotros — Nimbo | Transformación digital para pymes argentinas',
+    description:
+      'Somos Nimbo: ayudamos a pymes argentinas a crecer con automatización, inteligencia artificial, páginas web y análisis de datos. Conocé cómo trabajamos.',
+    path: '/nosotros',
+  })
   return (
     <main className="page about-page">
       <header className="section about-hero">

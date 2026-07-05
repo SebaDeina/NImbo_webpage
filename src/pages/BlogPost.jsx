@@ -1,47 +1,43 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { useEffect } from 'react'
 import { getPost, posts } from '../data/blog'
 import Reveal from '../components/Reveal'
-
-function renderMarkdown(md) {
-  // Headings
-  let html = md
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-  // Bold
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-  // Italic
-  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>')
-  // Inline links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-  // HR
-  html = html.replace(/^---$/gm, '<hr />')
-  // Unordered lists
-  html = html.replace(/^- (.+)$/gm, '<li>$1</li>')
-  html = html.replace(/(<li>[\s\S]+?<\/li>)/g, (m) => `<ul>${m}</ul>`)
-  // Fix nested ul wrapping
-  html = html.replace(/<\/ul>\n<ul>/g, '')
-  // Paragraphs: wrap non-tagged lines
-  html = html
-    .split('\n\n')
-    .map((block) => {
-      const trimmed = block.trim()
-      if (!trimmed) return ''
-      if (/^<(h[2-3]|ul|hr|li)/.test(trimmed)) return trimmed
-      return `<p>${trimmed.replace(/\n/g, ' ')}</p>`
-    })
-    .join('\n')
-  return html
-}
+import { useSeo } from '../hooks/useSeo'
+import { BlogContent } from '../lib/blog-render'
 
 export default function BlogPost() {
   const { slug } = useParams()
   const post = getPost(slug)
 
-  useEffect(() => {
-    if (post) document.title = `${post.title} | Nimbo`
-    return () => { document.title = 'Nimbo — Automatización, IA y Páginas Web' }
-  }, [post])
+  useSeo(
+    post
+      ? {
+          title: `${post.title} | Nimbo`,
+          description: post.description,
+          path: `/blog/${post.slug}`,
+          type: 'article',
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.description,
+            datePublished: post.date,
+            dateModified: post.date,
+            articleSection: post.category,
+            inLanguage: 'es-AR',
+            author: { '@type': 'Organization', name: 'Nimbo' },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Nimbo',
+              url: 'https://www.nimbodata.com',
+            },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `https://www.nimbodata.com/blog/${post.slug}`,
+            },
+          },
+        }
+      : {},
+  )
 
   if (!post) return <Navigate to="/blog" replace />
 
@@ -66,10 +62,9 @@ export default function BlogPost() {
         </Reveal>
 
         <Reveal delay={3}>
-          <article
-            className="blog-post-body"
-            dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
-          />
+          <article className="blog-post-body">
+            <BlogContent content={post.content} />
+          </article>
         </Reveal>
 
         {others.length > 0 && (

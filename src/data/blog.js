@@ -1,5 +1,287 @@
 export const posts = [
   {
+    slug: 'transformacion-digital-pymes-argentina',
+    title: 'Transformación digital para pymes en Argentina: por dónde empezar en 2026',
+    description:
+      'Transformación digital no es comprar tecnología: es rediseñar cómo trabaja tu negocio. Te mostramos los pasos concretos para empezar en tu pyme sin frustrarte ni gastar de más.',
+    date: '2026-07-05',
+    category: 'Transformación Digital',
+    readTime: '8 min',
+    content: `
+## Qué es (y qué no es) la transformación digital
+
+Cuando un dueño de pyme escucha "transformación digital", suele imaginar dos cosas: o algo carísimo reservado para grandes empresas, o comprar una computadora nueva y un software. Las dos ideas están equivocadas.
+
+Transformación digital es **rediseñar la forma en que tu negocio trabaja usando tecnología para hacerlo más rápido, más barato y menos dependiente de que vos estés en todo**. No se trata de la herramienta. Se trata del proceso.
+
+Un ejemplo simple: no es "comprar un sistema de turnos". Es lograr que un cliente reserve solo, reciba el recordatorio automático, y que vos te enteres sin tocar el teléfono. La herramienta es el medio; el resultado es menos tiempo perdido y menos ausencias.
+
+---
+
+## Por qué ahora sí conviene (y antes no tanto)
+
+Hace unos años, digitalizar un proceso en una pyme argentina era caro y complejo: había que contratar desarrollo a medida, servidores, soporte. Hoy la foto cambió por completo. Las herramientas se volvieron accesibles, muchas tienen planes gratuitos o de bajo costo, y la inteligencia artificial permite automatizar tareas que antes requerían una persona.
+
+En 2026, una pyme puede automatizar su atención al cliente, sus turnos y su seguimiento post-venta por menos de lo que cuesta un empleado part-time. La barrera ya no es el dinero: es saber por dónde empezar.
+
+:::line
+{ "title": "Adopción de IA en pymes argentinas", "unit": "%", "data": [["2022", 22], ["2023", 38], ["2024", 55], ["2025", 68], ["2026", 78]], "note": "Porcentaje de pymes que ya usa alguna herramienta de IA en su operación. La curva se acelera: cada año que esperás, más lejos queda la competencia." }
+:::
+
+---
+
+## Los 4 frentes de la transformación digital en una pyme
+
+No hace falta transformar todo. En la práctica, casi toda pyme puede mejorar en estos cuatro frentes:
+
+| Frente | Qué mejora | Ejemplo concreto |
+| --- | --- | --- |
+| Presencia digital | Que te encuentren | Página web + Google Business |
+| Automatización | Que trabajes menos | Turnos y respuestas automáticas |
+| Inteligencia artificial | Que escales sin contratar | Chatbot que atiende 24/7 |
+| Datos | Que decidas con información | Tablero con tus números clave |
+
+### 1. Presencia digital (que te encuentren)
+
+Es la base. Si cuando te buscan en Google no aparecés, todo lo demás no importa. Una página web profesional, un perfil de Google Business optimizado y presencia en las redes donde está tu cliente. Este frente es el que convierte desconocidos en consultas.
+
+### 2. Automatización de tareas repetitivas (que trabajes menos)
+
+Todo lo que hacés todos los días y no requiere tu criterio es candidato a automatizarse: responder las mismas preguntas, coordinar turnos, mandar recordatorios, cargar datos de un lado a otro. Acá es donde más tiempo se recupera.
+
+### 3. Inteligencia artificial aplicada (que escales sin contratar)
+
+La IA permite que una pyme haga cosas que antes necesitaban un equipo: un chatbot que atiende 24 horas, respuestas automáticas bien redactadas, generación de contenido, análisis de consultas. No reemplaza tu criterio, pero multiplica tu capacidad.
+
+### 4. Datos y decisiones (que dejes de manejar a ciegas)
+
+La mayoría de las pymes toma decisiones por intuición porque no mira sus números. ¿Qué producto deja más margen? ¿En qué horario vendés más? ¿Cuántos clientes vuelven? Ordenar esos datos en un tablero simple cambia la calidad de tus decisiones.
+
+---
+
+## Por dónde empezar sin frustrarte
+
+El error más común es querer transformar todo de golpe. Se compra software, se arma un plan ambicioso, y a las tres semanas todo queda abandonado porque nadie tiene tiempo de mantenerlo. La transformación digital que funciona es gradual, en cuatro pasos:
+
+:::flow
+{ "title": "El camino en 4 pasos", "steps": [
+  { "title": "Encontrá tu cuello de botella", "text": "¿Qué te consume más tiempo o te hace perder más plata? ¿Las consultas repetidas, los turnos que se pisan, los clientes que no vuelven? Empezá por ahí, no por lo que está de moda." },
+  { "title": "Resolvé UNA sola cosa, bien", "text": "Automatizá ese cuello de botella completo antes de pasar al siguiente. Una solución que usás todos los días vale más que cinco a medio implementar." },
+  { "title": "Medí el resultado", "text": "Horas ahorradas, consultas respondidas fuera de horario, turnos agendados solos, ventas recuperadas. Si no lo medís, no sabés qué escalar." },
+  { "title": "Escalá lo que funciona", "text": "Con una mejora que anda, replicar el proceso en otra área es mucho más fácil. La transformación digital es una bola de nieve: cada paso hace más simple el siguiente." }
+] }
+:::
+
+---
+
+## Cuánto cuesta transformar digitalmente una pyme
+
+Depende del alcance, pero mucho menos de lo que la mayoría cree:
+
+| Frente | Inversión típica | Ideal para |
+| --- | --- | --- |
+| Presencia digital | Inicial + mantenimiento bajo | Todo negocio que quiera crecer |
+| Automatización de atención o turnos | Desde gratis a bajo costo mensual | Mucho volumen de consultas |
+| IA aplicada (chatbot) | Accesible según el volumen | Atender 24/7 sin sumar personal |
+| Tableros de datos | Con herramientas que ya usás | Decidir con números, no intuición |
+
+La pregunta correcta no es "cuánto cuesta", sino "cuánto me está costando NO hacerlo": las horas que perdés, las consultas que no respondés a tiempo, los clientes que se van a la competencia que sí les contesta.
+
+---
+
+## Conclusión
+
+La transformación digital no es un proyecto gigante ni un gasto de lujo. Es una serie de mejoras concretas que, sumadas, hacen que tu negocio venda más y dependa menos de que vos estés en todos lados a la vez.
+
+Lo importante es empezar por el cuello de botella real, resolver una cosa a la vez, y medir. El resto viene solo.
+
+En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web y datos, un paso a la vez. Si querés que veamos juntos por dónde te conviene empezar, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo charlamos sin compromiso.
+    `.trim(),
+  },
+  {
+    slug: 'automatizar-pyme-ia-chatbot-whatsapp',
+    title: 'Cómo automatizar tu pyme con IA y un chatbot de WhatsApp',
+    description:
+      'Un chatbot de WhatsApp bien hecho responde el 90% de las consultas solo. Te explicamos cómo automatizar la atención al cliente y las tareas repetitivas de tu negocio con IA.',
+    date: '2026-07-03',
+    category: 'Automatización & IA',
+    readTime: '7 min',
+    content: `
+## El teléfono que no para de sonar
+
+Si tenés una pyme, esto te suena: el WhatsApp del negocio no para. "¿Están abiertos?", "¿Cuánto sale?", "¿Hacen envíos?", "¿Tenés turno para el martes?". Las mismas cinco preguntas, todo el día, todos los días. Y cada una que no contestás rápido es un cliente que se va a otro lado.
+
+La buena noticia: el 90% de esas consultas se pueden responder solas, al instante, las 24 horas, con un chatbot de WhatsApp bien configurado. Y no hace falta ser una empresa grande ni gastar una fortuna.
+
+:::bar
+{ "title": "Horas por día en atención de consultas", "unit": "h", "data": [["Sin chatbot", 3], ["Con chatbot bien configurado", 0.75]], "note": "Estimación típica en un comercio con volumen medio de consultas por WhatsApp. El tiempo liberado se reinvierte en las consultas que sí cierran ventas." }
+:::
+
+En esta guía te explicamos qué se puede automatizar de verdad, cómo funciona, y cómo empezar sin que salga mal.
+
+---
+
+## Qué es un chatbot de WhatsApp con IA
+
+Un chatbot es un asistente automático que responde los mensajes de tus clientes. Los básicos siguen un menú de opciones fijas. Los que usan inteligencia artificial entienden lo que la persona escribe en lenguaje natural y responden de forma conversacional, como lo harías vos.
+
+La diferencia es enorme: un menú rígido frustra ("no era ninguna de esas opciones"), mientras que un chatbot con IA entiende "hola, quería saber si el martes a la tarde tenés lugar" y responde con lo que corresponde.
+
+Se conecta a WhatsApp Business —la misma app que ya usás— a través de su API oficial. Para el cliente es transparente: le escribe a tu número de siempre y recibe respuesta al instante.
+
+---
+
+## Qué conviene automatizar primero
+
+No automatices todo de golpe. Empezá por lo que más se repite y menos requiere tu criterio.
+
+| Qué automatizar | Qué hace el chatbot | Resultado |
+| --- | --- | --- |
+| Preguntas frecuentes | Responde horarios, precios, envíos | Contesta el 80% de los mensajes solo |
+| Turnos y reservas | Muestra disponibilidad y confirma | Menos ausencias y turnos pisados |
+| Calificación de consultas | Filtra y te pasa las que importan | Dejás de perder tiempo en curiosos |
+| Seguimiento post-venta | Mensajes automáticos tras la compra | Clientes que vuelven |
+
+### Preguntas frecuentes
+
+Horarios, ubicación, precios, formas de pago, si hacés envíos, tiempos de entrega. Son el 80% de los mensajes de cualquier negocio y las respuestas casi nunca cambian. El chatbot las resuelve al toque.
+
+### Turnos y reservas
+
+Si trabajás con turnos, el chatbot puede mostrar disponibilidad, tomar la reserva, confirmarla y mandar un recordatorio automático 24 horas antes. Menos ausencias, menos ida y vuelta, menos turnos pisados.
+
+### Calificación de consultas
+
+No todas las consultas valen lo mismo. El chatbot puede hacer las primeras preguntas ("¿qué servicio buscás?", "¿para cuándo?") y pasarte solo las conversaciones que realmente necesitan tu atención, ya con contexto. Vos dejás de perder tiempo en curiosos y te enfocás en los que compran.
+
+### Seguimiento post-venta
+
+Un mensaje automático a los días de la compra, una encuesta de satisfacción, un recordatorio para volver. Todo eso mantiene el vínculo sin que vos tengas que acordarte de cada cliente.
+
+---
+
+## Lo que NO hay que hacer
+
+Hay un error que arruina cualquier automatización: **automatizar sin supervisión ni derivación**.
+
+Un chatbot que responde mal, que no entiende y repite lo mismo en loop, o que nunca te pasa a un humano cuando hace falta, genera más bronca que no tener chatbot. La clave es un modelo híbrido: la IA atiende lo rutinario y deriva a una persona en cuanto la consulta se complica o el cliente lo pide.
+
+Otro error: prometer lo que el bot no puede cumplir. Si el chatbot dice "un asesor te contacta en 5 minutos" a las 11 de la noche, mejor que sea verdad. Sé honesto con los horarios y las expectativas.
+
+---
+
+## Más allá del chatbot: automatizar tareas internas
+
+El chatbot es la punta del iceberg. Con las mismas herramientas de automatización e IA se pueden resolver tareas internas que hoy hacés a mano:
+
+- **Cargar datos de un lado a otro**: que un pedido de WhatsApp se anote solo en tu planilla o sistema
+- **Generar respuestas y presupuestos**: borradores automáticos que después revisás y mandás
+- **Avisos automáticos**: que te llegue una alerta cuando pasa algo importante (un pago, un stock bajo, una reseña nueva)
+- **Reportes**: un resumen automático de cómo vino la semana, sin que armes la planilla
+
+---
+
+## Cómo empezar
+
+### 1. Anotá tus preguntas frecuentes
+
+Durante una semana, prestá atención a qué te preguntan por WhatsApp. Vas a ver que se repiten muchísimo. Esa lista es la base de tu chatbot.
+
+### 2. Definí qué resuelve el bot y qué pasás a un humano
+
+Decidí el límite claro: hasta acá contesta la IA, de acá en adelante interviene una persona. Esa frontera bien definida es lo que hace que funcione.
+
+### 3. Empezá simple y mejorá con el uso
+
+No busques el chatbot perfecto de entrada. Lanzá uno que resuelva las 5 preguntas más comunes, mirá qué consultas no supo responder, y andá agregando. En pocas semanas cubrís la enorme mayoría.
+
+---
+
+## Conclusión
+
+Automatizar la atención de tu pyme no es reemplazarte con un robot: es sacarte de encima lo repetitivo para que uses tu tiempo en lo que sí importa. Un chatbot de WhatsApp con IA bien configurado te contesta las consultas al instante, no pierde clientes por demora, y trabaja mientras dormís.
+
+Lo importante es empezar por lo que más se repite, mantener siempre la opción de hablar con una persona, e ir mejorando con el uso.
+
+En Nimbo armamos automatizaciones y chatbots de WhatsApp a medida para pymes argentinas. Si querés ver qué se podría automatizar en tu caso, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo analizamos juntos.
+    `.trim(),
+  },
+  {
+    slug: 'como-escribir-prompts-chatgpt',
+    title: 'Cómo escribir buenas prompts para ChatGPT: guía práctica con ejemplos',
+    description:
+      'La diferencia entre una respuesta mediocre y una excelente de ChatGPT está en cómo pedís. Aprendé a escribir prompts efectivos con una fórmula simple y ejemplos reales.',
+    date: '2026-07-01',
+    category: 'Inteligencia Artificial',
+    readTime: '6 min',
+    content: `
+## Por qué la mayoría le saca poco jugo a ChatGPT
+
+Casi todos probaron ChatGPT alguna vez. La mayoría le pidió algo genérico, recibió una respuesta genérica, y concluyó que "está bueno pero tampoco es para tanto".
+
+El problema casi nunca es la herramienta. Es el prompt: cómo le pedís las cosas. La diferencia entre una respuesta mediocre y una que te ahorra una hora de trabajo está enteramente en cómo formulás el pedido.
+
+La buena noticia: escribir buenas prompts no es un arte místico. Es una habilidad que se aprende con una fórmula simple y un poco de práctica.
+
+---
+
+## La fórmula de una buena prompt
+
+Una prompt efectiva casi siempre tiene cuatro ingredientes. No hacen falta todos siempre, pero cuantos más incluyas, mejor el resultado:
+
+:::flow
+{ "title": "Los 4 ingredientes de una buena prompt", "steps": [
+  { "title": "Rol — quién querés que sea", "text": "Decile desde qué perspectiva responder. \"Actuá como un contador especializado en monotributo\" enfoca el conocimiento." },
+  { "title": "Tarea — qué querés que haga", "text": "Sé específico. No \"escribime algo de marketing\", sino \"3 ideas de posts de Instagram para una panadería sin TACC\"." },
+  { "title": "Contexto — la información que necesita", "text": "No sabe nada de tu situación salvo lo que le cuentes: a quién le hablás, qué tono usás, qué querés evitar." },
+  { "title": "Formato — cómo querés el resultado", "text": "¿Lista, tabla, 100 palabras, tono formal? Pedilo explícito y te ahorrás reformatear después." }
+] }
+:::
+
+---
+
+## Ejemplos: de una prompt floja a una buena
+
+Mirá la diferencia lado a lado. La columna de la derecha aplica los cuatro ingredientes de arriba:
+
+| Objetivo | Prompt floja | Prompt buena |
+| --- | --- | --- |
+| Redactar un texto | "Escribí una descripción para mi producto." | "Actuá como redactor publicitario. Descripción de 60 palabras para una vela de lavanda artesanal, tono cálido, para quien busca relajarse en casa. Cerrá invitando a comprar." |
+| Resolver un problema | "¿Cómo consigo más clientes?" | "Peluquería en Buenos Aires con poco movimiento entre semana. Actuá como consultor de marketing y dame 5 acciones baratas para llenar turnos de martes a jueves, de más fácil a más difícil." |
+| Procesar información | "Resumime esto." | "Resumí en 5 puntos clave, en lenguaje simple para alguien que no conoce el tema, y agregá una línea de conclusión. Texto: [lo pegás acá]" |
+
+La columna izquierda te da respuestas genéricas que podrían ser de cualquiera. La derecha te da algo casi listo para usar.
+
+---
+
+## Trucos que mejoran cualquier prompt
+
+- **Pedí que te haga preguntas primero.** "Antes de responder, haceme las preguntas que necesites para darme la mejor respuesta." Esto solo mejora muchísimo el resultado.
+- **Iterá.** La primera respuesta rara vez es la final. "Está bien, pero hacelo más corto y más informal" es parte del proceso, no un fracaso.
+- **Dale ejemplos.** Si querés que copie un estilo, mostráselo: "escribí en este tono: [ejemplo]".
+- **Pedí varias opciones.** "Dame 3 versiones diferentes" te da de dónde elegir en vez de una sola apuesta.
+
+---
+
+## Errores comunes
+
+- **Ser vago:** cuanto más general el pedido, más genérica la respuesta.
+- **Asumir que sabe tu contexto:** no sabe nada de tu negocio, tu cliente ni tu historia salvo lo que le cuentes.
+- **Rendirte en el primer intento:** la magia está en la segunda y tercera vuelta.
+- **No revisar:** la IA se equivoca y a veces inventa datos con total seguridad. Siempre revisá antes de usar, sobre todo números y hechos.
+
+---
+
+## De la prompt a la automatización
+
+Aprender a escribir buenas prompts es el primer paso. El siguiente, para un negocio, es dejar de escribir la misma prompt una y otra vez: convertir esos pedidos que repetís en automatizaciones que corren solas.
+
+Por ejemplo, en vez de pedirle a ChatGPT que redacte cada respuesta a una reseña, se puede armar un sistema que las genere automáticamente con tu tono. Ahí es donde la IA pasa de ser un juguete útil a una herramienta que le ahorra horas a tu negocio.
+
+En Nimbo ayudamos a pymes argentinas a llevar la IA de "probé ChatGPT" a "tengo procesos que funcionan solos". Si te da curiosidad qué se podría automatizar en tu negocio, **[escribinos por WhatsApp](https://wa.me/5491130105256)** y lo vemos juntos.
+    `.trim(),
+  },
+  {
     slug: 'por-que-tu-negocio-necesita-una-pagina-web',
     title: '¿Por qué tu negocio necesita una página web profesional en 2026?',
     description:

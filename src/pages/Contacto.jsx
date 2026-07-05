@@ -1,9 +1,16 @@
 import { useLang } from '../i18n/LangContext'
 import Reveal from '../components/Reveal'
 import ContactForm from '../components/ContactForm'
+import { useSeo } from '../hooks/useSeo'
 
 export default function Contacto() {
   const { t } = useLang()
+  useSeo({
+    title: 'Contacto — Nimbo | Automatización, IA y páginas web para pymes',
+    description:
+      'Contactá a Nimbo para automatizar tu negocio, implementar IA, diseñar tu página web o analizar tus datos. Consultá gratis y sin compromiso.',
+    path: '/contacto',
+  })
 
   return (
     <main className="page contact-page">

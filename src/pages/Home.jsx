@@ -6,8 +6,15 @@ import StickyScroll from '../components/StickyScroll'
 import Work from '../components/Work'
 import Testimonios from '../components/Testimonios'
 import FAQ from '../components/FAQ'
+import { useSeo } from '../hooks/useSeo'
 
 export default function Home() {
+  useSeo({
+    title: 'Nimbo — Transformación Digital para Pymes: Automatización, IA y Web',
+    description:
+      'Soluciones digitales para pymes en Argentina: automatización de procesos, implementación de IA, páginas web profesionales y análisis de datos. Más clientes, menos trabajo manual.',
+    path: '/',
+  })
   return (
     <div className="home">
       <Hero />

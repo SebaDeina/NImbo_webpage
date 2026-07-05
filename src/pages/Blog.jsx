@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom'
 import { posts } from '../data/blog'
 import Reveal from '../components/Reveal'
+import { useSeo } from '../hooks/useSeo'
 
 export default function Blog() {
+  useSeo({
+    title: 'Blog Nimbo — Transformación digital, IA y web para pymes',
+    description:
+      'Guías prácticas sobre automatización, inteligencia artificial, páginas web y transformación digital para dueños de negocios en Argentina.',
+    path: '/blog',
+  })
   return (
     <main className="page blog-page">
       <div className="blog-hero-glow" aria-hidden="true" />
