@@ -1,5 +1,115 @@
 export const posts = [
   {
+    slug: 'que-es-un-crm-y-por-que-tu-pyme-lo-necesita',
+    title: 'Qué es un CRM y por qué tu pyme lo necesita (aunque creas que no)',
+    description:
+      'Si guardás a tus clientes en la cabeza, en un cuaderno y en el WhatsApp, estás perdiendo ventas sin darte cuenta. Te explicamos qué es un CRM, cómo saber si ya lo necesitás y cómo empezar sin marearte.',
+    date: '2026-07-06',
+    category: 'Transformación Digital',
+    readTime: '7 min',
+    content: `
+## "Lo tengo todo en la cabeza"
+
+Es la frase que más escuchamos de dueños de pymes. Y es verdad: te acordás de casi todo. El problema es "casi".
+
+Te acordás del cliente que te escribió el lunes, pero no del que consultó hace tres semanas y quedó en "lo pienso y te aviso". Ese nunca te avisó, y vos tampoco le escribiste. No porque no quisieras: porque se te traspapeló entre el WhatsApp, el cuaderno, los mails y la memoria. Esa venta no se perdió por precio ni por competencia. Se perdió porque nadie le hizo seguimiento.
+
+Un CRM es, básicamente, la herramienta que evita que eso vuelva a pasar. Y no, no es solo para empresas grandes.
+
+---
+
+## Qué es un CRM, sin vueltas
+
+CRM son las siglas de *Customer Relationship Management* (gestión de la relación con clientes). Suena a algo corporativo, pero la idea es simple: es **un solo lugar donde vive todo lo que necesitás saber de cada cliente y de cada oportunidad de venta**.
+
+Quién es, qué te consultó, qué le ofreciste, cuándo fue la última vez que hablaron, qué quedó pendiente y cuál es el próximo paso. En vez de tener esa información desparramada en cinco lugares (y en tu cabeza), está toda junta, ordenada y accesible.
+
+Pensalo así: si tu negocio fuera un local, el CRM es el mostrador donde está la ficha de cada cliente. No importa quién atienda ni qué día sea: la información está ahí.
+
+---
+
+## Las señales de que ya lo necesitás
+
+No hace falta ser una gran empresa. Si te pasan varias de estas, un CRM te va a cambiar la semana:
+
+| Señal | Qué está pasando en realidad |
+| --- | --- |
+| "Uh, me olvidé de contestarle a fulano" | Estás perdiendo ventas por falta de seguimiento |
+| Buscás una conversación vieja y no la encontrás | Tu información está desordenada y te hace perder tiempo |
+| No sabés cuántas consultas tenés abiertas | No tenés visibilidad de tu propio embudo de ventas |
+| Si te vas de vacaciones, se frena todo | El negocio depende de que vos te acuerdes de cada cosa |
+| Sumaste a alguien y no sabe con quién hablaste | El conocimiento está en tu cabeza, no en el negocio |
+
+Si leíste esto asintiendo, no es un problema de organización personal. Es que tu negocio creció más rápido que tus herramientas.
+
+---
+
+## Qué hace un CRM por tu negocio
+
+Más allá de "ordenar", un CRM te da cosas concretas:
+
+- **Nadie se cae del mapa.** Cada consulta queda registrada con su próximo paso. El cliente que dijo "la semana que viene" te aparece la semana que viene, sin que dependas de tu memoria.
+- **Ves tu embudo completo.** Cuántas oportunidades tenés abiertas, en qué etapa está cada una y cuáles están por enfriarse. Dejás de manejar a ciegas.
+- **El seguimiento deja de ser un esfuerzo.** Recordatorios automáticos para volver a contactar, mensajes de post-venta, avisos cuando algo lleva mucho sin moverse.
+- **El conocimiento queda en el negocio, no en vos.** Si sumás a alguien, o te tomás una semana, la información sigue estando. El negocio no se para.
+- **Decidís con datos.** De dónde vienen tus mejores clientes, qué se te cae en la etapa de presupuesto, cuánto tardás en cerrar. Números reales en lugar de sensaciones.
+
+---
+
+## CRM vs. la planilla de Excel
+
+Mucha gente arranca con una planilla, y está perfecto como primer paso. Pero tiene un techo. Esta es la diferencia:
+
+| | Planilla de Excel | CRM |
+| --- | --- | --- |
+| Guardar contactos | Sí | Sí |
+| Recordarte los seguimientos | No, te acordás vos | Sí, te avisa solo |
+| Ver en qué etapa está cada venta | A mano y engorroso | Visual, de un vistazo |
+| Que la use más de una persona | Se pisan los cambios | Todos ven lo mismo, siempre |
+| Conectar con WhatsApp o mail | No | Sí, según la herramienta |
+| Registrar cada conversación | Muy manual | Queda solo |
+
+La planilla te sirve para empezar. El CRM te sirve para crecer sin que se te escape nada.
+
+---
+
+## Cómo empezar sin marearte
+
+El error más común es elegir un CRM enorme, lleno de funciones que nunca vas a usar, y abandonarlo a las dos semanas. La forma que funciona es al revés: simple primero, complejo después.
+
+:::flow
+{ "title": "El camino en 4 pasos", "steps": [
+  { "title": "Definí tus etapas de venta", "text": "Escribí el recorrido real de un cliente en tu negocio: por ejemplo Consulta nueva, Presupuesto enviado, En negociacion, Cerrado. Ese mapa simple es el corazon de tu CRM." },
+  { "title": "Cargá lo que ya tenés", "text": "Volcá tus contactos y las oportunidades abiertas de este momento. No hace falta migrar diez anios de historia: arranca con lo que esta vivo hoy." },
+  { "title": "Usalo todos los días, aunque sea básico", "text": "Cada consulta nueva entra al CRM y cada una tiene un proximo paso con fecha. Esta es la unica regla que importa al principio. La constancia vale mas que las funciones." },
+  { "title": "Automatizá recién cuando ya lo usás", "text": "Cuando el habito esta instalado, sumas recordatorios automaticos, mensajes de seguimiento y conexion con WhatsApp. Ahi el CRM pasa de ordenar a trabajar por vos." }
+] }
+:::
+
+No necesitás la herramienta más cara ni la más completa. Necesitás una que uses de verdad. Hay opciones gratuitas o de bajo costo que alcanzan y sobran para la mayoría de las pymes que están empezando.
+
+---
+
+## Tres mitos que te frenan
+
+**"Es para empresas grandes."** Al revés: cuanto más chico sos, más te duele perder una venta por olvido. Una empresa grande tiene un equipo que compensa; vos sos el equipo.
+
+**"Es muy complicado de usar."** Los CRM de hoy están pensados para arrancar en una tarde. Si elegís uno simple y lo usás para lo básico, la curva es corta. Lo complicado es seguir perdiendo clientes sin saber por qué.
+
+**"No tengo tantos clientes como para eso."** Justamente por eso: cada cliente pesa más. Cuando tenés pocos, cuidar a cada uno y no dejar ninguna consulta sin responder es lo que te hace crecer.
+
+---
+
+## Conclusión
+
+Un CRM no es un software más ni un lujo de empresa grande. Es la diferencia entre un negocio que depende de que vos te acuerdes de todo y uno que funciona ordenado, donde ninguna consulta se cae y cada cliente recibe seguimiento.
+
+No se trata de la herramienta más sofisticada. Se trata de dejar de perder ventas por desorden. Empezá simple, usalo todos los días, y automatizá cuando el hábito ya esté instalado.
+
+En Nimbo ayudamos a pymes argentinas a ordenar sus clientes y automatizar el seguimiento para que no se les escape ninguna venta. Si querés que veamos cuál es el CRM que mejor te sirve y cómo dejarlo andando, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo charlamos sin compromiso.
+    `.trim(),
+  },
+  {
     slug: 'transformacion-digital-pymes-argentina',
     title: 'Transformación digital para pymes en Argentina: por dónde empezar en 2026',
     description:
