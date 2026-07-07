@@ -1,5 +1,100 @@
 export const posts = [
   {
+    slug: 'agentes-de-ia-vs-chatbots',
+    title: 'Agentes de IA vs. Chatbots: qué son, en qué se diferencian y cómo atienden a tus clientes 24/7',
+    description:
+      '¿Chatbot o agente de IA? Te explicamos qué son, en qué se diferencian y cómo un agente puede atender, filtrar y agendar a tus clientes las 24 horas, sin que se pierda ni un mensaje.',
+    date: '2026-07-06',
+    category: 'Inteligencia Artificial',
+    readTime: '6 min',
+    content: `
+## Son las 22:30 y tu negocio sigue recibiendo mensajes
+
+Estás cenando, mirando el partido o ya en la cama. En el teléfono del negocio entra un mensaje: "Hola, ¿tenés turno para mañana?". No lo ves hasta la mañana siguiente. Cuando contestás, la persona ya resolvió en otro lado.
+
+Esa escena se repite todos los días en miles de negocios argentinos. Cada consulta que no respondés a tiempo es una oportunidad que se enfría. Y el problema no es que no quieras atender: es que no podés estar disponible las 24 horas.
+
+La buena noticia es que hoy la tecnología puede atender esas consultas por vos, al instante, a cualquier hora. La menos conocida es que no todo lo que "responde solo" es lo mismo. Hay una diferencia grande entre un **chatbot** y un **agente de IA**, y entenderla te puede cambiar la forma de atender.
+
+---
+
+## ¿Qué es un chatbot?
+
+Un chatbot es un programa que responde mensajes siguiendo reglas y guiones fijos. Vos definís de antemano las preguntas y las respuestas, y muchas veces funciona con menús: "Escribí 1 para horarios, 2 para precios, 3 para hablar con un asesor".
+
+Sirve para lo más básico y repetitivo: horarios, dirección, formas de pago. Es como un contestador un poco más inteligente.
+
+Su límite aparece cuando el cliente se sale del guión. Si escribe algo que no estaba previsto —"¿me lo pueden mandar a Escobar el sábado?"— el chatbot no entiende, responde "no comprendí tu consulta" o te devuelve al menú. Ahí es donde el cliente se frustra y se va.
+
+---
+
+## ¿Qué es un agente de IA?
+
+Un agente de IA juega en otra liga. Usa inteligencia artificial para **entender lo que la persona quiere en lenguaje natural**, tener en cuenta el contexto de la conversación y —lo más importante— **actuar**.
+
+No solo responde: decide y ejecuta. Puede agendar un turno mirando tu disponibilidad real, filtrar si una consulta es un cliente potencial o alguien que solo está preguntando, armar un presupuesto tipo, tomar los datos de contacto y derivar a una persona cuando la charla lo amerita.
+
+Entiende un mensaje como "che, ¿tenés lugar el jueves a la tarde para dos?" y lo resuelve como lo haría un buen empleado: sin menús, sin guiones rígidos, con una conversación que se siente natural.
+
+La diferencia en una frase: **el chatbot informa; el agente de IA resuelve.**
+
+---
+
+## Chatbot vs. Agente de IA: la comparación
+
+| Aspecto | Chatbot | Agente de IA |
+| --- | --- | --- |
+| Cómo entiende | Palabras clave y menús fijos | Lenguaje natural y contexto |
+| Qué hace | Responde guiones predefinidos | Decide y ejecuta acciones |
+| Ante algo inesperado | Se traba o te manda al menú | Razona, resuelve o deriva a una persona |
+| Tareas que cubre | Informar (horarios, precios) | Agendar, filtrar leads, vender, derivar |
+| Cómo lo siente el cliente | Robótico y limitado | Como hablar con alguien del equipo |
+
+---
+
+## Casos de uso por rubro
+
+Así se ve un agente de IA trabajando, según lo que necesite tu negocio:
+
+### Atención al cliente
+
+Responde las consultas frecuentes al instante y a cualquier hora. Cuando la pregunta se complica, deriva a una persona con todo el contexto ya cargado. Tu cliente nunca queda esperando y vos no vivís pegado al teléfono.
+
+### Ventas
+
+El agente hace las primeras preguntas ("¿qué estás buscando?", "¿para cuándo?", "¿en qué zona?"), separa a los curiosos de los que realmente quieren comprar y te pasa solo las oportunidades calientes, ya calificadas. Dejás de perder tiempo con consultas que no van a ningún lado y dejás de perder ventas por no contestar a tiempo.
+
+### Agendamiento
+
+Muestra tu disponibilidad real, toma la reserva, la confirma y manda el recordatorio automático. Menos turnos pisados, menos ausentes y menos ida y vuelta para coordinar un horario.
+
+---
+
+## ¿Cómo sé si mi negocio necesita un agente de IA?
+
+No todos los negocios lo necesitan hoy. Pero si te cruzás con varias de estas señales, es momento de mirarlo en serio:
+
+:::flow
+{ "title": "4 señales de que te conviene un agente de IA", "steps": [
+  { "title": "Recibís muchos mensajes repetidos", "text": "Si contestás las mismas cinco preguntas todo el día, un agente las resuelve solo y te libera horas." },
+  { "title": "Perdés consultas fuera de horario", "text": "Los mensajes de la noche y el fin de semana que quedan sin responder son ventas que se van a la competencia." },
+  { "title": "Tu equipo (o vos) está saturado", "text": "Cuando atender el WhatsApp te come el tiempo de lo importante, es momento de delegar lo repetitivo." },
+  { "title": "Los leads se enfrían por la demora", "text": "Mientras más tardás en responder, menos chances de cerrar. Un agente contesta en segundos, siempre." }
+] }
+:::
+
+---
+
+## Que tu negocio no dependa de que vos estés mirando el teléfono
+
+Un agente de IA bien implementado atiende, filtra y agenda por vos —durante el partido, de madrugada y el domingo— y te pasa a las personas solo cuando de verdad hace falta.
+
+En Nimbo implementamos **agentes de IA a medida** para negocios argentinos: los conectamos a tu WhatsApp, los entrenamos con tu información y tu forma de atender, y los dejamos trabajando 24/7.
+
+**[Agendá una llamada gratuita de diagnóstico](https://wa.me/5491124036836?text=Hola,%20quiero%20la%20llamada%20de%20diagnostico%20sobre%20agentes%20de%20IA)** y te mostramos cómo sería un agente de IA funcionando en tu negocio.
+    `.trim(),
+  },
+  {
     slug: 'que-es-un-crm-y-por-que-tu-pyme-lo-necesita',
     title: 'Qué es un CRM y por qué tu pyme lo necesita (aunque creas que no)',
     description:
