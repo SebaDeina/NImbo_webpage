@@ -1,5 +1,103 @@
 export const posts = [
   {
+    slug: 'automatiza-tu-negocio-con-ia',
+    title: 'Automatizá tu negocio con IA: la guía práctica para pymes argentinas',
+    description:
+      '¿Querés automatizar tu negocio con IA pero no sabés por dónde empezar? Guía práctica para pymes en Argentina: qué se puede automatizar, cómo hacerlo paso a paso y cuánto cuesta, sin vueltas.',
+    date: '2026-07-06',
+    category: 'Automatización & IA',
+    readTime: '9 min',
+    content: `
+## Automatizá tu negocio con IA: de la frase de moda a algo concreto
+
+"Automatizá tu negocio con IA" suena por todos lados. Pero cuando sos dueño de una pyme y estás tapado de tareas, la frase sola no te sirve: necesitás saber **qué** se automatiza, **cómo** se hace y **cuánto** cuesta, en criollo.
+
+Esta guía es justo eso. Sin humo, sin promesas mágicas: lo que hoy una pyme argentina puede automatizar con inteligencia artificial para vender más y trabajar menos.
+
+La idea de fondo es simple: hay un montón de tareas que hacés todos los días, que te comen horas y no requieren tu criterio. Esas son las que la IA puede hacer por vos, mientras vos te dedicás a lo que sí importa.
+
+---
+
+## Qué se puede automatizar en tu negocio
+
+No hace falta automatizar todo. Estas son las áreas donde una pyme gana más tiempo, ordenadas de la más común a la más avanzada:
+
+| Área | Qué se automatiza | Con qué |
+| --- | --- | --- |
+| Atención al cliente | Responder consultas frecuentes al instante, 24/7 | Chatbot o agente de IA en WhatsApp |
+| Turnos y reservas | Agendar, confirmar y recordar solo | Sistema de turnos automático |
+| Ventas | Filtrar y calificar los mejores leads | Agente de IA |
+| Post-venta | Seguimiento y recontacto de clientes | Automatización de mensajes y email |
+| Tareas internas | Cargar datos, armar reportes, avisos | Flujos automáticos entre tus apps |
+
+Si querés profundizar en la atención al cliente, tenemos una guía dedicada: **[cómo automatizar tu pyme con IA y un chatbot de WhatsApp](/blog/automatizar-pyme-ia-chatbot-whatsapp)**.
+
+---
+
+## Cómo automatizar tu negocio, paso a paso
+
+El error más común es querer automatizar todo de golpe, comprar cinco herramientas y terminar sin usar ninguna. Lo que funciona es ir de a poco:
+
+:::flow
+{ "title": "El camino para automatizar tu negocio", "steps": [
+  { "title": "Detectá qué te hace perder tiempo", "text": "Durante una semana, prestá atención a qué tareas repetís todo el día. Esas son las candidatas." },
+  { "title": "Empezá por UNA sola", "text": "Elegí la que más tiempo te come —normalmente la atención de consultas— y resolvela bien antes de pasar a la siguiente." },
+  { "title": "Elegí la herramienta o un desarrollo a medida", "text": "Para lo estándar alcanza con herramientas existentes; para procesos propios conviene una solución a medida." },
+  { "title": "Medí y escalá", "text": "Mirá cuánto tiempo ganaste y cuántas consultas se resolvieron solas. Lo que funciona, lo replicás en otra área." }
+] }
+:::
+
+---
+
+## ¿Chatbot o agente de IA?
+
+Acá hay una diferencia importante que conviene entender antes de contratar nada. Un **chatbot** sigue guiones fijos y responde preguntas frecuentes. Un **agente de IA** entiende lenguaje natural, toma decisiones y ejecuta acciones: agenda, filtra, vende y deriva a una persona cuando hace falta.
+
+Para automatizar de verdad tu negocio, casi siempre querés un agente de IA. Lo explicamos en detalle acá: **[agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots)**.
+
+---
+
+## Cuánto cuesta automatizar tu negocio
+
+Depende del alcance, pero mucho menos de lo que la mayoría cree. Para la mayoría de las pymes, arrancar con una automatización bien hecha cuesta menos que sumar una persona part-time, y trabaja las 24 horas.
+
+Muchas herramientas tienen planes gratuitos o de bajo costo mensual (para turnos, respuestas automáticas, email). El desarrollo a medida tiene sentido cuando tenés procesos propios que ninguna herramienta estándar cubre. La pregunta correcta no es "cuánto cuesta", sino **cuánto te está costando NO hacerlo**: las horas que perdés y las consultas que no respondés a tiempo.
+
+---
+
+## Ejemplos por rubro
+
+Así se ve automatizar un negocio, según el rubro:
+
+- **Comercio / tienda**: respuestas automáticas a talles, colores, precios y envíos; el dueño recupera horas de responder Instagram y WhatsApp.
+- **Servicios con turnos** (salud, estética, oficios): agenda automática con recordatorio, menos ausentes y menos turnos pisados.
+- **Profesionales** (contadores, estudios): seguimiento automático de documentación y recordatorios, sin perseguir a cada cliente.
+- **Ventas**: un agente de IA filtra los curiosos de los que quieren comprar y te pasa solo las oportunidades calientes.
+
+Todo esto es parte de algo más grande: la **[transformación digital de tu pyme](/blog/transformacion-digital-pymes-argentina)**.
+
+---
+
+## Probá un agente de IA ahora mismo
+
+Mejor que contártelo: probalo. Escribile al asistente como si fueras un cliente tuyo y fijate cómo atiende.
+
+:::chatbot
+{ "title": "Asistente de IA de Nimbo", "intro": "Es el mismo tipo de agente que implementamos a medida para cada negocio. Preguntale lo que quieras:" }
+:::
+
+---
+
+## Empezá a automatizar tu negocio hoy
+
+No necesitás un plan gigante ni un presupuesto enorme. Necesitás empezar por la tarea que más tiempo te come y resolverla bien. El resto viene solo.
+
+En Nimbo automatizamos negocios argentinos con IA a medida: atención, turnos, ventas y tareas internas. Lo conectamos a tu WhatsApp, lo entrenamos con tu forma de trabajar y lo dejamos funcionando 24/7.
+
+**[Agendá una llamada gratuita de diagnóstico](https://wa.me/5491124036836?text=Hola,%20quiero%20automatizar%20mi%20negocio%20con%20IA)** y te mostramos qué se podría automatizar en tu caso puntual.
+    `.trim(),
+  },
+  {
     slug: 'agentes-de-ia-vs-chatbots',
     title: 'Agentes de IA vs. Chatbots: qué son, en qué se diferencian y cómo atienden a tus clientes 24/7',
     description:
