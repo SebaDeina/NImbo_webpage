@@ -1,6 +1,24 @@
+import { lazy, Suspense } from 'react'
 import BarChart from '../components/blog/BarChart'
 import LineChart from '../components/blog/LineChart'
 import FlowDiagram from '../components/blog/FlowDiagram'
+import { useLang } from '../i18n/LangContext'
+
+// El asistente de IA es pesado: se carga en diferido y solo si un post lo usa.
+const Chatbot = lazy(() => import('../components/Chatbot'))
+
+function BlogChatbot({ title, intro }) {
+  const { lang } = useLang()
+  return (
+    <figure className="blog-viz blog-chatbot">
+      {title && <figcaption className="blog-viz-title">{title}</figcaption>}
+      {intro && <p className="blog-chatbot-intro">{intro}</p>}
+      <Suspense fallback={<div className="chat-embed chat-embed--loading" aria-hidden="true" />}>
+        <Chatbot variant="embed" key={lang} />
+      </Suspense>
+    </figure>
+  )
+}
 
 /*
   Renderizado del contenido del blog.
@@ -25,6 +43,7 @@ const CHART_COMPONENTS = {
   bar: BarChart,
   line: LineChart,
   flow: FlowDiagram,
+  chatbot: BlogChatbot,
 }
 
 export function parseContent(content) {

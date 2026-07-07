@@ -2250,6 +2250,11 @@ a.ci-v:hover{color:var(--accent)}
 /* Teaser de blog en la home */
 .blog-teaser-more{display:flex;justify-content:center;margin-top:clamp(32px,5vh,52px)}
 
+/* Chatbot embebido dentro de un artículo */
+.blog-chatbot{background:linear-gradient(180deg,var(--glow),var(--surface))}
+.blog-chatbot-intro{font-size:14.5px;color:var(--text-dim);margin:0 0 18px;line-height:1.55}
+.blog-chatbot .chat-embed{margin:0}
+
 @media(max-width:640px){
   .blog-grid{grid-template-columns:1fr}
   .blog-card-link{padding:20px}

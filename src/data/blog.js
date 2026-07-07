@@ -85,6 +85,14 @@ No todos los negocios lo necesitan hoy. Pero si te cruzás con varias de estas s
 
 ---
 
+## Probá un agente de IA ahora mismo
+
+En vez de contártelo, mejor que lo veas. Escribile al asistente de acá abajo como si fueras un cliente tuyo —preguntale por precios, horarios o pedile un turno— y fijate cómo responde:
+
+:::chatbot
+{ "title": "Asistente de IA de Nimbo", "intro": "Es el mismo tipo de agente que implementamos a medida para cada negocio. Probalo:" }
+:::
+
 ## Que tu negocio no dependa de que vos estés mirando el teléfono
 
 Un agente de IA bien implementado atiende, filtra y agenda por vos —durante el partido, de madrugada y el domingo— y te pasa a las personas solo cuando de verdad hace falta.
