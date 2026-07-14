@@ -1,5 +1,134 @@
 export const posts = [
   {
+    slug: 'como-medir-el-roi-de-una-automatizacion',
+    title: 'Cómo medir el ROI de una automatización (sin planillas imposibles)',
+    description:
+      '¿Vale la pena automatizar? Te mostramos cómo calcular el retorno (ROI) de una automatización en tu pyme, paso a paso y con un ejemplo, para saber si te conviene antes de gastar un peso.',
+    date: '2026-07-13',
+    category: 'Automatización & IA',
+    readTime: '8 min',
+    content: `
+## "Che, ¿y esto se paga solo?"
+
+Es la pregunta que hace todo dueño de pyme antes de automatizar algo. Y está perfecta: nadie quiere gastar plata en una herramienta linda que no mueve la aguja.
+
+El problema es que muchos automatizan por moda, o directamente no automatizan por miedo a tirar la plata, y en los dos casos deciden a ojo. La buena noticia es que el retorno de una automatización se puede calcular con la matemática de la primaria y en una servilleta.
+
+En esta guía te muestro cómo medir el ROI (retorno de la inversión) de una automatización de forma simple, para que decidas con números y no con la intuición.
+
+---
+
+## Qué es el ROI, en criollo
+
+ROI es cuánto te devuelve cada peso que ponés. La fórmula de toda la vida es:
+
+**ROI = (lo que ganás o ahorrás − lo que te costó) ÷ lo que te costó**
+
+Si te da 1, significa que por cada peso que pusiste, recuperaste ese peso y ganaste uno más (100% de retorno). Si te da 2, ganaste dos por cada uno. Si te da negativo, estás perdiendo.
+
+Con las automatizaciones hay una ventaja: el costo suele ser fijo y mensual, mientras que el beneficio se repite mes a mes. Por eso una automatización que "empata" el primer mes, del segundo en adelante es casi todo ganancia.
+
+---
+
+## Los 4 números que necesitás
+
+No hace falta un sistema contable. Con estos cuatro datos te alcanza:
+
+:::flow
+{ "title": "Los datos para calcular tu retorno", "steps": [
+  { "title": "El costo de la automatización", "text": "Lo que pagás por armarla y mantenerla. Puede ser un plan mensual, un desarrollo a medida, o las dos cosas." },
+  { "title": "El tiempo que te ahorra", "text": "Cuántas horas por semana dejás de hacer esa tarea vos o tu equipo. Cronometralo una semana, no lo estimes de memoria." },
+  { "title": "Cuánto vale esa hora", "text": "El costo por hora de quien hoy hace la tarea. Si sos vos, usá lo que cobrás tu hora de trabajo productivo." },
+  { "title": "El ingreso extra que genera", "text": "Ventas que antes se perdían: consultas sin responder, turnos que nadie confirmaba, clientes que no volvían." }
+] }
+:::
+
+Los primeros tres miden el **ahorro**. El cuarto mide el **ingreso extra**, y suele ser el más grande, aunque también el más difícil de estimar. Empezá midiendo solo el ahorro de tiempo: si con eso ya se justifica, el ingreso extra es todo yapa.
+
+---
+
+## Un ejemplo, paso a paso
+
+Veamos un caso ilustrativo (números de ejemplo, para que veas la mecánica; poné los tuyos). Una pyme automatiza la respuesta a consultas frecuentes por WhatsApp:
+
+| Concepto | Valor mensual |
+| --- | --- |
+| Costo de la automatización | $80.000 |
+| Horas ahorradas por semana | 8 hs |
+| Horas ahorradas por mes (x4,3) | 34 hs |
+| Valor de la hora | $6.000 |
+| Ahorro por tiempo (34 × $6.000) | $206.000 |
+| Ingreso extra por consultas respondidas a tiempo | $120.000 |
+
+Con esos números:
+
+- **Beneficio total:** $206.000 + $120.000 = **$326.000 por mes**
+- **Costo:** $80.000 por mes
+- **ROI = (326.000 − 80.000) ÷ 80.000 = 3,07**
+
+Un ROI de 3 quiere decir que por cada peso invertido, la pyme recupera ese peso y **gana tres más**. Y ojo: si sacás el ingreso extra y mirás solo el ahorro de tiempo, el ROI sigue siendo positivo (más de 1,5). O sea, se justifica aunque no vendas ni un peso de más.
+
+---
+
+## El número que casi nadie mira: el punto de equilibrio
+
+Más útil todavía que el ROI es el **punto de equilibrio**: en cuánto tiempo la automatización se paga sola.
+
+Es una cuenta sola: costo total inicial dividido por el beneficio mensual. Si armar una automatización te costó $240.000 una vez y te deja $326.000 por mes, se paga sola en menos de un mes. De ahí en adelante, es ganancia neta que se repite sin que hagas nada.
+
+Este es el número que conviene tener a mano cuando dudás si vale la pena: no "cuánto cuesta", sino **en cuántas semanas se paga solo**.
+
+---
+
+## El costo invisible: lo que perdés por NO automatizar
+
+Cuando calculás el retorno, es fácil ver el costo de automatizar. Lo difícil es ver el costo de **no** hacerlo, porque no aparece en ninguna factura. Pero está, y suele ser más caro:
+
+- Las consultas que llegan a la noche o el finde y nadie responde hasta el lunes (para entonces el cliente ya compró en otro lado).
+- Los turnos que se pisan o quedan libres porque nadie confirmó.
+- Los clientes que no volvieron porque nadie les hizo seguimiento.
+- Tus horas —o las de tu equipo— gastadas en tareas repetitivas en vez de en vender o mejorar el negocio.
+
+Eso es lo que se llama costo de oportunidad, y aunque no lo veas en el banco, te lo está sacando igual. Cuando lo sumás al cálculo, el retorno de automatizar casi siempre crece.
+
+---
+
+## Errores comunes al medir el retorno
+
+Para que tu cálculo no te mienta, evitá estas trampas:
+
+| Error | Por qué te confunde |
+| --- | --- |
+| Mirar solo el costo, no el beneficio | La automatización parece "un gasto" cuando en realidad es una inversión que se repite. |
+| Estimar las horas de memoria | Casi siempre subestimás cuánto tiempo te come una tarea. Cronometrala una semana. |
+| Esperar resultados el día uno | Una automatización necesita un par de semanas de ajuste antes de rendir a full. |
+| Olvidar el ingreso extra | El ahorro de tiempo es solo la mitad; las ventas rescatadas suelen ser la otra mitad. |
+| Automatizar algo que casi no usás | Un proceso que pasa dos veces por mes no mueve la aguja, por más lindo que quede. |
+
+---
+
+## Cómo empezar sin arriesgar de más
+
+La forma más segura de tener un buen ROI es no jugarte todo de una:
+
+1. **Elegí la tarea que más tiempo te come.** Suele ser responder consultas o coordinar turnos. Ahí el retorno aparece rápido.
+2. **Medí una semana antes de automatizar.** Anotá horas reales y consultas perdidas. Ese es tu punto de partida.
+3. **Automatizá esa sola tarea y medí de nuevo.** Compará contra el punto de partida. Si el número cierra, escalás a la siguiente.
+
+Este orden lo desarrollamos en la guía de **[cómo automatizar tu negocio con IA](/blog/automatiza-tu-negocio-con-ia)**, que te sirve para elegir por dónde arrancar antes de sacar la calculadora.
+
+---
+
+## En resumen
+
+Medir el ROI de una automatización no requiere una planilla imposible ni un contador: necesitás cuatro números (costo, horas ahorradas, valor de la hora e ingreso extra) y una división. Con eso sabés si te conviene antes de gastar un peso, y sobre todo, en cuántas semanas se paga sola.
+
+En Nimbo automatizamos negocios argentinos con IA a medida y te ayudamos a hacer justamente este cálculo para tu caso, con tus números reales, antes de arrancar. Sin humo y sin comprometerte a nada.
+
+**[Escribinos y calculamos juntos el retorno de automatizar tu negocio](https://wa.me/5491124036836?text=Hola,%20quiero%20saber%20si%20me%20conviene%20automatizar%20mi%20negocio)** — te decimos con números si te conviene.
+    `.trim(),
+  },
+  {
     slug: 'automatiza-tu-negocio-con-ia',
     title: 'Automatizá tu negocio con IA: la guía práctica para pymes argentinas',
     description:
