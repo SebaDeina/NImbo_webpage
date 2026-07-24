@@ -1,5 +1,123 @@
 export const posts = [
   {
+    slug: 'velocidad-de-carga-web-por-que-importa',
+    title: 'Velocidad de carga web: por qué importa (y cómo mejorarla sin ser programador)',
+    description:
+      'Si tu web tarda en abrir, perdés clientes antes de que vean lo que vendés. Te explicamos qué mide Google, cómo testear tu sitio gratis en 5 minutos y qué arreglar primero.',
+    date: '2026-07-24',
+    category: 'Diseño Web',
+    readTime: '8 min',
+    content: `
+## La prueba que casi nadie le hace a su propia web
+
+Agarrá el celular, salí de la oficina, poné los datos móviles (nada de wifi) y abrí tu página. Contá mentalmente: uno, dos, tres...
+
+Si a esa altura seguís mirando una pantalla en blanco, ya sabés cómo la vive un cliente que te encontró en Google mientras esperaba el colectivo. Y ese cliente no espera: vuelve atrás y entra a la del competidor que carga primero.
+
+Lo jodido de la velocidad web es que es un problema silencioso. No te llega ningún reclamo, nadie te escribe "che, tu página tarda". Simplemente no te escriben. Y vos pensás que la web "no trae clientes", cuando en realidad los trae y los pierde en el camino.
+
+La buena noticia: la mayoría de los problemas de velocidad en webs de pymes son cuatro o cinco cosas concretas, y casi ninguna requiere saber programar para detectarla.
+
+---
+
+## Por qué la velocidad te cuesta plata (dos veces)
+
+Una web lenta te pega por dos lados distintos, y conviene entenderlos por separado.
+
+**1. Perdés visitas que ya tenías.** Esta es la más cara y la más invisible. Son personas que ya te encontraron, que ya hicieron clic, que ya estaban interesadas. Pagaste (con SEO, con publicidad o con tiempo) para que llegaran, y se van antes de ver un solo producto. Es como tener el local abierto pero con la puerta trabada.
+
+**2. Google te muestra menos.** Google usa la experiencia de página —y dentro de ella, la velocidad— como una de sus señales para ordenar resultados. No es la más importante (el contenido relevante manda), pero cuando dos sitios compiten parejo por la misma búsqueda, el más rápido tiene ventaja. Y en búsquedas locales, donde casi todos los competidores tienen contenido parecido, ese desempate pesa.
+
+O sea: primero te llega menos gente, y de la que llega, una parte se va antes de leerte.
+
+---
+
+## Las tres métricas que mira Google (en criollo)
+
+Google resume la experiencia de carga en tres números llamados **Core Web Vitals**. Suenan técnicos, pero cada uno responde a una pregunta muy humana:
+
+| Métrica | La pregunta que responde | Umbral "bueno" |
+| --- | --- | --- |
+| LCP (Largest Contentful Paint) | ¿Cuánto tarda en aparecer lo importante de la pantalla? | 2,5 segundos o menos |
+| INP (Interaction to Next Paint) | Cuando toco un botón, ¿reacciona al toque o queda colgado? | 200 milisegundos o menos |
+| CLS (Cumulative Layout Shift) | ¿Se me mueve todo de lugar mientras carga y termino tocando lo que no quería? | 0,1 o menos |
+
+Fuente: Google, documentación oficial de Core Web Vitals (web.dev, 2026). Google evalúa estos umbrales en el percentil 75 de las visitas reales: para "aprobar", tres de cada cuatro personas que entran tienen que tener esa experiencia o mejor.
+
+Ese detalle del percentil 75 es clave y casi nadie lo entiende: no alcanza con que tu web ande rápida en tu notebook con fibra óptica. Tiene que andar rápida en el celular de gama media de tu cliente, con la señal que hay en la calle. Ese es el examen real.
+
+El tercero, el CLS, es el que más bronca genera en la vida real: es cuando estás por tocar "Comprar", carga una imagen arriba, todo se corre para abajo y terminás tocando otra cosa. No es solo velocidad, es sensación de sitio hecho a las apuradas.
+
+---
+
+## Cómo medir tu web gratis en 5 minutos
+
+No hace falta contratar a nadie para saber cómo estás parado:
+
+1. Entrá a **PageSpeed Insights** de Google (es gratis y no hay que registrarse).
+2. Pegá la dirección de tu web y dale analizar.
+3. **Mirá la solapa de celular, no la de escritorio.** La enorme mayoría de las visitas de una pyme argentina llegan desde el teléfono, así que ese es el número que importa.
+4. Ignorá por un rato el puntaje sobre 100 y fijate en las tres métricas de arriba: ¿están en verde, amarillo o rojo?
+5. Bajá hasta la sección de oportunidades. Ahí Google te dice, en orden, qué es lo que más te está frenando.
+
+Un consejo: no te obsesiones con llegar a 100. Un puntaje verde y estable rinde mucho más que perseguir la perfección. La diferencia entre 45 y 80 la siente el cliente; entre 92 y 98, no la siente nadie.
+
+---
+
+## Las causas típicas en webs de pymes
+
+Después de mirar decenas de sitios de pymes, los culpables se repiten muchísimo. Van en orden de "cuánto pesa" versus "qué fácil es arreglarlo":
+
+**Las imágenes sin optimizar.** Es, lejos, el problema número uno. Alguien subió la foto tal cual salió de la cámara o del celular: varios megas para mostrarse en un recuadro chiquito. El navegador se la baja entera igual. Redimensionar las fotos y guardarlas en formatos modernos (WebP) suele ser el arreglo que más mejora por menos trabajo.
+
+**Demasiados plugins.** Típico de WordPress: se van sumando plugins para el chat, el pop-up, las estadísticas, el carrusel, las cookies... y cada uno agrega código que el visitante tiene que descargar. Muchos quedan instalados por algo que se probó una vez y nunca se usó.
+
+**Scripts de terceros.** Píxeles de publicidad, chats, mapas embebidos, videos incrustados, tipografías traídas de afuera. Cada uno es una llamada a un servidor ajeno, y tu web va tan rápido como el más lento de ellos.
+
+**Hosting barato o mal ubicado.** Si el servidor está saturado o físicamente lejos de tus visitantes, todo arranca tarde por más liviana que sea la página. Es la parte menos glamorosa y una de las que más se nota.
+
+**Sitios armados con plantillas pesadas.** Muchas plantillas prometen "todo incluido" y cargan animaciones, íconos y estilos que tu web no usa. Se paga el peso completo igual.
+
+---
+
+## El orden en que conviene atacarlo
+
+No hagas todo junto ni de una. Este orden te da la mayor mejora con el menor riesgo de romper algo:
+
+:::flow
+{ "title": "Plan para acelerar tu web", "steps": [
+  { "title": "1. Medí y anotá el punto de partida", "text": "Corré PageSpeed Insights en celular y guardá una captura. Sin ese antes, después no vas a saber si mejoraste o te lo estás imaginando." },
+  { "title": "2. Arreglá las imágenes", "text": "Redimensionalas al tamaño real en que se muestran, convertilas a WebP y activá carga diferida para las que están más abajo. Es el mayor ahorro de peso por unidad de esfuerzo." },
+  { "title": "3. Limpiá lo que no usás", "text": "Desinstalá plugins que no aportan y sacá scripts de terceros que ya no mirás. Cada cosa que borrás es peso que el cliente no descarga." },
+  { "title": "4. Revisá el hosting", "text": "Si el servidor responde lento con la web ya liviana, el problema es la casa, no los muebles. Un plan mejor o un CDN suele resolverlo." },
+  { "title": "5. Volvé a medir y dejalo monitoreado", "text": "Compará contra la captura del paso 1 y repetí la medición cada par de meses. Las webs se vuelven lentas de a poco, sin que nadie lo note." }
+] }
+:::
+
+Los pasos 2 y 3 los podés encarar vos mismo o con quien te mantiene la web, y en general resuelven la mayor parte del problema. Recién si después de eso seguís en rojo, vale la pena meterse en cuestiones más técnicas.
+
+---
+
+## Tres errores que empeoran las cosas
+
+- **Instalar un plugin de caché y darlo por resuelto.** Ayuda, pero no achica una foto de 4 megas. Si el problema es el peso, la caché solo te lo entrega rápido... y pesado.
+- **Perseguir el 100 de puntaje.** Se pueden pasar semanas en los últimos puntos, que nadie percibe, mientras la web sigue sin explicar bien qué vendés. La velocidad es un medio, no la meta.
+- **Optimizar la velocidad de un sitio que no convierte.** Si tu web carga volando pero no dice claro qué hacés, para quién y cómo contactarte, el problema no era la velocidad. Sobre eso escribimos en **[por qué tu negocio necesita una página web](/blog/por-que-tu-negocio-necesita-una-pagina-web)**.
+
+---
+
+## En resumen
+
+La velocidad de carga no es un capricho de programadores: es la puerta de entrada de tu negocio. Google mira tres cosas concretas —cuánto tarda en aparecer el contenido, si responde al toque y si no se mueve todo de lugar— y las mide en el celular de tu cliente, no en tu computadora.
+
+Medirla es gratis y toma cinco minutos. Arreglar el 80% del problema suele ser optimizar imágenes y sacar lo que sobra. Y el beneficio se nota donde importa: más gente que llega, se queda y te escribe.
+
+En Nimbo diseñamos y optimizamos webs para pymes argentinas pensando desde el primer día en que carguen rápido en el celular, no solo en que se vean lindas en una notebook.
+
+**[Escribinos y revisamos gratis la velocidad de tu web](https://wa.me/5491124036836?text=Hola,%20quiero%20que%20revisen%20la%20velocidad%20de%20mi%20web)** — te decimos qué la está frenando y qué conviene arreglar primero.
+    `.trim(),
+  },
+  {
     slug: 'como-medir-el-roi-de-una-automatizacion',
     title: 'Cómo medir el ROI de una automatización (sin planillas imposibles)',
     description:
