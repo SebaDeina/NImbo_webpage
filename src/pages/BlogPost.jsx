@@ -1,8 +1,11 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getPost, posts } from '../data/blog'
-import Reveal from '../components/Reveal'
 import { useSeo } from '../hooks/useSeo'
 import { BlogContent } from '../lib/blog-render'
+import PageHero from '../components/g/PageHero'
+import { Emblem, useRevealAll } from '../components/g/Art'
+import CTA from '../components/CTA'
+import { EMB_BY_CAT, fmtDate, PostCard } from './Blog'
 
 export default function BlogPost() {
   const { slug } = useParams()
@@ -25,69 +28,54 @@ export default function BlogPost() {
             articleSection: post.category,
             inLanguage: 'es-AR',
             author: { '@type': 'Organization', name: 'Nimbo' },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Nimbo',
-              url: 'https://www.nimbodata.com',
-            },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://www.nimbodata.com/blog/${post.slug}`,
-            },
+            publisher: { '@type': 'Organization', name: 'Nimbo', url: 'https://www.nimbodata.com' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.nimbodata.com/blog/${post.slug}` },
           },
         }
       : {},
   )
+  useRevealAll('.rv', [slug])
 
   if (!post) return <Navigate to="/blog" replace />
 
-  const others = posts.filter((p) => p.slug !== slug).slice(0, 2)
+  const others = [
+    ...posts.filter((p) => p.slug !== slug && p.category === post.category),
+    ...posts.filter((p) => p.slug !== slug && p.category !== post.category),
+  ].slice(0, 2)
 
   return (
-    <main className="page blog-post-page">
-      <div className="blog-hero-glow" aria-hidden="true" />
-      <div className="wrap wrap-narrow">
-        <Reveal as="div" className="blog-post-meta">
-          <Link to="/blog" className="blog-back">← Blog</Link>
-          <span className="blog-category">{post.category}</span>
-          <span className="blog-read-time">{post.readTime} de lectura</span>
-        </Reveal>
-
-        <Reveal as="h1" delay={1} className="blog-post-title">
-          {post.title}
-        </Reveal>
-
-        <Reveal as="p" delay={2} className="blog-post-lead">
-          {post.description}
-        </Reveal>
-
-        <Reveal delay={3}>
-          <article className="blog-post-body">
+    <main className="g-main">
+      <PageHero className="art-hero">
+        <Link className="back" to="/blog">← Blog</Link>
+        <Emblem n={EMB_BY_CAT[post.category] || 'I'} className="emb" />
+        <div className="meta">
+          <span className="cat">{post.category}</span>
+          <span className="dot">·</span>
+          <span>{post.readTime} de lectura</span>
+          <span className="dot">·</span>
+          <span>{fmtDate(post.date)}</span>
+        </div>
+        <h1>{post.title}</h1>
+        <p className="hero-sub">{post.description}</p>
+      </PageHero>
+      <div className="paper">
+        <div className="wrap">
+          <article className="art">
             <BlogContent content={post.content} />
           </article>
-        </Reveal>
-
+        </div>
         {others.length > 0 && (
-          <Reveal delay={4} as="section" className="blog-related">
-            <h2 className="blog-related-title">Seguir leyendo</h2>
-            <div className="blog-grid blog-grid-sm">
+          <section className="related wrap">
+            <h2>Seguir leyendo</h2>
+            <div className="grid">
               {others.map((p) => (
-                <article key={p.slug} className="blog-card">
-                  <Link to={`/blog/${p.slug}`} className="blog-card-link">
-                    <div className="blog-card-meta">
-                      <span className="blog-category">{p.category}</span>
-                      <span className="blog-read-time">{p.readTime}</span>
-                    </div>
-                    <h3 className="blog-card-title">{p.title}</h3>
-                    <p className="blog-card-desc">{p.description}</p>
-                    <span className="blog-card-cta">Leer artículo →</span>
-                  </Link>
-                </article>
+                <PostCard key={p.slug} p={p} />
               ))}
             </div>
-          </Reveal>
+          </section>
         )}
       </div>
+      <CTA />
     </main>
   )
 }

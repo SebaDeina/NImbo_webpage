@@ -1,3 +1,4 @@
+import '../index.css'
 import { useParams } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import { IconArrowRight, IconStar, IconWhatsApp, IconCalendar } from '../components/Icons'

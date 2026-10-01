@@ -1,43 +1,28 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
-import { useContact } from '../contexts/ContactContext'
-import { useIsMobile } from '../hooks/useIsMobile'
-import Reveal from './Reveal'
-import { IconArrowRight } from './Icons'
+import { whatsappUrl } from '../config/whatsapp'
+import { LogoMedallion } from './g/Art'
 
+/* Cierre de página: medallón con el logo grabado + contacto. */
 export default function CTA() {
   const { t } = useLang()
-  const { openContact } = useContact()
-  const isMobile = useIsMobile()
-
-  const onContact = (e) => {
-    if (isMobile) {
-      e.preventDefault()
-      openContact()
-    }
-  }
-
   return (
-    <section className="cta" id="contacto" data-screen-label="CTA">
+    <section className="paper colophon">
       <div className="wrap">
-        <Reveal as="p" className="eyebrow no-dot">
-          {t('cta.eyebrow')}
-        </Reveal>
-        <Reveal as="h2" delay={1} className="display">
-          {t('cta.title')}
-        </Reveal>
-        <Reveal as="p" delay={2} className="lead">
-          {t('cta.lead')}
-        </Reveal>
-        <Reveal delay={2} className="cta-actions">
-          <Link to="/contacto" className="btn btn-primary" onClick={onContact}>
-            <span>{t('cta.btn')}</span> <IconArrowRight size={18} className="arr" />
+        <div className="orn"><span />✦<span /></div>
+        <LogoMedallion />
+        <div className="eyebrow">De la idea al impacto</div>
+        <p className="lead">{t('cta.lead')}</p>
+        <div className="col-btns">
+          <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} target="_blank" rel="noopener noreferrer">
+            Escribinos por WhatsApp <span className="arr">→</span>
+          </a>
+          <Link className="btn btn-ghost" to="/contacto">
+            Contanos tu idea
           </Link>
-        </Reveal>
-        <Reveal as="p" delay={3} className="cta-note">
-          {t('cta.noteText')}{' '}
-          <a href="mailto:contacto@nimbodata.com">contacto@nimbodata.com</a>
-        </Reveal>
+        </div>
+        <p className="col-note">Sin compromiso · Respuesta en menos de 24 h</p>
+        <div className="orn"><span />✦<span /></div>
       </div>
     </section>
   )
