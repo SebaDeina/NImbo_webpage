@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 */
 
 const SITE_URL = 'https://www.nimbodata.com'
-const DEFAULT_IMAGE = `${SITE_URL}/dashboard-cover.jpg`
+const DEFAULT_IMAGE = `${SITE_URL}/og-nimbo.jpg`
 const DEFAULT_TITLE =
   'Nimbo — Transformación Digital para Pymes: Automatización, IA y Web'
 const DEFAULT_DESCRIPTION =
