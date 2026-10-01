@@ -1,36 +1,25 @@
 /* Equipo NIMBO — editá nombres, roles y fotos (/public/team/). */
 export const TEAM = [
   {
-    id: 'direction',
+    id: 'seba',
     initials: 'SD',
     photo: null,
     name: { es: 'Sebastián Deina', en: 'Sebastián Deina' },
-    role: { es: 'Fundador & Estrategia', en: 'Founder & Strategy' },
+    role: { es: 'Desarrollo y automatizaciones', en: 'Development & automation' },
     bio: {
-      es: 'Producto, discovery y dirección de proyectos. Conecta la visión del cliente con un plan concreto.',
-      en: 'Product, discovery and project direction. Connects client vision with a concrete plan.',
+      es: 'Webs, apps, automatizaciones e IA: convierte cada idea en un sistema que funciona solo en el día a día del negocio.',
+      en: 'Websites, apps, automations and AI: turns each idea into a system that runs on its own in the day-to-day of the business.',
     },
   },
   {
-    id: 'design',
-    initials: 'ND',
+    id: 'sol',
+    initials: 'SB',
     photo: null,
-    name: { es: 'Diseño & Marca', en: 'Design & Brand' },
-    role: { es: 'Identidad visual & UX', en: 'Visual identity & UX' },
+    name: { es: 'Sol Bogner', en: 'Sol Bogner' },
+    role: { es: 'Diseño y branding', en: 'Design & branding' },
     bio: {
-      es: 'Branding, interfaces y sistemas de diseño que se sienten claros, humanos y listos para escalar.',
-      en: 'Branding, interfaces and design systems that feel clear, human and ready to scale.',
-    },
-  },
-  {
-    id: 'build',
-    initials: 'NT',
-    photo: null,
-    name: { es: 'Desarrollo & Datos', en: 'Development & Data' },
-    role: { es: 'Web, datos & IA', en: 'Web, data & AI' },
-    bio: {
-      es: 'Sitios, dashboards, automatizaciones e integraciones con IA — todo lo que hace que la idea funcione en el mundo real.',
-      en: 'Sites, dashboards, automations and AI integrations — everything that makes the idea work in the real world.',
+      es: 'Identidad visual, interfaces y piezas de marca para que cada proyecto se vea claro, cuidado y profesional.',
+      en: 'Visual identity, interfaces and brand assets so every project looks clear, polished and professional.',
     },
   },
 ]
