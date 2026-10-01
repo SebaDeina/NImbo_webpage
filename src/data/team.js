@@ -4,7 +4,7 @@ export const TEAM = [
     id: 'seba',
     initials: 'SD',
     photo: null,
-    name: { es: 'Sebastián Deina', en: 'Sebastián Deina' },
+    name: { es: 'Sebastian Deina', en: 'Sebastian Deina' },
     role: { es: 'Desarrollo y automatizaciones', en: 'Development & automation' },
     bio: {
       es: 'Webs, apps, automatizaciones e IA: convierte cada idea en un sistema que funciona solo en el día a día del negocio.',
