@@ -661,3 +661,17 @@ nav.g-nav.scrolled .wrap{height:64px}
 .contact-list li{padding:12px 0;border-bottom:1px solid rgba(38,36,137,.25);font-size:17px;display:flex;gap:14px;flex-wrap:wrap}
 .contact-list b{font-weight:400;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;min-width:110px;padding-top:3px}
 .contact-list a{border-bottom:1px solid currentColor}
+
+/* móvil: menú más compacto y escenario fijo debajo de la barra */
+@media (max-width:980px){
+  .nav-burger{width:36px;height:36px}
+  .nav-burger span{width:19px;height:1.25px;margin:4px 0}
+  .nav-open .nav-burger span:nth-child(1){transform:translateY(5.25px) rotate(45deg)}
+  .nav-open .nav-burger span:nth-child(3){transform:translateY(-5.25px) rotate(-45deg)}
+}
+@media (max-width:900px){
+  nav.g-nav .wrap,nav.g-nav.scrolled .wrap{height:58px}
+  nav.g-nav{background:rgba(38,36,137,.96)}
+  .logo{font-size:28px}.logo svg{width:36px}
+  .ch-stage{top:66px}
+}
