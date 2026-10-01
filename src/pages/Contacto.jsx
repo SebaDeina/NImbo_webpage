@@ -1,6 +1,7 @@
 import { useLang } from '../i18n/LangContext'
-import Reveal from '../components/Reveal'
 import ContactForm from '../components/ContactForm'
+import PageHero from '../components/g/PageHero'
+import { whatsappUrl } from '../config/whatsapp'
 import { useSeo } from '../hooks/useSeo'
 
 export default function Contacto() {
@@ -13,42 +14,33 @@ export default function Contacto() {
   })
 
   return (
-    <main className="page contact-page">
-      <div className="contact-glow" aria-hidden="true" />
-      <section className="section">
+    <main className="g-main">
+      <PageHero>
+        <div className="eyebrow">Hablemos</div>
+        <h1>
+          Contanos <em>tu idea</em>
+        </h1>
+        <p className="hero-sub">{t('contact.lead')}</p>
+      </PageHero>
+      <section className="paper contact-body">
         <div className="wrap contact-grid">
-          <div className="contact-intro">
-            <Reveal as="p" className="eyebrow no-dot">
-              {t('contact.eyebrow')}
-            </Reveal>
-            <Reveal as="h1" delay={1} className="display">
-              {t('contact.title')}
-            </Reveal>
-            <Reveal as="p" delay={2} className="lead">
-              {t('contact.lead')}
-            </Reveal>
-
-            <Reveal className="contact-info" delay={2}>
-              <div className="ci">
-                <span className="ci-k">{t('foot.c3')}</span>
-                <a className="ci-v" href="mailto:contacto@nimbodata.com">
-                  contacto@nimbodata.com
-                </a>
-              </div>
-              <div className="ci">
-                <span className="ci-k">{t('contact.locK')}</span>
-                <span className="ci-v">{t('foot.loc')}</span>
-              </div>
-              <div className="ci">
-                <span className="ci-k">{t('contact.respK')}</span>
-                <span className="ci-v">{t('contact.resp')}</span>
-              </div>
-            </Reveal>
+          <div className="contact-aside">
+            <div className="eyebrow">El camino más rápido</div>
+            <p className="lead">Escribinos por WhatsApp y te respondemos el mismo día. O completá el formulario y te contactamos nosotros.</p>
+            <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} target="_blank" rel="noopener noreferrer">
+              Escribinos por WhatsApp <span className="arr">→</span>
+            </a>
+            <ul className="contact-list">
+              <li><b>Mail</b> <a href="mailto:contacto@nimbodata.com">contacto@nimbodata.com</a></li>
+              <li><b>Ubicación</b> Buenos Aires, Argentina</li>
+              <li><b>Respuesta</b> En menos de 24 h</li>
+            </ul>
           </div>
-
-          <Reveal className="contact-form-wrap" delay={1}>
-            <ContactForm />
-          </Reveal>
+          <div className="contact-card">
+            <div className="contact-card-in">
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
     </main>

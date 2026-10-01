@@ -1,3 +1,4 @@
+import '../index.css'
 import CloudMark from '../components/CloudMark'
 import { whatsappUrl } from '../config/whatsapp'
 

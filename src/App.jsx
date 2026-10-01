@@ -1,5 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom'
 import { LangProvider } from './i18n/LangContext'
 import { ContactProvider } from './contexts/ContactContext'
 import Nav from './components/Nav'
@@ -7,8 +7,9 @@ import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
 import WhatsAppFab from './components/WhatsAppFab'
 import Home from './pages/Home'
+import { GDefs } from './components/g/Art'
 
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const Proyectos = lazy(() => import('./pages/Proyectos'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
 const Contacto = lazy(() => import('./pages/Contacto'))
 const Propuesta = lazy(() => import('./pages/Propuesta'))
@@ -18,15 +19,27 @@ const Links = lazy(() => import('./pages/Links'))
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
+/* Las fichas viejas /trabajos/:slug ahora viven dentro de /proyectos. */
+function LegacyProject() {
+  const { slug } = useParams()
+  return <Navigate to={`/proyectos#${slug}`} replace />
+}
+
 function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
     if (hash) {
-      const el = document.querySelector(hash)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-        return
+      // las páginas se cargan en diferido: reintentar hasta que exista la sección
+      let tries = 0
+      let timer
+      const find = () => {
+        const el = document.getElementById(decodeURIComponent(hash.slice(1)))
+        if (el) return el.scrollIntoView({ behavior: 'smooth' })
+        if (++tries < 30) timer = setTimeout(find, 80)
       }
+      window.scrollTo(0, 0)
+      find()
+      return () => clearTimeout(timer)
     }
     window.scrollTo(0, 0)
   }, [pathname, hash])
@@ -46,12 +59,14 @@ export default function App() {
       <ContactProvider>
         {!ready && <SplashScreen onDone={onSplashDone} />}
         <div className="app-shell">
+          {!isLanding && <GDefs />}
           <ScrollManager />
           {!isLanding && <Nav />}
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/trabajos/:slug" element={<ProjectDetail />} />
+              <Route path="/proyectos" element={<Proyectos />} />
+              <Route path="/trabajos/:slug" element={<LegacyProject />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/propuesta/:slug" element={<Propuesta />} />

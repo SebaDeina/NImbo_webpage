@@ -1,3 +1,4 @@
+import './legacy-ui.css'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { useIsMobile } from '../hooks/useIsMobile'

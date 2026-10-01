@@ -1,3 +1,4 @@
+import './legacy-ui.css'
 import { useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { submitContact } from '../lib/cms'

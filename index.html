@@ -12,7 +12,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
-  <meta name="theme-color" content="#050e20" />
+  <meta name="theme-color" content="#262489" />
   <title>Nimbo — Transformación Digital para Pymes: Automatización, IA y Web</title>
   <meta name="description" content="Soluciones digitales para pymes en Argentina: automatización de procesos, implementación de IA, páginas web profesionales y análisis de datos. Más clientes, menos trabajo manual. Consultá gratis." />
   <meta name="keywords" content="transformación digital pymes, automatización de procesos, IA para pymes Argentina, implementación de inteligencia artificial, análisis de datos empresas, soluciones digitales, servicios digitales, página web profesional Argentina, chatbot WhatsApp negocio" />
@@ -61,24 +61,24 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <style>
     #splash{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
-      background:#ffffff;transition:opacity .45s ease}
-    :root[data-theme="dark"] #splash{background:#050e20}
-    #splash.done{opacity:0;pointer-events:none}
-    .splash-word{margin:0;font-family:'Inter',system-ui,sans-serif;font-size:clamp(52px,14vw,96px);
-      font-weight:800;letter-spacing:-.03em;color:#0a1628;animation:splash-in .7s ease both}
-    :root[data-theme="dark"] .splash-word{color:#ffffff}
-    @keyframes splash-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+      background:#262489;transition:opacity .45s ease}
+        #splash.done{opacity:0;pointer-events:none}
+    .splash-word{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(56px,14vw,104px);
+      font-weight:500;letter-spacing:.01em;color:#f3ead7;animation:splash-in .7s ease both}
+        @keyframes splash-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
     #root{position:relative;z-index:1}
   </style>
 </head>
 <body>
   <div id="splash" aria-live="polite" aria-busy="true">
-    <p class="splash-word">Nimbo</p>
+    <p class="splash-word">nimbo</p>
   </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
