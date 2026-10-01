@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import PageHero from '../components/g/PageHero'
-import { Emblem, useRevealAll } from '../components/g/Art'
+import { Emblem } from '../components/g/Art'
 import CTA from '../components/CTA'
 import { PROJECTS } from '../data/projects'
 import { useSeo } from '../hooks/useSeo'
@@ -9,13 +9,38 @@ const FILTERS = ['Todos', 'Apps y plataformas', 'Webs', 'Automatización', 'IA y
 const EMB = { Webs: 'I', 'Apps y plataformas': 'I', Automatización: 'II', Marketing: 'II', 'IA y agentes': 'III', Datos: 'IV', Visión: 'V' }
 const PRIORITY = ['Visión', 'IA y agentes', 'Marketing', 'Automatización', 'Datos', 'Apps y plataformas', 'Webs']
 
+/* Recuerda en estado si el proyecto ya entró en pantalla: así la animación de
+   aparición no se pierde cuando React redibuja la lista al cambiar el filtro. */
+function useSeen() {
+  const ref = useRef(null)
+  const [seen, setSeen] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || seen) return
+    if (!('IntersectionObserver' in window)) return setSeen(true)
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setSeen(true)
+          io.disconnect()
+        }
+      },
+      { rootMargin: '0px 0px -8% 0px' },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [seen])
+  return [ref, seen]
+}
+
 function Project({ p, i }) {
+  const [ref, seen] = useSeen()
   const areas = p.areas || []
   const emb = EMB[PRIORITY.find((x) => areas.includes(x))] || 'I'
   const Plate = p.live ? 'a' : 'div'
   const plateProps = p.live ? { href: p.live, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `${p.title} (abre el sitio)` } : {}
   return (
-    <article className={`pj${i % 2 ? ' flip' : ''}`} id={p.slug}>
+    <article ref={ref} className={`pj${i % 2 ? ' flip' : ''}${seen ? ' in' : ''}`} id={p.slug}>
       <Plate className="plate" {...plateProps}>
         <span className="corner" />
         <div className="plate-in wipe">
@@ -70,7 +95,6 @@ export default function Proyectos() {
       'Proyectos reales de Nimbo: apps y plataformas, sitios web, automatizaciones, agentes de IA, dashboards de datos y visión por computadora para negocios en Argentina.',
     path: '/proyectos',
   })
-  useRevealAll('.pj', [filter])
 
   const filters = FILTERS.filter((f, i) => !i || PROJECTS.some((p) => p.areas?.includes(f)))
   const list = filter === 'Todos' ? PROJECTS : PROJECTS.filter((p) => p.areas?.includes(filter))
