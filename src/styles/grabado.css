@@ -700,3 +700,25 @@ nav.g-nav.scrolled .wrap{height:64px}
 footer>.wrap{position:relative;z-index:1}
 footer .stars.f-stars{height:auto;bottom:clamp(140px,18vw,220px);transform:none}
 footer .stars.f-stars{opacity:.8}
+
+/* footer más compacto */
+footer{padding-top:clamp(44px,5vw,64px)}
+.f-grid{gap:28px}
+.f-brand p{margin:12px 0 14px}
+.f-brand li{margin:4px 0}
+.f-col h4::after{margin:10px 0 12px}
+.f-col a{margin:4px 0;font-size:16.5px}
+.f-col p{margin-bottom:12px}
+.f-legal{margin-top:20px}
+.horizon{height:clamp(130px,14vw,190px);margin-top:0}
+.horizon .isl-wrap{width:clamp(54px,5.5vw,84px);bottom:30%}
+footer .stars.f-stars{bottom:clamp(80px,9vw,120px)}
+@media (max-width:640px){
+  .f-grid{grid-template-columns:1fr 1fr;gap:22px 18px}
+  .f-brand,.f-grid>.f-col:last-child{grid-column:1/-1}
+  .f-col a{width:auto}
+  .f-grid>.f-col:last-child p{display:none}
+  .f-grid>.f-col:last-child h4{display:none}
+  .f-brand p{margin:10px 0 10px}
+  .horizon{height:100px}
+}
