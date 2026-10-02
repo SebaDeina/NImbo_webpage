@@ -87,7 +87,7 @@ export default function Chapters() {
     const onScroll = () => {
       const VH = document.documentElement.clientHeight
       const VW = document.documentElement.clientWidth
-      const mid = VH * (VW < 900 ? 0.8 : 0.55)
+      const mid = VH * (VW < 900 ? 0.8 : 0.5)
       let curCh = null
       for (const ch of chapters) {
         const r = ch.getBoundingClientRect()
@@ -113,8 +113,18 @@ export default function Chapters() {
               if (s.querySelector('h3').getBoundingClientRect().top < VH - 60) best = +s.dataset.i
             })
         } else {
+          // escritorio: manda el texto más cercano al centro de la zona visible
+          // (debajo del menú), que es donde está centrado el escenario
+          const zm = (64 + VH) / 2
+          let dmin = 1e9
           steps.forEach((s) => {
-            if (s.getBoundingClientRect().top < mid) best = +s.dataset.i
+            const t = s.querySelector('h3').getBoundingClientRect().top
+            const b = s.querySelector('p').getBoundingClientRect().bottom
+            const d = Math.abs((t + b) / 2 - zm)
+            if (b > 64 && t < VH && d < dmin) {
+              dmin = d
+              best = +s.dataset.i
+            }
           })
         }
         if (r.top < VH * 0.85 && r.bottom > VH * 0.15) activate(ch, best)
@@ -198,6 +208,7 @@ export default function Chapters() {
                 ))}
               </div>
               <div className="ch-stage">
+                <div className="stage-pin">
                 <div className="stage">
                   <span className="corner a" />
                   <div className="stage-in">
@@ -215,6 +226,7 @@ export default function Chapters() {
                       <i key={i} data-i={i} />
                     ))}
                   </div>
+                </div>
                 </div>
               </div>
             </div>

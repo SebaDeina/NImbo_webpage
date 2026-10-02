@@ -690,3 +690,8 @@ nav.g-nav.scrolled .wrap{height:64px}
   animation:shoot 11s ease-in 3s infinite}
 @keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(18deg)}2%{opacity:1}9%{opacity:0;transform:translate(46vw,15vw) rotate(18deg)}100%{opacity:0;transform:translate(46vw,15vw) rotate(18deg)}}
 @media (max-width:760px){.star:nth-child(n+36){display:none}.shooting{width:90px}}
+
+/* escenario de los servicios centrado verticalmente (escritorio) */
+.stage-pin{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100svh - 64px);display:flex;align-items:center}
+.stage-pin .stage,.ch-stage .stage-pin .stage{position:relative;top:auto;width:100%}
+@media (max-width:900px){.stage-pin{position:static;height:auto;display:block}}
