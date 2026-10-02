@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { whatsappUrl } from '../config/whatsapp'
-import { CloudBand, Flock, SHIP_LAYER, ISLAND_LAYER } from './g/Art'
+import { CloudBand, Flock, Stars, SHIP_LAYER, ISLAND_LAYER } from './g/Art'
 
 const ROWS = [
   { base: 0.36, rmin: 0.07, rmax: 0.15, seed: 11, fade: 'dark' },
@@ -30,6 +30,7 @@ export default function Hero() {
 
   return (
     <header className="hero" id="top" ref={ref}>
+      <Stars count={80} seed={7} />
       <Flock n={6} seed={11} className="hero-flock" />
       <Flock n={4} seed={16} className="hero-flock b" />
       <div className="hero-inner wrap">

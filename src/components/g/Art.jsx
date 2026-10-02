@@ -32,6 +32,58 @@ export function Emblem({ n, className = '' }) {
   return <div className={className} aria-hidden="true" dangerouslySetInnerHTML={{ __html: FX.E[n] || FX.E.I }} />
 }
 
+/* Estrellas del cielo sobre las nubes: cruces de cuatro puntas (como las de los
+   emblemas) y puntos, cada una titilando a su ritmo, más una estrella fugaz. */
+const STAR_PATH = 'M0 -1Q0 0 1 0Q0 0 0 1Q0 0 -1 0Q0 0 0 -1z'
+function makeStars(count, seed) {
+  let s = seed
+  const r = () => (s = (s * 9301 + 49297) % 233280) / 233280
+  return Array.from({ length: count }, () => {
+    const cross = r() < 0.32
+    return {
+      x: (r() * 100).toFixed(2),
+      y: (Math.pow(r(), 1.3) * 100).toFixed(2), // más densas arriba
+      size: cross ? 7 + r() * 9 : 1.6 + r() * 2.2,
+      cross,
+      o1: (0.15 + r() * 0.25).toFixed(2),
+      o2: (0.55 + r() * 0.45).toFixed(2),
+      dur: (2.4 + r() * 3.6).toFixed(2),
+      dl: (-r() * 6).toFixed(2),
+    }
+  })
+}
+export function Stars({ count = 70, seed = 7, className = '' }) {
+  const stars = useRef(null)
+  if (!stars.current) stars.current = makeStars(count, seed)
+  return (
+    <div className={`stars ${className}`} aria-hidden="true">
+      {stars.current.map((st, i) => (
+        <span
+          key={i}
+          className={st.cross ? 'star cross' : 'star'}
+          style={{
+            left: `${st.x}%`,
+            top: `${st.y}%`,
+            width: `${st.size}px`,
+            height: `${st.size}px`,
+            '--o1': st.o1,
+            '--o2': st.o2,
+            '--dur': `${st.dur}s`,
+            '--dl': `${st.dl}s`,
+          }}
+        >
+          {st.cross && (
+            <svg viewBox="-1 -1 2 2">
+              <path d={STAR_PATH} fill="currentColor" />
+            </svg>
+          )}
+        </span>
+      ))}
+      <span className="shooting" />
+    </div>
+  )
+}
+
 export function Flock({ n = 5, seed = 3, className = '' }) {
   return (
     <div className={`flock ${className}`} aria-hidden="true">
