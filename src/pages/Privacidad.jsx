@@ -14,23 +14,24 @@ const SECCIONES = [
     l: [
       'Sitio web: medimos visitas de forma anónima, sin cookies y sin guardar tu dirección IP ni tu navegador. Solo contamos páginas vistas, de qué sitio llegaste y si tocaste un botón de contacto.',
       'Formulario, WhatsApp y mail: lo que nos escribís (nombre, medio de contacto y tu mensaje) para poder responderte.',
-      'Instagram (@nimbodata): los comentarios y mensajes directos que nos enviás, tu nombre de usuario, la fecha y el texto, para poder responderte.',
+      'Instagram (@nimbodata): los comentarios y mensajes directos que nos enviás, tu nombre de usuario, tu identificador de usuario de Instagram, la fecha y el texto, más una nota interna con el motivo por el que respondimos (o no) y las respuestas que enviamos, para poder atenderte.',
     ],
   },
   {
     t: 'Para qué los usamos',
-    p: ['Para responder tus consultas, atender pedidos de información sobre nuestros servicios y mejorar el sitio. No usamos tus datos para publicidad ni los vendemos o cedemos a terceros.'],
+    p: ['Para responder tus consultas, atender pedidos de información sobre nuestros servicios y mejorar el sitio. No usamos tus datos para publicidad ni los vendemos ni los cedemos a terceros para sus propios fines. Sí usamos proveedores de servicios que tratan datos por cuenta nuestra y solo para prestarnos el servicio (por ejemplo, el de inteligencia artificial y el de avisos por Telegram, que se describen más abajo).'],
   },
   {
     t: 'Respuestas con un asistente virtual',
     p: [
       'Algunas respuestas a comentarios y mensajes de Instagram las redacta un asistente virtual de inteligencia artificial, siempre dentro de reglas fijas (no da precios ni promete plazos, y deriva a una persona lo que no le corresponde). Cuando alguien pregunta si habla con un robot, el asistente lo aclara.',
-      'Para redactar la respuesta, el texto de tu comentario o mensaje es procesado por un proveedor de servicios de inteligencia artificial que actúa por cuenta nuestra. Una persona del equipo revisa las conversaciones y puede intervenir en cualquier momento; si preferís hablar con una persona, escribinos a contacto@nimbodata.com.',
+      'Para redactar la respuesta, enviamos a un proveedor de servicios de inteligencia artificial que actúa por cuenta nuestra el texto de tu comentario o mensaje, tu nombre de usuario, el título de la publicación en la que comentaste y los últimos mensajes de esa conversación. Además, cuando hay que avisarle al responsable de la cuenta (por ejemplo, ante un posible cliente o algo que requiere atención humana), se envía un extracto de la conversación a su chat de Telegram, también como servicio que usamos por cuenta nuestra.',
+      'El equipo puede revisar la actividad del asistente y pausarlo en cualquier momento. En algunos períodos una persona aprueba cada respuesta antes de que salga; en otros, el asistente responde solo dentro de esas reglas, y una persona revisa lo que hizo y se encarga de lo que deriva. No prometemos que una persona lea cada mensaje. Si preferís hablar con una persona, escribinos a contacto@nimbodata.com.',
     ],
   },
   {
     t: 'Cuánto tiempo los conservamos',
-    p: ['El texto de los comentarios y mensajes de Instagram, y de nuestras respuestas, se borra de nuestros sistemas a los 90 días. Después quedan solo datos agregados (por ejemplo, cuántas conversaciones hubo), sin tu texto. Los mensajes por mail o formulario se conservan mientras dure la conversación comercial.'],
+    p: ['A los 90 días borramos de nuestra base de datos el texto de los comentarios y mensajes de Instagram y de nuestras respuestas, tu nombre de usuario, tu identificador de usuario de Instagram y la nota interna con el motivo de cada decisión. Lo que queda es un registro anónimo (identificadores de la plataforma del comentario, estado y fechas), sin datos personales. Dos aclaraciones: las copias de seguridad pueden conservar ese texto hasta 14 días más, y los avisos que le llegan al responsable por Telegram quedan en ese chat. Los mensajes por mail o formulario se conservan mientras dure la conversación comercial.'],
   },
   {
     t: 'Tus derechos',
@@ -38,7 +39,7 @@ const SECCIONES = [
   },
   {
     t: 'Cómo pedir que eliminemos tus datos',
-    p: ['Escribinos a contacto@nimbodata.com desde el mismo mail o indicando tu usuario de Instagram, con el asunto «Eliminar mis datos». Borramos tus comentarios, mensajes y respuestas asociados y te lo confirmamos dentro de los 10 días hábiles. También podés pedirnos que borremos una respuesta nuestra a un comentario tuyo.'],
+    p: ['Escribinos a contacto@nimbodata.com desde el mismo mail o indicando tu usuario de Instagram, con el asunto «Eliminar mis datos». Borramos de nuestros sistemas lo que guardamos sobre vos (tus comentarios y mensajes y nuestras respuestas) y te lo confirmamos dentro de los 10 días hábiles. Podemos eliminar de Instagram nuestras respuestas a tus comentarios; en cambio, las respuestas enviadas por mensaje directo no se pueden retirar desde Instagram y quedan en tu bandeja de entrada. Las copias de seguridad y los avisos de Telegram se eliminan según lo explicado en la sección de conservación.'],
   },
   {
     t: 'Instagram y Meta',
