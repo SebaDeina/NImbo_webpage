@@ -16,6 +16,7 @@ const Propuesta = lazy(() => import('./pages/Propuesta'))
 const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const Links = lazy(() => import('./pages/Links'))
+const Privacidad = lazy(() => import('./pages/Privacidad'))
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -74,6 +75,7 @@ export default function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/links" element={<Links />} />
+              <Route path="/privacidad" element={<Privacidad />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>

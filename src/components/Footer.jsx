@@ -41,6 +41,7 @@ export default function Footer() {
             <Link to="/nosotros">Nosotros</Link>
             <Link to="/blog">Blog</Link>
             <Link to="/contacto">Contacto</Link>
+            <Link to="/privacidad">Privacidad</Link>
           </div>
           <div className="f-col">
             <h4>Hablemos</h4>
