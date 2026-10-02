@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { whatsappUrl } from '../config/whatsapp'
 import { Logo } from './Nav'
-import { CloudBand, ISLAND_LAYER } from './g/Art'
+import { CloudBand, Stars, ISLAND_LAYER } from './g/Art'
 
 const ROWS = [
   { base: 0.42, rmin: 0.07, rmax: 0.14, seed: 61, fade: 'dark' },
@@ -15,6 +15,7 @@ export default function Footer() {
   const wa = whatsappUrl(t('wa.message'))
   return (
     <footer>
+      <Stars count={50} seed={29} className="f-stars" />
       <div className="wrap">
         <div className="f-grid">
           <div className="f-brand">

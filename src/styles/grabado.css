@@ -695,3 +695,8 @@ nav.g-nav.scrolled .wrap{height:64px}
 .stage-pin{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100svh - 64px);display:flex;align-items:center}
 .stage-pin .stage,.ch-stage .stage-pin .stage{position:relative;top:auto;width:100%}
 @media (max-width:900px){.stage-pin{position:static;height:auto;display:block}}
+
+/* estrellas del footer: todo el cielo hasta el horizonte, más tenues */
+footer>.wrap{position:relative;z-index:1}
+footer .stars.f-stars{height:auto;bottom:clamp(140px,18vw,220px);transform:none}
+footer .stars.f-stars{opacity:.8}
