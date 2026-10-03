@@ -32,7 +32,7 @@ const SECCIONES = [
     ],
     l: [
       'Instagram: el texto de tu comentario o mensaje, tu nombre de usuario, el título de la publicación en la que comentaste y los últimos mensajes de esa conversación.',
-      'WhatsApp de Nimbo: el texto de tus mensajes. Cuando hace falta que intervenga el equipo, se nos avisa por WhatsApp o Telegram y una persona retoma la conversación.',
+      'WhatsApp de Nimbo: el texto de tus mensajes y, si nos mandás imágenes, esas imágenes. Cuando hace falta que intervenga el equipo, se nos avisa por WhatsApp o Telegram y una persona retoma la conversación.',
       'Asistente del blog: lo que escribís en el chat y los últimos mensajes de esa conversación.',
     ],
     p2: [
