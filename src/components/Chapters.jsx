@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import { CH } from '../lib/grabado/scenes'
 import FX from '../lib/grabado/fx'
 import { clamp } from '../lib/grabado/engine'
+import { Link } from 'react-router-dom'
+import { whatsappUrl } from '../config/whatsapp'
 
 /* Índice de servicios (salta a cada capítulo). */
 export function ServicesToc() {
@@ -28,8 +30,43 @@ export function ServicesToc() {
             </a>
           ))}
         </div>
+        <div className="mid-cta">
+          <p>¿No sabés cuál te conviene? Contanos tu caso y lo vemos juntos.</p>
+          <a
+            className="btn btn-solid"
+            href={whatsappUrl('¡Hola! Vi los servicios de Nimbo y no sé cuál me conviene. ¿Podemos charlar sobre mi negocio?')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Escribinos por WhatsApp <span className="arr">→</span>
+          </a>
+        </div>
       </div>
     </section>
+  )
+}
+
+/* Cierre de cada capítulo: lleva a contacto sin esperar al final de la página. */
+function ChapterCta({ c }) {
+  return (
+    <div className="ch-cta">
+      <p>
+        ¿Te sirve <b>{c.t.toLowerCase()}</b> para tu negocio?
+      </p>
+      <div className="col-btns">
+        <a
+          className="btn btn-solid"
+          href={whatsappUrl(`¡Hola! Vi el servicio de ${c.t} en el sitio de Nimbo y me gustaría conversar sobre un proyecto.`)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultanos por WhatsApp <span className="arr">→</span>
+        </a>
+        <Link className="ch-cta-alt" to="/contacto">
+          o escribinos por el formulario
+        </Link>
+      </div>
+    </div>
   )
 }
 
@@ -230,6 +267,7 @@ export default function Chapters() {
                 </div>
               </div>
             </div>
+            <ChapterCta c={c} />
           </div>
         </section>
       ))}
