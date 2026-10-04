@@ -216,7 +216,7 @@
   .tag-new{font-family:var(--text);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--brand);padding:3px 8px;vertical-align:middle;margin-left:8px}
 
   /* ---------- CAPÍTULOS ---------- */
-  .chapter{position:relative;padding:clamp(90px,12vw,150px) 0 clamp(40px,6vw,80px)}
+  .chapter{position:relative;padding:clamp(90px,12vw,150px) 0 clamp(40px,6vw,80px);overflow-x:clip}
   .chapter.inkbg{background:var(--ink);color:var(--paper)}
   .chapter.paper{color:var(--ink)}
   .ch-head{text-align:center;max-width:760px;margin:0 auto clamp(30px,5vw,60px)}
