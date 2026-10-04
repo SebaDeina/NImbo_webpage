@@ -65,7 +65,7 @@ export default function Nav() {
         <div className="wrap">
           <Logo onClick={() => setOpen(false)} />
           <div className="nav-links">{LINKS.map(link)}</div>
-          <a className="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-ghost" href={wa} data-cta="menu" target="_blank" rel="noopener noreferrer">
             Hablemos <span className="arr">→</span>
           </a>
           <button
@@ -85,7 +85,7 @@ export default function Nav() {
       <div id="nav-sheet" className="nav-sheet" aria-hidden={!open}>
         {LINKS.map(link)}
         <Link to="/contacto">Contacto</Link>
-        <a className="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
+        <a className="btn btn-ghost" href={wa} data-cta="menu-celular" target="_blank" rel="noopener noreferrer">
           Escribinos por WhatsApp <span className="arr">→</span>
         </a>
       </div>

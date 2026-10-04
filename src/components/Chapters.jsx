@@ -34,6 +34,7 @@ export function ServicesToc() {
           <p>¿No sabés cuál te conviene? Contanos tu caso y lo vemos juntos.</p>
           <a
             className="btn btn-solid"
+            data-cta="indice"
             href={whatsappUrl('¡Hola! Vi los servicios de Nimbo y no sé cuál me conviene. ¿Podemos charlar sobre mi negocio?')}
             target="_blank"
             rel="noopener noreferrer"
@@ -47,7 +48,10 @@ export function ServicesToc() {
 }
 
 /* Cierre de cada capítulo: lleva a contacto sin esperar al final de la página. */
-function ChapterCta({ c }) {
+// etiqueta de medición de cada servicio (en el mismo orden que CH)
+const CTA_SERVICIO = ['servicio-web', 'servicio-automatizacion', 'servicio-chatbots', 'servicio-datos', 'servicio-vision']
+
+function ChapterCta({ c, ci }) {
   return (
     <div className="ch-cta">
       <p>
@@ -56,6 +60,7 @@ function ChapterCta({ c }) {
       <div className="col-btns">
         <a
           className="btn btn-solid"
+          data-cta={CTA_SERVICIO[ci]}
           href={whatsappUrl(`¡Hola! Vi el servicio de ${c.t} en el sitio de Nimbo y me gustaría conversar sobre un proyecto.`)}
           target="_blank"
           rel="noopener noreferrer"
@@ -267,7 +272,7 @@ export default function Chapters() {
                 </div>
               </div>
             </div>
-            <ChapterCta c={c} />
+            <ChapterCta c={c} ci={ci} />
           </div>
         </section>
       ))}

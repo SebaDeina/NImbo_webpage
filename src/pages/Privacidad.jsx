@@ -14,7 +14,7 @@ const SECCIONES = [
   {
     t: 'Qué datos tratamos',
     l: [
-      'Sitio web: medimos visitas sin cookies y sin guardar tu dirección IP. Registramos qué páginas se ven, de qué sitio llegaste (y los parámetros utm del link, si los tiene), si tocaste un botón de contacto (WhatsApp, mail o agenda), el tipo de dispositivo (móvil o escritorio) y un identificador que cambia todos los días y no permite reconocerte de un día para el otro. Respetamos la opción «No rastrear» de tu navegador.',
+      'Sitio web: medimos visitas sin cookies y sin guardar tu dirección IP. Registramos qué páginas se ven, de qué sitio llegaste (y los parámetros utm del link, si los tiene), si tocaste un botón de contacto (WhatsApp, mail o agenda) y cuál de los botones de la página fue (por ejemplo, el del inicio o el de un servicio), el tipo de dispositivo (móvil o escritorio) y un identificador que cambia todos los días y no permite reconocerte de un día para el otro. Respetamos la opción «No rastrear» de tu navegador.',
       'En tu dispositivo: el idioma y el tema (claro u oscuro) que elegís quedan guardados solo en tu navegador. Las tipografías del sitio se cargan desde Google Fonts, por lo que Google recibe tu dirección IP cuando abrís una página.',
       'Formulario y chat de contacto: nombre, mail, teléfono y empresa (opcionales), tema, rango de presupuesto y tu mensaje. Nos llegan por mail y a un canal interno de avisos del equipo.',
       'WhatsApp y mail: lo que nos escribís (tu nombre o número y tu mensaje) para poder responderte.',

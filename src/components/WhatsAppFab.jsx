@@ -7,6 +7,7 @@ export default function WhatsAppFab() {
   return (
     <a
       className="wa-fab"
+      data-cta="flotante"
       href={whatsappUrl(t('wa.message'))}
       target="_blank"
       rel="noopener noreferrer"

@@ -108,7 +108,7 @@ export default function Propuesta() {
 
   // Todos los CTA principales escriben directo por WhatsApp.
   const PrimaryCTA = ({ children }) => (
-    <a className="btn btn-primary" href={waUrl} target="_blank" rel="noopener noreferrer">
+    <a className="btn btn-primary" href={waUrl} data-cta="propuesta" target="_blank" rel="noopener noreferrer">
       <IconWhatsApp size={20} /> <span>{children}</span>
     </a>
   )
@@ -304,10 +304,10 @@ export default function Propuesta() {
             La forma más rápida: escribime por WhatsApp y lo arreglamos en minutos.
           </Reveal>
           <Reveal delay={2} className="sale-final-cta">
-            <a className="btn btn-primary btn-wa" href={waUrl} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-primary btn-wa" href={waUrl} data-cta="propuesta" target="_blank" rel="noopener noreferrer">
               <IconWhatsApp size={22} /> <span>Escribime por WhatsApp</span>
             </a>
-            <a className="btn btn-ghost" href={CALL_URL} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-ghost" href={CALL_URL} data-cta="propuesta" target="_blank" rel="noopener noreferrer">
               <IconCalendar size={18} /> <span>Agendar una llamada</span>
             </a>
           </Reveal>

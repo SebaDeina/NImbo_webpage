@@ -27,11 +27,11 @@ export default function Contacto() {
           <div className="contact-aside">
             <div className="eyebrow">El camino más rápido</div>
             <p className="lead">Escribinos por WhatsApp y te respondemos el mismo día. O completá el formulario y te contactamos nosotros.</p>
-            <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} data-cta="contacto" target="_blank" rel="noopener noreferrer">
               Escribinos por WhatsApp <span className="arr">→</span>
             </a>
             <ul className="contact-list">
-              <li><b>Mail</b> <a href="mailto:contacto@nimbodata.com">contacto@nimbodata.com</a></li>
+              <li><b>Mail</b> <a href="mailto:contacto@nimbodata.com" data-cta="contacto">contacto@nimbodata.com</a></li>
               <li><b>Ubicación</b> Buenos Aires, Argentina</li>
               <li><b>Respuesta</b> En menos de 24 h</li>
             </ul>

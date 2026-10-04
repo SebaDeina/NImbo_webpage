@@ -73,6 +73,7 @@ export default function Links() {
               <a
                 key={s.label}
                 href={s.href}
+                data-cta="links"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}

@@ -22,8 +22,8 @@ export default function Footer() {
             <Logo />
             <p>Tecnología que trabaja mientras vos te enfocás en crecer.</p>
             <ul>
-              <li><a href={wa} target="_blank" rel="noopener noreferrer">WhatsApp · +54 9 11 2403-6836</a></li>
-              <li><a href="mailto:contacto@nimbodata.com">contacto@nimbodata.com</a></li>
+              <li><a href={wa} data-cta="pie" target="_blank" rel="noopener noreferrer">WhatsApp · +54 9 11 2403-6836</a></li>
+              <li><a href="mailto:contacto@nimbodata.com" data-cta="pie">contacto@nimbodata.com</a></li>
               <li>Buenos Aires, Argentina</li>
             </ul>
           </div>
@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="f-col">
             <h4>Hablemos</h4>
             <p>Contanos tu idea y te respondemos en menos de 24 horas.</p>
-            <a className="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-ghost" href={wa} data-cta="pie" target="_blank" rel="noopener noreferrer">
               Escribinos <span className="arr">→</span>
             </a>
           </div>

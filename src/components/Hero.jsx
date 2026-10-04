@@ -40,7 +40,7 @@ export default function Hero() {
         </h1>
         <p className="hero-sub">{t('hero.sub')}</p>
         <div className="hero-btns">
-          <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} data-cta="hero" target="_blank" rel="noopener noreferrer">
             Empezá gratis <span className="arr">→</span>
           </a>
           <a className="btn btn-ghost" href="#servicios">

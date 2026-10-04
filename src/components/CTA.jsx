@@ -14,7 +14,7 @@ export default function CTA() {
         <div className="eyebrow">De la idea al impacto</div>
         <p className="lead">{t('cta.lead')}</p>
         <div className="col-btns">
-          <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} data-cta="cierre" target="_blank" rel="noopener noreferrer">
             Escribinos por WhatsApp <span className="arr">→</span>
           </a>
           <Link className="btn btn-ghost" to="/contacto">

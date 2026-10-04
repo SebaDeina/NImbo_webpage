@@ -85,7 +85,7 @@ function inline(text) {
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>',
+      '<a href="$2" target="_blank" rel="noopener noreferrer" data-cta="blog">$1</a>',
     )
 }
 
