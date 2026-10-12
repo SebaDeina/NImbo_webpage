@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext'
 import { whatsappUrl } from '../config/whatsapp'
 import { Logo } from './Nav'
@@ -9,6 +9,21 @@ const ROWS = [
   { base: 0.68, rmin: 0.09, rmax: 0.18, seed: 71, fade: 'dark' },
   { base: 0.95, rmin: 0.11, rmax: 0.23, seed: 83, fade: 'light' },
 ]
+
+/* En los subdominios (robots., automatizaciones.) la raíz es otra página: los links del footer van al sitio principal. */
+const EXTERNO =
+  typeof window !== 'undefined' && /^(robots|automatizaciones)\./.test(window.location.hostname)
+function Link({ to, children, ...rest }) {
+  return EXTERNO ? (
+    <a href={`https://www.nimbodata.com${to}`} {...rest}>
+      {children}
+    </a>
+  ) : (
+    <RouterLink to={to} {...rest}>
+      {children}
+    </RouterLink>
+  )
+}
 
 export default function Footer() {
   const { t } = useLang()

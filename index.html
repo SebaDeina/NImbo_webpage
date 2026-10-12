@@ -89,6 +89,11 @@
   <div id="splash" aria-live="polite" aria-busy="true">
     <p class="splash-word">nimbo</p>
   </div>
+  <script>
+    /* la landing de automatizaciones (diseño blanco) no muestra el splash índigo */
+    if (location.pathname.indexOf('/automatizaciones') === 0 || location.hostname.indexOf('automatizaciones.') === 0)
+      document.getElementById('splash').remove()
+  </script>
   <div id="root"></div>
   <!-- Contador de visitas propio (sin cookies ni datos personales): código en el repo Openclaw, carpeta stats/ -->
   <script defer src="https://media.nimbodata.com/_m/m.js"></script>

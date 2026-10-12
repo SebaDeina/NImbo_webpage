@@ -17,6 +17,10 @@ const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const Links = lazy(() => import('./pages/Links'))
 const Privacidad = lazy(() => import('./pages/Privacidad'))
+const Automatizaciones = lazy(() => import('./pages/Automatizaciones'))
+
+// automatizaciones.nimbodata.com muestra la landing de automatizaciones en la raíz.
+const IS_AUTO_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('automatizaciones.')
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -54,18 +58,21 @@ export default function App() {
   // La landing de venta (/propuesta) es una página enfocada: sin nav, footer ni chat.
   const { pathname } = useLocation()
   const isLanding = pathname.startsWith('/propuesta') || pathname === '/links'
+  // La landing de automatizaciones tiene diseño propio (blanco, Poppins): sin splash, nav ni botón de Nimbo,
+  // pero con el footer grabado de Nimbo.
+  const isAuto = pathname === '/automatizaciones' || (IS_AUTO_HOST && pathname === '/')
 
   return (
     <LangProvider>
       <ContactProvider>
-        {!ready && <SplashScreen onDone={onSplashDone} />}
+        {!ready && !isAuto && <SplashScreen onDone={onSplashDone} />}
         <div className="app-shell">
           {!isLanding && <GDefs />}
           <ScrollManager />
-          {!isLanding && <Nav />}
+          {!isLanding && !isAuto && <Nav />}
           <Suspense fallback={null}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={IS_AUTO_HOST ? <Automatizaciones /> : <Home />} />
               <Route path="/proyectos" element={<Proyectos />} />
               <Route path="/trabajos/:slug" element={<LegacyProject />} />
               <Route path="/nosotros" element={<Nosotros />} />
@@ -76,11 +83,12 @@ export default function App() {
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/links" element={<Links />} />
               <Route path="/privacidad" element={<Privacidad />} />
+              <Route path="/automatizaciones" element={<Automatizaciones />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </Suspense>
           {!isLanding && <Footer />}
-          {!isLanding && ready && <WhatsAppFab />}
+          {!isLanding && !isAuto && ready && <WhatsAppFab />}
         </div>
       </ContactProvider>
     </LangProvider>
