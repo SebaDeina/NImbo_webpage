@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import AutoPopup, { useAutoPopup } from '../components/AutoPopup'
 import { AgentDemo, DiagnosisDemo, HeroDemo, IntegrationsDemo, OrchestraDemo, TrainingDemo } from '../components/AutoDemos'
-import { WHATSAPP_NUMBER, whatsappUrl } from '../config/whatsapp'
+import { Cloud, NdFaq, WA_LABEL, WaLink as BaseWaLink, useScrolled } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/automatizaciones.css'
 
@@ -15,19 +15,8 @@ import '../styles/automatizaciones.css'
 */
 
 const WA_MSG = '¡Hola! Vi la página de automatizaciones de Nimbo y quiero un diagnóstico gratis para mi negocio.'
-const wa = (msg = WA_MSG) => whatsappUrl(msg)
-// 5491124036836 → +54 9 11 2403-6836
-const WA_LABEL = WHATSAPP_NUMBER.replace(/^(\d{2})(\d)(\d{2})(\d{4})(\d{4})$/, '+$1 $2 $3 $4-$5')
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
-const CLOUD =
-  'M271.84,16.97c15.42,12.31,28,33.93,28.55,53.89,13.64-.57,26.09-.17,38.52,5.87,56.51,27.48,43.11,115.68-20.22,122.53l-261.99-.05c-62.34-7.28-77.99-89.68-23.15-121.24,14.02-8.07,30.12-8.07,45.94-6.19,1.71-.48,5.47-10.25,6.98-12.67,10.49-16.9,33.25-31.45,53.83-31.99,3.61-.09,18.6,3.19,19.55,2.91.59-.17,6.77-7.6,8.32-8.95,29.26-25.43,72.35-29.12,103.66-4.12Z'
-
-const Cloud = () => (
-  <svg viewBox="0 0 374.63 199.26" aria-hidden="true">
-    <path d={CLOUD} fill="currentColor" />
-  </svg>
-)
+const WaLink = ({ msg = WA_MSG, ...rest }) => <BaseWaLink msg={msg} {...rest} />
 
 const DOLORES = [
   ['WhatsApp que no para', 'Las mismas preguntas todo el día. Y las de la noche se pierden con el cliente.'],
@@ -52,33 +41,6 @@ const FAQ = [
   ['¿Cuánto tarda la implementación?', 'Un primer agente de atención suele estar funcionando en 2 a 4 semanas.'],
 ]
 
-function WaLink({ cta, msg, className, children }) {
-  return (
-    <a className={className} data-cta={cta} href={wa(msg)} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
-  )
-}
-
-function Faq() {
-  const [open, setOpen] = useState(0)
-  return (
-    <div className="nd-faq">
-      {FAQ.map(([q, a], i) => (
-        <div key={q} className="nd-faq-item">
-          <button type="button" aria-expanded={open === i} onClick={() => setOpen(open === i ? -1 : i)}>
-            <span>{q}</span>
-            <span className="nd-faq-sign" aria-hidden="true">
-              {open === i ? '−' : '+'}
-            </span>
-          </button>
-          {open === i && <p>{a}</p>}
-        </div>
-      ))}
-    </div>
-  )
-}
-
 export default function Automatizaciones() {
   useSeo({
     title: 'Agentes de IA y automatización para pymes | Nimbodata',
@@ -95,27 +57,7 @@ export default function Automatizaciones() {
     },
   })
 
-  // tipografías del diseño + fondo blanco (el resto del sitio usa el papel índigo)
-  useEffect(() => {
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = FONTS
-    document.head.appendChild(link)
-    document.documentElement.classList.add('nd-page')
-    return () => {
-      link.remove()
-      document.documentElement.classList.remove('nd-page')
-    }
-  }, [])
-
-  // línea bajo el encabezado cuando ya hay contenido detrás
-  const [scrolled, setScrolled] = useState(false)
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const scrolled = useScrolled()
 
   const [popup, setPopup] = useState(null)
   const openPopup = useCallback((src) => setPopup(src), [])
@@ -299,7 +241,7 @@ export default function Automatizaciones() {
       <section id="faq" className="nd-sec">
         <div className="nd-wrap nd-narrow">
           <h2 className="nd-h2 nd-center">Preguntas frecuentes</h2>
-          <Faq />
+          <NdFaq items={FAQ} />
         </div>
       </section>
 

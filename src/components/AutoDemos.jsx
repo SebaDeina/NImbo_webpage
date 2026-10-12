@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
   de pantalla) y, con "reducir movimiento", queda quieta en el último paso.
 */
 
-function useSteps(durations) {
+export function useSteps(durations) {
   const ref = useRef(null)
   const [state, setState] = useState({ step: 0, loop: 0 })
   useEffect(() => {
@@ -46,7 +46,7 @@ function useSteps(durations) {
   return [ref, state.step, state.loop]
 }
 
-const on = (cond) => (cond ? ' is-on' : '')
+export const on = (cond) => (cond ? ' is-on' : '')
 
 /* Agente 24/7: llega la consulta, escribe, responde y agenda */
 const CANALES = ['WhatsApp', 'Web', 'Instagram']

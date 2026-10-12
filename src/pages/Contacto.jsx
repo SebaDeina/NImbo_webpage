@@ -1,7 +1,6 @@
 import { useLang } from '../i18n/LangContext'
 import ContactForm from '../components/ContactForm'
-import PageHero from '../components/g/PageHero'
-import { whatsappUrl } from '../config/whatsapp'
+import { NdPageHero, WA_LABEL, WaLink } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 
 export default function Contacto() {
@@ -14,33 +13,38 @@ export default function Contacto() {
   })
 
   return (
-    <main className="g-main">
-      <PageHero>
-        <div className="eyebrow">Hablemos</div>
-        <h1>
-          Contanos <em>tu idea</em>
-        </h1>
-        <p className="hero-sub">{t('contact.lead')}</p>
-      </PageHero>
-      <section className="paper contact-body">
-        <div className="wrap contact-grid">
-          <div className="contact-aside">
-            <div className="eyebrow">El camino más rápido</div>
-            <p className="lead">Escribinos por WhatsApp y te respondemos el mismo día. O completá el formulario y te contactamos nosotros.</p>
-            <a className="btn btn-solid" href={whatsappUrl(t('wa.message'))} data-cta="contacto" target="_blank" rel="noopener noreferrer">
-              Escribinos por WhatsApp <span className="arr">→</span>
-            </a>
-            <ul className="contact-list">
-              <li><b>Mail</b> <a href="mailto:contacto@nimbodata.com" data-cta="contacto">contacto@nimbodata.com</a></li>
-              <li><b>Ubicación</b> Buenos Aires, Argentina</li>
-              <li><b>Respuesta</b> En menos de 24 h</li>
-            </ul>
-          </div>
-          <div className="contact-card">
-            <div className="contact-card-in">
-              <ContactForm />
+    <main className="nd-page-main">
+      <NdPageHero eyebrow="Hablemos" title="Contanos tu idea">
+        <p>{t('contact.lead')}</p>
+      </NdPageHero>
+      <section className="nd-wrap ct-grid">
+        <div className="ct-aside">
+          <h2>El camino más rápido</h2>
+          <p>Escribinos por WhatsApp y te respondemos el mismo día. O completá el formulario y te contactamos nosotros.</p>
+          <WaLink cta="contacto" msg={t('wa.message')} className="nd-btn">
+            WhatsApp {WA_LABEL}
+          </WaLink>
+          <dl className="ct-list">
+            <div>
+              <dt>Mail</dt>
+              <dd>
+                <a href="mailto:contacto@nimbodata.com" data-cta="contacto">
+                  contacto@nimbodata.com
+                </a>
+              </dd>
             </div>
-          </div>
+            <div>
+              <dt>Ubicación</dt>
+              <dd>Buenos Aires, Argentina</dd>
+            </div>
+            <div>
+              <dt>Respuesta</dt>
+              <dd>En menos de 24 h</dd>
+            </div>
+          </dl>
+        </div>
+        <div className="ct-card">
+          <ContactForm />
         </div>
       </section>
     </main>

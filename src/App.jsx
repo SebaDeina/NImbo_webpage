@@ -2,12 +2,13 @@ import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { Routes, Route, Navigate, useLocation, useParams } from 'react-router-dom'
 import { LangProvider } from './i18n/LangContext'
 import { ContactProvider } from './contexts/ContactContext'
-import Nav from './components/Nav'
 import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
-import WhatsAppFab from './components/WhatsAppFab'
 import Home from './pages/Home'
-import { GDefs } from './components/g/Art'
+import NdHeader from './components/nd/NdHeader'
+import { NdFloat, useNdPage } from './components/nd/Nd'
+import './styles/automatizaciones.css'
+import './styles/nd-site.css'
 
 const Proyectos = lazy(() => import('./pages/Proyectos'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
@@ -55,21 +56,26 @@ export default function App() {
   const [ready, setReady] = useState(false)
   const onSplashDone = useCallback(() => setReady(true), [])
 
-  // La landing de venta (/propuesta) es una página enfocada: sin nav, footer ni chat.
+  // La landing de venta (/propuesta) y /links son páginas enfocadas: sin encabezado, pie ni botón flotante.
   const { pathname } = useLocation()
   const isLanding = pathname.startsWith('/propuesta') || pathname === '/links'
-  // La landing de automatizaciones tiene diseño propio (blanco, Poppins): sin splash, nav ni botón de Nimbo,
-  // pero con el footer grabado de Nimbo.
+  // La landing de automatizaciones tiene encabezado y botón de WhatsApp propios.
   const isAuto = pathname === '/automatizaciones' || (IS_AUTO_HOST && pathname === '/')
+  // El resto del sitio usa el diseño blanco ("Nimbodata Landing v2"): encabezado, botón flotante y pie blancos.
+  const isSite = !isLanding
+  useNdPage(isSite)
+  // si el splash índigo de index.html quedó (p. ej. /robots redirigido a la home), en el sitio blanco no va
+  useEffect(() => {
+    if (isSite) document.getElementById('splash')?.remove()
+  }, [isSite])
 
   return (
     <LangProvider>
       <ContactProvider>
-        {!ready && !isAuto && <SplashScreen onDone={onSplashDone} />}
-        <div className="app-shell">
-          {!isLanding && <GDefs />}
+        {!ready && !isSite && <SplashScreen onDone={onSplashDone} />}
+        <div className={`app-shell${isSite ? ' nd' : ''}`}>
           <ScrollManager />
-          {!isLanding && !isAuto && <Nav />}
+          {isSite && !isAuto && <NdHeader />}
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={IS_AUTO_HOST ? <Automatizaciones /> : <Home />} />
@@ -84,11 +90,11 @@ export default function App() {
               <Route path="/links" element={<Links />} />
               <Route path="/privacidad" element={<Privacidad />} />
               <Route path="/automatizaciones" element={<Automatizaciones />} />
-              <Route path="*" element={<Home />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
           {!isLanding && <Footer />}
-          {!isLanding && !isAuto && ready && <WhatsAppFab />}
+          {isSite && !isAuto && <NdFloat />}
         </div>
       </ContactProvider>
     </LangProvider>

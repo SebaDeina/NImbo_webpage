@@ -1,4 +1,4 @@
-import PageHero from '../components/g/PageHero'
+import { NdPageHero } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 
 const EMAIL = 'contacto@nimbodata.com'
@@ -79,28 +79,22 @@ export default function Privacidad() {
   })
 
   return (
-    <main className="g-main">
-      <PageHero>
-        <div className="eyebrow">Legal</div>
-        <h1>
-          Política de <em>privacidad</em>
-        </h1>
-        <p className="hero-sub">Última actualización: 2 de octubre de 2026.</p>
-      </PageHero>
-      <section className="paper">
-        <div className="wrap">
-          <article className="art">
-            {SECCIONES.map(s => (
-              <section key={s.t}>
-                <h2>{s.t}</h2>
-                {(s.p || []).map(x => <p key={x}>{conMail(x)}</p>)}
-                {s.l && <ul>{s.l.map(x => <li key={x}>{conMail(x)}</li>)}</ul>}
-                {(s.p2 || []).map(x => <p key={x}>{conMail(x)}</p>)}
-              </section>
-            ))}
-          </article>
-        </div>
-      </section>
+    <main className="nd-page-main">
+      <NdPageHero eyebrow="Legal" title="Política de privacidad">
+        <p>Última actualización: 2 de octubre de 2026.</p>
+      </NdPageHero>
+      <div className="nd-wrap">
+        <article className="nd-art">
+          {SECCIONES.map(s => (
+            <section key={s.t}>
+              <h2>{s.t}</h2>
+              {(s.p || []).map(x => <p key={x}>{conMail(x)}</p>)}
+              {s.l && <ul>{s.l.map(x => <li key={x}>{conMail(x)}</li>)}</ul>}
+              {(s.p2 || []).map(x => <p key={x}>{conMail(x)}</p>)}
+            </section>
+          ))}
+        </article>
+      </div>
     </main>
   )
 }

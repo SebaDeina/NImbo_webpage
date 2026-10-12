@@ -1,13 +1,11 @@
-import PageHero from '../components/g/PageHero'
-import { Emblem, useRevealAll } from '../components/g/Art'
-import CTA from '../components/CTA'
+import { Cloud, NdFinal, NdPageHero } from '../components/nd/Nd'
 import { TEAM } from '../data/team'
 import { useSeo } from '../hooks/useSeo'
 
 const VALUES = [
-  { e: 'II', t: 'Una sola mesa', d: 'Web, automatización, datos e IA bajo un mismo techo. Sin traducciones entre proveedores: todo avanza en paralelo.' },
-  { e: 'IV', t: 'Negocio, no solo tecnología', d: 'Entendemos a quién le hablás y qué tiene que pasar para que funcione. Medimos resultados, no líneas de código.' },
-  { e: 'I', t: 'Lanzar es el comienzo', d: 'Acompañamos todos los meses: medimos, ajustamos y sumamos automatizaciones a medida que tu negocio crece.' },
+  { t: 'Una sola mesa', d: 'Web, automatización, datos e IA bajo un mismo techo. Sin traducciones entre proveedores: todo avanza en paralelo.' },
+  { t: 'Negocio, no solo tecnología', d: 'Entendemos a quién le hablás y qué tiene que pasar para que funcione. Medimos resultados, no líneas de código.' },
+  { t: 'Lanzar es el comienzo', d: 'Acompañamos todos los meses: medimos, ajustamos y sumamos automatizaciones a medida que tu negocio crece.' },
 ]
 
 const HISTORY = [
@@ -32,82 +30,70 @@ export default function Nosotros() {
       'Somos Nimbo: ayudamos a pymes argentinas a crecer con automatización, inteligencia artificial, páginas web, datos y visión por computadora. Conocé quiénes somos y cómo trabajamos.',
     path: '/nosotros',
   })
-  useRevealAll('.rv')
 
   return (
-    <main className="g-main">
-      <PageHero>
-        <div className="eyebrow">Nosotros</div>
-        <h1>
-          Bajamos las ideas <em>a tierra</em>
-        </h1>
-        <p className="hero-sub">
-          Somos un estudio digital argentino que toma algo intangible —una idea— y lo convierte en sistemas que trabajan solos.
-        </p>
-      </PageHero>
+    <main className="nd-page-main">
+      <NdPageHero eyebrow="Nosotros" title="Bajamos las ideas a tierra">
+        <p>Somos un estudio digital argentino que toma algo intangible —una idea— y lo convierte en sistemas que trabajan solos.</p>
+      </NdPageHero>
 
-      <section className="paper about-body">
-        <div className="wrap">
-          <div className="about-intro rv">
-            <div className="eyebrow">Por qué Nimbo</div>
-            <p className="lead">
+      <section className="nd-wrap">
+        <div className="nd-stage ab-why">
+          <span className="ab-cloud" aria-hidden="true">
+            <Cloud />
+          </span>
+          <div>
+            <span className="nd-mono ab-k">POR QUÉ NIMBO</span>
+            <p>
               Nimbo es “nube”. Las mejores ideas empiezan ahí arriba: intangibles, ambiciosas, llenas de potencial. Nuestro
               trabajo es darles forma con diseño, tecnología, datos e IA para que existan de verdad en tu negocio.
             </p>
           </div>
-          <div className="values">
+        </div>
+      </section>
+
+      <section className="nd-sec">
+        <div className="nd-wrap">
+          <h2 className="nd-h2">Cómo pensamos</h2>
+          <div className="nd-cols">
             {VALUES.map((v) => (
-              <div className="value rv" key={v.t}>
-                <div className="value-in">
-                  <Emblem n={v.e} className="emb" />
-                  <h3>{v.t}</h3>
-                  <p>{v.d}</p>
-                </div>
+              <div className="nd-col" key={v.t}>
+                <h3>{v.t}</h3>
+                <p>{v.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="chapter inkbg sec-pad">
-        <div className="wrap">
-          <header className="ch-head">
-            <div className="eyebrow">Historia</div>
-            <h2>De las nubes al mundo real</h2>
-          </header>
-          <div className="timeline">
+      <section className="nd-sec">
+        <div className="nd-wrap">
+          <h2 className="nd-h2">De las nubes al mundo real</h2>
+          <ol className="ab-tl">
             {HISTORY.map((h) => (
-              <div className="tl rv" key={h.t}>
-                <div className="yr">{h.y}</div>
+              <li key={h.t}>
+                <span className="nd-mono ab-yr">{h.y}</span>
                 <div>
                   <h3>{h.t}</h3>
                   <p>{h.d}</p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      <section className="paper sec-pad">
-        <div className="wrap">
-          <div className="sec-head">
-            <div className="eyebrow">Equipo</div>
-            <h2>
-              Las personas detrás <em>de las nubes</em>
-            </h2>
-            <p className="lead">Un equipo chico, cercano y obsesionado con que tu idea llegue al mundo real.</p>
-          </div>
-          <div className="team">
-            {TEAM.map((m) => (
-              <div className="person rv" key={m.id}>
-                <div className="portrait">
-                  <div className="portrait-in">
-                    {m.photo ? <img src={m.photo} alt={m.name.es} loading="lazy" /> : <span className="ini">{m.initials}</span>}
-                  </div>
+      <section className="nd-sec">
+        <div className="nd-wrap">
+          <h2 className="nd-h2">Las personas detrás de las nubes</h2>
+          <div className="ab-team">
+            {TEAM.map((m, i) => (
+              <div className="ab-person" key={m.id}>
+                <div className={`nd-visual ab-photo ${i % 2 ? 'nd-v-sand' : 'nd-v-lilac'}`}>
+                  {m.photo ? <img src={m.photo} alt={m.name.es} loading="lazy" /> : <span className="ab-ini">{m.initials}</span>}
                 </div>
                 <h3>{m.name.es}</h3>
-                <div className="role">{m.role.es}</div>
+                <span className="nd-mono ab-role">{m.role.es}</span>
                 <p>{m.bio.es}</p>
               </div>
             ))}
@@ -115,29 +101,22 @@ export default function Nosotros() {
         </div>
       </section>
 
-      <section className="paper sec-pad" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <div className="sec-head">
-            <div className="eyebrow">Cómo trabajamos</div>
-            <h2>
-              De la charla <em>al sistema funcionando</em>
-            </h2>
-          </div>
-          <div className="steps-row">
+      <section className="nd-sec">
+        <div className="nd-wrap">
+          <h2 className="nd-h2">De la charla al sistema funcionando</h2>
+          <div className="nd-cols nd-steps ab-steps">
             {PROCESS.map((s, i) => (
-              <div className="st rv" key={s.t} style={{ transitionDelay: `${i * 0.08}s` }}>
-                <div className="st-in">
-                  <span className="n">{i + 1}</span>
-                  <h3>{s.t}</h3>
-                  <p>{s.d}</p>
-                </div>
+              <div key={s.t} className="nd-col">
+                <span className="nd-mono nd-step-k">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CTA />
+      <NdFinal />
     </main>
   )
 }

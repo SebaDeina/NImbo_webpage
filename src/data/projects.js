@@ -119,7 +119,7 @@ export const PROJECTS = [
     "title": "Analítica de video",
     "client": "Salas de entretenimiento",
     "year": "2026",
-    "cover": "/proyectos/analitica-video.jpg",
+    "cover": "/proyectos/analitica-video-v2.jpg",
     "live": null,
     "status": "En desarrollo",
     "isNew": true,
@@ -155,7 +155,7 @@ export const PROJECTS = [
       "Datos"
     ],
     "gallery": [
-      "/proyectos/analitica-video.jpg"
+      "/proyectos/analitica-video-v2.jpg"
     ]
   },
   {

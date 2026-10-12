@@ -79,6 +79,25 @@ export function parseContent(content) {
 
 // --- Markdown → HTML (inline + bloques) --------------------------------------
 
+/* id de cada subtítulo (## …) para el índice del artículo */
+export function headingId(text) {
+  return text
+    .replace(/[*_`[\]()]/g, '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+}
+
+/* subtítulos (## …) del contenido, en orden */
+export function headings(content) {
+  return [...content.matchAll(/^## (.+)$/gm)].map((m) => {
+    const t = m[1].replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').trim()
+    return { id: headingId(t), t }
+  })
+}
+
 function inline(text) {
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
@@ -127,7 +146,16 @@ export function renderMarkdown(md) {
       }
       if (block === '---') return '<hr />'
       if (/^### /.test(block)) return `<h3>${inline(block.slice(4))}</h3>`
-      if (/^## /.test(block)) return `<h2>${inline(block.slice(3))}</h2>`
+      if (/^## /.test(block)) {
+        const t = block.slice(3).replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').trim()
+        return `<h2 id="${headingId(t)}">${inline(block.slice(3))}</h2>`
+      }
+      // Cita destacada: líneas que empiezan con "> " (la última puede ser "— autor").
+      if (lines.every((l) => /^>\s?/.test(l))) {
+        const ls = lines.map((l) => l.replace(/^>\s?/, ''))
+        const who = /^[—–-]\s/.test(ls[ls.length - 1]) ? ls.pop() : null
+        return `<blockquote><p>${inline(ls.join(' '))}</p>${who ? `<cite>${inline(who)}</cite>` : ''}</blockquote>`
+      }
       if (lines.every((l) => /^\d+\.\s/.test(l))) {
         return (
           '<ol>' +
