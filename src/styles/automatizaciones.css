@@ -130,7 +130,8 @@ html.nd-page,html.nd-page body{background:#fff}
   .hd-arrow::after{right:auto;left:-7px;top:auto;bottom:-1px;border:6px solid transparent;border-top:8px solid rgba(38,36,138,.28);border-bottom:0}
   .hd-arrow.is-on{border-left-color:var(--ink-2)}
   .hd-arrow.is-on::after{border-top-color:var(--ink-2);border-left-color:transparent}
-  .hd-arrow-t{left:14px;bottom:auto;top:50%;transform:translateY(-50%)}
+  /* rótulo centrado sobre la línea: arrancando del centro hacia la derecha se salía en pantallas angostas */
+  .hd-arrow-t{left:50%;bottom:auto;top:50%;transform:translate(-50%,-50%)}
   @keyframes hdFlow{from{clip-path:inset(0 -200px 100% -200px)}to{clip-path:inset(0 -200px 0 -200px)}}
 }
 @media (max-width:640px){

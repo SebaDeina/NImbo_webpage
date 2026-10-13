@@ -14,7 +14,10 @@
   --font-mono:'JetBrains Mono',ui-monospace,monospace;--ease:cubic-bezier(.22,1,.36,1);
   --sheet-backdrop:rgba(20,19,58,.4);--sheet-shadow:0 -24px 70px -24px rgba(20,19,58,.35)}
 .nd [id]{scroll-margin-top:84px}
-.app-shell.nd{display:flex;flex-direction:column}
+/* red de seguridad: ningún mockup animado puede ensanchar la página (clip no rompe el encabezado sticky) */
+.app-shell.nd{display:flex;flex-direction:column;overflow-x:clip}
+/* botones largos ("WhatsApp +54 9 11…") pueden partirse en celulares angostos */
+@media (max-width:380px){.nd .nd-btn{white-space:normal;text-align:center;max-width:100%}}
 .nd-page-main{display:block}
 
 /* encabezado */
