@@ -56,7 +56,7 @@ function Project({ p, i }) {
 export default function Proyectos() {
   const [filter, setFilter] = useState('Todos')
   useSeo({
-    title: 'Proyectos — Nimbo | Webs, apps, automatización e IA para negocios',
+    title: 'Proyectos — Nimbo | Automatización, IA y apps para pymes',
     description:
       'Proyectos reales de Nimbo: apps y plataformas, sitios web, automatizaciones, agentes de IA, dashboards de datos y visión por computadora para negocios en Argentina.',
     path: '/proyectos',

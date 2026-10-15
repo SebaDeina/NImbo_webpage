@@ -23,7 +23,7 @@ export function PostCard({ p }) {
 export default function Blog() {
   const [cat, setCat] = useState('Todas')
   useSeo({
-    title: 'Blog Nimbo — Transformación digital, IA y web para pymes',
+    title: 'Blog Nimbo — Automatización e IA para pymes',
     description:
       'Guías prácticas sobre automatización, inteligencia artificial, páginas web y transformación digital para dueños de negocios en Argentina.',
     path: '/blog',

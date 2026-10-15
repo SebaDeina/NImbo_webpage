@@ -6,7 +6,7 @@ import { useSeo } from '../hooks/useSeo'
 export default function Contacto() {
   const { t } = useLang()
   useSeo({
-    title: 'Contacto — Nimbo | Automatización, IA y páginas web para pymes',
+    title: 'Contacto — Nimbo | Automatización e IA para pymes',
     description:
       'Contactá a Nimbo para automatizar tu negocio, implementar IA, diseñar tu página web o analizar tus datos. Consultá gratis y sin compromiso.',
     path: '/contacto',

@@ -18,17 +18,9 @@ const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un p
 const WaLink = ({ msg = WA_MSG, ...rest }) => <BaseWaLink msg={msg} {...rest} />
 const svcMsg = (t) => `¡Hola! Vi el servicio de ${t} en el sitio de Nimbo y me gustaría conversar sobre un proyecto.`
 
-// los ids cap-I…cap-V son los que usa el pie para saltar a cada servicio
+// los ids cap-I…cap-V son los que usa el pie para saltar a cada servicio (no siguen el orden de la lista:
+// automatización y agentes van primero porque la home le habla a la pyme, la web es un servicio más)
 const SERVICIOS = [
-  {
-    id: 'cap-I',
-    cta: 'servicio-web',
-    t: 'Desarrollo web',
-    d: 'Sitios rápidos y modernos, pensados para convertir visitantes en clientes.',
-    usos: ['Tienda online con pedidos a WhatsApp', 'Rápida y visible en Google'],
-    v: 'nd-v-ink',
-    demo: <WebDemo />,
-  },
   {
     id: 'cap-II',
     cta: 'servicio-automatizacion',
@@ -47,6 +39,15 @@ const SERVICIOS = [
     usos: ['Atención 24/7', 'Agente de voz para llamadas'],
     v: 'nd-v-sand',
     demo: <AgentDemo />,
+  },
+  {
+    id: 'cap-I',
+    cta: 'servicio-web',
+    t: 'Desarrollo web',
+    d: 'Sitios rápidos y modernos, pensados para convertir visitantes en clientes.',
+    usos: ['Tienda online con pedidos a WhatsApp', 'Rápida y visible en Google'],
+    v: 'nd-v-ink',
+    demo: <WebDemo />,
   },
   {
     id: 'cap-IV',
@@ -89,9 +90,9 @@ const FAQ = [
 
 export default function Home() {
   useSeo({
-    title: 'Nimbo — Transformación Digital para Pymes: Automatización, IA y Web',
+    title: 'Nimbo — Automatización e IA para Pymes en Argentina',
     description:
-      'Soluciones digitales para pymes en Argentina: automatización de procesos, implementación de IA, páginas web profesionales, análisis de datos y visión por computadora. Más clientes, menos trabajo manual.',
+      'Automatizamos procesos, sumamos agentes de IA y ordenamos los datos de pymes argentinas. También web, tienda online y visión por computadora. Más clientes, menos trabajo manual.',
     path: '/',
   })
 
@@ -100,13 +101,13 @@ export default function Home() {
       <section id="top" className="nd-hero">
         <div className="nd-wrap nd-hero-in">
           <div className="nd-hero-copy">
-            <span className="nd-eyebrow">Nimbo · Estudio web e IA en Argentina</span>
+            <span className="nd-eyebrow">Nimbo · Tecnología para pymes argentinas</span>
             <h1>
-              Webs que venden. <span className="hm-l">IA que trabaja por vos.</span>
+              La tecnología de las grandes empresas, <span className="hm-l">a la medida de tu pyme.</span>
             </h1>
             <p>
-              Diseñamos tu web, automatizamos tus procesos y sumamos agentes de IA, datos y visión por computadora. Un
-              solo equipo, de la idea a que funcione todos los días.
+              Automatizamos tus procesos, sumamos agentes de IA que atienden a tus clientes y ponemos tus números en un
+              solo lugar. Un solo equipo, de la idea a que funcione todos los días.
             </p>
             <div className="nd-btns">
               <WaLink cta="hero" className="nd-btn">

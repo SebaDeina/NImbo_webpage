@@ -29,7 +29,7 @@ const SOCIALS = [
 const LINKS = [
   {
     label: 'Conocé Nimbo',
-    desc: 'Web, IA y automatizaciones para tu negocio',
+    desc: 'Automatización e IA para tu pyme',
     href: 'https://www.nimbodata.com',
     primary: true,
   },
@@ -66,7 +66,7 @@ export default function Links() {
             <CloudMark />
           </div>
           <h1 className="links-name">Nimbo</h1>
-          <p className="links-tagline">Páginas web · Automatización · IA para negocios en Argentina</p>
+          <p className="links-tagline">Automatización · IA · Datos para pymes argentinas</p>
 
           <div className="links-socials">
             {SOCIALS.map((s) => (

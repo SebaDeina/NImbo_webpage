@@ -54,9 +54,9 @@ export default function Footer() {
           </div>
           <div className="nf-col">
             <h4>Servicios</h4>
-            <Link to="/#cap-I">Desarrollo web</Link>
             <Link to="/#cap-II">Automatización</Link>
             <Link to="/#cap-III">Chatbots e IA</Link>
+            <Link to="/#cap-I">Desarrollo web</Link>
             <Link to="/#cap-IV">Datos</Link>
             <Link to="/#cap-V">Visión por computadora</Link>
           </div>
