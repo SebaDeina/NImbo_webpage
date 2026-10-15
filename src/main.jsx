@@ -15,7 +15,8 @@ const app = (
   </StrictMode>
 )
 
-// react-snap prerendera el HTML estático; hydrateRoot lo activa sin re-renderizar
+// El build prerenderiza el HTML de cada ruta (scripts/prerender.mjs); hydrateRoot lo activa sin
+// re-renderizar. Si el HTML era de otra ruta u otro host, el script en línea que agrega el prerender ya lo vació.
 if (root.hasChildNodes()) {
   hydrateRoot(root, app)
 } else {

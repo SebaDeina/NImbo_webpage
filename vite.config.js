@@ -49,12 +49,21 @@ function apiPlugin(env) {
   }
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
+  // `vite build --ssr` arma la entrada de servidor que usa scripts/prerender.mjs (corre en Node, no se publica)
+  if (isSsrBuild) {
+    return {
+      plugins: [react()],
+      build: { outDir: 'dist-ssr', emptyOutDir: true, target: 'node18' },
+    }
+  }
   return {
     plugins: [react(), apiPlugin(env)],
     build: {
       target: ['chrome72', 'es2019'],
+      // el prerender lo lee para poner el CSS de cada página en su <head>; después lo borra
+      manifest: true,
       rollupOptions: {
         output: {
           manualChunks: {
