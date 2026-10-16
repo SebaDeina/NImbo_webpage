@@ -356,3 +356,10 @@ footer.nd-foot{
 .dg-done h2{margin:0 0 8px;font-size:clamp(24px,2.4vw,30px);font-weight:500;letter-spacing:-.02em}
 .dg-done p{margin:0;font-size:16.5px;line-height:1.55;color:var(--text)}
 @media (max-width:560px){.dg-row{grid-template-columns:1fr}}
+.dg-pop .dg-form{margin-top:20px;gap:14px}
+.dg-pop .dg-form input,.dg-pop .dg-form select,.dg-pop .dg-form textarea{background:#F7F6FC}
+.dg-pop .dg-form .nd-btn{width:100%;justify-content:center}
+.dg-pop .dg-note{text-align:center;margin:-2px 0 0}
+.dg-pop .dg-done{margin-top:20px}
+button.nd-btn{border:0;cursor:pointer;font:inherit}
+button.dg-link{background:none;border:0;padding:0;cursor:pointer;font:inherit}

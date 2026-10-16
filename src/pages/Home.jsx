@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { AgentDemo, HeroDemo } from '../components/AutoDemos'
 import { DataDemo, DisplayDemo, FlowDemo, WebDemo } from '../components/HomeDemos'
+import { useDiagnostico } from '../components/nd/DiagnosticoForm'
 import Ofertas from '../components/nd/Ofertas'
 import { Cloud, NdFaq, NdFinal, WaLink as BaseWaLink } from '../components/nd/Nd'
 import { PROJECTS } from '../data/projects'
@@ -103,6 +104,7 @@ const FAQ = [
 ]
 
 export default function Home() {
+  const openDiagnostico = useDiagnostico()
   useSeo({
     title: 'Nimbo Consulting — IA y automatización para pymes en Argentina',
     description:
@@ -124,9 +126,9 @@ export default function Home() {
               tu equipo dedique menos tiempo a tareas repetitivas y más tiempo a hacer crecer el negocio.
             </p>
             <div className="nd-btns">
-              <Link to="/diagnostico" className="nd-btn" data-cta="hero">
+              <button type="button" className="nd-btn" onClick={() => openDiagnostico('hero')}>
                 Agendá un diagnóstico gratis
-              </Link>
+              </button>
               <a href="#servicios" className="nd-btn nd-btn-soft">
                 Ver servicios
               </a>
@@ -181,9 +183,9 @@ export default function Home() {
               <h2 className="nd-h2">Cuatro áreas, un solo equipo</h2>
               <p>Consultoría, IA aplicada e ingeniería de software para resolver problemas de negocio.</p>
             </div>
-            <WaLink cta="indice" className="nd-link" msg="¡Hola! Vi los servicios de Nimbo y no sé cuál me conviene. ¿Podemos charlar sobre mi empresa?">
+            <button type="button" className="nd-link dg-link" onClick={() => openDiagnostico('indice')}>
               ¿No sabés por dónde empezar? →
-            </WaLink>
+            </button>
           </div>
 
           <div className="nd-grid-2">
