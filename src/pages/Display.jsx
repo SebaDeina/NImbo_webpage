@@ -5,7 +5,7 @@ import '../styles/automatizaciones.css'
 import '../styles/home.css'
 
 /*
-  Nimbo Display (línea Nimbo Products): cartelería digital que ya se vende.
+  Nimbo Display (producto propio de Nimbo Consulting): cartelería digital que ya se vende.
   Problema → cómo funciona → planes → demo por WhatsApp. Precios confirmados por Seba (oct. 2026):
   $70.000 por dispositivo y un abono mensual que depende de la cantidad de pantallas.
 */
@@ -89,7 +89,7 @@ export default function Display() {
       <section className="nd-hero dp-hero">
         <div className="nd-wrap nd-hero-in">
           <div className="nd-hero-copy">
-            <span className="nd-eyebrow">Nimbo Products · Nimbo Display</span>
+            <span className="nd-eyebrow">Producto propio · Nimbo Display</span>
             <h1>
               Tus pantallas, <span className="hm-l">conectadas a tu negocio.</span>
             </h1>

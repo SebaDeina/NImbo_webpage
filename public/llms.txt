@@ -1,17 +1,24 @@
-# Nimbo
+# Nimbo Consulting
 
-> Nimbo es un estudio digital de Buenos Aires, Argentina, que implementa automatización, agentes de inteligencia artificial, desarrollo web, análisis de datos y visión por computadora para pymes argentinas.
+> Nimbo Consulting es una consultora boutique de Buenos Aires, Argentina, de tecnología, inteligencia artificial y automatización para pymes de 10 a 100 empleados. Diagnostica problemas operativos, implementa la solución y la acompaña con un abono mensual.
 
-Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con negocios de todo el país.
+Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con empresas de todo el país. La primera reunión de diagnóstico es sin cargo.
 
-## Servicios
+## Áreas de servicio
 
-- Automatización de procesos y tareas repetitivas
-- Agentes de IA para atención, ventas y operaciones
-- Integraciones con WhatsApp, Gmail, Google Sheets, CRM y sistemas de gestión
-- Desarrollo de sitios web, tiendas y aplicaciones
-- Dashboards, análisis de datos y alertas
-- Visión por computadora
+- Inteligencia artificial y agentes: bots de WhatsApp e Instagram, reservas y turnos, asistentes internos, visión por computadora
+- Automatización e integración de sistemas: APIs, ERP, CRM, Google Workspace, procesos administrativos y reportes
+- Datos y business intelligence: dashboards, integración de fuentes, SQL, indicadores de gestión y alertas
+- Software a medida: aplicaciones internas, portales, sistemas de gestión y webs con lógica de negocio
+
+## Precios de referencia (ARS, octubre 2026)
+
+- Agente IA básico, un canal: implementación desde $350.000 + $120.000 por mes
+- Nimbo Managed AI (agente empresarial, hasta 2 canales): implementación desde $650.000 + $200.000 por mes
+- Automatización entre sistemas: desde $400.000 + desde $90.000 por mes
+- Dashboard empresarial: desde $500.000 + desde $100.000 por mes
+- Aplicación o sistema a medida: desde $1.200.000, abono a cotizar
+- Consultoría y diagnóstico técnico: desde $150.000, bonificable si se contrata la implementación
 
 ## Productos
 
@@ -22,6 +29,7 @@ Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus
 - [Inicio](https://www.nimbodata.com/): presentación general de Nimbo y sus servicios
 - [Automatizaciones y agentes de IA](https://www.nimbodata.com/automatizaciones): soluciones para pymes y proceso de implementación
 - [Nimbo Display](https://www.nimbodata.com/display): cartelería digital, planes y demo
+- [Diagnóstico gratis](https://www.nimbodata.com/diagnostico): pedido de reunión de diagnóstico sin cargo
 - [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
 - [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
 - [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web
