@@ -8,39 +8,67 @@ import { submitContact } from '../../lib/cms'
   La página /diagnostico usa el mismo formulario.
 */
 
+const TAREAS = [
+  'Responder WhatsApp e Instagram',
+  'Turnos y reservas',
+  'Pedidos y stock',
+  'Presupuestos y ventas',
+  'Carga de datos y planillas',
+  'Reportes y números del negocio',
+  'Facturación y cobranzas',
+  'Otra cosa',
+]
+const RUBROS = ['Clínica o salud', 'Comercio', 'Distribuidora', 'Servicios', 'Industria', 'Otro']
 const EMPLEADOS = ['1 a 9', '10 a 30', '31 a 100', 'Más de 100']
-const RUBROS = ['Clínica o centro de servicios', 'Comercio o distribuidora', 'Empresa con mucha administración', 'Otro']
-const HORARIOS = ['Por la mañana', 'Por la tarde', 'Me da igual']
+const PASOS = ['Qué resolver', 'Tu empresa', 'Contacto']
 
-const EMPTY = { nombre: '', empresa: '', email: '', telefono: '', empleados: '', rubro: '', problema: '', horario: '' }
+const EMPTY = { tareas: [], detalle: '', rubro: '', empleados: '', nombre: '', telefono: '', email: '', empresa: '' }
 
+/* Tres pasos cortos: casi todo se elige con un toque y los datos de contacto quedan al final,
+   cuando el visitante ya contó qué necesita. */
 export function DiagnosticoForm({ source = 'pagina', autoFocus = false }) {
   const [d, setD] = useState(EMPTY)
+  const [paso, setPaso] = useState(0)
   const [error, setError] = useState('')
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
-  const first = useRef(null)
+  const box = useRef(null)
   const set = (k) => (e) => setD((v) => ({ ...v, [k]: e.target.value }))
+  const pick = (k, v) => setD((x) => ({ ...x, [k]: x[k] === v ? '' : v }))
+  const toggle = (t) => setD((x) => ({ ...x, tareas: x.tareas.includes(t) ? x.tareas.filter((y) => y !== t) : [...x.tareas, t] }))
 
+  // al cambiar de paso, foco en el primer control (en celulares no: abriría el teclado tapando el popup)
   useEffect(() => {
-    // en celulares no: abriría el teclado tapando el popup apenas aparece
-    if (autoFocus && window.matchMedia?.('(pointer: fine)').matches) first.current?.focus()
-  }, [autoFocus])
+    if (!autoFocus && paso === 0) return
+    if (!window.matchMedia?.('(pointer: fine)').matches) return
+    box.current?.querySelector('button.au-chip, input, textarea')?.focus()
+  }, [paso, autoFocus])
+
+  const okPaso0 = d.tareas.length > 0 || d.detalle.trim()
+  const ir = (n) => {
+    setError('')
+    setPaso(n)
+  }
+  const siguiente = () => {
+    if (paso === 0 && !okPaso0) return setError('Elegí al menos una opción o contanos en una línea.')
+    ir(paso + 1)
+  }
 
   const submit = async (e) => {
     e.preventDefault()
+    if (paso < 2) return siguiente()
     const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email.trim())
-    if (!d.nombre.trim() || !d.empresa.trim() || !emailOk || !d.telefono.trim() || !d.problema.trim()) {
-      return setError('Completá los campos marcados con * (y revisá el mail).')
+    if (!d.nombre.trim() || !d.telefono.trim() || !emailOk) {
+      return setError('Completá nombre, WhatsApp y un mail válido.')
     }
     setError('')
     setSending(true)
     const [firstName, ...rest] = d.nombre.trim().split(/\s+/)
     const message = [
-      `Qué quiere resolver: ${d.problema.trim()}`,
-      d.empleados && `Empleados: ${d.empleados}`,
+      d.tareas.length && `Quiere resolver: ${d.tareas.join(', ')}`,
+      d.detalle.trim() && `Detalle: ${d.detalle.trim()}`,
       d.rubro && `Rubro: ${d.rubro}`,
-      d.horario && `Horario preferido: ${d.horario}`,
+      d.empleados && `Personas: ${d.empleados}`,
       `Botón: ${source}`,
     ]
       .filter(Boolean)
@@ -52,7 +80,7 @@ export function DiagnosticoForm({ source = 'pagina', autoFocus = false }) {
         email: d.email.trim(),
         countryCode: '+54',
         phone: d.telefono.trim(),
-        company: d.empresa.trim(),
+        company: d.empresa.trim() || undefined,
         topic: 'diagnostico',
         source: 'diagnostico',
         message,
@@ -70,79 +98,109 @@ export function DiagnosticoForm({ source = 'pagina', autoFocus = false }) {
     return (
       <div className="dg-done" role="status">
         <h2>¡Listo, {d.nombre.trim().split(/\s+/)[0]}!</h2>
-        <p>Te escribimos en menos de 24 horas hábiles para coordinar el día y la hora.</p>
+        <p>Te escribimos por WhatsApp en menos de 24 horas hábiles para coordinar el día y la hora.</p>
       </div>
     )
   }
 
   return (
-    <form className="dg-form" onSubmit={submit} noValidate>
-      <label>
-        <span>Nombre y apellido *</span>
-        <input ref={first} value={d.nombre} onChange={set('nombre')} autoComplete="name" required />
-      </label>
-      <label>
-        <span>Empresa *</span>
-        <input value={d.empresa} onChange={set('empresa')} autoComplete="organization" required />
-      </label>
-      <div className="dg-row">
-        <label>
-          <span>Email *</span>
-          <input type="email" value={d.email} onChange={set('email')} autoComplete="email" required />
-        </label>
-        <label>
-          <span>WhatsApp *</span>
-          <input type="tel" value={d.telefono} onChange={set('telefono')} autoComplete="tel" placeholder="11 2345-6789" required />
-        </label>
+    <form className="dg-form" onSubmit={submit} noValidate ref={box}>
+      <div className="dg-prog" aria-label={`Paso ${paso + 1} de 3: ${PASOS[paso]}`}>
+        {PASOS.map((p, i) => (
+          <span key={p} className={i <= paso ? 'is-on' : undefined}>
+            {p}
+          </span>
+        ))}
       </div>
-      <div className="dg-row">
-        <label>
-          <span>Personas en la empresa</span>
-          <select value={d.empleados} onChange={set('empleados')}>
-            <option value="">Elegí</option>
-            {EMPLEADOS.map((o) => (
-              <option key={o}>{o}</option>
+
+      {paso === 0 && (
+        <fieldset>
+          <legend>¿Qué te gustaría sacarte de encima?</legend>
+          <p className="dg-hint">Podés marcar varias.</p>
+          <div className="au-chips">
+            {TAREAS.map((t) => (
+              <button key={t} type="button" className="au-chip" aria-pressed={d.tareas.includes(t)} onClick={() => toggle(t)}>
+                {t}
+              </button>
             ))}
-          </select>
-        </label>
-        <label>
-          <span>Rubro</span>
-          <select value={d.rubro} onChange={set('rubro')}>
-            <option value="">Elegí</option>
-            {RUBROS.map((o) => (
-              <option key={o}>{o}</option>
+          </div>
+          <label>
+            <span>Contanos en una línea (opcional)</span>
+            <input value={d.detalle} onChange={set('detalle')} placeholder="Ej.: respondemos 80 consultas por día a mano" maxLength={200} />
+          </label>
+        </fieldset>
+      )}
+
+      {paso === 1 && (
+        <fieldset>
+          <legend>Contanos de tu empresa</legend>
+          <p className="dg-hint">Así llegamos a la reunión con ideas para tu rubro.</p>
+          <span className="dg-sub">Rubro</span>
+          <div className="au-chips">
+            {RUBROS.map((r) => (
+              <button key={r} type="button" className="au-chip" aria-pressed={d.rubro === r} onClick={() => pick('rubro', r)}>
+                {r}
+              </button>
             ))}
-          </select>
-        </label>
-      </div>
-      <label>
-        <span>¿Qué te gustaría resolver? *</span>
-        <textarea
-          rows={3}
-          value={d.problema}
-          onChange={set('problema')}
-          placeholder="Ej.: respondemos a mano 80 consultas por día de WhatsApp y fuera de horario se pierden."
-          required
-        />
-      </label>
-      <label>
-        <span>¿Cuándo te queda mejor?</span>
-        <select value={d.horario} onChange={set('horario')}>
-          <option value="">Elegí</option>
-          {HORARIOS.map((o) => (
-            <option key={o}>{o}</option>
-          ))}
-        </select>
-      </label>
+          </div>
+          <span className="dg-sub">¿Cuántas personas trabajan?</span>
+          <div className="au-chips">
+            {EMPLEADOS.map((r) => (
+              <button key={r} type="button" className="au-chip" aria-pressed={d.empleados === r} onClick={() => pick('empleados', r)}>
+                {r}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      {paso === 2 && (
+        <fieldset>
+          <legend>¿A dónde te escribimos?</legend>
+          <p className="dg-hint">Coordinamos la reunión por WhatsApp.</p>
+          <label>
+            <span>Nombre y apellido</span>
+            <input value={d.nombre} onChange={set('nombre')} autoComplete="name" required />
+          </label>
+          <div className="dg-row">
+            <label>
+              <span>WhatsApp</span>
+              <input type="tel" value={d.telefono} onChange={set('telefono')} autoComplete="tel" placeholder="11 2345-6789" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" value={d.email} onChange={set('email')} autoComplete="email" required />
+            </label>
+          </div>
+          <label>
+            <span>Empresa (opcional)</span>
+            <input value={d.empresa} onChange={set('empresa')} autoComplete="organization" />
+          </label>
+        </fieldset>
+      )}
+
       {error && (
         <p className="dg-error" role="alert">
           {error}
         </p>
       )}
-      <button type="submit" className="nd-btn" disabled={sending}>
-        {sending ? 'Enviando…' : 'Pedir mi diagnóstico'}
-      </button>
-      <p className="dg-note">Sin cargo · 30 a 45 minutos por videollamada · Usamos tus datos solo para coordinar.</p>
+
+      <div className="dg-nav">
+        {paso > 0 && (
+          <button type="button" className="dg-back" onClick={() => ir(paso - 1)}>
+            ← Atrás
+          </button>
+        )}
+        <button type="submit" className="nd-btn" disabled={sending}>
+          {paso < 2 ? 'Siguiente →' : sending ? 'Enviando…' : 'Pedir mi diagnóstico'}
+        </button>
+      </div>
+      {paso === 1 && (
+        <button type="button" className="dg-skip" onClick={() => ir(2)}>
+          Prefiero contarlo en la reunión
+        </button>
+      )}
+      <p className="dg-note">Sin cargo · 30 a 45 minutos por videollamada</p>
     </form>
   )
 }
@@ -182,9 +240,8 @@ function DiagnosticoPopup({ source, onClose }) {
           <button className="au-pop-x" type="button" onClick={onClose} aria-label="Cerrar">
             ×
           </button>
-          <span className="au-pop-k">Diagnóstico gratis</span>
+          <span className="au-pop-k">Diagnóstico gratis · 1 minuto</span>
           <h3 id="dg-pop-t">Contanos qué te frena</h3>
-          <p>Te escribimos en menos de 24 h para coordinar una reunión sin cargo.</p>
           <DiagnosticoForm source={source} autoFocus />
         </div>
       </div>
