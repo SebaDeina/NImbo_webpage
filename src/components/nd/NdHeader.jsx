@@ -7,6 +7,7 @@ import { Cloud, WaLink, useScrolled } from './Nd'
 const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un proyecto.'
 const NAV = [
   ['/#servicios', 'Servicios'],
+  ['/display', 'Nimbo Display'],
   ['/proyectos', 'Proyectos'],
   ['/blog', 'Blog'],
   ['/nosotros', 'Nosotros'],

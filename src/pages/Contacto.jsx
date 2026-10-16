@@ -1,6 +1,7 @@
 import { useLang } from '../i18n/LangContext'
 import ContactForm from '../components/ContactForm'
 import { NdPageHero, WA_LABEL, WaLink } from '../components/nd/Nd'
+import Ofertas from '../components/nd/Ofertas'
 import { useSeo } from '../hooks/useSeo'
 
 export default function Contacto() {
@@ -47,6 +48,7 @@ export default function Contacto() {
           <ContactForm />
         </div>
       </section>
+      <Ofertas title="O empezá por una de estas ofertas" />
     </main>
   )
 }

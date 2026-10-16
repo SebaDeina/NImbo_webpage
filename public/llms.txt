@@ -13,10 +13,15 @@ Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus
 - Dashboards, análisis de datos y alertas
 - Visión por computadora
 
+## Productos
+
+- Nimbo Display: cartelería digital para locales y cadenas. Un dispositivo por pantalla (HDMI), administrado desde un panel en la nube, conectado a promociones, precios, stock y horarios; sigue funcionando sin internet. Desde $70.000 por dispositivo más un abono mensual según la cantidad de pantallas.
+
 ## Páginas principales
 
 - [Inicio](https://www.nimbodata.com/): presentación general de Nimbo y sus servicios
 - [Automatizaciones y agentes de IA](https://www.nimbodata.com/automatizaciones): soluciones para pymes y proceso de implementación
+- [Nimbo Display](https://www.nimbodata.com/display): cartelería digital, planes y demo
 - [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
 - [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
 - [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web

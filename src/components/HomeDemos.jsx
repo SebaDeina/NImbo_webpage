@@ -154,3 +154,50 @@ export function VisionDemo() {
     </div>
   )
 }
+
+/* Nimbo Display: la pantalla del local pasa de la promo a los precios y al stock, y el panel la ve en línea */
+const PANTALLAS = [
+  ['PROMO · HASTA LAS 12', '2x1 en cafés', 'Con cualquier medialuna'],
+  ['PRECIOS · DESDE LA PLANILLA', null, null],
+  ['STOCK · EN VIVO', 'Últimas 3 tortas', 'Llevala antes de que se termine'],
+]
+const MENU = [
+  ['Café con leche', '$3.200'],
+  ['Tostado J y Q', '$6.900'],
+  ['Jugo de naranja', '$4.100'],
+]
+export function DisplayDemo() {
+  const [ref, s] = useSteps([2600, 2600, 2600])
+  const [k, t, d] = PANTALLAS[s]
+  return (
+    <div className="hdi" ref={ref}>
+      <div className="hdi-tv">
+        <div key={s} className="hdi-slide">
+          <span className="nd-mono hdi-k">{k}</span>
+          {t ? (
+            <>
+              <b>{t}</b>
+              <span>{d}</span>
+            </>
+          ) : (
+            <ul className="hdi-menu">
+              {MENU.map(([n, p]) => (
+                <li key={n}>
+                  {n}
+                  <span className="nd-mono">{p}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+      <div className="hdi-stand" aria-hidden="true" />
+      <div className="hdi-status nd-mono">
+        <span className="nd-on">Sucursal Centro · en línea</span>
+        <span>
+          {s + 1}/{PANTALLAS.length}
+        </span>
+      </div>
+    </div>
+  )
+}

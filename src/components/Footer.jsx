@@ -53,12 +53,13 @@ export default function Footer() {
             </ul>
           </div>
           <div className="nf-col">
-            <h4>Servicios</h4>
-            <Link to="/#cap-II">Automatización</Link>
+            <h4>Nimbo Solutions</h4>
+            <Link to="/#cap-II">Automatización y datos</Link>
             <Link to="/#cap-III">Chatbots e IA</Link>
-            <Link to="/#cap-I">Desarrollo web</Link>
-            <Link to="/#cap-IV">Datos</Link>
+            <Link to="/#cap-I">Desarrollo web y apps</Link>
             <Link to="/#cap-V">Visión por computadora</Link>
+            <h4 className="nf-sub">Nimbo Products</h4>
+            <Link to="/display">Nimbo Display</Link>
           </div>
           <div className="nf-col">
             <h4>Nimbo</h4>
