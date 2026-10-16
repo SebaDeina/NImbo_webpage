@@ -1,0 +1,29 @@
+# Nimbo
+
+> Nimbo es un estudio digital de Buenos Aires, Argentina, que implementa automatización, agentes de inteligencia artificial, desarrollo web, análisis de datos y visión por computadora para pymes argentinas.
+
+Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con negocios de todo el país.
+
+## Servicios
+
+- Automatización de procesos y tareas repetitivas
+- Agentes de IA para atención, ventas y operaciones
+- Integraciones con WhatsApp, Gmail, Google Sheets, CRM y sistemas de gestión
+- Desarrollo de sitios web, tiendas y aplicaciones
+- Dashboards, análisis de datos y alertas
+- Visión por computadora
+
+## Páginas principales
+
+- [Inicio](https://www.nimbodata.com/): presentación general de Nimbo y sus servicios
+- [Automatizaciones y agentes de IA](https://www.nimbodata.com/automatizaciones): soluciones para pymes y proceso de implementación
+- [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
+- [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
+- [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web
+- [Contacto](https://www.nimbodata.com/contacto): canales para conversar sobre un proyecto
+
+## Contacto
+
+- Sitio oficial: https://www.nimbodata.com/
+- Correo: contacto@nimbodata.com
+- Ubicación: Buenos Aires, Argentina

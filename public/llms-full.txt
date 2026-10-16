@@ -1,0 +1,85 @@
+# Nimbo: información completa
+
+## Qué es Nimbo
+
+Nimbo es un estudio digital con base en Buenos Aires, Argentina. Ayuda a pymes argentinas a incorporar automatización, agentes de inteligencia artificial, desarrollo web, datos y visión por computadora. Trabaja de forma remota con negocios de todo el país.
+
+Su propuesta es reunir estas disciplinas en un solo equipo para convertir ideas y procesos manuales en sistemas que funcionen todos los días.
+
+## Para quién trabaja
+
+Nimbo trabaja con dueños y equipos de pymes que necesitan reducir tareas repetitivas, mejorar la atención, conectar herramientas, desarrollar productos digitales o tomar decisiones con datos ordenados.
+
+La página de automatizaciones menciona comercios y retail, servicios profesionales, industria y distribución como sectores posibles.
+
+## Servicios
+
+### Automatización de procesos
+
+Automatiza tareas repetitivas, recordatorios, carga de datos, facturación, reportes y flujos entre las herramientas que una pyme ya usa.
+
+Más información: https://www.nimbodata.com/automatizaciones
+
+### Agentes de inteligencia artificial
+
+Implementa agentes para atención al cliente, ventas y tareas operativas. Pueden responder consultas, trabajar con información del negocio, ejecutar acciones y derivar casos delicados a una persona.
+
+### Integraciones
+
+Conecta herramientas y sistemas para que la información viaje sin copiarla manualmente. El sitio menciona WhatsApp, Gmail, Google Sheets, CRM y sistemas de gestión con facturación electrónica, sujetos a revisión en el diagnóstico.
+
+### Desarrollo web y productos digitales
+
+Diseña y desarrolla sitios web, tiendas online, aplicaciones y plataformas para negocios. El enfoque declarado incluye velocidad, uso desde celulares y conversión de visitantes en clientes.
+
+### Datos
+
+Construye dashboards, reportes, alertas y asistentes que permiten consultar información del negocio en lenguaje natural.
+
+### Visión por computadora
+
+Aplica inteligencia artificial a cámaras para conteo de personas, recorridos, mapas de calor y ocupación por zona. También investiga usos vinculados con cámaras y drones.
+
+## Cómo trabaja
+
+El proceso presentado por Nimbo comienza con una charla o diagnóstico, continúa con una propuesta y la construcción de la solución, y sigue con acompañamiento, medición y ajustes.
+
+## Proyectos publicados
+
+La página de proyectos reúne, entre otros:
+
+- Nimbo Display: cartelería digital administrada desde un panel
+- WODSI: plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp
+- Analítica de video: conteo de personas, recorridos, mapas de calor y ocupación
+- Marketing automático: sistema de agentes para producir contenido listo para revisar
+- Recorridos 360: recorridos virtuales navegables
+- Asistente con IA: consultas en lenguaje natural sobre datos del negocio
+- Dashboard a medida: métricas, alertas y datos operativos
+- Nimbo Tax: facturación para monotributistas conectada a ARCA
+- Gestión agropecuaria: aplicación para producción, sanidad, clima, tareas y stock
+- Prospección con agentes: análisis de presencia digital y preparación de propuestas con aprobación humana
+
+Fuente principal: https://www.nimbodata.com/proyectos
+
+## Guías del blog
+
+El blog publica contenidos para dueños y equipos de pymes sobre automatización, agentes de IA, CRM, transformación digital, desarrollo web, velocidad y SEO local.
+
+Índice: https://www.nimbodata.com/blog
+
+Lecturas relacionadas:
+
+- https://www.nimbodata.com/blog/automatiza-tu-negocio-con-ia
+- https://www.nimbodata.com/blog/agentes-de-ia-vs-chatbots
+- https://www.nimbodata.com/blog/como-medir-el-roi-de-una-automatizacion
+- https://www.nimbodata.com/blog/transformacion-digital-pymes-argentina
+- https://www.nimbodata.com/blog/por-que-tu-negocio-necesita-una-pagina-web
+
+## Identidad y contacto
+
+- Nombre: Nimbo
+- Sitio oficial: https://www.nimbodata.com/
+- Ubicación: Buenos Aires, Argentina
+- Cobertura declarada: pymes de Argentina
+- Correo: contacto@nimbodata.com
+- Contacto: https://www.nimbodata.com/contacto
