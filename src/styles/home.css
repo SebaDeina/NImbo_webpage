@@ -6,6 +6,9 @@
 
 .nd-home [id]{scroll-margin-top:84px}
 .hm-l{display:block}
+/* el titular de la home es largo: más chico que el de /automatizaciones para que entre en dos líneas */
+.nd-home .nd-hero-copy{max-width:1120px}
+.nd-home .nd-hero h1{font-size:clamp(34px,4.6vw,64px);line-height:1.05}
 @media (max-width:640px){.nd-home .nd-sectors-in>span{flex-basis:100%;text-align:center}}
 .nd-home .nd-sectors-in a b{transition:color .2s}
 .nd-home .nd-sectors-in a:hover b{color:var(--hover)}
