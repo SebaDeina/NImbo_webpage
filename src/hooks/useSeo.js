@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { createContext, useContext, useEffect } from 'react'
 
 /*
   SEO por ruta. Como el sitio es una SPA, sin esto TODAS las páginas comparten
@@ -7,7 +7,14 @@ import { useEffect } from 'react'
   home y no lo indexa por separado. Este hook actualiza el <head> en cada ruta:
   title, description, canonical propio, Open Graph, Twitter y JSON-LD opcional.
   Googlebot ejecuta JS, así que respeta estas etiquetas puestas en cliente.
+
+  Los crawlers que NO ejecutan JS (GPTBot, ClaudeBot, PerplexityBot…) reciben
+  el HTML prerenderado en el build (scripts/prerender.mjs): ahí no corre el
+  efecto, así que el hook deja los datos en SeoContext y el prerender los
+  escribe en el <head> de cada ruta.
 */
+
+export const SeoContext = createContext(null)
 
 const SITE_URL = 'https://www.nimbodata.com'
 const DEFAULT_IMAGE = `${SITE_URL}/og-nimbo-v2.jpg`
@@ -37,6 +44,17 @@ function upsertLink(rel, href) {
   el.setAttribute('href', href)
 }
 
+/* Valores finales del <head> de una ruta (los usa también el prerender). */
+export function seoTags({ title, description, path = '', image, type = 'website' } = {}) {
+  return {
+    title: title || DEFAULT_TITLE,
+    description: description || DEFAULT_DESCRIPTION,
+    url: `${SITE_URL}${path}`,
+    image: image ? `${SITE_URL}${image}` : DEFAULT_IMAGE,
+    type,
+  }
+}
+
 export function useSeo({
   title,
   description,
@@ -46,12 +64,15 @@ export function useSeo({
   jsonLd,
 } = {}) {
   const jsonLdStr = jsonLd ? JSON.stringify(jsonLd) : null
+  const sink = useContext(SeoContext)
+  if (sink) sink.seo = { title, description, path, image, type, jsonLd }
 
   useEffect(() => {
-    const finalTitle = title || DEFAULT_TITLE
-    const finalDesc = description || DEFAULT_DESCRIPTION
-    const url = `${SITE_URL}${path}`
-    const img = image ? `${SITE_URL}${image}` : DEFAULT_IMAGE
+    const tags = seoTags({ title, description, path, image, type })
+    const finalTitle = tags.title
+    const finalDesc = tags.description
+    const url = tags.url
+    const img = tags.image
 
     document.title = finalTitle
     upsertMeta('name', 'description', finalDesc)
@@ -67,6 +88,8 @@ export function useSeo({
     upsertMeta('name', 'twitter:description', finalDesc)
     upsertMeta('name', 'twitter:image', img)
 
+    // el JSON-LD que dejó el prerender lo reemplaza el de la ruta actual
+    document.head.querySelectorAll('script[data-seo-route]').forEach((el) => el.remove())
     let script
     if (jsonLdStr) {
       script = document.createElement('script')
