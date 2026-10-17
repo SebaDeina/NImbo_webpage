@@ -49,11 +49,29 @@ export default function Automatizaciones() {
     path: '/automatizaciones',
     jsonLd: {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Agentes de IA y automatización de procesos para pymes',
-      provider: { '@type': 'Organization', name: 'Nimbo', url: 'https://www.nimbodata.com' },
-      areaServed: 'AR',
-      serviceType: 'Automatización de procesos con IA',
+      '@graph': [
+        {
+          '@type': 'Service',
+          '@id': 'https://www.nimbodata.com/automatizaciones#service',
+          name: 'Agentes de IA y automatización de procesos para pymes',
+          description:
+            'Implementación y acompañamiento de agentes de IA, integraciones y automatización de procesos para pymes de Argentina.',
+          url: 'https://www.nimbodata.com/automatizaciones',
+          provider: { '@id': 'https://www.nimbodata.com/#business' },
+          areaServed: { '@type': 'Country', name: 'Argentina' },
+          audience: { '@type': 'BusinessAudience', audienceType: 'Pymes de Argentina' },
+          serviceType: 'Automatización de procesos con IA',
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': 'https://www.nimbodata.com/automatizaciones#faq',
+          mainEntity: FAQ.map(([name, text]) => ({
+            '@type': 'Question',
+            name,
+            acceptedAnswer: { '@type': 'Answer', text },
+          })),
+        },
+      ],
     },
   })
 

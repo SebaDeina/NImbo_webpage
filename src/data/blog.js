@@ -1,5 +1,142 @@
 export const posts = [
   {
+    slug: 'agentes-de-ia-para-pymes-como-implementarlos',
+    title: 'Agentes de IA para pymes: qué hacen y cómo implementarlos',
+    description:
+      'Guía para entender qué puede hacer un agente de IA en una pyme, cuándo conviene implementarlo y qué controles necesita para trabajar con clientes y sistemas.',
+    date: '2026-10-17',
+    category: 'Inteligencia Artificial',
+    readTime: '8 min',
+    content: `
+## Qué es un agente de IA para una pyme
+
+Un agente de IA es un sistema que entiende pedidos en lenguaje natural, consulta información del negocio y puede ejecutar acciones dentro de límites definidos. En una pyme puede responder consultas, registrar datos, coordinar turnos, preparar seguimientos o conectar herramientas que hoy funcionan por separado.
+
+La diferencia central con un chatbot tradicional es que el chatbot sigue respuestas o menús predefinidos, mientras que el agente puede interpretar el contexto y completar una tarea. Eso no significa dejarlo actuar sin control: una implementación seria define qué puede resolver, qué necesita aprobación y cuándo debe derivar a una persona.
+
+---
+
+## Qué tareas puede resolver
+
+Los mejores primeros casos de uso son repetitivos, frecuentes y fáciles de verificar.
+
+| Área | Qué puede hacer el agente | Cuándo deriva |
+| --- | --- | --- |
+| Atención | Responder preguntas con información del negocio | Cuando falta información o el caso es delicado |
+| Ventas | Hacer preguntas iniciales y registrar la consulta | Cuando la oportunidad necesita una propuesta personal |
+| Turnos | Consultar disponibilidad y coordinar una reserva | Cuando hay una excepción o un conflicto |
+| Administración | Cargar datos, ordenar pedidos y preparar reportes | Cuando detecta datos incompletos o inconsistentes |
+| Operaciones | Conectar mensajes, planillas, CRM y sistemas de gestión | Cuando una acción necesita autorización |
+
+Un agente también puede trabajar junto con automatizaciones tradicionales. Por ejemplo, interpreta un mensaje recibido por WhatsApp, extrae los datos relevantes y activa un flujo que los registra en el sistema correspondiente.
+
+---
+
+## Cuándo conviene implementar uno
+
+Un agente de IA tiene sentido cuando existe una tarea clara que se repite y usa información que la empresa puede mantener actualizada. Algunas señales concretas:
+
+- Tu equipo responde las mismas consultas todos los días.
+- Los datos se copian manualmente entre mensajes, planillas y sistemas.
+- Hay consultas que quedan pendientes fuera del horario de atención.
+- El seguimiento depende de que una persona se acuerde.
+- Una tarea tiene reglas conocidas, pero aparecen variaciones que un flujo rígido no entiende.
+
+Si el proceso cambia todos los días, nadie sabe cuál es la respuesta correcta o los datos están desordenados, primero conviene ordenar esa base. La IA no corrige por sí sola un proceso que todavía no está definido.
+
+---
+
+## Agente de IA, chatbot o automatización
+
+No son soluciones excluyentes. Cada una sirve para un problema distinto:
+
+- **Chatbot:** responde preguntas y recorre opciones predefinidas.
+- **Automatización:** mueve información o ejecuta pasos cuando ocurre un evento conocido.
+- **Agente de IA:** interpreta pedidos variables, usa contexto y decide qué herramienta aplicar dentro de reglas establecidas.
+
+Para una explicación más detallada, podés leer **[agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots)**. Si querés revisar primero qué procesos conviene mejorar, también está la guía para **[automatizar un negocio con IA](/blog/automatiza-tu-negocio-con-ia)**.
+
+---
+
+## Cómo se implementa en una pyme
+
+:::flow
+{ "title": "Del proceso manual al agente funcionando", "steps": [
+  { "title": "1. Elegir una tarea concreta", "text": "Se identifica un proceso repetitivo, su volumen y el resultado esperado. Conviene empezar por una sola tarea que pueda medirse." },
+  { "title": "2. Ordenar la información", "text": "Se reúnen preguntas frecuentes, reglas, documentos y datos que el agente necesita para responder o actuar." },
+  { "title": "3. Definir límites y derivaciones", "text": "Se establece qué puede resolver solo, qué acciones requieren aprobación y en qué casos interviene una persona." },
+  { "title": "4. Conectar las herramientas", "text": "El agente se integra con los canales y sistemas necesarios, como WhatsApp, correo, planillas, CRM o software de gestión." },
+  { "title": "5. Probar con casos reales", "text": "Se revisan respuestas, errores y excepciones antes de ampliar su alcance. El objetivo es mejorar con evidencia, no agregar funciones por agregar." }
+] }
+:::
+
+En Nimbo este trabajo empieza con un diagnóstico del proceso y continúa con la implementación, las pruebas y el acompañamiento. Podés ver el enfoque completo en **[automatizaciones y agentes de IA para pymes](/automatizaciones)**.
+
+---
+
+## Qué controles necesita
+
+Un agente que interactúa con clientes o sistemas no debería quedar sin supervisión. Como mínimo, necesita:
+
+- información aprobada y actualizada para responder;
+- permisos limitados a las acciones necesarias;
+- reglas claras para derivar a una persona;
+- registro de lo que hizo y con qué datos;
+- pruebas con consultas normales, ambiguas y excepcionales;
+- revisión periódica de errores y conversaciones no resueltas.
+
+La aprobación humana es especialmente importante para propuestas, decisiones sensibles y acciones que no se puedan revertir fácilmente.
+
+---
+
+## Ejemplos según el tipo de pyme
+
+### Comercios y distribución
+
+Puede responder consultas, tomar datos de pedidos, revisar información disponible y registrar cada oportunidad para que el equipo continúe la conversación.
+
+### Servicios profesionales
+
+Puede organizar consultas iniciales, pedir documentación, coordinar reuniones y recordar tareas pendientes sin reemplazar el criterio del profesional.
+
+### Empresas con tareas administrativas
+
+Puede leer mensajes, clasificar solicitudes, cargar datos y preparar reportes conectando las herramientas que ya usa el equipo.
+
+### Equipos comerciales
+
+Puede hacer las primeras preguntas, ordenar las oportunidades y dejar el contexto listo para que una persona continúe la venta.
+
+---
+
+## Preguntas frecuentes
+
+### ¿Un agente de IA reemplaza a una persona?
+
+No necesariamente. Su mejor uso en una pyme es resolver tareas repetitivas y preparar información para que las personas se concentren en excepciones, decisiones y relaciones con clientes.
+
+### ¿Puede trabajar con WhatsApp y los sistemas que ya usamos?
+
+Puede integrarse con WhatsApp, correo, planillas, CRM y sistemas de gestión cuando esas herramientas ofrecen una forma segura de conexión. La viabilidad se revisa durante el diagnóstico.
+
+### ¿Qué pasa si no sabe responder?
+
+Debe reconocer el límite y derivar la conversación con el contexto disponible. Inventar una respuesta no es una salida aceptable.
+
+### ¿Por dónde conviene empezar?
+
+Por una tarea frecuente, repetitiva y medible. Resolver bien un solo proceso permite comprobar el resultado antes de ampliar el agente a otras áreas.
+
+---
+
+## En resumen
+
+Un agente de IA para pymes no es solamente un chat que responde: es una pieza de software capaz de entender pedidos, consultar información y ejecutar tareas dentro de reglas claras. Funciona mejor cuando empieza con un proceso concreto, datos ordenados, permisos limitados y derivación humana.
+
+En Nimbo diseñamos e implementamos agentes, integraciones y automatizaciones para pymes de Argentina. **[Conocé cómo trabajamos y pedí un diagnóstico](/automatizaciones)** para revisar qué tarea conviene resolver primero en tu empresa.
+    `.trim(),
+  },
+  {
     slug: 'velocidad-de-carga-web-por-que-importa',
     title: 'Velocidad de carga web: por qué importa (y cómo mejorarla sin ser programador)',
     description:
