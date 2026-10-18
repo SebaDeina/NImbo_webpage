@@ -118,7 +118,8 @@ export default function Automatizaciones() {
             <h1>IA que trabaja en tu negocio, todos los días</h1>
             <p>
               Agentes que atienden clientes 24/7, conectan tus sistemas y se ocupan de las tareas repetitivas.
-              Implementados y acompañados por nuestro equipo en Argentina.
+              Implementados y acompañados por nuestro equipo en Argentina. Si querés entender qué tareas resuelven, qué controles necesitan y cómo se ponen en marcha, leé nuestra{' '}
+              <a href="/blog/agentes-de-ia-para-pymes-como-implementarlos">guía de agentes de IA para pymes</a>.
             </p>
             <div className="nd-btns">
               {diag('hero')}

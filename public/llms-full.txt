@@ -69,6 +69,7 @@ El blog publica contenidos para dueños y equipos de pymes sobre automatización
 
 Lecturas relacionadas:
 
+- https://www.nimbodata.com/blog/agentes-de-ia-para-pymes-como-implementarlos
 - https://www.nimbodata.com/blog/automatiza-tu-negocio-con-ia
 - https://www.nimbodata.com/blog/agentes-de-ia-vs-chatbots
 - https://www.nimbodata.com/blog/como-medir-el-roi-de-una-automatizacion

@@ -61,8 +61,8 @@ const SERVICIOS = [
     id: 'cap-I',
     n: '04',
     cta: 'servicio-web',
-    t: 'Software a medida',
-    d: 'Aplicaciones internas, portales y sistemas de gestión cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
+    t: 'Desarrollo web y software a medida',
+    d: 'Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
     usos: ['Sistemas de gestión', 'Portales', 'Apps internas', 'Webs con lógica de negocio'],
     v: 'nd-v-ink',
     demo: <WebDemo />,
@@ -110,6 +110,16 @@ export default function Home() {
     description:
       'Consultoría tecnológica, inteligencia artificial y automatización para pymes argentinas. Diagnosticamos tus procesos, implementamos agentes de IA, integraciones y tableros, y los acompañamos todos los meses.',
     path: '/',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': 'https://www.nimbodata.com/#faq',
+      mainEntity: FAQ.map(([name, text]) => ({
+        '@type': 'Question',
+        name,
+        acceptedAnswer: { '@type': 'Answer', text },
+      })),
+    },
   })
 
   return (

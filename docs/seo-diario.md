@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-18
+- **Explicitar el servicio de desarrollo web para pymes** (contenido) — La oferta actual queda escondida bajo «Software a medida», aunque el sitio sí declara que Nimbo diseña páginas web. Nombrarla de forma directa mejora la relevancia para búsquedas de desarrollo web sin crear un servicio nuevo.  
+  Archivos: `index.html`, `src/components/Footer.jsx`, `src/pages/Home.jsx`
+- **Marcar las preguntas frecuentes de la home** (datos-estructurados) — La home ya muestra preguntas y respuestas completas sobre diagnóstico, costos, integración y ubicación. Declararlas como FAQPage ayuda a buscadores y asistentes a interpretar esas respuestas sin agregar contenido ni modificar precios.  
+  Archivos: `src/pages/Home.jsx`
+- **Conectar la nueva guía con la landing de agentes** (enlaces) — La búsqueda está dominada por guías, y el artículo publicado ayer todavía necesita señales internas. El enlace bidireccional entre la guía y la landing consolida el tema, mientras que llms-full.txt permite que asistentes encuentren la lectura nueva.  
+  Archivos: `public/llms-full.txt`, `public/sitemap.xml`, `src/pages/Automatizaciones.jsx`
+
 ## 2026-10-17
 - **Publicar una guía sobre agentes de IA para pymes** (articulo) — Cubre de forma directa una búsqueda objetivo donde hoy aparecen guías y comparativas de competidores, sin superponerse con el artículo que solo compara agentes y chatbots. También enlaza la guía con la landing comercial y otros contenidos relacionados.  
   Archivos: `public/sitemap.xml`, `src/data/blog.js`
