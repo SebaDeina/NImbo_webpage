@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/((?!api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|.*\\.(?:png|jpg|jpeg|webp|svg|ico|woff2?|css|js|txt|xml)$).*)",
-      "destination": "/index.html"
+      "destination": "/_spa.html"
     }
   ],
   "headers": [

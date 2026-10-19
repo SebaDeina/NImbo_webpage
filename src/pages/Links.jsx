@@ -1,6 +1,7 @@
 import '../index.css'
 import CloudMark from '../components/CloudMark'
 import { whatsappUrl } from '../config/whatsapp'
+import { useSeo } from '../hooks/useSeo'
 
 const SOCIALS = [
   {
@@ -56,6 +57,13 @@ const LINKS = [
 ]
 
 export default function Links() {
+  useSeo({
+    title: 'Links — Nimbo',
+    description:
+      'Todos los links de Nimbo en un lugar: WhatsApp, Instagram, la web y el blog. Automatización, IA y páginas web para pymes en Argentina.',
+    path: '/links',
+  })
+
   return (
     <div className="links-page">
       <div className="links-glow" aria-hidden="true" />
