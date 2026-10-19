@@ -27,6 +27,44 @@ export default function Blog() {
     description:
       'Guías prácticas sobre automatización, inteligencia artificial, páginas web y transformación digital para dueños de negocios en Argentina.',
     path: '/blog',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'CollectionPage',
+          '@id': 'https://www.nimbodata.com/blog#page',
+          name: 'Blog de Nimbo',
+          description:
+            'Guías prácticas sobre automatización, inteligencia artificial, páginas web y transformación digital para dueños de negocios en Argentina.',
+          url: 'https://www.nimbodata.com/blog',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: { '@id': 'https://www.nimbodata.com/blog#articles' },
+        },
+        {
+          '@type': 'ItemList',
+          '@id': 'https://www.nimbodata.com/blog#articles',
+          numberOfItems: posts.length,
+          itemListElement: posts.map((p, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            url: 'https://www.nimbodata.com/blog/' + p.slug,
+            item: {
+              '@type': 'BlogPosting',
+              '@id': 'https://www.nimbodata.com/blog/' + p.slug + '#article',
+              headline: p.title,
+              description: p.description,
+              datePublished: p.date,
+              articleSection: p.category,
+              inLanguage: 'es-AR',
+              author: { '@id': 'https://www.nimbodata.com/#business' },
+              publisher: { '@id': 'https://www.nimbodata.com/#business' },
+            },
+          })),
+        },
+      ],
+    },
   })
 
   const cats = ['Todas', ...new Set(posts.map((p) => p.category))]

@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-19
+- **Describir el índice del blog con CollectionPage e ItemList** (datos-estructurados) — Declara cada artículo, su tema y fecha dentro de un índice conectado con Nimbo. Ayuda a buscadores que ejecutan JavaScript a descubrir y relacionar las guías que compiten en búsquedas informativas.  
+  Archivos: `src/pages/Blog.jsx`
+- **Convertir el portfolio en una colección de proyectos legible por máquinas** (datos-estructurados) — Los proyectos publicados son evidencia concreta de las capacidades de Nimbo. Un ItemList con entidades CreativeWork permite interpretar esa evidencia sin inventar clientes, resultados ni métricas.  
+  Archivos: `src/pages/Proyectos.jsx`
+- **Actualizar las fechas reales de las páginas modificadas** (tecnico) — La home todavía declara julio pese a los cambios del 18 de octubre. Actualizar home, blog y proyectos evita señales de antigüedad incorrectas y ayuda a priorizar el rastreo de las páginas modificadas.  
+  Archivos: `public/sitemap.xml`
+
 ## 2026-10-18
 - **Explicitar el servicio de desarrollo web para pymes** (contenido) — La oferta actual queda escondida bajo «Software a medida», aunque el sitio sí declara que Nimbo diseña páginas web. Nombrarla de forma directa mejora la relevancia para búsquedas de desarrollo web sin crear un servicio nuevo.  
   Archivos: `index.html`, `src/components/Footer.jsx`, `src/pages/Home.jsx`

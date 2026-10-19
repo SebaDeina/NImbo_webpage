@@ -60,6 +60,41 @@ export default function Proyectos() {
     description:
       'Proyectos reales de Nimbo: apps y plataformas, sitios web, automatizaciones, agentes de IA, dashboards de datos y visión por computadora para negocios en Argentina.',
     path: '/proyectos',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'CollectionPage',
+          '@id': 'https://www.nimbodata.com/proyectos#page',
+          name: 'Proyectos de Nimbo',
+          description:
+            'Proyectos de aplicaciones, sitios web, automatizaciones, agentes de IA, datos y visión por computadora desarrollados por Nimbo.',
+          url: 'https://www.nimbodata.com/proyectos',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: { '@id': 'https://www.nimbodata.com/proyectos#project-list' },
+        },
+        {
+          '@type': 'ItemList',
+          '@id': 'https://www.nimbodata.com/proyectos#project-list',
+          numberOfItems: PROJECTS.length,
+          itemListElement: PROJECTS.map((p, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            url: 'https://www.nimbodata.com/proyectos#' + p.slug,
+            item: {
+              '@type': 'CreativeWork',
+              '@id': 'https://www.nimbodata.com/proyectos#' + p.slug,
+              name: p.title,
+              description: p.summary.es,
+              creator: { '@id': 'https://www.nimbodata.com/#business' },
+              inLanguage: 'es-AR',
+            },
+          })),
+        },
+      ],
+    },
   })
 
   const filters = FILTERS.filter((f, i) => !i || PROJECTS.some((p) => p.areas?.includes(f)))
