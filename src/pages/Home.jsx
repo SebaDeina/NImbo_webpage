@@ -35,6 +35,7 @@ const SERVICIOS = [
     usos: ['Bots de WhatsApp e Instagram', 'Reservas y turnos', 'Asistentes internos', 'Visión por computadora'],
     v: 'nd-v-sand',
     demo: <AgentDemo />,
+    mas: ['/automatizaciones', 'Ver agentes de IA para pymes'],
   },
   {
     id: 'cap-II',

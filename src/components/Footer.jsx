@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
           <div className="nf-col">
             <h4>Servicios</h4>
-            <Link to="/#cap-III">IA y agentes</Link>
+            <Link to="/automatizaciones">IA y agentes para pymes</Link>
             <Link to="/#cap-II">Automatización e integración</Link>
             <Link to="/#cap-IV">Datos y BI</Link>
             <Link to="/#cap-I">Desarrollo web y software a medida</Link>

@@ -43,9 +43,9 @@ const FAQ = [
 
 export default function Automatizaciones() {
   useSeo({
-    title: 'Agentes de IA y automatización para pymes | Nimbodata',
+    title: 'Automatización con IA para pymes en Argentina | Nimbo',
     description:
-      'Agentes que atienden clientes 24/7, conectan tus sistemas y se ocupan de las tareas repetitivas. Implementados y acompañados por nuestro equipo en Argentina. Diagnóstico gratis.',
+      'Automatización con IA y agentes para pymes de Argentina: atención, integraciones y tareas repetitivas implementadas y acompañadas por Nimbo.',
     path: '/automatizaciones',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -115,7 +115,7 @@ export default function Automatizaciones() {
         <div className="nd-wrap nd-hero-in">
           <div className="nd-hero-copy">
             <span className="nd-eyebrow">Nimbodata para pymes</span>
-            <h1>IA que trabaja en tu negocio, todos los días</h1>
+            <h1>Automatización con IA para pymes, todos los días</h1>
             <p>
               Agentes que atienden clientes 24/7, conectan tus sistemas y se ocupan de las tareas repetitivas.
               Implementados y acompañados por nuestro equipo en Argentina. Si querés entender qué tareas resuelven, qué controles necesitan y cómo se ponen en marcha, leé nuestra{' '}

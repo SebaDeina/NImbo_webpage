@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-20
+- **Alinear la landing con «automatización con IA para pymes Argentina»** (meta) — El título y el h1 actuales priorizan agentes, pero la búsqueda más amplia usa «automatización con IA». Incorporar esa frase y Argentina mejora la correspondencia temática sin cambiar la oferta.  
+  Archivos: `public/sitemap.xml`, `src/pages/Automatizaciones.jsx`
+- **Identificar al equipo de Nimbo como entidades Person** (datos-estructurados) — La página Nosotros ya publica nombres, funciones y biografías verificables. Declararlos como personas vinculadas al negocio ayuda a buscadores y asistentes a entender quién integra Nimbo.  
+  Archivos: `index.html`, `public/sitemap.xml`, `src/pages/Nosotros.jsx`
+- **Reforzar los enlaces internos hacia automatizaciones y agentes** (enlaces) — La landing principal recibe un enlace desde el área de automatización, pero no desde la tarjeta específica de IA ni desde el enlace equivalente del pie. Estos enlaces descriptivos consolidan la página para las dos búsquedas objetivo.  
+  Archivos: `public/sitemap.xml`, `src/components/Footer.jsx`, `src/pages/Home.jsx`
+
 ## 2026-10-19
 - **Describir el índice del blog con CollectionPage e ItemList** (datos-estructurados) — Declara cada artículo, su tema y fecha dentro de un índice conectado con Nimbo. Ayuda a buscadores que ejecutan JavaScript a descubrir y relacionar las guías que compiten en búsquedas informativas.  
   Archivos: `src/pages/Blog.jsx`

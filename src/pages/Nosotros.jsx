@@ -29,6 +29,29 @@ export default function Nosotros() {
     description:
       'Somos Nimbo: ayudamos a pymes argentinas a crecer con automatización, inteligencia artificial, páginas web, datos y visión por computadora. Conocé quiénes somos y cómo trabajamos.',
     path: '/nosotros',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'AboutPage',
+          '@id': 'https://www.nimbodata.com/nosotros#page',
+          name: 'Nosotros — Nimbo',
+          url: 'https://www.nimbodata.com/nosotros',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: TEAM.map((member) => ({ '@id': 'https://www.nimbodata.com/nosotros#' + member.id })),
+        },
+        ...TEAM.map((member) => ({
+          '@type': 'Person',
+          '@id': 'https://www.nimbodata.com/nosotros#' + member.id,
+          name: member.name.es,
+          jobTitle: member.role.es,
+          description: member.bio.es,
+          worksFor: { '@id': 'https://www.nimbodata.com/#business' },
+        })),
+      ],
+    },
   })
 
   return (
