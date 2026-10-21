@@ -24,6 +24,7 @@ const Robots = lazy(() => import('./pages/Robots'))
 const Automatizaciones = lazy(() => import('./pages/Automatizaciones'))
 const Display = lazy(() => import('./pages/Display'))
 const Diagnostico = lazy(() => import('./pages/Diagnostico'))
+const Anuncio = lazy(() => import('./pages/Anuncio'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
 const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('robots.')
@@ -80,7 +81,8 @@ export default function App() {
   // flotante, pero con el footer de Nimbo.
   const isReport = pathname === '/robots' || (IS_ROBOTS_HOST && pathname === '/')
   // La landing de automatizaciones tiene encabezado y botón de WhatsApp propios.
-  const isAuto = pathname === '/automatizaciones' || (IS_AUTO_HOST && pathname === '/')
+  // La landing del anuncio en ChatGPT también.
+  const isAuto = pathname === '/automatizaciones' || pathname === '/diagnostico-ia' || (IS_AUTO_HOST && pathname === '/')
   // El resto del sitio usa el diseño blanco ("Nimbodata Landing v2"): encabezado, botón flotante y pie blancos.
   const isSite = !isLanding && !isReport
   useNdPage(isSite)
@@ -115,6 +117,7 @@ export default function App() {
               <Route path="/automatizaciones" element={<Automatizaciones />} />
               <Route path="/display" element={<Display />} />
               <Route path="/diagnostico" element={<Diagnostico />} />
+              <Route path="/diagnostico-ia" element={<Anuncio />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
