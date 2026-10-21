@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Cloud, NdFaq, WA_LABEL, WaLink, useScrolled } from '../components/nd/Nd'
+import { Cloud, NdFaq, NdFloat, WA_LABEL, WaLink, useScrolled } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/anuncio.css'
 
@@ -237,10 +237,7 @@ export default function Anuncio({ variante = 'diagnostico' }) {
         </div>
       </section>
 
-      <WaLink cta={`${v.cta}-flotante`} msg={msg} className="nd-float">
-        <span className="nd-dot" />
-        WhatsApp
-      </WaLink>
+      <NdFloat cta={`${v.cta}-flotante`} msg={msg} />
     </div>
   )
 }

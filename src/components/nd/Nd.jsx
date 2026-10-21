@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { WHATSAPP_NUMBER, whatsappUrl } from '../../config/whatsapp'
+import { IconWhatsApp } from '../Icons'
 
 /*
   Piezas compartidas del diseño blanco "Nimbodata Landing v2" (home y /automatizaciones).
@@ -69,13 +70,12 @@ export function NdFaq({ items }) {
 
 const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un proyecto.'
 
-/* Pill flotante de WhatsApp */
+/* Botón flotante de WhatsApp: el logo de WhatsApp en su círculo verde */
 export function NdFloat({ cta = 'flotante', msg = WA_MSG }) {
   return (
-    <WaLink cta={cta} msg={msg} className="nd-float">
-      <span className="nd-dot" />
-      WhatsApp
-    </WaLink>
+    <a className="nd-float" data-cta={cta} href={whatsappUrl(msg)} target="_blank" rel="noopener noreferrer" aria-label="Escribinos por WhatsApp">
+      <IconWhatsApp size={32} />
+    </a>
   )
 }
 

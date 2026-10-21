@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 import AutoPopup, { useAutoPopup } from '../components/AutoPopup'
 import { AgentDemo, DiagnosisDemo, HeroDemo, IntegrationsDemo, OrchestraDemo, TrainingDemo } from '../components/AutoDemos'
-import { Cloud, NdFaq, WA_LABEL, WaLink as BaseWaLink, useScrolled } from '../components/nd/Nd'
+import { Cloud, NdFaq, NdFloat, WA_LABEL, WaLink as BaseWaLink, useScrolled } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/automatizaciones.css'
 
@@ -277,10 +277,7 @@ export default function Automatizaciones() {
         </div>
       </section>
 
-      <WaLink cta="auto-flotante" className="nd-float">
-        <span className="nd-dot" />
-        WhatsApp
-      </WaLink>
+      <NdFloat cta="auto-flotante" msg={WA_MSG} />
 
       {popup && <AutoPopup source={popup} onClose={closePopup} />}
     </div>

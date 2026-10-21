@@ -274,11 +274,10 @@ html.nd-page,html.nd-page body{background:#fff}
 .nd-final p{margin:0;font-size:18px;line-height:1.5;color:var(--text);max-width:560px}
 
 /* WhatsApp flotante */
-.nd-float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:30;background:var(--ink);color:#fff!important;padding:13px 20px;border-radius:999px;
-  font-weight:500;font-size:14.5px;box-shadow:0 10px 30px rgba(20,19,58,.25);display:flex;align-items:center;gap:8px}
-.nd-float:hover{background:var(--ink-2)}
-.nd-dot{width:8px;height:8px;border-radius:50%;background:#B8F5C8;box-shadow:0 0 0 0 rgba(184,245,200,.7);animation:ndRing 2.2s ease-out infinite}
-@keyframes ndRing{70%{box-shadow:0 0 0 8px rgba(184,245,200,0)}100%{box-shadow:0 0 0 0 rgba(184,245,200,0)}}
+.nd-float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:30;width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:#fff!important;box-shadow:0 10px 30px rgba(20,19,58,.25);display:grid;place-items:center;transition:transform .2s,background .2s}
+.nd-float:hover{background:#1EBE5A;transform:scale(1.06)}
+.nd-float .ui-icon{display:block}
 
 /* popup de diagnóstico (AutoPopup) */
 .au-pop-bg{position:fixed;inset:0;z-index:90;background:rgba(20,19,58,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
@@ -325,5 +324,5 @@ html.nd-page,html.nd-page body{background:#fff}
 }
 @media (prefers-reduced-motion:reduce){
   .dm-ring,.dm-typing i{animation:none}
-  .nd-on::before,.nd-dot{animation:none}
+  .nd-on::before{animation:none}
 }
