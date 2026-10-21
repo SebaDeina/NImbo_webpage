@@ -1,6 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom'
 import { whatsappUrl } from '../config/whatsapp'
-import { Cloud, WA_LABEL } from './nd/Nd'
+import { Cloud } from './nd/Nd'
 
 /*
   Pie del sitio en el diseño blanco: mismas piezas que el pie grabado (marca, contacto,
@@ -41,7 +41,7 @@ export default function Footer() {
             <ul>
               <li>
                 <a href={wa} data-cta="pie" target="_blank" rel="noopener noreferrer">
-                  WhatsApp · {WA_LABEL}
+                  WhatsApp
                 </a>
               </li>
               <li>
