@@ -26,8 +26,8 @@ const EMPTY = { tareas: [], detalle: '', rubro: '', empleados: '', nombre: '', t
 
 /* Tres pasos cortos: casi todo se elige con un toque y los datos de contacto quedan al final,
    cuando el visitante ya contó qué necesita. */
-export function DiagnosticoForm({ source = 'pagina', autoFocus = false }) {
-  const [d, setD] = useState(EMPTY)
+export function DiagnosticoForm({ source = 'pagina', autoFocus = false, tareas = [] }) {
+  const [d, setD] = useState({ ...EMPTY, tareas })
   const [paso, setPaso] = useState(0)
   const [error, setError] = useState('')
   const [sending, setSending] = useState(false)
@@ -205,23 +205,23 @@ export function DiagnosticoForm({ source = 'pagina', autoFocus = false }) {
   )
 }
 
-/* Popup: lo abre cualquier botón con useDiagnostico()(origen). */
+/* Popup: lo abre cualquier botón con useDiagnostico()(origen, tareas), tareas ya marcadas en el primer paso. */
 const Ctx = createContext(() => {})
 export const useDiagnostico = () => useContext(Ctx)
 
 export function DiagnosticoProvider({ children }) {
-  const [source, setSource] = useState(null)
-  const open = useCallback((src = 'boton') => setSource(src), [])
-  const close = useCallback(() => setSource(null), [])
+  const [pop, setPop] = useState(null)
+  const open = useCallback((source = 'boton', tareas = []) => setPop({ source, tareas }), [])
+  const close = useCallback(() => setPop(null), [])
   return (
     <Ctx.Provider value={open}>
       {children}
-      {source && <DiagnosticoPopup source={source} onClose={close} />}
+      {pop && <DiagnosticoPopup {...pop} onClose={close} />}
     </Ctx.Provider>
   )
 }
 
-function DiagnosticoPopup({ source, onClose }) {
+function DiagnosticoPopup({ source, tareas, onClose }) {
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose()
     document.addEventListener('keydown', onKey)
@@ -242,7 +242,7 @@ function DiagnosticoPopup({ source, onClose }) {
           </button>
           <span className="au-pop-k">Diagnóstico gratis · 1 minuto</span>
           <h3 id="dg-pop-t">Contanos qué te frena</h3>
-          <DiagnosticoForm source={source} autoFocus />
+          <DiagnosticoForm source={source} tareas={tareas} autoFocus />
         </div>
       </div>
     </div>

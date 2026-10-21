@@ -31,6 +31,7 @@
 .hm-sheet .nd-wrap{display:flex;flex-direction:column;padding-top:8px;padding-bottom:20px}
 .hm-sheet a:not(.nd-btn){padding:14px 0;border-bottom:1px solid var(--line-2);font-size:17px;font-weight:500}
 .hm-sheet .nd-btn{margin-top:18px}
+.hm-sheet button.nd-btn{width:100%;justify-content:center}
 @media (max-width:860px){.hm-burger{display:flex}}
 
 /* encabezado de página interna */
@@ -291,38 +292,22 @@ footer.nd-foot{
 @keyframes hdiIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.hdi-slide{animation:none}}
 
-/* ---------- Tarifario (home y /contacto) ---------- */
-.of-lead{margin:0;max-width:360px;font-size:15px;line-height:1.5;color:var(--muted)}
+/* ---------- Formas de trabajar, sin montos (home y /contacto) ---------- */
+.of-lead{margin:0;max-width:400px;font-size:15px;line-height:1.55;color:var(--muted)}
 .of-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 24px}
 .of-grid>.of-card{margin-bottom:24px}
-.of-card{display:grid;grid-row:span 6;grid-template-rows:subgrid;gap:18px;align-content:start;background:var(--mist);border-radius:24px;padding:clamp(24px,3vw,36px)}
-.of-head h3{margin:0 0 6px;font-size:22px;font-weight:600;letter-spacing:-.015em}
+.of-card{display:grid;grid-row:span 5;grid-template-rows:subgrid;gap:18px;align-content:start;background:var(--mist);border-radius:24px;padding:clamp(24px,3vw,36px)}
+.of-k{display:block;margin-bottom:14px;font-size:12px;color:var(--muted)}
+.of-head h3{margin:0 0 8px;font-size:22px;font-weight:600;letter-spacing:-.015em}
 .of-head p{margin:0;font-size:15px;line-height:1.5;color:var(--text)}
-.of-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;padding-top:18px;border-top:1px solid var(--line)}
-.of-desde{width:100%;font-size:13px;color:var(--muted)}
-.of-price b{font-size:clamp(34px,3.4vw,44px);line-height:1;letter-spacing:-.035em;font-weight:500;color:var(--ink)}
-.of-unit{font-size:15px;color:var(--muted)}
-.of-nota{margin:-6px 0 0;font-size:13.5px;line-height:1.5;color:var(--muted)}
+.of-modo{margin:0;padding-top:18px;border-top:1px solid var(--line);font-size:17px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
 .of-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.45;color:var(--ink)}
 .of-list li{position:relative;padding-left:24px}
 .of-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--brand);font-weight:600}
-.of-foot{align-self:end;padding-top:6px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.of-aparte{margin:0;font-size:13.5px;line-height:1.5;color:var(--muted)}
+.of-foot{align-self:end;padding-top:6px}
 .of-card.is-star{background:#fff;box-shadow:inset 0 0 0 2px var(--brand)}
 .of-tag{display:inline-block;margin-left:10px;vertical-align:3px;font-size:12px;font-weight:500;letter-spacing:0;color:#fff;background:var(--brand);padding:3px 10px;border-radius:999px}
-.of-aparte{margin:0;font-size:13.5px;line-height:1.5;color:var(--muted);padding-top:14px;border-top:1px solid var(--line)}
-.of-aparte b{color:var(--ink);font-weight:600}
-.of-table{margin-top:24px;border-top:1px solid var(--ink)}
-.of-row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--text)}
-.of-row-head{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:12px 0}
-.of-svc{color:var(--ink);font-weight:500}
-.of-small{margin:16px 0 0;font-size:13.5px;line-height:1.5;color:var(--muted);max-width:720px}
-.of-small a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
-@media (max-width:640px){
-  .of-row-head{display:none}
-  .of-row{grid-template-columns:1fr 1fr;gap:4px 16px}
-  .of-svc{grid-column:1/-1;margin-bottom:4px}
-  .of-row>[data-label]::before{content:attr(data-label);display:block;font-size:12px;color:var(--muted)}
-}
 
 /* ---------- /display ---------- */
 .dp-hero .nd-stage{min-height:0}

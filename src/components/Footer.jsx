@@ -58,7 +58,7 @@ export default function Footer() {
             <Link to="/#cap-II">Automatización e integración</Link>
             <Link to="/#cap-IV">Datos y BI</Link>
             <Link to="/#cap-I">Desarrollo web y software a medida</Link>
-            <Link to="/#precios">Precios</Link>
+            <Link to="/#precios">Formas de trabajar</Link>
             <h4 className="nf-sub">Producto propio</h4>
             <Link to="/display">Nimbo Display</Link>
           </div>
@@ -71,11 +71,11 @@ export default function Footer() {
             <Link to="/privacidad">Privacidad</Link>
           </div>
           <div className="nf-col nf-talk">
-            <h4>Hablemos</h4>
-            <p>Contanos tu idea y te respondemos en menos de 24 horas.</p>
-            <a className="nf-btn" href={wa} data-cta="pie" target="_blank" rel="noopener noreferrer">
-              Escribinos →
-            </a>
+            <h4>Diagnóstico</h4>
+            <p>Contanos qué proceso querés mejorar y te respondemos en menos de 24 horas.</p>
+            <Link className="nf-btn" to="/diagnostico">
+              Solicitar diagnóstico →
+            </Link>
           </div>
         </div>
         <div className="nf-legal">

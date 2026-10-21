@@ -9,9 +9,25 @@
 /* el titular de la home es largo: más chico que el de /automatizaciones para que entre en dos líneas */
 .nd-home .nd-hero-copy{max-width:1120px}
 .nd-home .nd-hero h1{font-size:clamp(34px,4.6vw,64px);line-height:1.05}
+.hm-hero-note{font-size:12px!important;color:var(--muted)!important;letter-spacing:.01em}
 @media (max-width:640px){.nd-home .nd-sectors-in>span{flex-basis:100%;text-align:center}}
 .nd-home .nd-sectors-in a b{transition:color .2s}
 .nd-home .nd-sectors-in a:hover b{color:var(--hover)}
+
+/* casos: evidencia visual y breve */
+.hm-text-button{appearance:none;border:0;background:none;padding:0;font:inherit;cursor:pointer;text-align:left}
+.hm-case-grid{margin-top:0}
+.hm-case-card{display:flex;flex-direction:column;gap:20px}
+.hm-case-media{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:20px;background:var(--mist)}
+.hm-case-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.hm-case-media:hover img{transform:scale(1.025)}
+.hm-case-copy{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:0 4px}
+.hm-case-copy h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.hm-case-copy p{margin:0;font-size:15px;line-height:1.5;color:var(--text)}
+.hm-case-copy .nd-more{margin-top:3px}
+.hm-final .nd-eyebrow{margin-bottom:-10px}
+.hm-final-note{font-size:12px!important;color:var(--muted)!important;margin-top:-10px!important}
+.nd-home .nd-sec{padding-top:112px}
 
 /* tarjetas de servicio */
 .hm-tag{display:inline-block;vertical-align:middle;margin-left:10px;font-size:11.5px;font-weight:500;letter-spacing:0;
@@ -123,3 +139,9 @@
 .hm-product-copy .hm-more{align-items:center;gap:12px 22px;margin-top:8px}
 .hm-product-copy .nd-more{margin-top:0}
 @media (max-width:900px){.hm-product{grid-template-columns:1fr}}
+@media (max-width:760px){.nd-home .nd-sec{padding-top:82px}}
+
+/* tarjetas de servicio: toda la tarjeta abre el diagnóstico */
+.hm-svc{cursor:pointer}
+.hm-svc:hover h3{color:var(--hover)}
+.hm-svc h3{transition:color .2s}

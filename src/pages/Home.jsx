@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { AgentDemo, HeroDemo } from '../components/AutoDemos'
-import { DataDemo, DisplayDemo, FlowDemo, WebDemo } from '../components/HomeDemos'
+import { DataDemo, FlowDemo, WebDemo } from '../components/HomeDemos'
 import { useDiagnostico } from '../components/nd/DiagnosticoForm'
+import { Cloud, NdFaq, NdFinalBtns } from '../components/nd/Nd'
 import Ofertas from '../components/nd/Ofertas'
-import { Cloud, NdFaq, NdFinal, WaLink as BaseWaLink } from '../components/nd/Nd'
 import { PROJECTS } from '../data/projects'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/automatizaciones.css'
@@ -13,17 +13,14 @@ import '../styles/home.css'
   Home de Nimbo Consulting con el diseño blanco de /automatizaciones ("Nimbodata Landing v2"):
   Poppins, bloques limpios y una demo animada por área. El encabezado, el
   botón flotante y el pie los pone App (NdHeader, NdFloat, Footer).
-  Los data-cta conservan las etiquetas de la home anterior para no cortar la medición.
 */
-
-const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría agendar una reunión de diagnóstico para mi empresa.'
-const WaLink = ({ msg = WA_MSG, ...rest }) => <BaseWaLink msg={msg} {...rest} />
-const svcMsg = (t) => `¡Hola! Vi el área de ${t} en el sitio de Nimbo y me gustaría conversar sobre mi empresa.`
 
 // Las cuatro áreas de la consultora (oct. 2026). IA y automatización van primero: son las que se promocionan
 // en los primeros 90 días; datos y software a medida son venta complementaria.
 // Los ids cap-I…cap-V son los que usa el pie para saltar a cada área; visión por computadora quedó dentro
 // de IA y su id viejo (cap-V) sigue como ancla en esa tarjeta.
+const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría agendar una reunión de diagnóstico para mi empresa.'
+
 const SERVICIOS = [
   {
     id: 'cap-III',
@@ -31,8 +28,9 @@ const SERVICIOS = [
     n: '01',
     cta: 'servicio-chatbots',
     t: 'Inteligencia artificial y agentes',
-    d: 'Agentes que atienden, venden y reservan por WhatsApp e Instagram, asistentes internos para tu equipo y visión sobre las cámaras que ya tenés.',
-    usos: ['Bots de WhatsApp e Instagram', 'Reservas y turnos', 'Asistentes internos', 'Visión por computadora'],
+    d: 'Agentes que atienden, venden y resuelven consultas en los canales que tu empresa ya usa.',
+    usos: ['WhatsApp e Instagram', 'Reservas y turnos', 'Asistentes internos'],
+    tareas: ['Responder WhatsApp e Instagram', 'Turnos y reservas'],
     v: 'nd-v-sand',
     demo: <AgentDemo />,
     mas: ['/automatizaciones', 'Ver agentes de IA para pymes'],
@@ -42,8 +40,9 @@ const SERVICIOS = [
     n: '02',
     cta: 'servicio-automatizacion',
     t: 'Automatización e integración',
-    d: 'Conectamos tus sistemas y sacamos de encima las tareas repetitivas: lo que hoy se copia a mano entre planillas pasa solo.',
-    usos: ['APIs', 'ERP y CRM', 'Google Workspace', 'Procesos administrativos'],
+    d: 'Conectamos tus sistemas para que los datos circulen y las tareas repetitivas sucedan solas.',
+    usos: ['ERP y CRM', 'Google Workspace', 'Procesos administrativos'],
+    tareas: ['Carga de datos y planillas'],
     v: 'nd-v-lilac',
     demo: <FlowDemo />,
     mas: ['/automatizaciones', 'Ver automatizaciones para pymes'],
@@ -53,8 +52,9 @@ const SERVICIOS = [
     n: '03',
     cta: 'servicio-datos',
     t: 'Datos y business intelligence',
-    d: 'Tus números en un solo lugar: tableros de gestión, fuentes integradas y alertas cuando algo se sale de lo normal.',
-    usos: ['Dashboards', 'Indicadores de gestión', 'SQL', 'Alertas inteligentes'],
+    d: 'Unificamos tus números en tableros claros, con indicadores y alertas para decidir a tiempo.',
+    usos: ['Dashboards', 'Indicadores', 'Alertas inteligentes'],
+    tareas: ['Reportes y números del negocio'],
     v: 'nd-v-wheat',
     demo: <DataDemo />,
   },
@@ -71,35 +71,41 @@ const SERVICIOS = [
 ]
 
 const RESULTADOS = [
-  ['Menos tiempo perdido', 'Las tareas repetitivas pasan a correr solas y tu equipo se dedica a lo que suma.'],
-  ['Mejor atención comercial', 'Cada consulta recibe respuesta en el momento, también fuera de horario.'],
-  ['Menos errores', 'Menos datos copiados a mano entre planillas y sistemas.'],
-  ['Más información para decidir', 'Ves cómo viene el negocio sin esperar al cierre del mes.'],
+  ['Menos trabajo manual', 'Las tareas repetitivas dejan de consumir horas del equipo.'],
+  ['Mejor atención', 'Cada consulta recibe una respuesta rápida y consistente.'],
+  ['Sistemas conectados', 'La información circula sin copias ni datos duplicados.'],
+  ['Decisiones a tiempo', 'Los indicadores están disponibles cuando hacen falta.'],
 ]
 
-const CLIENTES = [
-  ['Clínicas y centros de servicios', 'Reservas, confirmación de turnos, consultas frecuentes, derivaciones y reportes, cuidando los datos sensibles.'],
-  ['Comercios y distribuidores', 'Atención comercial, consultas de stock, pedidos, integración de ventas e indicadores.'],
-  ['Empresas con mucha administración', 'Consolidación de información, integraciones, conciliaciones, tableros y controles automáticos.'],
-]
-
-const DISPLAY_MSG = '¡Hola! Vi Nimbo Display en el sitio y me gustaría ver una demo.'
-
-const DESTACADOS = ['nimbo-display', 'analitica-video', 'marketing-automatico']
-const PROYECTOS = DESTACADOS.map((slug) => PROJECTS.find((p) => p.slug === slug)).filter(Boolean)
+const CASOS = [
+  {
+    slug: 'asistente-ia',
+    label: 'IA + datos',
+    resumen: 'Preguntas de negocio respondidas con datos reales, sin SQL ni dependencia del equipo técnico.',
+  },
+  {
+    slug: 'dashboard-a-medida',
+    label: 'Business intelligence',
+    resumen: 'Indicadores, comparativas y alertas reunidos en un tablero conectado a la operación.',
+  },
+  {
+    slug: 'gestion-agro',
+    label: 'Software a medida',
+    resumen: 'Producción, sanidad, clima, tareas y stock centralizados en una aplicación de uso diario.',
+  },
+].map((story) => ({ ...story, project: PROJECTS.find((p) => p.slug === story.slug) })).filter((story) => story.project)
 
 const PASOS = [
-  ['01', 'Diagnóstico', 'Una primera reunión sin cargo para entender tu proceso, cuánto te cuesta el problema y si tiene solución.'],
-  ['02', 'Propuesta', 'Alcance, entregables, exclusiones, plazos y costos por escrito, en pesos.'],
-  ['03', 'Implementación', 'Construimos, probamos con casos reales y lo ponemos en producción con tu aprobación.'],
-  ['04', 'Acompañamiento', 'Monitoreo, soporte y una reunión periódica para revisar resultados y ajustar.'],
+  ['01', 'Diagnóstico', 'Entendemos el proceso y la oportunidad de mejora.'],
+  ['02', 'Propuesta', 'Definimos alcance, tiempos, costos y resultados esperados.'],
+  ['03', 'Implementación', 'Construimos y probamos la solución con casos reales.'],
+  ['04', 'Evolución', 'Medimos, mantenemos y ajustamos lo implementado.'],
 ]
 
 const FAQ = [
-  ['¿El diagnóstico tiene costo?', 'La primera reunión es sin cargo. Si el problema necesita un relevamiento técnico detallado y un documento de solución, ese diagnóstico arranca en $150.000 y se bonifica si después contratás la implementación.'],
-  ['¿Cuánto cuesta?', 'Un agente de IA arranca en $350.000 de implementación más $120.000 por mes; Nimbo Managed AI, en $650.000 más $200.000 por mes. Las automatizaciones arrancan en $400.000 y los dashboards en $500.000. El software a medida se cotiza por proyecto. Después del diagnóstico te pasamos un presupuesto cerrado en pesos.'],
-  ['¿Qué incluye el abono mensual?', 'La operación del servicio, monitoreo, resolución de incidencias en horario de soporte y ajustes menores. Nuevas integraciones, rediseños completos y costos de terceros (consumo de modelos de IA, cargos de Meta, licencias) se presupuestan aparte.'],
-  ['¿Cómo se paga la implementación?', 'En general, 50 % al iniciar y 50 % contra la aceptación, con hitos definidos en la propuesta.'],
+  ['¿El diagnóstico tiene costo?', 'La primera reunión es sin cargo. Si hace falta un relevamiento técnico detallado, lo cotizamos antes de avanzar.'],
+  ['¿Cuánto cuesta?', 'Depende del alcance. Después del diagnóstico entregamos una propuesta cerrada, en pesos y a precio fijo, con tiempos y resultados esperados.'],
+  ['¿Qué incluye el abono mensual?', 'La operación del servicio, monitoreo, soporte y ajustes continuos. Nuevas integraciones, rediseños completos y costos de terceros (consumo de modelos de IA, cargos de Meta, licencias) se proponen aparte.'],
   ['¿Funciona con los sistemas que ya uso?', 'En la mayoría de los casos sí: WhatsApp, Gmail, Google Sheets, CRMs y sistemas de gestión con facturación electrónica. Lo revisamos en el diagnóstico.'],
   ['¿Dónde están?', 'En Buenos Aires, y trabajamos de forma remota con empresas de todo el país.'],
 ]
@@ -128,22 +134,23 @@ export default function Home() {
       <section id="top" className="nd-hero">
         <div className="nd-wrap nd-hero-in">
           <div className="nd-hero-copy">
-            <span className="nd-eyebrow">Nimbo Consulting · Tecnología, IA y automatización</span>
+            <span className="nd-eyebrow">Consultoría tecnológica · Estrategia, implementación y evolución</span>
             <h1>
               Automatizamos los procesos que <span className="hm-l">frenan el crecimiento de tu empresa.</span>
             </h1>
             <p>
-              Diseñamos e implementamos agentes de inteligencia artificial, integraciones y soluciones digitales para que
-              tu equipo dedique menos tiempo a tareas repetitivas y más tiempo a hacer crecer el negocio.
+              Analizamos tus procesos y diseñamos soluciones para reducir trabajo manual, mejorar la atención y conectar
+              los sistemas que tu operación ya usa.
             </p>
             <div className="nd-btns">
               <button type="button" className="nd-btn" onClick={() => openDiagnostico('hero')}>
-                Agendá un diagnóstico gratis
+                Solicitar un diagnóstico
               </button>
-              <a href="#servicios" className="nd-btn nd-btn-soft">
-                Ver servicios
+              <a href="#casos" className="nd-btn nd-btn-soft">
+                Ver casos reales
               </a>
             </div>
+            <p className="hm-hero-note">Primera reunión sin cargo · 30 a 45 minutos · Sin compromiso</p>
           </div>
 
           <div className="nd-stage">
@@ -154,25 +161,20 @@ export default function Home() {
 
       <section className="nd-sectors">
         <div className="nd-wrap nd-sectors-in">
-          <span>Un solo equipo para</span>
-          {SERVICIOS.map((s) => (
-            <a key={s.id} href={`#${s.id}`}>
-              <b>{s.t}</b>
-            </a>
-          ))}
+          <span>Resultados que buscamos</span>
+          <a href="#resultados"><b>Menos tareas repetitivas</b></a>
+          <a href="#resultados"><b>Mejor atención</b></a>
+          <a href="#resultados"><b>Sistemas conectados</b></a>
+          <a href="#resultados"><b>Decisiones con datos</b></a>
         </div>
       </section>
 
-      <section id="enfoque" className="nd-sec">
+      <section id="resultados" className="nd-sec">
         <div className="nd-wrap">
           <div className="nd-sec-top">
             <div className="hm-line">
-              <span className="nd-eyebrow">Cómo pensamos</span>
-              <h2 className="nd-h2">Un socio tecnológico, no un proveedor de bots</h2>
-              <p>
-                Primero entendemos cómo trabaja tu empresa y dónde pierde tiempo o plata. Después elegimos la tecnología,
-                la implementamos y nos hacemos cargo de que siga funcionando.
-              </p>
+              <span className="nd-eyebrow">Resultados</span>
+              <h2 className="nd-h2">Menos fricción. Más capacidad para crecer.</h2>
             </div>
           </div>
           <div className="nd-cols">
@@ -190,9 +192,9 @@ export default function Home() {
         <div className="nd-wrap">
           <div className="nd-sec-top">
             <div className="hm-line">
-              <span className="nd-eyebrow">Servicios</span>
-              <h2 className="nd-h2">Cuatro áreas, un solo equipo</h2>
-              <p>Consultoría, IA aplicada e ingeniería de software para resolver problemas de negocio.</p>
+              <span className="nd-eyebrow">Soluciones</span>
+              <h2 className="nd-h2">De la estrategia a la implementación</h2>
+              <p>Combinamos consultoría, IA e ingeniería de software según lo que el proceso necesite.</p>
             </div>
             <button type="button" className="nd-link dg-link" onClick={() => openDiagnostico('indice')}>
               ¿No sabés por dónde empezar? →
@@ -201,27 +203,34 @@ export default function Home() {
 
           <div className="nd-grid-2">
             {SERVICIOS.map((s) => (
-              <Servicio key={s.id} s={s} />
+              <Servicio key={s.id} s={s} onDiagnostico={openDiagnostico} />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="clientes" className="nd-sec">
+      <section id="casos" className="nd-sec hm-cases">
         <div className="nd-wrap">
           <div className="nd-sec-top">
             <div className="hm-line">
-              <span className="nd-eyebrow">Para quién trabajamos</span>
-              <h2 className="nd-h2">Pymes de 10 a 100 personas</h2>
-              <p>Empresas con procesos digitales desordenados, consultas que se repiten todo el día y ganas de invertir en eficiencia.</p>
+              <span className="nd-eyebrow">Experiencia aplicada</span>
+              <h2 className="nd-h2">Soluciones que ya están funcionando.</h2>
             </div>
+            <Link to="/proyectos" className="nd-link">Ver todos los proyectos →</Link>
           </div>
-          <div className="nd-cols">
-            {CLIENTES.map(([t, d]) => (
-              <div key={t} className="nd-col">
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
+          <div className="nd-grid-3 hm-case-grid">
+            {CASOS.map((story, index) => (
+              <article key={story.slug} className="hm-case-card">
+                <Link to={`/proyectos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
+                  <img src={story.project.cover} alt={`Captura de ${story.project.title}`} loading="lazy" />
+                </Link>
+                <div className="hm-case-copy">
+                  <span className="nd-mono hm-type">{story.label} · Caso 0{index + 1}</span>
+                  <h3>{story.project.title}</h3>
+                  <p>{story.resumen}</p>
+                  <Link to={`/proyectos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -231,8 +240,8 @@ export default function Home() {
         <div className="nd-wrap">
           <div className="nd-sec-top">
             <div className="hm-line">
-              <h2 className="nd-h2">Cómo trabajamos</h2>
-              <p>Diagnóstico, implementación y abono mensual: cada solución queda funcionando y con alguien a cargo.</p>
+              <span className="nd-eyebrow">Método de trabajo</span>
+              <h2 className="nd-h2">Primero entendemos. Después construimos.</h2>
             </div>
           </div>
           <div className="nd-cols nd-steps">
@@ -249,70 +258,6 @@ export default function Home() {
 
       <Ofertas />
 
-      <section id="productos" className="nd-sec">
-        <div className="nd-wrap">
-          <div className="nd-sec-top">
-            <div className="hm-line">
-              <span className="nd-eyebrow">Producto propio</span>
-              <h2 className="nd-h2">Software listo para usar</h2>
-              <p>Además de los proyectos a medida, desarrollamos y mantenemos un producto con abono mensual.</p>
-            </div>
-          </div>
-
-          <article className="hm-product">
-            <Link to="/display" className="nd-visual nd-v-mist hm-product-vis" aria-label="Conocé Nimbo Display">
-              <DisplayDemo />
-            </Link>
-            <div className="hm-product-copy">
-              <span className="nd-mono hm-type">Cartelería digital · SaaS</span>
-              <h3>Nimbo Display</h3>
-              <p>
-                Las pantallas de tu local conectadas a tus promociones, precios, stock y horarios. Cambiás lo que se ve en
-                todas las sucursales desde un solo panel, y sigue andando aunque se corte internet.
-              </p>
-              <ul className="hm-usos">
-                <li>Promos programadas</li>
-                <li>Precios desde tu planilla</li>
-                <li>Varias sucursales</li>
-              </ul>
-              <div className="hm-more">
-                <Link to="/display" className="nd-btn">
-                  Conocé Nimbo Display
-                </Link>
-                <WaLink cta="display" className="nd-more" msg={DISPLAY_MSG}>
-                  Pedí una demo →
-                </WaLink>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="proyectos" className="nd-sec">
-        <div className="nd-wrap">
-          <div className="nd-sec-top">
-            <h2 className="nd-h2">Proyectos que ya están andando</h2>
-            <Link to="/proyectos" className="nd-link">
-              Ver todos los proyectos →
-            </Link>
-          </div>
-          <div className="nd-grid-3 hm-projects">
-            {PROYECTOS.map((p) => (
-              <Link key={p.slug} to={`/proyectos#${p.slug}`} className="nd-card hm-project">
-                <div className="nd-visual nd-v-mist sm hm-shot">
-                  <img src={p.cover} alt={`Captura de ${p.title}`} loading="lazy" />
-                </div>
-                <div className="nd-card-copy">
-                  <span className="nd-mono hm-type">{p.type}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.summary.es}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="faq" className="nd-sec">
         <div className="nd-wrap nd-narrow">
           <h2 className="nd-h2 nd-center">Preguntas frecuentes</h2>
@@ -320,14 +265,24 @@ export default function Home() {
         </div>
       </section>
 
-      <NdFinal />
+      <section className="nd-final hm-final">
+        <div className="nd-wrap nd-final-in">
+          <span className="nd-eyebrow">¿Qué proceso está frenando hoy a tu equipo?</span>
+          <h2>Empecemos por entender el problema.</h2>
+          <p>Revisamos tu proceso y detectamos oportunidades concretas de mejora.</p>
+          <NdFinalBtns cta="cierre" msg={WA_MSG} onForm={() => openDiagnostico('cierre')} />
+          <p className="hm-final-note">Sin cargo · 30 a 45 minutos por videollamada · Te respondemos en menos de 24 h</p>
+        </div>
+      </section>
     </div>
   )
 }
 
-function Servicio({ s }) {
+// toda la tarjeta abre el diagnóstico con las tareas del área ya marcadas; los enlaces de adentro siguen haciendo lo suyo
+function Servicio({ s, onDiagnostico }) {
+  const abrir = () => onDiagnostico(s.cta, s.tareas)
   return (
-    <article id={s.id} className="nd-card">
+    <article id={s.id} className="nd-card hm-svc" onClick={(e) => !e.target.closest('a, button') && abrir()}>
       {s.alias && <span id={s.alias} className="hm-alias" aria-hidden="true" />}
       <div className={`nd-visual ${s.v}`}>{s.demo}</div>
       <div className="nd-card-copy">
@@ -340,9 +295,9 @@ function Servicio({ s }) {
           ))}
         </ul>
         <div className="hm-more">
-          <WaLink cta={s.cta} className="nd-more" msg={svcMsg(s.t)}>
-            Consultanos →
-          </WaLink>
+          <button type="button" className="nd-more hm-text-button" onClick={abrir}>
+            Evaluar este proceso →
+          </button>
           {s.mas && (
             <Link to={s.mas[0]} className="nd-more hm-alt">
               {s.mas[1]} →

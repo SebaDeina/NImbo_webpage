@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Cloud, WaLink, useScrolled } from './Nd'
+import { useDiagnostico } from './DiagnosticoForm'
+import { Cloud, useScrolled } from './Nd'
 
 /* Encabezado blanco del sitio (todas las páginas salvo /automatizaciones, que tiene el suyo). */
 
-const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un proyecto.'
 const NAV = [
-  ['/#servicios', 'Servicios'],
-  ['/display', 'Nimbo Display'],
-  ['/proyectos', 'Proyectos'],
-  ['/blog', 'Blog'],
+  ['/#servicios', 'Soluciones'],
+  ['/#casos', 'Casos de éxito'],
+  ['/#proceso', 'Cómo trabajamos'],
   ['/nosotros', 'Nosotros'],
 ]
 
@@ -29,6 +28,7 @@ function NavLinks() {
 
 export default function NdHeader() {
   const scrolled = useScrolled()
+  const openDiagnostico = useDiagnostico()
   const [open, setOpen] = useState(false)
   const { pathname, hash } = useLocation()
   useEffect(() => setOpen(false), [pathname, hash])
@@ -50,9 +50,9 @@ export default function NdHeader() {
           <NavLinks />
         </nav>
         <div className="nd-head-cta">
-          <WaLink cta="menu" msg={WA_MSG} className="nd-btn nd-btn-sm">
-            Hablemos
-          </WaLink>
+          <button type="button" className="nd-btn nd-btn-sm" onClick={() => openDiagnostico('menu')}>
+            Solicitar diagnóstico
+          </button>
           <button
             type="button"
             className="hm-burger"
@@ -70,10 +70,11 @@ export default function NdHeader() {
         <div id="hm-sheet" className="hm-sheet">
           <div className="nd-wrap">
             <NavLinks />
-            <Link to="/contacto">Contacto</Link>
-            <WaLink cta="menu-celular" msg={WA_MSG} className="nd-btn">
-              Escribinos por WhatsApp
-            </WaLink>
+            <Link to="/proyectos">Todos los proyectos</Link>
+            <Link to="/blog">Ideas y recursos</Link>
+            <button type="button" className="nd-btn" onClick={() => openDiagnostico('menu-celular')}>
+              Solicitar diagnóstico
+            </button>
           </div>
         </div>
       )}

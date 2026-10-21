@@ -83,7 +83,7 @@ export default function Contacto() {
           <ContactForm />
         </div>
       </section>
-      <Ofertas title="Precios de referencia" />
+      <Ofertas />
     </main>
   )
 }

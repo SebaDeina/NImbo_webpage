@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { WHATSAPP_NUMBER, whatsappUrl } from '../../config/whatsapp'
 import { IconWhatsApp } from '../Icons'
+import { useDiagnostico } from './DiagnosticoForm'
 
 /*
   Piezas compartidas del diseño blanco "Nimbodata Landing v2" (home y /automatizaciones).
@@ -92,22 +92,30 @@ export function NdPageHero({ eyebrow, title, children, className = '' }) {
   )
 }
 
-/* Cierre de página: WhatsApp + formulario */
+/* Cierre de página: el popup de diagnóstico como formulario y WhatsApp como alternativa */
 export function NdFinal({ title = 'Contanos tu idea', cta = 'cierre', msg = WA_MSG }) {
+  const openDiagnostico = useDiagnostico()
   return (
     <section className="nd-final">
       <div className="nd-wrap nd-final-in">
         <h2>{title}</h2>
         <p>Te respondemos en menos de 24 horas con un plan para convertirla en algo concreto. Sin compromiso.</p>
-        <div className="nd-btns">
-          <WaLink cta={cta} msg={msg} className="nd-btn">
-            WhatsApp {WA_LABEL}
-          </WaLink>
-          <Link to="/contacto" className="nd-btn nd-btn-soft">
-            Escribinos por el formulario
-          </Link>
-        </div>
+        <NdFinalBtns cta={cta} msg={msg} onForm={() => openDiagnostico(cta)} />
       </div>
     </section>
+  )
+}
+
+export function NdFinalBtns({ cta, msg = WA_MSG, onForm, label = 'Solicitar un diagnóstico' }) {
+  return (
+    <div className="nd-btns">
+      <button type="button" className="nd-btn" onClick={onForm}>
+        {label}
+      </button>
+      <WaLink cta={cta} msg={msg} className="nd-btn nd-btn-soft">
+        <IconWhatsApp size={18} />
+        Escribinos por WhatsApp
+      </WaLink>
+    </div>
   )
 }
