@@ -982,6 +982,7 @@ En Nimbo ayudamos a pymes argentinas a llevar la IA de "probé ChatGPT" a "tengo
     description:
       'Tener solo Instagram ya no alcanza. Te explicamos por qué una página web propia es la base de cualquier negocio que quiera crecer en serio.',
     date: '2026-06-10',
+    updated: '2026-10-21',
     category: 'Diseño Web',
     readTime: '5 min',
     content: `
@@ -1053,6 +1054,14 @@ No alcanza con tener cualquier web. Hay características básicas que hacen la d
 - **SEO básico**: título de página, descripción, palabras clave relevantes
 - **Formulario o botón de contacto visible**
 - **Certificado de seguridad (HTTPS)**: Google penaliza los sitios sin SSL
+
+---
+
+## Desarrollo web para pymes desde Buenos Aires
+
+En Nimbo diseñamos y desarrollamos páginas web para pymes, además de aplicaciones internas, portales y sistemas de gestión cuando el negocio necesita algo a medida. Trabajamos desde Buenos Aires de forma remota con empresas de todo el país.
+
+Una web para una pyme tiene que explicar con claridad qué ofrece, funcionar bien desde el celular, cargar rápido y facilitar el contacto. Podés conocer el enfoque de **[desarrollo web y software a medida de Nimbo](/#cap-I)** o **[contarnos tu proyecto](/contacto)** para revisar qué tipo de solución necesitás.
 
 ---
 

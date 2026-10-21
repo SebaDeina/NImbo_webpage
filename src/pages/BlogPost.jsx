@@ -90,7 +90,7 @@ export default function BlogPost() {
                 headline: post.title,
                 description: post.description,
                 datePublished: post.date,
-                dateModified: post.date,
+                dateModified: post.updated || post.date,
                 articleSection: post.category,
                 inLanguage: 'es-AR',
                 image: 'https://www.nimbodata.com/og-nimbo-v2.jpg',

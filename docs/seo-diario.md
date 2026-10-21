@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-21
+- **Bloquear el rastreo de propuestas privadas** (tecnico) — Las rutas /propuesta contienen material privado y robots.txt actualmente permite rastrear todo el sitio. El bloqueo reduce el riesgo de que buscadores descubran estas páginas por enlaces externos o historiales compartidos.  
+  Archivos: `public/robots.txt`
+- **Reforzar la guía para desarrollo web de pymes en Buenos Aires** (contenido) — La búsqueda de desarrollo web necesita una respuesta comercial específica, pero no se puede crear una landing esta semana. La guía existente ahora conecta esa intención con la oferta verificable de Nimbo y declara correctamente su fecha de actualización.  
+  Archivos: `public/sitemap.xml`, `src/data/blog.js`, `src/pages/BlogPost.jsx`
+- **Identificar la página de contacto y sus migas de pan** (datos-estructurados) — ContactPage y BreadcrumbList conectan la ruta de conversión con la entidad Nimbo y el sitio principal. Esto facilita que buscadores y asistentes interpreten correctamente el propósito de la página.  
+  Archivos: `public/sitemap.xml`, `src/pages/Contacto.jsx`
+
 ## 2026-10-20
 - **Alinear la landing con «automatización con IA para pymes Argentina»** (meta) — El título y el h1 actuales priorizan agentes, pero la búsqueda más amplia usa «automatización con IA». Incorporar esa frase y Argentina mejora la correspondencia temática sin cambiar la oferta.  
   Archivos: `public/sitemap.xml`, `src/pages/Automatizaciones.jsx`

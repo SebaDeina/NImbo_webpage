@@ -11,6 +11,41 @@ export default function Contacto() {
     description:
       'Pedí un diagnóstico a Nimbo Consulting para automatizar procesos, implementar agentes de IA o tableros de gestión en tu empresa. La primera reunión es sin cargo.',
     path: '/contacto',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'ContactPage',
+          '@id': 'https://www.nimbodata.com/contacto#page',
+          name: 'Contacto — Nimbo Consulting',
+          description:
+            'Página de contacto de Nimbo para conversar sobre automatización, agentes de IA, datos, desarrollo web y software a medida para pymes.',
+          url: 'https://www.nimbodata.com/contacto',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          breadcrumb: { '@id': 'https://www.nimbodata.com/contacto#breadcrumb' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.nimbodata.com/contacto#breadcrumb',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Inicio',
+              item: 'https://www.nimbodata.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Contacto',
+              item: 'https://www.nimbodata.com/contacto',
+            },
+          ],
+        },
+      ],
+    },
   })
 
   return (

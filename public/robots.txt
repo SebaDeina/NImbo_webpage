@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /propuesta
+Disallow: /propuesta/
 
 Sitemap: https://www.nimbodata.com/sitemap.xml
