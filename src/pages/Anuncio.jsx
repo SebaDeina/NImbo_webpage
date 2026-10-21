@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Cloud, NdFaq, NdFloat, WA_LABEL, WaLink, useScrolled } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
+import { pixelLead, pixelPageView } from '../lib/oaiq'
 import '../styles/anuncio.css'
 
 /*
@@ -133,6 +134,12 @@ export default function Anuncio({ variante = 'diagnostico' }) {
   const v = VARIANTES[variante]
   useSeo(v.seo)
 
+  useEffect(() => pixelPageView(), [variante])
+  // cualquier botón de WhatsApp de la página cuenta como conversión para el píxel
+  const onClick = (e) => {
+    if (e.target.closest('[data-cta]')) pixelLead()
+  }
+
   const scrolled = useScrolled()
   const [sel, setSel] = useState([])
   const toggle = (p) => setSel((s) => (s.includes(p) ? s.filter((x) => x !== p) : [...s, p]))
@@ -140,7 +147,7 @@ export default function Anuncio({ variante = 'diagnostico' }) {
   const msg = sel.length ? `${base}. ${v.pickMsg}: ${sel.join(', ').toLowerCase()}.` : `${base} para mi negocio.`
 
   return (
-    <div className="nd ad">
+    <div className="nd ad" onClickCapture={onClick}>
       <header className={`nd-head${scrolled ? ' is-scrolled' : ''}`}>
         <div className="nd-wrap nd-head-in">
           <span className="nd-logo" aria-label="Nimbo">
