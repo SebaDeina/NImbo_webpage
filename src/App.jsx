@@ -81,8 +81,12 @@ export default function App() {
   // flotante, pero con el footer de Nimbo.
   const isReport = pathname === '/robots' || (IS_ROBOTS_HOST && pathname === '/')
   // La landing de automatizaciones tiene encabezado y botón de WhatsApp propios.
-  // La landing del anuncio en ChatGPT también.
-  const isAuto = pathname === '/automatizaciones' || pathname === '/diagnostico-ia' || (IS_AUTO_HOST && pathname === '/')
+  // Las landings de los anuncios en ChatGPT también.
+  const isAuto =
+    pathname === '/automatizaciones' ||
+    pathname === '/diagnostico-ia' ||
+    pathname === '/sistemas-conectados' ||
+    (IS_AUTO_HOST && pathname === '/')
   // El resto del sitio usa el diseño blanco ("Nimbodata Landing v2"): encabezado, botón flotante y pie blancos.
   const isSite = !isLanding && !isReport
   useNdPage(isSite)
@@ -118,6 +122,7 @@ export default function App() {
               <Route path="/display" element={<Display />} />
               <Route path="/diagnostico" element={<Diagnostico />} />
               <Route path="/diagnostico-ia" element={<Anuncio />} />
+              <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
