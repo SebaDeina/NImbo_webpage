@@ -3,31 +3,30 @@ import { TEAM } from '../data/team'
 import { useSeo } from '../hooks/useSeo'
 
 const VALUES = [
-  { t: 'Una sola mesa', d: 'Web, automatización, datos e IA bajo un mismo techo. Sin traducciones entre proveedores: todo avanza en paralelo.' },
-  { t: 'Negocio, no solo tecnología', d: 'Entendemos a quién le hablás y qué tiene que pasar para que funcione. Medimos resultados, no líneas de código.' },
-  { t: 'Lanzar es el comienzo', d: 'Acompañamos todos los meses: medimos, ajustamos y sumamos automatizaciones a medida que tu negocio crece.' },
+  { t: 'Primero el problema', d: 'Antes de proponer tecnología entendemos el proceso, cuánto cuesta hoy y qué cambia si se resuelve.' },
+  { t: 'Un solo equipo', d: 'IA, automatización, datos y software bajo la misma mesa. Sin intermediarios ni traducciones entre proveedores.' },
+  { t: 'Resultados, no entregables', d: 'Medimos lo implementado y lo acompañamos todos los meses para que siga rindiendo a medida que la empresa crece.' },
 ]
 
 const HISTORY = [
-  { y: '2024', t: 'La intuición', d: 'El nombre y la metáfora: bajar las ideas de las nubes a productos que funcionan en el mundo real.' },
-  { y: '2025', t: 'Primeros clientes', d: 'WODSI y los primeros sitios y automatizaciones: de la estrategia al lanzamiento, con datos e IA desde el día uno.' },
-  { y: '2026', t: 'Productos propios', d: 'Lanzamos Nimbo Display, Nimbo Tax y Recorridos 360: herramientas propias que también usan nuestros clientes.' },
-  { y: '2026', t: 'Agentes y visión por computadora', d: 'Agentes de IA que trabajan solos (prospección, marketing, atención) y cámaras que entienden lo que pasa en un local.' },
+  { y: '2024', t: 'El origen', d: 'Nace Nimbo con una idea simple: bajar la tecnología de las nubes a soluciones que funcionen en la operación diaria.' },
+  { y: '2025', t: 'Primeros clientes', d: 'WODSI y las primeras automatizaciones e integraciones, con datos e IA desde el día uno.' },
+  { y: '2026', t: 'Producto propio', d: 'Lanzamos Nimbo Display, cartelería digital conectada a precios, promociones y stock.' },
+  { y: '2026', t: 'Nimbo Consulting', d: 'Ordenamos la consultora en cuatro áreas: IA y agentes, automatización e integración, datos y software a medida.' },
 ]
 
 const PROCESS = [
-  { t: 'Diagnóstico', d: 'Charlamos y entendemos dónde se te va el tiempo y la plata.' },
-  { t: 'Propuesta', d: 'Te mostramos qué automatizar primero, cuánto cuesta y qué vas a ahorrar.' },
-  { t: 'Demo', d: 'Antes de cobrarte, te mostramos cómo se vería funcionando en tu negocio.' },
-  { t: 'Construcción', d: 'Lo armamos e integramos con lo que ya usás: WhatsApp, planillas, tu sistema.' },
-  { t: 'Acompañamiento', d: 'Lo mantenemos, medimos y lo hacemos crecer mes a mes.' },
+  { t: 'Diagnóstico', d: 'Entendemos el proceso y la oportunidad de mejora.' },
+  { t: 'Propuesta', d: 'Definimos alcance, tiempos, costos y resultados esperados.' },
+  { t: 'Implementación', d: 'Construimos y probamos la solución con casos reales.' },
+  { t: 'Evolución', d: 'Medimos, mantenemos y ajustamos lo implementado.' },
 ]
 
 export default function Nosotros() {
   useSeo({
-    title: 'Nosotros — Nimbo | Transformación digital para pymes argentinas',
+    title: 'Nosotros — Nimbo Consulting | IA y automatización para pymes argentinas',
     description:
-      'Somos Nimbo: ayudamos a pymes argentinas a crecer con automatización, inteligencia artificial, páginas web, datos y visión por computadora. Conocé quiénes somos y cómo trabajamos.',
+      'Somos Nimbo Consulting: ayudamos a pymes argentinas a reducir trabajo manual con inteligencia artificial, automatización, datos y software a medida. Conocé quiénes somos y cómo trabajamos.',
     path: '/nosotros',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -56,8 +55,11 @@ export default function Nosotros() {
 
   return (
     <main className="nd-page-main">
-      <NdPageHero eyebrow="Nosotros" title="Bajamos las ideas a tierra">
-        <p>Somos un estudio digital argentino que toma algo intangible —una idea— y lo convierte en sistemas que trabajan solos.</p>
+      <NdPageHero eyebrow="Nosotros" title="Consultoría tecnológica con los pies en la tierra">
+        <p>
+          Somos una consultora argentina que ayuda a pymes a reducir trabajo manual, mejorar la atención y conectar sus
+          sistemas con IA, automatización y software a medida.
+        </p>
       </NdPageHero>
 
       <section className="nd-wrap">
@@ -68,8 +70,8 @@ export default function Nosotros() {
           <div>
             <span className="nd-mono ab-k">POR QUÉ NIMBO</span>
             <p>
-              Nimbo es “nube”. Las mejores ideas empiezan ahí arriba: intangibles, ambiciosas, llenas de potencial. Nuestro
-              trabajo es darles forma con diseño, tecnología, datos e IA para que existan de verdad en tu negocio.
+              Nimbo es “nube”. Mucha tecnología se queda ahí arriba: promesas, demos y herramientas que nadie termina de usar.
+              Nuestro trabajo es bajarla a tierra, en soluciones concretas que tu equipo usa todos los días y que se pueden medir.
             </p>
           </div>
         </div>
@@ -91,7 +93,7 @@ export default function Nosotros() {
 
       <section className="nd-sec">
         <div className="nd-wrap">
-          <h2 className="nd-h2">De las nubes al mundo real</h2>
+          <h2 className="nd-h2">Nuestra historia</h2>
           <ol className="ab-tl">
             {HISTORY.map((h) => (
               <li key={h.t}>
@@ -108,7 +110,7 @@ export default function Nosotros() {
 
       <section className="nd-sec">
         <div className="nd-wrap">
-          <h2 className="nd-h2">Las personas detrás de las nubes</h2>
+          <h2 className="nd-h2">El equipo</h2>
           <div className="ab-team">
             {TEAM.map((m, i) => (
               <div className="ab-person" key={m.id}>
@@ -126,7 +128,7 @@ export default function Nosotros() {
 
       <section className="nd-sec">
         <div className="nd-wrap">
-          <h2 className="nd-h2">De la charla al sistema funcionando</h2>
+          <h2 className="nd-h2">Primero entendemos. Después construimos.</h2>
           <div className="nd-cols nd-steps ab-steps">
             {PROCESS.map((s, i) => (
               <div key={s.t} className="nd-col">

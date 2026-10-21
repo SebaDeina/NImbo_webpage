@@ -5,10 +5,10 @@ export const TEAM = [
     initials: 'SD',
     photo: null,
     name: { es: 'Sebastian Deina', en: 'Sebastian Deina' },
-    role: { es: 'Desarrollo y automatizaciones', en: 'Development & automation' },
+    role: { es: 'IA, automatización y software', en: 'AI, automation & software' },
     bio: {
-      es: 'Webs, apps, automatizaciones e IA: convierte cada idea en un sistema que funciona solo en el día a día del negocio.',
-      en: 'Websites, apps, automations and AI: turns each idea into a system that runs on its own in the day-to-day of the business.',
+      es: 'Diseña e implementa agentes de IA, integraciones y sistemas a medida, desde el diagnóstico hasta que quedan funcionando en la operación.',
+      en: 'Designs and implements AI agents, integrations and custom systems, from the assessment until they run in day-to-day operations.',
     },
   },
   {
