@@ -15,6 +15,53 @@ export default function Diagnostico() {
     description:
       'Una reunión sin cargo de 30 a 45 minutos para entender tus procesos, cuánto te cuesta el problema y si la IA o la automatización lo pueden resolver.',
     path: '/diagnostico',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.nimbodata.com/diagnostico#page',
+          name: 'Diagnóstico para pymes — Nimbo Consulting',
+          description:
+            'Reunión por videollamada para entender un proceso, medir el costo del problema y evaluar si puede resolverse con inteligencia artificial, automatización o software.',
+          url: 'https://www.nimbodata.com/diagnostico',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: { '@id': 'https://www.nimbodata.com/diagnostico#service' },
+          breadcrumb: { '@id': 'https://www.nimbodata.com/diagnostico#breadcrumb' },
+        },
+        {
+          '@type': 'Service',
+          '@id': 'https://www.nimbodata.com/diagnostico#service',
+          name: 'Diagnóstico de procesos para pymes',
+          description:
+            'Revisión del proceso actual, del tiempo o las oportunidades que se pierden y de las alternativas para resolver el problema.',
+          provider: { '@id': 'https://www.nimbodata.com/#business' },
+          areaServed: { '@type': 'Country', name: 'Argentina' },
+          audience: { '@type': 'BusinessAudience', audienceType: 'Pymes de Argentina' },
+          serviceType: 'Diagnóstico de automatización, inteligencia artificial y software',
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.nimbodata.com/diagnostico#breadcrumb',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Inicio',
+              item: 'https://www.nimbodata.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Diagnóstico',
+              item: 'https://www.nimbodata.com/diagnostico',
+            },
+          ],
+        },
+      ],
+    },
   })
 
   return (

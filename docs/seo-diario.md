@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-22
+- **Aclarar la oferta y el equipo de Nimbo para asistentes de IA** (geo) — El resumen actual agrega un rango de empleados que no está respaldado por el sitio. Las respuestas directas y la identificación del equipo mejoran la comprensión de la entidad y de sus servicios sin inventar atributos.  
+  Archivos: `public/llms-full.txt`, `public/llms.txt`
+- **Completar la identidad local de Nimbo en los datos estructurados** (datos-estructurados) — La ubicación, el teléfono y el perfil oficial ya están publicados, pero no forman parte de ProfessionalService. Incorporarlos ayuda a relacionar a Nimbo con Buenos Aires y sus canales oficiales.  
+  Archivos: `index.html`
+- **Identificar el diagnóstico como servicio y página de conversión** (datos-estructurados) — La página explica un servicio concreto, su modalidad y qué ocurre durante la reunión, pero hoy no tiene datos estructurados propios. WebPage, Service y BreadcrumbList permiten interpretar su propósito y su relación con Nimbo.  
+  Archivos: `public/sitemap.xml`, `src/pages/Diagnostico.jsx`
+
 ## 2026-10-21
 - **Bloquear el rastreo de propuestas privadas** (tecnico) — Las rutas /propuesta contienen material privado y robots.txt actualmente permite rastrear todo el sitio. El bloqueo reduce el riesgo de que buscadores descubran estas páginas por enlaces externos o historiales compartidos.  
   Archivos: `public/robots.txt`

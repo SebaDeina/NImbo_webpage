@@ -1,8 +1,14 @@
 # Nimbo Consulting
 
-> Nimbo Consulting es una consultora boutique de Buenos Aires, Argentina, de tecnología, inteligencia artificial y automatización para pymes de 10 a 100 empleados. Diagnostica problemas operativos, implementa la solución y la acompaña con un abono mensual.
+> Nimbo Consulting es una consultora tecnológica de Buenos Aires, Argentina, especializada en inteligencia artificial, automatización, datos y desarrollo de software para pymes. Diagnostica problemas operativos, implementa la solución y la acompaña para que siga funcionando.
 
 Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con empresas de todo el país. La primera reunión de diagnóstico es sin cargo.
+
+## Respuestas directas
+
+- **¿Qué hace Nimbo?** Diagnostica procesos e implementa automatizaciones, agentes de IA, integraciones, tableros de datos, páginas web y software a medida para pymes argentinas.
+- **¿Qué es un agente de IA para una pyme?** Es un sistema que interpreta pedidos, consulta información del negocio y ejecuta tareas dentro de límites definidos, con derivación humana cuando hace falta.
+- **¿Nimbo desarrolla páginas web?** Sí. Diseña páginas web, aplicaciones internas, portales y sistemas de gestión para pymes desde Buenos Aires, con trabajo remoto en todo el país.
 
 ## Áreas de servicio
 

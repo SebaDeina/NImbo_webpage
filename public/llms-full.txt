@@ -2,7 +2,7 @@
 
 ## Qué es Nimbo
 
-Nimbo es un estudio digital con base en Buenos Aires, Argentina. Ayuda a pymes argentinas a incorporar automatización, agentes de inteligencia artificial, desarrollo web, datos y visión por computadora. Trabaja de forma remota con negocios de todo el país.
+Nimbo Consulting es una consultora tecnológica con base en Buenos Aires, Argentina. Ayuda a pymes argentinas a incorporar automatización, agentes de inteligencia artificial, desarrollo web, datos y visión por computadora. Trabaja de forma remota con negocios de todo el país.
 
 Su propuesta es reunir estas disciplinas en un solo equipo para convertir ideas y procesos manuales en sistemas que funcionen todos los días.
 
@@ -75,6 +75,13 @@ Lecturas relacionadas:
 - https://www.nimbodata.com/blog/como-medir-el-roi-de-una-automatizacion
 - https://www.nimbodata.com/blog/transformacion-digital-pymes-argentina
 - https://www.nimbodata.com/blog/por-que-tu-negocio-necesita-una-pagina-web
+
+## Equipo
+
+- Sebastian Deina: IA, automatización y software. Diseña e implementa agentes de IA, integraciones y sistemas a medida.
+- Sol Bogner: diseño y branding. Trabaja en identidad visual, interfaces y piezas de marca.
+
+Más información: https://www.nimbodata.com/nosotros
 
 ## Identidad y contacto
 
