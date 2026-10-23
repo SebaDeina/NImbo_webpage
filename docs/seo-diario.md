@@ -2,6 +2,12 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-23
+- **Completar los datos estructurados de Nimbo Display** (datos-estructurados) — WebPage, Product, FAQPage y BreadcrumbList permiten relacionar el producto, sus respuestas visibles, Nimbo y la navegación sin cambiar precios ni agregar afirmaciones.  
+  Archivos: `public/sitemap.xml`, `src/pages/Display.jsx`
+- **Enlazar IA y automatización desde la navegación principal** (enlaces) — Un enlace interno descriptivo y presente en las páginas principales refuerza la landing que compite por automatización con IA y agentes para pymes, actualmente visible solo desde zonas menos prominentes.  
+  Archivos: `src/components/nd/NdHeader.jsx`
+
 ## 2026-10-22
 - **Aclarar la oferta y el equipo de Nimbo para asistentes de IA** (geo) — El resumen actual agrega un rango de empleados que no está respaldado por el sitio. Las respuestas directas y la identificación del equipo mejoran la comprensión de la entidad y de sus servicios sin inventar atributos.  
   Archivos: `public/llms-full.txt`, `public/llms.txt`

@@ -67,20 +67,66 @@ export default function Display() {
     image: '/proyectos/nimbo-display.jpg',
     jsonLd: {
       '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: 'Nimbo Display',
-      description:
-        'Sistema de cartelería digital centralizada: un dispositivo por pantalla, conectado por HDMI y administrado desde un panel en la nube.',
-      brand: { '@type': 'Brand', name: 'Nimbo' },
-      image: 'https://www.nimbodata.com/proyectos/nimbo-display.jpg',
-      url: 'https://www.nimbodata.com/display',
-      offers: {
-        '@type': 'Offer',
-        price: '70000',
-        priceCurrency: 'ARS',
-        description: 'Dispositivo por pantalla, más abono mensual según la cantidad de pantallas.',
-        availability: 'https://schema.org/InStock',
-      },
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.nimbodata.com/display#page',
+          name: 'Nimbo Display — Cartelería digital para negocios y sucursales',
+          description:
+            'Cartelería digital para administrar promociones, precios, stock y horarios de locales y sucursales desde un panel en la nube.',
+          url: 'https://www.nimbodata.com/display',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: { '@id': 'https://www.nimbodata.com/display#product' },
+          breadcrumb: { '@id': 'https://www.nimbodata.com/display#breadcrumb' },
+        },
+        {
+          '@type': 'Product',
+          '@id': 'https://www.nimbodata.com/display#product',
+          name: 'Nimbo Display',
+          description:
+            'Sistema de cartelería digital centralizada: un dispositivo por pantalla, conectado por HDMI y administrado desde un panel en la nube.',
+          brand: { '@type': 'Brand', name: 'Nimbo' },
+          image: 'https://www.nimbodata.com/proyectos/nimbo-display.jpg',
+          url: 'https://www.nimbodata.com/display',
+          offers: {
+            '@type': 'Offer',
+            price: '70000',
+            priceCurrency: 'ARS',
+            description: 'Dispositivo por pantalla, más abono mensual según la cantidad de pantallas.',
+            availability: 'https://schema.org/InStock',
+            seller: { '@id': 'https://www.nimbodata.com/#business' },
+          },
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': 'https://www.nimbodata.com/display#faq',
+          mainEntity: FAQ.map(([name, text]) => ({
+            '@type': 'Question',
+            name,
+            acceptedAnswer: { '@type': 'Answer', text },
+          })),
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.nimbodata.com/display#breadcrumb',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Inicio',
+              item: 'https://www.nimbodata.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Nimbo Display',
+              item: 'https://www.nimbodata.com/display',
+            },
+          ],
+        },
+      ],
     },
   })
 
