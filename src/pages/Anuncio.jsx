@@ -30,6 +30,8 @@ const VARIANTES = {
       description:
         'Ya sabés que la IA puede ayudarte. En 30 minutos vemos qué tareas de tu negocio se pueden automatizar y cuánto cuesta. Sin cargo, por videollamada.',
       path: '/diagnostico-ia',
+      // landing de anuncios: no compite en Google con la home ni con /automatizaciones
+      robots: 'noindex, follow',
     },
     eyebrow: 'Diagnóstico gratis · 30 minutos',
     title: 'Ya sabés que la IA te puede ayudar. Nosotros la ponemos a trabajar en tu negocio.',
@@ -78,6 +80,8 @@ const VARIANTES = {
       description:
         'Conectamos tu sistema de gestión, CRM, planillas y e-commerce para que los datos viajen solos, y desarrollamos apps a medida. Diagnóstico gratis.',
       path: '/sistemas-conectados',
+      // landing de anuncios: no compite en Google con la home ni con /automatizaciones
+      robots: 'noindex, follow',
     },
     eyebrow: 'Integraciones y software a medida',
     title: '¿Tus sistemas no se hablan? Los conectamos.',

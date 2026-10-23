@@ -42,50 +42,197 @@
   <meta name="twitter:description" content="Automatizaciones, agentes de IA y datos para pymes argentinas que quieren crecer." />
   <meta name="twitter:image" content="https://www.nimbodata.com/og-nimbo-v2.jpg" />
 
-  <!-- Schema.org -->
+  <!-- Schema.org: la empresa y sus cuatro servicios; las páginas suman su propio JSON-LD con useSeo y apuntan a #business -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://www.nimbodata.com/#website",
-    "name": "Nimbo",
-    "url": "https://www.nimbodata.com/",
-    "inLanguage": "es-AR",
-    "publisher": { "@id": "https://www.nimbodata.com/#business" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Nimbo",
-    "alternateName": "Nimbo Consulting",
-    "description": "Consultoría de tecnología, inteligencia artificial y automatización para pymes en Argentina: diagnóstico, implementación y abono mensual.",
-    "@id": "https://www.nimbodata.com/#business",
-    "url": "https://www.nimbodata.com",
-    "areaServed": { "@type": "Country", "name": "Argentina" },
-    "serviceType": ["Transformación digital", "Automatización de procesos", "Inteligencia Artificial para empresas", "Diseño de páginas web", "Análisis de datos", "Visión por computadora"],
-    "knowsLanguage": "es-AR",
-    "email": "contacto@nimbodata.com",
-    "telephone": "+54 9 11 2403-6836",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Buenos Aires",
-      "addressCountry": "AR"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nimbodata.com/#website",
+      "name": "Nimbo Consulting",
+      "alternateName": "Nimbo",
+      "url": "https://www.nimbodata.com/",
+      "inLanguage": "es-AR",
+      "publisher": {
+        "@id": "https://www.nimbodata.com/#business"
+      }
     },
-    "sameAs": ["https://www.instagram.com/nimbodata"],
-    "image": "https://www.nimbodata.com/og-nimbo-v2.jpg",
-    "member": [
-      { "@id": "https://www.nimbodata.com/nosotros#seba" },
-      { "@id": "https://www.nimbodata.com/nosotros#sol" }
-    ],
-    "offers": [
-      { "@type": "Offer", "name": "Inteligencia artificial y agentes", "description": "Bots de WhatsApp e Instagram, reservas y turnos, asistentes internos y visión por computadora para pymes" },
-      { "@type": "Offer", "name": "Automatización e integración de sistemas", "description": "Integración de APIs, ERP, CRM y Google Workspace, procesos administrativos y reportes automáticos" },
-      { "@type": "Offer", "name": "Datos y business intelligence", "description": "Dashboards, indicadores de gestión, integración de fuentes y alertas" },
-      { "@type": "Offer", "name": "Desarrollo web y software a medida", "description": "Páginas web, aplicaciones internas, portales y sistemas de gestión para pymes" }
-    ]
-  }
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.nimbodata.com/#business",
+      "name": "Nimbo Consulting",
+      "alternateName": [
+        "Nimbo",
+        "Nimbodata"
+      ],
+      "description": "Consultoría tecnológica para pymes argentinas: inteligencia artificial, automatización de procesos, datos y software a medida. Diagnóstico, implementación y servicio gestionado.",
+      "url": "https://www.nimbodata.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.nimbodata.com/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.nimbodata.com/og-nimbo-v2.jpg",
+      "email": "contacto@nimbodata.com",
+      "telephone": "+54 9 11 2403-6836",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+54 9 11 2403-6836",
+        "email": "contacto@nimbodata.com",
+        "areaServed": "AR",
+        "availableLanguage": "es"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "knowsLanguage": "es-AR",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.nimbodata.com/nosotros#seba",
+        "name": "Sebastian Deina",
+        "url": "https://sebadeina.com.ar"
+      },
+      "member": [
+        {
+          "@id": "https://www.nimbodata.com/nosotros#seba"
+        },
+        {
+          "@id": "https://www.nimbodata.com/nosotros#sol"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/nimbodata"
+      ],
+      "knowsAbout": [
+        "Inteligencia artificial",
+        "Agentes de IA",
+        "Automatización de procesos",
+        "Integración de sistemas",
+        "Business intelligence",
+        "Software a medida"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Nimbo Consulting",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.nimbodata.com/#servicio-ia"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.nimbodata.com/#servicio-automatizacion"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.nimbodata.com/#servicio-datos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://www.nimbodata.com/#servicio-software"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.nimbodata.com/#servicio-ia",
+      "name": "Inteligencia artificial y agentes",
+      "serviceType": "Agentes de IA para empresas",
+      "description": "Agentes de IA que atienden, venden y reservan turnos por WhatsApp e Instagram, y asistentes internos para el equipo.",
+      "url": "https://www.nimbodata.com/#cap-III",
+      "provider": {
+        "@id": "https://www.nimbodata.com/#business"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Pymes"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.nimbodata.com/#servicio-automatizacion",
+      "name": "Automatización e integración de sistemas",
+      "serviceType": "Automatización de procesos",
+      "description": "Integración de ERP, CRM y Google Workspace y automatización de procesos administrativos para que las tareas repetitivas corran solas.",
+      "url": "https://www.nimbodata.com/#cap-II",
+      "provider": {
+        "@id": "https://www.nimbodata.com/#business"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Pymes"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.nimbodata.com/#servicio-datos",
+      "name": "Datos y business intelligence",
+      "serviceType": "Business intelligence",
+      "description": "Tableros de gestión, indicadores y alertas que unifican los números de la empresa.",
+      "url": "https://www.nimbodata.com/#cap-IV",
+      "provider": {
+        "@id": "https://www.nimbodata.com/#business"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Pymes"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.nimbodata.com/#servicio-software",
+      "name": "Desarrollo web y software a medida",
+      "serviceType": "Desarrollo de software a medida",
+      "description": "Aplicaciones internas, portales y sistemas de gestión diseñados alrededor de la operación de cada pyme.",
+      "url": "https://www.nimbodata.com/#cap-I",
+      "provider": {
+        "@id": "https://www.nimbodata.com/#business"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Pymes"
+      }
+    }
+  ]
+}
   </script>
 
   <link rel="icon" href="/favicon.ico" sizes="48x48" />

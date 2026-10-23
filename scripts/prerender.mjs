@@ -64,6 +64,7 @@ function headFor(html, route, seo) {
     [/<title>[^<]*<\/title>/, `<title>${esc(t.title)}</title>`, 'title'],
     [/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${esc(t.url)}" />`, 'canonical'],
     [...meta('name', 'description', t.description), 'description'],
+    [...meta('name', 'robots', t.robots), 'robots'],
     [...meta('property', 'og:title', t.title), 'og:title'],
     [...meta('property', 'og:description', t.description), 'og:description'],
     [...meta('property', 'og:url', t.url), 'og:url'],

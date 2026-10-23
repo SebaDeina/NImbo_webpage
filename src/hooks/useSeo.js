@@ -45,13 +45,14 @@ function upsertLink(rel, href) {
 }
 
 /* Valores finales del <head> de una ruta (los usa también el prerender). */
-export function seoTags({ title, description, path = '', image, type = 'website' } = {}) {
+export function seoTags({ title, description, path = '', image, type = 'website', robots } = {}) {
   return {
     title: title || DEFAULT_TITLE,
     description: description || DEFAULT_DESCRIPTION,
     url: `${SITE_URL}${path}`,
     image: image ? `${SITE_URL}${image}` : DEFAULT_IMAGE,
     type,
+    robots: robots || 'index, follow',
   }
 }
 
@@ -61,14 +62,15 @@ export function useSeo({
   path = '',
   image,
   type = 'website',
+  robots,
   jsonLd,
 } = {}) {
   const jsonLdStr = jsonLd ? JSON.stringify(jsonLd) : null
   const sink = useContext(SeoContext)
-  if (sink) sink.seo = { title, description, path, image, type, jsonLd }
+  if (sink) sink.seo = { title, description, path, image, type, robots, jsonLd }
 
   useEffect(() => {
-    const tags = seoTags({ title, description, path, image, type })
+    const tags = seoTags({ title, description, path, image, type, robots })
     const finalTitle = tags.title
     const finalDesc = tags.description
     const url = tags.url
@@ -77,6 +79,7 @@ export function useSeo({
     document.title = finalTitle
     upsertMeta('name', 'description', finalDesc)
     upsertLink('canonical', url)
+    upsertMeta('name', 'robots', tags.robots)
 
     upsertMeta('property', 'og:title', finalTitle)
     upsertMeta('property', 'og:description', finalDesc)
@@ -102,5 +105,5 @@ export function useSeo({
     return () => {
       if (script) script.remove()
     }
-  }, [title, description, path, image, type, jsonLdStr])
+  }, [title, description, path, image, type, robots, jsonLdStr])
 }
