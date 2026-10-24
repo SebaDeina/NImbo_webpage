@@ -13,7 +13,7 @@ export default function Diagnostico() {
   useSeo({
     title: 'Agendá un diagnóstico gratis — Nimbo Consulting',
     description:
-      'Una reunión sin cargo de 30 a 45 minutos para entender tus procesos, cuánto te cuesta el problema y si la IA o la automatización lo pueden resolver.',
+      'Una reunión sin cargo de 20 minutos para entender tus procesos, cuánto te cuesta el problema y si la IA o la automatización lo pueden resolver.',
     path: '/diagnostico',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -90,7 +90,7 @@ export default function Diagnostico() {
           <dl className="ct-list">
             <div>
               <dt>Duración</dt>
-              <dd>30 a 45 minutos</dd>
+              <dd>20 minutos</dd>
             </div>
             <div>
               <dt>Modalidad</dt>

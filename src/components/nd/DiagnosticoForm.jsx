@@ -200,7 +200,7 @@ export function DiagnosticoForm({ source = 'pagina', autoFocus = false, tareas =
           Prefiero contarlo en la reunión
         </button>
       )}
-      <p className="dg-note">Sin cargo · 30 a 45 minutos por videollamada</p>
+      <p className="dg-note">Sin cargo · 20 minutos por videollamada</p>
     </form>
   )
 }

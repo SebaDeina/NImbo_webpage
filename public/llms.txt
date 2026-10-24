@@ -2,7 +2,7 @@
 
 > Nimbo Consulting es una consultora tecnológica de Buenos Aires, Argentina, especializada en inteligencia artificial, automatización, datos y desarrollo de software para pymes. Diagnostica problemas operativos, implementa la solución y la acompaña para que siga funcionando.
 
-Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con empresas de todo el país. La primera reunión de diagnóstico es sin cargo.
+Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus sistemas, atender consultas y ordenar la información del negocio. Trabaja de forma remota con empresas de todo el país. La primera reunión de diagnóstico dura 20 minutos y es sin cargo.
 
 Nimbo Consulting fue fundada en 2026 por Sebastian Deina, que hace proyectos de automatización, datos e IA desde 2024.
 

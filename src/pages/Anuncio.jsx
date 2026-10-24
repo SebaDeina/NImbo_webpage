@@ -16,11 +16,11 @@ import '../styles/anuncio.css'
 
 const PASOS = [
   ['Escribinos', 'Por WhatsApp, con lo que te quita más tiempo. Coordinamos una videollamada.'],
-  ['30 minutos de diagnóstico', 'Vemos cómo trabaja tu negocio, dónde se pierde tiempo y cuánto te cuesta.'],
+  ['20 minutos de diagnóstico', 'Vemos cómo trabaja tu negocio, dónde se pierde tiempo y cuánto te cuesta.'],
   ['Propuesta en 48 h', 'Si hay caso, te mandamos qué haríamos y cuánto cuesta, en pesos. Si no lo hay, te lo decimos.'],
 ]
 
-const FAQ_GRATIS = ['¿El diagnóstico tiene costo?', 'No. Es una videollamada de 30 a 45 minutos sin cargo y sin compromiso de contratar nada.']
+const FAQ_GRATIS = ['¿El diagnóstico tiene costo?', 'No. Es una videollamada de 20 minutos sin cargo y sin compromiso de contratar nada.']
 
 const VARIANTES = {
   diagnostico: {
@@ -28,12 +28,12 @@ const VARIANTES = {
     seo: {
       title: 'Diagnóstico gratis: IA y automatización para tu pyme | Nimbo',
       description:
-        'Ya sabés que la IA puede ayudarte. En 30 minutos vemos qué tareas de tu negocio se pueden automatizar y cuánto cuesta. Sin cargo, por videollamada.',
+        'Ya sabés que la IA puede ayudarte. En 20 minutos vemos qué tareas de tu negocio se pueden automatizar y cuánto cuesta. Sin cargo, por videollamada.',
       path: '/diagnostico-ia',
       // landing de anuncios: no compite en Google con la home ni con /automatizaciones
       robots: 'noindex, follow',
     },
-    eyebrow: 'Diagnóstico gratis · 30 minutos',
+    eyebrow: 'Diagnóstico gratis · 20 minutos',
     title: 'Ya sabés que la IA te puede ayudar. Nosotros la ponemos a trabajar en tu negocio.',
     lead:
       'Preguntar es el primer paso. En una videollamada sin cargo vemos qué tareas de tu pyme se pueden automatizar, cuánto tiempo te devuelven y cuánto cuesta hacerlo.',
@@ -87,7 +87,7 @@ const VARIANTES = {
     title: '¿Tus sistemas no se hablan? Los conectamos.',
     lead:
       'Un Excel por acá, un correo por allá y el sistema de gestión por otro lado. Conectamos lo que ya usás para que los datos viajen solos, y si la herramienta que necesitás no existe, la desarrollamos a medida.',
-    ticks: ['Diagnóstico gratis de 30 min', 'Presupuesto en pesos, por etapas', 'Equipo en Argentina'],
+    ticks: ['Diagnóstico gratis de 20 min', 'Presupuesto en pesos, por etapas', 'Equipo en Argentina'],
     pickTitle: '¿Qué querés conectar o resolver?',
     pickLead: 'Marcá lo que aplique y te escribimos con eso en mente.',
     pickMsg: 'Quiero conectar o resolver',
@@ -239,7 +239,7 @@ export default function Anuncio({ variante = 'diagnostico' }) {
       <section className="nd-final">
         <div className="nd-wrap nd-final-in">
           <h2>{v.finalTitle}</h2>
-          <p>30 minutos por videollamada. Te vas con un plan concreto, aunque no trabajemos juntos.</p>
+          <p>20 minutos por videollamada. Te vas con un plan concreto, aunque no trabajemos juntos.</p>
           <div className="nd-btns">
             <WaLink cta={`${v.cta}-cierre`} msg={msg} className="nd-btn">
               Pedir mi diagnóstico gratis
