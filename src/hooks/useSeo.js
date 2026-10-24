@@ -44,6 +44,17 @@ function upsertLink(rel, href) {
   el.setAttribute('href', href)
 }
 
+function upsertAlternate(hreflang, href) {
+  let el = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`)
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', 'alternate')
+    el.setAttribute('hreflang', hreflang)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('href', href)
+}
+
 /* Valores finales del <head> de una ruta (los usa también el prerender). */
 export function seoTags({ title, description, path = '', image, type = 'website', robots } = {}) {
   return {
@@ -79,6 +90,9 @@ export function useSeo({
     document.title = finalTitle
     upsertMeta('name', 'description', finalDesc)
     upsertLink('canonical', url)
+    // el sitio es solo es-AR: cada ruta es su propia versión es-AR y la x-default
+    upsertAlternate('es-AR', url)
+    upsertAlternate('x-default', url)
     upsertMeta('name', 'robots', tags.robots)
 
     upsertMeta('property', 'og:title', finalTitle)

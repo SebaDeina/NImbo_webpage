@@ -11,6 +11,13 @@ import { Cloud } from './nd/Nd'
 
 const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un proyecto.'
 
+/* Perfiles oficiales: los mismos que el sameAs del JSON-LD de index.html y llms.txt. */
+const SOCIAL = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/nimboconsulting', label: 'Nimbo Consulting en LinkedIn' },
+  { name: 'X', href: 'https://x.com/sebadeina', label: 'Sebastian Deina (@sebadeina) en X' },
+  { name: 'Instagram', href: 'https://www.instagram.com/nimbodata', label: 'Nimbo (@nimbodata) en Instagram' },
+]
+
 /* En los subdominios (robots., automatizaciones.) la raíz es otra página: los links del footer van al sitio principal. */
 const EXTERNO =
   typeof window !== 'undefined' && /^(robots|automatizaciones)\./.test(window.location.hostname)
@@ -50,6 +57,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>Buenos Aires, Argentina</li>
+              <li className="nf-social">
+                {SOCIAL.map((r) => (
+                  <a key={r.href} href={r.href} target="_blank" rel="noopener noreferrer" aria-label={r.label}>
+                    {r.name}
+                  </a>
+                ))}
+              </li>
             </ul>
           </div>
           <div className="nf-col">

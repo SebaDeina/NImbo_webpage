@@ -9,10 +9,10 @@ const VALUES = [
 ]
 
 const HISTORY = [
-  { y: '2024', t: 'El origen', d: 'Nace Nimbo con una idea simple: bajar la tecnología de las nubes a soluciones que funcionen en la operación diaria.' },
-  { y: '2025', t: 'Primeros clientes', d: 'WODSI y las primeras automatizaciones e integraciones, con datos e IA desde el día uno.' },
+  { y: '2024', t: 'El origen', d: 'Seba arranca sus primeros proyectos con una idea simple: bajar la tecnología de las nubes a soluciones que funcionen en la operación diaria.' },
+  { y: '2025', t: 'Primeros clientes', d: 'WODSI y las primeras automatizaciones e integraciones, con datos e IA desde el día uno, antes de formalizar Nimbo.' },
+  { y: '2026', t: 'Nimbo Consulting', d: 'Nimbo se formaliza como consultora, ordenada en cuatro áreas: IA y agentes, automatización e integración, datos y software a medida.' },
   { y: '2026', t: 'Producto propio', d: 'Lanzamos Nimbo Display, cartelería digital conectada a precios, promociones y stock.' },
-  { y: '2026', t: 'Nimbo Consulting', d: 'Ordenamos la consultora en cuatro áreas: IA y agentes, automatización e integración, datos y software a medida.' },
 ]
 
 const PROCESS = [
@@ -48,6 +48,7 @@ export default function Nosotros() {
           jobTitle: member.role.es,
           description: member.bio.es,
           worksFor: { '@id': 'https://www.nimbodata.com/#business' },
+          ...(member.sameAs ? { sameAs: member.sameAs } : {}),
         })),
       ],
     },
