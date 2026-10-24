@@ -24,6 +24,7 @@ const Robots = lazy(() => import('./pages/Robots'))
 const Automatizaciones = lazy(() => import('./pages/Automatizaciones'))
 const Display = lazy(() => import('./pages/Display'))
 const Diagnostico = lazy(() => import('./pages/Diagnostico'))
+const ServicioDesarrolloWeb = lazy(() => import('./pages/ServicioDesarrolloWeb'))
 const Anuncio = lazy(() => import('./pages/Anuncio'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
@@ -121,6 +122,7 @@ export default function App() {
               <Route path="/automatizaciones" element={<Automatizaciones />} />
               <Route path="/display" element={<Display />} />
               <Route path="/diagnostico" element={<Diagnostico />} />
+              <Route path="/desarrollo-web-pymes" element={<ServicioDesarrolloWeb />} />
               <Route path="/diagnostico-ia" element={<Anuncio />} />
               <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
               <Route path="*" element={<Navigate to="/" replace />} />

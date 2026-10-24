@@ -2,6 +2,10 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-24
+- **Crear una landing de desarrollo web para pymes en Buenos Aires** (pagina) — Una página comercial específica permite competir por la búsqueda local con un título, un h1, contenido y datos estructurados propios. También separa con claridad páginas web, aplicaciones internas, portales y sistemas a medida sin inventar servicios.  
+  Archivos: `public/llms-full.txt`, `public/llms.txt`, `public/sitemap.xml`, `src/App.jsx`, `src/components/Footer.jsx`, `src/pages/Home.jsx`, `src/pages/ServicioDesarrolloWeb.jsx`
+
 ## 2026-10-23
 - **Completar los datos estructurados de Nimbo Display** (datos-estructurados) — WebPage, Product, FAQPage y BreadcrumbList permiten relacionar el producto, sus respuestas visibles, Nimbo y la navegación sin cambiar precios ni agregar afirmaciones.  
   Archivos: `public/sitemap.xml`, `src/pages/Display.jsx`
