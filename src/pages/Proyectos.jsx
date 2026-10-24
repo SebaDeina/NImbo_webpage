@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Cloud, NdFinal, NdPageHero } from '../components/nd/Nd'
 import { PROJECTS } from '../data/projects'
 import { useSeo } from '../hooks/useSeo'
+import '../styles/casos.css'
 
 const FILTERS = ['Todos', 'Apps y plataformas', 'Webs', 'Automatización', 'IA y agentes', 'Datos', 'Visión', 'Marketing']
 // fondo del panel de cada proyecto (se alterna)
@@ -12,9 +14,13 @@ function Project({ p, i }) {
   const shotProps = p.live ? { href: p.live, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `${p.title} (abre el sitio)` } : {}
   return (
     <article className={`npj${i % 2 ? ' is-flip' : ''}`} id={p.slug}>
-      <Shot className={`nd-visual pj-shot ${TONOS[i % TONOS.length]}`} {...shotProps}>
+      <Shot className={`nd-visual pj-shot ${p.logo ? 'cs-logo-media' : TONOS[i % TONOS.length]}`} {...shotProps}>
         {p.cover ? (
-          <img src={p.cover} alt={`${p.title} — ${p.summary?.es || ''}`} loading={i < 2 ? 'eager' : 'lazy'} />
+          <img
+            src={p.cover}
+            alt={p.logo ? `Logo de ${p.title}` : `${p.title} — ${p.summary?.es || ''}`}
+            loading={i < 2 ? 'eager' : 'lazy'}
+          />
         ) : (
           <span className="pj-ph">
             <Cloud />
@@ -41,6 +47,11 @@ function Project({ p, i }) {
           </ul>
         )}
         <div className="pj-btns">
+          {p.caso && (
+            <Link className="nd-btn nd-btn-sm" to={p.caso}>
+              Leer el caso →
+            </Link>
+          )}
           {p.live && (
             <a className="nd-btn nd-btn-sm" href={p.live} target="_blank" rel="noopener noreferrer">
               Ver en vivo ↗

@@ -1,0 +1,27 @@
+/* Páginas de casos de éxito (/casos/...) */
+.cs-intro{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;padding-top:8px}
+.cs-logo{width:168px;aspect-ratio:1;border-radius:24px;overflow:hidden;background:#1455a5;flex-shrink:0}
+.cs-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.cs-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px;margin:0}
+.cs-facts div{border-top:1px solid var(--line);padding-top:14px}
+.cs-facts dt{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:6px}
+.cs-facts dd{margin:0;font-size:16px;color:var(--ink)}
+.cs-sec{padding-top:96px}
+.cs-sec .nd-art.nd-art{margin:0;max-width:760px}
+.nd-art.cs-extra{margin:64px 0 0;max-width:760px}
+.cs-stack{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.cs-note{margin:0;font-size:14px;color:var(--muted)}
+.cs-page>.nd-sec:last-of-type{padding-bottom:140px}
+/* logo del cliente en las tarjetas (home y /proyectos): centrado sobre su color, sin recortar */
+.cs-logo-media{background:#1455a5!important;display:flex!important;align-items:center;justify-content:center}
+.hm-case-media.cs-logo-media img,.pj-shot.cs-logo-media img{width:auto!important;height:70%!important;object-fit:contain!important;border-radius:0!important;box-shadow:none!important}
+.nd-visual.pj-shot.cs-logo-media{padding:0;align-items:center}
+@media (max-width:760px){
+  .cs-intro{grid-template-columns:1fr;gap:28px}
+  .cs-logo{width:120px}
+  .cs-sec{padding-top:72px}
+  .cs-page>.nd-sec:last-of-type{padding-bottom:96px}
+}
+/* la home muestra cuatro casos: en escritorio van en una fila de cuatro */
+@media (min-width:1100px){.cs-case-grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:700px) and (max-width:1099px){.cs-case-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}

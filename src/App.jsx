@@ -26,6 +26,7 @@ const Display = lazy(() => import('./pages/Display'))
 const Diagnostico = lazy(() => import('./pages/Diagnostico'))
 const ServicioDesarrolloWeb = lazy(() => import('./pages/ServicioDesarrolloWeb'))
 const Anuncio = lazy(() => import('./pages/Anuncio'))
+const CasoSomosBz = lazy(() => import('./pages/CasoSomosBz'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
 const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('robots.')
@@ -110,6 +111,7 @@ export default function App() {
               <Route path="/" element={IS_ROBOTS_HOST ? <Robots /> : IS_AUTO_HOST ? <Automatizaciones /> : <Home />} />
               <Route path="/proyectos" element={<Proyectos />} />
               <Route path="/trabajos/:slug" element={<LegacyProject />} />
+              <Route path="/casos/somos-bz" element={<CasoSomosBz />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/propuesta/:slug" element={<Propuesta />} />
