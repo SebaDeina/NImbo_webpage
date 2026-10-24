@@ -26,7 +26,7 @@ const DOLORES = [
 ]
 
 const PASOS = [
-  ['01 · Semana 1', 'Diagnóstico', '30 minutos para mapear dónde se pierde tiempo.'],
+  ['01 · Semana 1', 'Diagnóstico', '20 minutos para mapear dónde se pierde tiempo.'],
   ['02 · Semana 1', 'Plan y presupuesto', 'Una propuesta clara, en pesos, con prioridades y plazos.'],
   ['03 · Semanas 2–4', 'Implementación', 'Configuramos, conectamos y probamos con casos reales.'],
   ['04 · Siempre', 'Acompañamiento', 'Capacitamos, medimos y ajustamos todos los meses.'],
@@ -267,7 +267,7 @@ export default function Automatizaciones() {
       <section id="diagnostico" className="nd-final">
         <div className="nd-wrap nd-final-in">
           <h2>Contanos cómo trabaja tu negocio</h2>
-          <p>Diagnóstico gratuito de 30 minutos por videollamada. Te vas con un plan concreto, sin compromiso.</p>
+          <p>Diagnóstico gratuito de 20 minutos por videollamada. Te vas con un plan concreto, sin compromiso.</p>
           <div className="nd-btns">
             {diag('cierre')}
             <WaLink cta="auto-cierre-wa" className="nd-btn nd-btn-soft">

@@ -5,6 +5,8 @@ export const TEAM = [
     initials: 'SD',
     photo: null,
     name: { es: 'Sebastian Deina', en: 'Sebastian Deina' },
+    // perfiles públicos (JSON-LD Person.sameAs en /nosotros; mismos que el founder de index.html)
+    sameAs: ['https://x.com/sebadeina', 'https://github.com/SebaDeina'],
     role: { es: 'IA, automatización y software', en: 'AI, automation & software' },
     bio: {
       es: 'Diseña e implementa agentes de IA, integraciones y sistemas a medida, desde el diagnóstico hasta que quedan funcionando en la operación.',

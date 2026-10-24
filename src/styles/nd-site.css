@@ -229,6 +229,7 @@ footer.nd-foot{
 .nd-foot .nd-logo svg{height:19px;width:auto}
 .nf-brand p{margin:14px 0 18px;max-width:30ch;color:var(--muted)}
 .nf-brand ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+.nf-brand .nf-social{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:6px}
 .nf-col{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 .nf-col h4{margin:0 0 4px;font-weight:500;font-size:14px;color:var(--ink)}
 .nf-col h4.nf-sub{margin-top:14px}

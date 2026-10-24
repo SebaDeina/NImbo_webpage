@@ -63,6 +63,12 @@ function headFor(html, route, seo) {
   const tags = [
     [/<title>[^<]*<\/title>/, `<title>${esc(t.title)}</title>`, 'title'],
     [/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${esc(t.url)}" />`, 'canonical'],
+    // el sitio es solo en español de Argentina: cada ruta se declara a sí misma como es-AR y x-default
+    ...['es-AR', 'x-default'].map((lang) => [
+      new RegExp(`<link rel="alternate" hreflang="${lang}" href="[^"]*"\\s*/?>`),
+      `<link rel="alternate" hreflang="${lang}" href="${esc(t.url)}" />`,
+      `hreflang ${lang}`,
+    ]),
     [...meta('name', 'description', t.description), 'description'],
     [...meta('name', 'robots', t.robots), 'robots'],
     [...meta('property', 'og:title', t.title), 'og:title'],
@@ -90,11 +96,31 @@ function headFor(html, route, seo) {
 
 // La página de cada ruta: su CSS va en el <head> (si no, el HTML se ve sin estilos hasta que
 // carga el JS de la página) y su JS se precarga para hidratar antes.
+// La ruta → componente sale de los <Route> de src/App.jsx y el componente → archivo de sus
+// lazy(() => import('./pages/X')): así sirve para rutas con guiones (/desarrollo-web-pymes →
+// ServicioDesarrolloWeb.jsx) o con otro nombre (/diagnostico-ia → Anuncio.jsx) sin tocar esto.
+const APP_SRC = fs.readFileSync(path.join(ROOT, 'src', 'App.jsx'), 'utf8')
+const PAGE_OF = Object.fromEntries(
+  [...APP_SRC.matchAll(/(?:const|import)\s+(\w+)\s*(?:=\s*lazy\(\s*\(\)\s*=>\s*import\(|from\s+)\s*['"]\.\/pages\/([\w-]+)(?:\.jsx)?['"]/g)].map(
+    ([, comp, file]) => [comp, `src/pages/${file}.jsx`],
+  ),
+)
+const ROUTES = [...APP_SRC.matchAll(/<Route\s+path="([^"]+)"\s+element=\{([\s\S]*?)\}\s*\/>/g)]
+  .map(([, p, el]) => {
+    // el último componente de páginas que aparece en el element (en "/" es Home, tras los ternarios de host)
+    const comps = [...el.matchAll(/<(\w+)/g)].map((m) => m[1]).filter((c) => PAGE_OF[c])
+    if (!comps.length || p === '*') return null
+    const re = new RegExp('^' + p.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/:\w+/g, '[^/]+') + '/?$')
+    return { re, file: PAGE_OF[comps[comps.length - 1]] }
+  })
+  .filter(Boolean)
+
 function pageFile(route) {
-  if (route === '/') return 'src/pages/Home.jsx'
-  if (route.startsWith('/blog/')) return 'src/pages/BlogPost.jsx'
-  const seg = route.split('/')[1]
-  return `src/pages/${seg.charAt(0).toUpperCase()}${seg.slice(1)}.jsx`
+  const hit = ROUTES.find((r) => r.re.test(route))
+  if (hit) return hit.file
+  // respaldo: /algo → src/pages/Algo.jsx, /algo-mas → src/pages/AlgoMas.jsx
+  const seg = route.split('/')[1] || 'home'
+  return `src/pages/${seg.replace(/(^|-)(\w)/g, (_, _d, c) => c.toUpperCase())}.jsx`
 }
 
 // Vite a veces junta una página con otra (Blog.jsx la importa BlogPost) y la clave del

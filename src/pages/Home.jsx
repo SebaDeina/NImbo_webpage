@@ -151,7 +151,7 @@ export default function Home() {
                 Ver casos reales
               </a>
             </div>
-            <p className="hm-hero-note">Primera reunión sin cargo · 30 a 45 minutos · Sin compromiso</p>
+            <p className="hm-hero-note">Primera reunión sin cargo · 20 minutos · Sin compromiso</p>
           </div>
 
           <div className="nd-stage">
@@ -272,7 +272,7 @@ export default function Home() {
           <h2>Empecemos por entender el problema.</h2>
           <p>Revisamos tu proceso y detectamos oportunidades concretas de mejora.</p>
           <NdFinalBtns cta="cierre" msg={WA_MSG} onForm={() => openDiagnostico('cierre')} />
-          <p className="hm-final-note">Sin cargo · 30 a 45 minutos por videollamada · Te respondemos en menos de 24 h</p>
+          <p className="hm-final-note">Sin cargo · 20 minutos por videollamada · Te respondemos en menos de 24 h</p>
         </div>
       </section>
     </div>

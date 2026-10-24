@@ -98,7 +98,7 @@ export default function AutoPopup({ source, onClose }) {
           <button className="au-pop-x" type="button" onClick={onClose} aria-label="Cerrar">
             ×
           </button>
-          <span className="au-pop-k">Diagnóstico gratis · 30 min</span>
+          <span className="au-pop-k">Diagnóstico gratis · 20 min</span>
           <h3 id="au-pop-t">¿Qué tarea te gustaría sacarte de encima?</h3>
           <p>Marcá una o varias y seguimos por WhatsApp con ideas para tu negocio.</p>
           <div className="au-chips">
