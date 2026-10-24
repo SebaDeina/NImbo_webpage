@@ -61,7 +61,8 @@ export function NdFaq({ items }) {
               {open === i ? '−' : '+'}
             </span>
           </button>
-          {open === i && <p>{a}</p>}
+          {/* todas las respuestas van en el HTML (prerender y buscadores); solo se ve la abierta */}
+          <p hidden={open !== i}>{a}</p>
         </div>
       ))}
     </div>

@@ -363,3 +363,15 @@ button.dg-link{background:none;border:0;padding:0;cursor:pointer;font:inherit}
 .dg-back:hover,.dg-skip:hover{color:var(--ink)}
 .dg-skip{align-self:center;margin-top:-8px;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .ct-card .dg-form .nd-btn{align-self:auto}
+
+/* tarjetas de rubro (home, páginas de rubro y guía) y links a rubros */
+.rb-card{text-decoration:none;color:inherit}
+.rb-card h3{transition:color .2s}
+.rb-card:hover h3{color:var(--hover)}
+.rb-card .nd-more{margin-top:auto;padding-top:4px}
+.nd-sectors-in a{text-decoration:none}
+.nd-sectors-in a b{transition:color .2s}
+.nd-sectors-in a:hover b{color:var(--hover)}
+.dg-rubros{display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--line);width:100%}
+.dg-rubros p{margin:0;font-size:15px;color:var(--muted)}
+.dg-rubros ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}

@@ -5,6 +5,7 @@ import { useDiagnostico } from '../components/nd/DiagnosticoForm'
 import { Cloud, NdFaq, NdFinalBtns } from '../components/nd/Nd'
 import Ofertas from '../components/nd/Ofertas'
 import { PROJECTS } from '../data/projects'
+import { RUBROS } from '../data/rubros'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/automatizaciones.css'
 import '../styles/home.css'
@@ -232,6 +233,29 @@ export default function Home() {
                   <Link to={`/proyectos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="rubros" className="nd-sec">
+        <div className="nd-wrap">
+          <div className="nd-sec-top">
+            <div className="hm-line">
+              <span className="nd-eyebrow">Por rubro</span>
+              <h2 className="nd-h2">Qué automatizamos en tu rubro.</h2>
+            </div>
+            <Link to="/guia-automatizar-pyme-argentina-2026" className="nd-link">
+              Guía 2026 para automatizar una pyme →
+            </Link>
+          </div>
+          <div className="nd-cols">
+            {RUBROS.map((r) => (
+              <Link key={r.slug} to={r.path} className="nd-col rb-card">
+                <h3>{r.nav}</h3>
+                <p>{r.card}</p>
+                <span className="nd-more">Ver cómo lo hacemos →</span>
+              </Link>
             ))}
           </div>
         </div>

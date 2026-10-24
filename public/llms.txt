@@ -8,9 +8,9 @@ Nimbo Consulting fue fundada en 2026 por Sebastian Deina, que hace proyectos de 
 
 ## Rubros en los que se especializa
 
-- Inmobiliarias
-- Distribuidoras y mayoristas
-- Servicios profesionales
+- [Inmobiliarias](https://www.nimbodata.com/automatizacion-inmobiliarias): agentes de IA para consultas de portales y WhatsApp, calificación de interesados, agenda de visitas, seguimiento y tablero de la cartera
+- [Distribuidoras y mayoristas](https://www.nimbodata.com/automatizacion-distribuidoras-mayoristas): toma de pedidos por WhatsApp con IA, integración con stock y facturación electrónica, recordatorios de cobranza y tablero comercial con alertas
+- [Estudios y servicios profesionales](https://www.nimbodata.com/automatizacion-servicios-profesionales): atención y turnos por WhatsApp, pedido de documentación, recordatorios de vencimientos, extracción de datos y asistentes internos con IA
 
 ## Respuestas directas
 
@@ -47,6 +47,7 @@ Nimbo Consulting fue fundada en 2026 por Sebastian Deina, que hace proyectos de 
 - [Diagnóstico gratis](https://www.nimbodata.com/diagnostico): pedido de reunión de diagnóstico sin cargo
 - [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
 - [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
+- [Guía 2026: cómo automatizar una pyme en Argentina](https://www.nimbodata.com/guia-automatizar-pyme-argentina-2026): paso a paso, tabla de qué automatizar primero, checklist, errores comunes y datos con fuente (actualizada el 24 de octubre de 2026)
 - [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web
 - [Contacto](https://www.nimbodata.com/contacto): canales para conversar sobre un proyecto
 

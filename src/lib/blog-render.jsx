@@ -102,9 +102,11 @@ function inline(text) {
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer" data-cta="blog">$1</a>',
+    // Los links internos (/ruta o #ancla) abren en la misma pestaña; los externos, en una nueva.
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, href) =>
+      /^[/#]/.test(href)
+        ? `<a href="${href}">${t}</a>`
+        : `<a href="${href}" target="_blank" rel="noopener noreferrer" data-cta="blog">${t}</a>`,
     )
 }
 

@@ -54,7 +54,7 @@ No son soluciones excluyentes. Cada una sirve para un problema distinto:
 - **Automatización:** mueve información o ejecuta pasos cuando ocurre un evento conocido.
 - **Agente de IA:** interpreta pedidos variables, usa contexto y decide qué herramienta aplicar dentro de reglas establecidas.
 
-Para una explicación más detallada, podés leer **[agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots)**. Si querés revisar primero qué procesos conviene mejorar, también está la guía para **[automatizar un negocio con IA](/blog/automatiza-tu-negocio-con-ia)**.
+Para una explicación más detallada, podés leer **[agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots)**. Si querés revisar primero qué procesos conviene mejorar, también está la **[guía 2026 para automatizar una pyme en Argentina](/guia-automatizar-pyme-argentina-2026)**.
 
 ---
 
@@ -370,7 +370,7 @@ La forma más segura de tener un buen ROI es no jugarte todo de una:
 2. **Medí una semana antes de automatizar.** Anotá horas reales y consultas perdidas. Ese es tu punto de partida.
 3. **Automatizá esa sola tarea y medí de nuevo.** Compará contra el punto de partida. Si el número cierra, escalás a la siguiente.
 
-Este orden lo desarrollamos en la guía de **[cómo automatizar tu negocio con IA](/blog/automatiza-tu-negocio-con-ia)**, que te sirve para elegir por dónde arrancar antes de sacar la calculadora.
+Este orden lo desarrollamos en la **[guía 2026 para automatizar una pyme en Argentina](/guia-automatizar-pyme-argentina-2026)**, que te sirve para elegir por dónde arrancar antes de sacar la calculadora.
 
 ---
 
@@ -381,104 +381,6 @@ Medir el ROI de una automatización no requiere una planilla imposible ni un con
 En Nimbo automatizamos negocios argentinos con IA a medida y te ayudamos a hacer justamente este cálculo para tu caso, con tus números reales, antes de arrancar. Sin humo y sin comprometerte a nada.
 
 **[Escribinos y calculamos juntos el retorno de automatizar tu negocio](https://wa.me/5491124036836?text=Hola,%20quiero%20saber%20si%20me%20conviene%20automatizar%20mi%20negocio)** — te decimos con números si te conviene.
-    `.trim(),
-  },
-  {
-    slug: 'automatiza-tu-negocio-con-ia',
-    title: 'Automatizá tu negocio con IA: la guía práctica para pymes argentinas',
-    description:
-      '¿Querés automatizar tu negocio con IA pero no sabés por dónde empezar? Guía práctica para pymes en Argentina: qué se puede automatizar, cómo hacerlo paso a paso y cuánto cuesta, sin vueltas.',
-    date: '2026-07-06',
-    category: 'Automatización & IA',
-    readTime: '9 min',
-    content: `
-## Automatizá tu negocio con IA: de la frase de moda a algo concreto
-
-"Automatizá tu negocio con IA" suena por todos lados. Pero cuando sos dueño de una pyme y estás tapado de tareas, la frase sola no te sirve: necesitás saber **qué** se automatiza, **cómo** se hace y **cuánto** cuesta, en criollo.
-
-Esta guía es justo eso. Sin humo, sin promesas mágicas: lo que hoy una pyme argentina puede automatizar con inteligencia artificial para vender más y trabajar menos.
-
-La idea de fondo es simple: hay un montón de tareas que hacés todos los días, que te comen horas y no requieren tu criterio. Esas son las que la IA puede hacer por vos, mientras vos te dedicás a lo que sí importa.
-
----
-
-## Qué se puede automatizar en tu negocio
-
-No hace falta automatizar todo. Estas son las áreas donde una pyme gana más tiempo, ordenadas de la más común a la más avanzada:
-
-| Área | Qué se automatiza | Con qué |
-| --- | --- | --- |
-| Atención al cliente | Responder consultas frecuentes al instante, 24/7 | Chatbot o agente de IA en WhatsApp |
-| Turnos y reservas | Agendar, confirmar y recordar solo | Sistema de turnos automático |
-| Ventas | Filtrar y calificar los mejores leads | Agente de IA |
-| Post-venta | Seguimiento y recontacto de clientes | Automatización de mensajes y email |
-| Tareas internas | Cargar datos, armar reportes, avisos | Flujos automáticos entre tus apps |
-
-Si querés profundizar en la atención al cliente, tenemos una guía dedicada: **[cómo automatizar tu pyme con IA y un chatbot de WhatsApp](/blog/automatizar-pyme-ia-chatbot-whatsapp)**.
-
----
-
-## Cómo automatizar tu negocio, paso a paso
-
-El error más común es querer automatizar todo de golpe, comprar cinco herramientas y terminar sin usar ninguna. Lo que funciona es ir de a poco:
-
-:::flow
-{ "title": "El camino para automatizar tu negocio", "steps": [
-  { "title": "Detectá qué te hace perder tiempo", "text": "Durante una semana, prestá atención a qué tareas repetís todo el día. Esas son las candidatas." },
-  { "title": "Empezá por UNA sola", "text": "Elegí la que más tiempo te come —normalmente la atención de consultas— y resolvela bien antes de pasar a la siguiente." },
-  { "title": "Elegí la herramienta o un desarrollo a medida", "text": "Para lo estándar alcanza con herramientas existentes; para procesos propios conviene una solución a medida." },
-  { "title": "Medí y escalá", "text": "Mirá cuánto tiempo ganaste y cuántas consultas se resolvieron solas. Lo que funciona, lo replicás en otra área." }
-] }
-:::
-
----
-
-## ¿Chatbot o agente de IA?
-
-Acá hay una diferencia importante que conviene entender antes de contratar nada. Un **chatbot** sigue guiones fijos y responde preguntas frecuentes. Un **agente de IA** entiende lenguaje natural, toma decisiones y ejecuta acciones: agenda, filtra, vende y deriva a una persona cuando hace falta.
-
-Para automatizar de verdad tu negocio, casi siempre querés un agente de IA. Lo explicamos en detalle acá: **[agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots)**.
-
----
-
-## Cuánto cuesta automatizar tu negocio
-
-Depende del alcance, pero mucho menos de lo que la mayoría cree. Para la mayoría de las pymes, arrancar con una automatización bien hecha cuesta menos que sumar una persona part-time, y trabaja las 24 horas.
-
-Muchas herramientas tienen planes gratuitos o de bajo costo mensual (para turnos, respuestas automáticas, email). El desarrollo a medida tiene sentido cuando tenés procesos propios que ninguna herramienta estándar cubre. La pregunta correcta no es "cuánto cuesta", sino **cuánto te está costando NO hacerlo**: las horas que perdés y las consultas que no respondés a tiempo.
-
----
-
-## Ejemplos por rubro
-
-Así se ve automatizar un negocio, según el rubro:
-
-- **Comercio / tienda**: respuestas automáticas a talles, colores, precios y envíos; el dueño recupera horas de responder Instagram y WhatsApp.
-- **Servicios con turnos** (salud, estética, oficios): agenda automática con recordatorio, menos ausentes y menos turnos pisados.
-- **Profesionales** (contadores, estudios): seguimiento automático de documentación y recordatorios, sin perseguir a cada cliente.
-- **Ventas**: un agente de IA filtra los curiosos de los que quieren comprar y te pasa solo las oportunidades calientes.
-
-Todo esto es parte de algo más grande: la **[transformación digital de tu pyme](/blog/transformacion-digital-pymes-argentina)**.
-
----
-
-## Probá un agente de IA ahora mismo
-
-Mejor que contártelo: probalo. Escribile al asistente como si fueras un cliente tuyo y fijate cómo atiende.
-
-:::chatbot
-{ "title": "Asistente de IA de Nimbo", "intro": "Es el mismo tipo de agente que implementamos a medida para cada negocio. Preguntale lo que quieras:" }
-:::
-
----
-
-## Empezá a automatizar tu negocio hoy
-
-No necesitás un plan gigante ni un presupuesto enorme. Necesitás empezar por la tarea que más tiempo te come y resolverla bien. El resto viene solo.
-
-En Nimbo automatizamos negocios argentinos con IA a medida: atención, turnos, ventas y tareas internas. Lo conectamos a tu WhatsApp, lo entrenamos con tu forma de trabajar y lo dejamos funcionando 24/7.
-
-**[Agendá una llamada gratuita de diagnóstico](https://wa.me/5491124036836?text=Hola,%20quiero%20automatizar%20mi%20negocio%20con%20IA)** y te mostramos qué se podría automatizar en tu caso puntual.
     `.trim(),
   },
   {
@@ -790,6 +692,8 @@ La transformación digital no es un proyecto gigante ni un gasto de lujo. Es una
 
 Lo importante es empezar por el cuello de botella real, resolver una cosa a la vez, y medir. El resto viene solo.
 
+En la **[guía 2026 para automatizar una pyme en Argentina](/guia-automatizar-pyme-argentina-2026)** tenés el paso a paso para elegir el primer proceso y medir si valió la pena.
+
 En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web y datos, un paso a la vez. Si querés que veamos juntos por dónde te conviene empezar, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo charlamos sin compromiso.
     `.trim(),
   },
@@ -897,6 +801,8 @@ No busques el chatbot perfecto de entrada. Lanzá uno que resuelva las 5 pregunt
 Automatizar la atención de tu pyme no es reemplazarte con un robot: es sacarte de encima lo repetitivo para que uses tu tiempo en lo que sí importa. Un chatbot de WhatsApp con IA bien configurado te contesta las consultas al instante, no pierde clientes por demora, y trabaja mientras dormís.
 
 Lo importante es empezar por lo que más se repite, mantener siempre la opción de hablar con una persona, e ir mejorando con el uso.
+
+Para ver dónde encaja WhatsApp dentro de un plan más amplio (procesos, datos y qué automatizar primero), mirá la **[guía 2026 para automatizar una pyme en Argentina](/guia-automatizar-pyme-argentina-2026)**.
 
 En Nimbo armamos automatizaciones y chatbots de WhatsApp a medida para pymes argentinas. Si querés ver qué se podría automatizar en tu caso, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo analizamos juntos.
     `.trim(),
@@ -1184,6 +1090,8 @@ Para la mayoría de las pymes, arrancar con herramientas existentes bien configu
 La IA no es el futuro. Es el presente. Y en Argentina, las pymes que están aprovechando estas herramientas ya tienen una ventaja concreta sobre las que siguen haciendo todo a mano.
 
 Lo importante no es implementar la tecnología más sofisticada. Es identificar dónde perdés tiempo todos los días y resolver eso primero.
+
+Si querés el paso a paso completo, con la tabla de prioridades, el checklist y los errores más comunes, leé la **[guía 2026 para automatizar una pyme en Argentina](/guia-automatizar-pyme-argentina-2026)**.
 
 En Nimbo diseñamos automatizaciones a medida para negocios argentinos. Si querés saber qué podríamos automatizar en tu caso específico, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo analizamos juntos.
     `.trim(),

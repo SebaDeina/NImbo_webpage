@@ -73,6 +73,10 @@ export default function Footer() {
             <Link to="/#cap-IV">Datos y BI</Link>
             <Link to="/desarrollo-web-pymes">Desarrollo web y software a medida</Link>
             <Link to="/#precios">Formas de trabajar</Link>
+            <h4 className="nf-sub">Por rubro</h4>
+            <Link to="/automatizacion-inmobiliarias">Inmobiliarias</Link>
+            <Link to="/automatizacion-distribuidoras-mayoristas">Distribuidoras y mayoristas</Link>
+            <Link to="/automatizacion-servicios-profesionales">Estudios y servicios profesionales</Link>
             <h4 className="nf-sub">Producto propio</h4>
             <Link to="/display">Nimbo Display</Link>
           </div>
@@ -81,6 +85,7 @@ export default function Footer() {
             <Link to="/proyectos">Proyectos</Link>
             <Link to="/nosotros">Nosotros</Link>
             <Link to="/blog">Blog</Link>
+            <Link to="/guia-automatizar-pyme-argentina-2026">Guía 2026: automatizar una pyme</Link>
             <Link to="/contacto">Contacto</Link>
             <Link to="/privacidad">Privacidad</Link>
           </div>

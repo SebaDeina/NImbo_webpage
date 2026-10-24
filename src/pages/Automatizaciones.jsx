@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
 import AutoPopup, { useAutoPopup } from '../components/AutoPopup'
 import { AgentDemo, DiagnosisDemo, HeroDemo, IntegrationsDemo, OrchestraDemo, TrainingDemo } from '../components/AutoDemos'
 import { Cloud, NdFaq, NdFloat, WA_LABEL, WaLink as BaseWaLink, useScrolled } from '../components/nd/Nd'
@@ -138,9 +139,17 @@ export default function Automatizaciones() {
       <section className="nd-sectors">
         <div className="nd-wrap nd-sectors-in">
           <span>Para pymes de todo el país</span>
+          <Link to="/automatizacion-inmobiliarias">
+            <b>Inmobiliarias</b>
+          </Link>
+          <Link to="/automatizacion-distribuidoras-mayoristas">
+            <b>Distribuidoras y mayoristas</b>
+          </Link>
+          <Link to="/automatizacion-servicios-profesionales">
+            <b>Servicios profesionales</b>
+          </Link>
           <b>Comercios y retail</b>
-          <b>Servicios profesionales</b>
-          <b>Industria y distribución</b>
+          <b>Industria</b>
         </div>
       </section>
 

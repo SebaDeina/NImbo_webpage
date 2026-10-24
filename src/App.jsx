@@ -26,6 +26,8 @@ const Display = lazy(() => import('./pages/Display'))
 const Diagnostico = lazy(() => import('./pages/Diagnostico'))
 const ServicioDesarrolloWeb = lazy(() => import('./pages/ServicioDesarrolloWeb'))
 const Anuncio = lazy(() => import('./pages/Anuncio'))
+const RubroPage = lazy(() => import('./pages/RubroPage'))
+const GuiaAutomatizarPyme = lazy(() => import('./pages/GuiaAutomatizarPyme'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
 const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('robots.')
@@ -115,6 +117,8 @@ export default function App() {
               <Route path="/propuesta/:slug" element={<Propuesta />} />
               <Route path="/propuesta" element={<Propuesta />} />
               <Route path="/blog" element={<Blog />} />
+              {/* el post viejo se consolidó en la guía 2026 (301 en vercel.json; esto cubre la navegación interna) */}
+              <Route path="/blog/automatiza-tu-negocio-con-ia" element={<Navigate to="/guia-automatizar-pyme-argentina-2026" replace />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/links" element={<Links />} />
               <Route path="/privacidad" element={<Privacidad />} />
@@ -123,6 +127,10 @@ export default function App() {
               <Route path="/display" element={<Display />} />
               <Route path="/diagnostico" element={<Diagnostico />} />
               <Route path="/desarrollo-web-pymes" element={<ServicioDesarrolloWeb />} />
+              <Route path="/automatizacion-inmobiliarias" element={<RubroPage slug="inmobiliarias" />} />
+              <Route path="/automatizacion-distribuidoras-mayoristas" element={<RubroPage slug="distribuidoras-mayoristas" />} />
+              <Route path="/automatizacion-servicios-profesionales" element={<RubroPage slug="servicios-profesionales" />} />
+              <Route path="/guia-automatizar-pyme-argentina-2026" element={<GuiaAutomatizarPyme />} />
               <Route path="/diagnostico-ia" element={<Anuncio />} />
               <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
               <Route path="*" element={<Navigate to="/" replace />} />
