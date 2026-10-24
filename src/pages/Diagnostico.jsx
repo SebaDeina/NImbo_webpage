@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { NdPageHero, WA_LABEL, WaLink } from '../components/nd/Nd'
 import { DiagnosticoForm } from '../components/nd/DiagnosticoForm'
 import { useSeo } from '../hooks/useSeo'
@@ -104,6 +105,23 @@ export default function Diagnostico() {
           <WaLink cta="diagnostico" msg={WA_MSG} className="nd-more">
             ¿Preferís WhatsApp? {WA_LABEL} →
           </WaLink>
+          <div className="dg-rubros">
+            <p>Antes de la reunión, mirá qué automatizamos en tu rubro:</p>
+            <ul>
+              <li>
+                <Link to="/automatizacion-inmobiliarias">Inmobiliarias</Link>
+              </li>
+              <li>
+                <Link to="/automatizacion-distribuidoras-mayoristas">Distribuidoras y mayoristas</Link>
+              </li>
+              <li>
+                <Link to="/automatizacion-servicios-profesionales">Estudios y servicios profesionales</Link>
+              </li>
+              <li>
+                <Link to="/guia-automatizar-pyme-argentina-2026">Guía 2026 para automatizar una pyme</Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="ct-card">

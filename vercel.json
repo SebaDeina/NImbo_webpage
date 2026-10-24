@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/automatiza-tu-negocio-con-ia",
+      "destination": "/guia-automatizar-pyme-argentina-2026",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|.*\\.(?:png|jpg|jpeg|webp|svg|ico|woff2?|css|js|txt|xml)$).*)",
