@@ -106,6 +106,10 @@ export default function Nosotros() {
               </li>
             ))}
           </ol>
+          <p className="ab-entity">
+            Nimbo Consulting es una consultora de Buenos Aires, Argentina, fundada en 2026 por Sebastian Deina. No tiene
+            relación con Nimbo Consulting SL de Valencia (España).
+          </p>
         </div>
       </section>
 

@@ -11,7 +11,7 @@ import { Cloud } from './nd/Nd'
 
 const WA_MSG = '¡Hola! Vi el sitio de Nimbo y me gustaría conversar sobre un proyecto.'
 
-/* Perfiles oficiales: los mismos que el sameAs del JSON-LD de index.html y llms.txt. */
+/* Perfiles oficiales: los de la empresa van en el sameAs de la Organization y los de Sebastian en el del founder (index.html); mismos que llms.txt. */
 const SOCIAL = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/nimboconsulting', label: 'Nimbo Consulting en LinkedIn' },
   { name: 'X', href: 'https://x.com/sebadeina', label: 'Sebastian Deina (@sebadeina) en X' },
