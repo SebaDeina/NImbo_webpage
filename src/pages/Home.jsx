@@ -8,6 +8,7 @@ import { PROJECTS } from '../data/projects'
 import { useSeo } from '../hooks/useSeo'
 import '../styles/automatizaciones.css'
 import '../styles/home.css'
+import '../styles/casos.css'
 
 /*
   Home de Nimbo Consulting con el diseño blanco de /automatizaciones ("Nimbodata Landing v2"):
@@ -79,6 +80,11 @@ const RESULTADOS = [
 ]
 
 const CASOS = [
+  {
+    slug: 'somos-bz',
+    label: 'Datos + automatización',
+    resumen: 'Del PDF manual a informes diarios y automáticos para decidir qué eventos y promociones repetir.',
+  },
   {
     slug: 'asistente-ia',
     label: 'IA + datos',
@@ -219,17 +225,27 @@ export default function Home() {
             </div>
             <Link to="/proyectos" className="nd-link">Ver todos los proyectos →</Link>
           </div>
-          <div className="nd-grid-3 hm-case-grid">
+          <div className="nd-grid-3 hm-case-grid cs-case-grid-4">
             {CASOS.map((story, index) => (
               <article key={story.slug} className="hm-case-card">
-                <Link to={`/proyectos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
-                  <img src={story.project.cover} alt={`Captura de ${story.project.title}`} loading="lazy" />
+                <Link
+                  to={story.project.caso || `/proyectos#${story.slug}`}
+                  className={`hm-case-media${story.project.logo ? ' cs-logo-media' : ''}`}
+                  aria-label={`Ver caso ${story.project.title}`}
+                >
+                  <img
+                    src={story.project.cover}
+                    alt={story.project.logo ? `Logo de ${story.project.title}` : `Captura de ${story.project.title}`}
+                    loading="lazy"
+                  />
                 </Link>
                 <div className="hm-case-copy">
                   <span className="nd-mono hm-type">{story.label} · Caso 0{index + 1}</span>
                   <h3>{story.project.title}</h3>
                   <p>{story.resumen}</p>
-                  <Link to={`/proyectos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
+                  <Link to={story.project.caso || `/proyectos#${story.slug}`} className="nd-more">
+                    {story.project.caso ? 'Leer el caso →' : 'Ver el proyecto →'}
+                  </Link>
                 </div>
               </article>
             ))}

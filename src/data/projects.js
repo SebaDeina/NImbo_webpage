@@ -18,8 +18,57 @@
                 IA y agentes, Datos, Visión, Marketing)
    - status:    texto opcional cuando no hay link en vivo ("En desarrollo"…)
    - isNew:     muestra la etiqueta Nuevo
+   - caso:      ruta de la página del caso de éxito (/casos/...), si tiene
+   - logo:      true si cover es el logo del cliente (se muestra centrado, sin recortar)
    ============================================================ */
 export const PROJECTS = [
+  {
+    "slug": "somos-bz",
+    "title": "Somos BZ",
+    "client": "Somos BZ · Berazategui",
+    "year": "2026",
+    "cover": "/proyectos/somos-bz-logo.jpg",
+    "logo": true,
+    "caso": "/casos/somos-bz",
+    "live": null,
+    "status": "En producción",
+    "isNew": true,
+    "category": {
+      "es": "Datos e informes automáticos",
+      "en": "Datos e informes automáticos"
+    },
+    "summary": {
+      "es": "Del PDF armado a mano a informes que se actualizan solos todos los días, con control de datos, análisis de eventos y segmentación de clientes.",
+      "en": "Del PDF armado a mano a informes que se actualizan solos todos los días, con control de datos, análisis de eventos y segmentación de clientes."
+    },
+    "description": {
+      "es": [
+        "Para esta empresa de entretenimiento de Berazategui reemplazamos el informe manual del directorio por un sitio privado de informes que se actualiza cada mañana y no publica si los datos no cierran. Cada evento se compara contra una base adecuada y recibe un veredicto: repetir, ajustar o descartar."
+      ],
+      "en": [
+        "Para esta empresa de entretenimiento de Berazategui reemplazamos el informe manual del directorio por un sitio privado de informes que se actualiza cada mañana y no publica si los datos no cierran. Cada evento se compara contra una base adecuada y recibe un veredicto: repetir, ajustar o descartar."
+      ]
+    },
+    "services": [
+      "Datos",
+      "Automatización",
+      "Dashboards"
+    ],
+    "tags": [
+      "n8n",
+      "OpenClaw",
+      "Python",
+      "SQL"
+    ],
+    "type": "Caso de éxito",
+    "areas": [
+      "Datos",
+      "Automatización"
+    ],
+    "gallery": [
+      "/proyectos/somos-bz-logo.jpg"
+    ]
+  },
   {
     "slug": "nimbo-display",
     "title": "Nimbo Display",

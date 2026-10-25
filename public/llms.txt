@@ -46,6 +46,7 @@ Nimbo Consulting fue fundada en 2026 por Sebastian Deina, que hace proyectos de 
 - [Nimbo Display](https://www.nimbodata.com/display): cartelería digital, planes y demo
 - [Diagnóstico gratis](https://www.nimbodata.com/diagnostico): pedido de reunión de diagnóstico sin cargo
 - [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
+- [Caso Somos BZ](https://www.nimbodata.com/casos/somos-bz): informes automáticos, control de datos, análisis de eventos y segmentación de clientes para salas de bingo y slots de Berazategui
 - [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
 - [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web
 - [Contacto](https://www.nimbodata.com/contacto): canales para conversar sobre un proyecto
