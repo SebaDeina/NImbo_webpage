@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-25
+- **Consolidar los servicios de IA y desarrollo web en sus landings** (datos-estructurados) — El grafo global todavía identifica ambos servicios con fragmentos de la home, aunque ya tienen páginas específicas. Usar los mismos identificadores que las landings evita entidades duplicadas y relaciona cada oferta con su URL comercial principal.  
+  Archivos: `index.html`, `public/sitemap.xml`
+- **Identificar la landing de automatizaciones como página y agregar migas de pan** (datos-estructurados) — La ruta ya declara el servicio y sus preguntas frecuentes, pero no la WebPage que los reúne ni su posición dentro del sitio. El grafo completo facilita que buscadores y asistentes relacionen página, servicio, FAQ, negocio y navegación.  
+  Archivos: `public/sitemap.xml`, `src/pages/Automatizaciones.jsx`
+- **Reforzar el descubrimiento de la landing de desarrollo web** (enlaces) — Los resultados revisados favorecen páginas de servicio específicas. Enlazar la nueva landing desde la navegación principal y corregir el artículo que todavía apunta a una sección de la home concentra relevancia y facilita su rastreo.  
+  Archivos: `public/sitemap.xml`, `src/components/nd/NdHeader.jsx`, `src/data/blog.js`
+
 ## 2026-10-24
 - **Crear una landing de desarrollo web para pymes en Buenos Aires** (pagina) — Una página comercial específica permite competir por la búsqueda local con un título, un h1, contenido y datos estructurados propios. También separa con claridad páginas web, aplicaciones internas, portales y sistemas a medida sin inventar servicios.  
   Archivos: `public/llms-full.txt`, `public/llms.txt`, `public/sitemap.xml`, `src/App.jsx`, `src/components/Footer.jsx`, `src/pages/Home.jsx`, `src/pages/ServicioDesarrolloWeb.jsx`

@@ -51,6 +51,20 @@ export default function Automatizaciones() {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'WebPage',
+          '@id': 'https://www.nimbodata.com/automatizaciones#page',
+          name: 'Automatización con IA para pymes en Argentina',
+          description:
+            'Automatización con IA, agentes, integraciones y acompañamiento para pymes de Argentina.',
+          url: 'https://www.nimbodata.com/automatizaciones',
+          inLanguage: 'es-AR',
+          isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
+          about: { '@id': 'https://www.nimbodata.com/#business' },
+          mainEntity: { '@id': 'https://www.nimbodata.com/automatizaciones#service' },
+          hasPart: { '@id': 'https://www.nimbodata.com/automatizaciones#faq' },
+          breadcrumb: { '@id': 'https://www.nimbodata.com/automatizaciones#breadcrumb' },
+        },
+        {
           '@type': 'Service',
           '@id': 'https://www.nimbodata.com/automatizaciones#service',
           name: 'Agentes de IA y automatización de procesos para pymes',
@@ -70,6 +84,24 @@ export default function Automatizaciones() {
             name,
             acceptedAnswer: { '@type': 'Answer', text },
           })),
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.nimbodata.com/automatizaciones#breadcrumb',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Inicio',
+              item: 'https://www.nimbodata.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Automatizaciones y agentes de IA',
+              item: 'https://www.nimbodata.com/automatizaciones',
+            },
+          ],
         },
       ],
     },
