@@ -4,30 +4,76 @@
 
     GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... node scripts/google-calendar-token.mjs
 
-  (o con las dos variables ya puestas en .env). Abre Google en el navegador: entrá con la cuenta
-  @nimbodata.com dueña del calendario y aceptá. Al final imprime el refresh token para cargarlo
-  en Vercel → Settings → Environment Variables.
+  (o con las dos variables ya puestas en .env). Si faltan, abre una ventana para pegarlas y las
+  guarda en .env. Abre Google en el navegador: entrá con la cuenta @nimbodata.com dueña del
+  calendario y aceptá. Al final guarda el refresh token en .env y lo imprime para cargarlo en
+  Vercel → Settings → Environment Variables.
 
   El cliente OAuth tiene que ser de tipo "App de escritorio" (Google Cloud → APIs y servicios →
   Credenciales) y la pantalla de consentimiento "Interna" (solo Workspace): así el token no vence.
 */
 import http from 'node:http'
 import fs from 'node:fs'
-import { exec } from 'node:child_process'
+import { exec, execFileSync } from 'node:child_process'
+import readline from 'node:readline/promises'
+
+const ENV_FILE = new URL('../.env', import.meta.url)
 
 // lee .env si existe, sin pisar lo que venga por la terminal
 try {
-  for (const line of fs.readFileSync(new URL('../.env', import.meta.url), 'utf8').split('\n')) {
+  for (const line of fs.readFileSync(ENV_FILE, 'utf8').split('\n')) {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/)
     if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^['"]|['"]$/g, '')
   }
 } catch {}
 
-const { GOOGLE_CLIENT_ID: clientId, GOOGLE_CLIENT_SECRET: clientSecret } = process.env
-if (!clientId || !clientSecret) {
-  console.error('Faltan GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET (en .env o en la terminal).')
-  process.exit(1)
+// escribe (o reemplaza) una variable en .env
+function saveEnv(key, value) {
+  let text = ''
+  try {
+    text = fs.readFileSync(ENV_FILE, 'utf8')
+  } catch {}
+  const line = `${key}=${value}`
+  const re = new RegExp(`^\\s*${key}\\s*=.*$`, 'm')
+  text = re.test(text) ? text.replace(re, line) : `${text.replace(/\n*$/, '\n')}${line}\n`
+  fs.writeFileSync(ENV_FILE, text)
 }
+
+// pide un valor: ventana de macOS (anda aunque la terminal no sea interactiva) o, si no, la terminal
+async function ask(message, { hidden = false } = {}) {
+  if (process.platform === 'darwin') {
+    const script = `text returned of (display dialog ${JSON.stringify(message)} default answer "" with title "Nimbo · Google Calendar"${hidden ? ' with hidden answer' : ''})`
+    try {
+      return execFileSync('osascript', ['-e', script], { encoding: 'utf8' }).trim()
+    } catch {
+      console.error('Cancelado.')
+      process.exit(1)
+    }
+  }
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+  const value = (await rl.question(`${message}\n> `)).trim()
+  rl.close()
+  return value
+}
+
+let { GOOGLE_CLIENT_ID: clientId, GOOGLE_CLIENT_SECRET: clientSecret } = process.env
+if (!clientId) {
+  clientId = (await ask('Pegá el ID de cliente de Google (termina en .apps.googleusercontent.com):')).replace(/\s+/g, '')
+  if (!clientId.endsWith('.apps.googleusercontent.com')) {
+    console.error('Ese ID no parece de Google: tiene que terminar en .apps.googleusercontent.com')
+    process.exit(1)
+  }
+  saveEnv('GOOGLE_CLIENT_ID', clientId)
+}
+if (!clientSecret) {
+  clientSecret = (await ask('Pegá el secreto del cliente (empieza con GOCSPX-):', { hidden: true })).replace(/\s+/g, '')
+  if (!clientSecret) {
+    console.error('No pegaste el secreto.')
+    process.exit(1)
+  }
+  saveEnv('GOOGLE_CLIENT_SECRET', clientSecret)
+}
+console.log('ID y secreto guardados en .env.')
 
 const PORT = 53682
 const redirectUri = `http://127.0.0.1:${PORT}/callback`
@@ -62,8 +108,9 @@ const server = http.createServer(async (req, res) => {
     console.error('Respuesta de Google:', data)
   } else {
     res.end('Listo. Ya podés cerrar esta pestaña y volver a la terminal.')
+    saveEnv('GOOGLE_REFRESH_TOKEN', data.refresh_token)
     console.log('\nGOOGLE_REFRESH_TOKEN=' + data.refresh_token + '\n')
-    console.log('Cargalo en Vercel (Production) y en tu .env para probar en local.')
+    console.log('Ya quedó guardado en .env. Cargalo también en Vercel (Production).')
   }
   server.close()
 })
