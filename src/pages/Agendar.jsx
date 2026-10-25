@@ -1,15 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { NdPageHero, WA_LABEL, WaLink } from '../components/nd/Nd'
+import { Cloud, NdPageHero, WA_LABEL, WaLink } from '../components/nd/Nd'
 import { useSeo } from '../hooks/useSeo'
 
 /*
   Agendador propio de llamadas (reemplaza Cal.com): el visitante elige día y hora entre los huecos
   libres del Google Calendar de Nimbo y la reserva crea el evento con link de Meet (lib/booking-handler.js).
-  Captcha: Cloudflare Turnstile. En local sin clave se usa la de prueba de Cloudflare (siempre pasa).
+  Anti-bots propio, sin servicios externos: el "No soy un robot" de abajo (prueba de trabajo firmada).
 */
 
 const TZ = 'America/Argentina/Buenos_Aires'
-const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || (import.meta.env.DEV ? '1x00000000000000000000AA' : '')
 const WA_MSG = '¡Hola! Quiero agendar una llamada con Nimbo.'
 
 const dayKey = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' })
@@ -22,51 +21,59 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 const when = (iso) => `${fmtLong.format(new Date(iso))}, ${fmtTime.format(new Date(iso))} h`
 const longWhen = (iso) => cap(when(iso))
 
-/* El script de Turnstile se carga una sola vez y solo cuando aparece el formulario */
-let turnstileReady
-function loadTurnstile() {
-  if (window.turnstile) return Promise.resolve(window.turnstile)
-  turnstileReady ??= new Promise((resolve, reject) => {
-    const s = document.createElement('script')
-    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
-    s.async = true
-    s.onload = () => resolve(window.turnstile)
-    s.onerror = () => {
-      turnstileReady = undefined
-      reject(new Error('turnstile'))
-    }
-    document.head.appendChild(s)
-  })
-  return turnstileReady
+/* "No soy un robot", hecho en casa: el servidor manda un desafío firmado y el navegador busca el número
+   cuyo SHA-256 coincide (~1 s). Para una persona es un toque; para un bot, cada reserva cuesta lo mismo. */
+const enc = new TextEncoder()
+async function solveChallenge({ salt, challenge, max }) {
+  const target = Uint8Array.from(challenge.match(/../g), (h) => parseInt(h, 16))
+  const same = (buf) => new Uint8Array(buf).every((b, i) => b === target[i])
+  for (let n = 0; n <= max; n += 1000) {
+    const batch = []
+    for (let i = n; i < Math.min(n + 1000, max + 1); i++) batch.push(crypto.subtle.digest('SHA-256', enc.encode(salt + i)))
+    const k = (await Promise.all(batch)).findIndex(same)
+    if (k >= 0) return n + k
+  }
+  throw new Error('sin solución')
 }
 
-function Captcha({ onToken, resetKey }) {
-  const box = useRef(null)
-  const id = useRef(null)
-  useEffect(() => {
-    let off = false
-    loadTurnstile()
-      .then((ts) => {
-        if (off || !box.current) return
-        id.current = ts.render(box.current, {
-          sitekey: SITE_KEY,
-          language: 'es',
-          callback: onToken,
-          'expired-callback': () => onToken(''),
-          'error-callback': () => onToken(''),
-        })
-      })
-      .catch(() => onToken(''))
-    return () => {
-      off = true
-      if (id.current != null) window.turnstile?.remove(id.current)
-    }
-  }, [onToken])
-  // después de un error del servidor el token ya se usó: se pide uno nuevo
-  useEffect(() => {
-    if (resetKey && id.current != null) window.turnstile?.reset(id.current)
-  }, [resetKey])
-  return <div ref={box} className="ag-captcha" />
+async function getProof() {
+  const r = await fetch('/api/agendar?reto=1', { headers: { Accept: 'application/json' } })
+  if (!r.ok) throw new Error(String(r.status))
+  const c = await r.json()
+  // un mínimo visible para que el "Verificando…" no parpadee
+  const [number] = await Promise.all([solveChallenge(c), new Promise((ok) => setTimeout(ok, 700))])
+  return { salt: c.salt, challenge: c.challenge, signature: c.signature, number }
+}
+
+const ROBOT_LABEL = {
+  idle: 'No soy un robot',
+  working: 'Verificando…',
+  done: 'Verificado',
+  error: 'No se pudo verificar. Tocá para reintentar',
+}
+
+function NotRobot({ state, onVerify }) {
+  return (
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={state === 'done'}
+      className="ag-robot"
+      data-state={state}
+      onClick={onVerify}
+      disabled={state === 'working' || state === 'done'}
+    >
+      <span className="ag-robot-box" aria-hidden="true">
+        {state === 'done' && '✓'}
+      </span>
+      <span className="ag-robot-t" aria-live="polite">
+        {ROBOT_LABEL[state]}
+      </span>
+      <span className="ag-robot-by" aria-hidden="true">
+        <Cloud /> Nimbo
+      </span>
+    </button>
+  )
 }
 
 function useSlots() {
@@ -106,8 +113,8 @@ export default function Agendar() {
   const [day, setDay] = useState('')
   const [slot, setSlot] = useState('')
   const [d, setD] = useState(EMPTY)
-  const [captcha, setCaptcha] = useState('')
-  const [resetKey, setResetKey] = useState(0)
+  const [proof, setProof] = useState(null)
+  const [robot, setRobot] = useState('idle')
   const [error, setError] = useState('')
   const [sending, setSending] = useState(false)
   const [done, setDone] = useState(null)
@@ -127,26 +134,43 @@ export default function Agendar() {
   }, [slot, done])
 
   const set = (k) => (e) => setD((v) => ({ ...v, [k]: e.target.value }))
+  const verify = async () => {
+    setRobot('working')
+    try {
+      const p = await getProof()
+      setProof(p)
+      setRobot('done')
+      return p
+    } catch {
+      setRobot('error')
+      return null
+    }
+  }
   const current = days.find((x) => x.key === day)
 
   const submit = async (e) => {
     e.preventDefault()
     const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email.trim())
     if (!d.name.trim() || !emailOk) return setError('Completá tu nombre y un mail válido.')
-    if (!captcha) return setError('Completá la verificación de abajo.')
     setError('')
     setSending(true)
     try {
+      // si no tocó "No soy un robot", se verifica solo al confirmar
+      const pow = proof ?? (await verify())
+      if (!pow) return setError('No pudimos verificar que no seas un robot. Tocá "No soy un robot" de nuevo.')
       const res = await fetch('/api/agendar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...d, start: slot, captcha, elapsed: Date.now() - shownAt.current }),
+        body: JSON.stringify({ ...d, start: slot, pow, elapsed: Date.now() - shownAt.current }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
         setError(data.error || 'No se pudo agendar. Probá de nuevo o escribinos por WhatsApp.')
-        setCaptcha('')
-        setResetKey((n) => n + 1)
+        // la verificación vale para una reserva: si el servidor la rechazó, hay que hacerla de nuevo
+        if (res.status === 403 || /verificación/i.test(data.error || '')) {
+          setProof(null)
+          setRobot('idle')
+        }
         // el horario se ocupó mientras completaba: volver a elegir con la lista al día
         if (res.status === 409 && !/agendada/.test(data.error || '')) {
           setSlot('')
@@ -273,7 +297,7 @@ export default function Agendar() {
             <input value={d.website} onChange={set('website')} tabIndex={-1} autoComplete="off" />
           </label>
         </fieldset>
-        <Captcha onToken={setCaptcha} resetKey={resetKey} />
+        <NotRobot state={robot} onVerify={verify} />
         {error && (
           <p className="dg-error" role="alert">
             {error}
