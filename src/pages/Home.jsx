@@ -151,7 +151,7 @@ export default function Home() {
                 Ver casos reales
               </a>
             </div>
-            <p className="hm-hero-note">Primera reunión sin cargo · 20 minutos · Sin compromiso</p>
+            <p className="hm-hero-note">Diagnóstico gratuito de 20 minutos · Sin compromiso</p>
           </div>
 
           <div className="nd-stage">

@@ -14,7 +14,7 @@ export default function Agendar() {
   useSeo({
     title: 'Agendá una llamada — Nimbo Consulting',
     description:
-      'Elegí día y horario para una videollamada de 30 minutos sin cargo con Nimbo. Te llega la invitación con el link de Google Meet.',
+      'Elegí día y horario para una videollamada de 20 minutos sin cargo con Nimbo. Te llega la invitación con el link de Google Meet.',
     path: '/agendar',
   })
 
@@ -26,7 +26,7 @@ export default function Agendar() {
   return (
     <main className="nd-page-main">
       <NdPageHero eyebrow="Llamada sin cargo" title="Agendá una llamada con Nimbo">
-        <p>Elegí el día y el horario que te quede cómodo. Son 30 minutos por videollamada para ver tu caso.</p>
+        <p>Elegí el día y el horario que te quede cómodo. Son 20 minutos por videollamada para ver tu caso.</p>
       </NdPageHero>
 
       <section className="nd-wrap ct-grid">
@@ -46,7 +46,7 @@ export default function Agendar() {
           <dl className="ct-list">
             <div>
               <dt>Duración</dt>
-              <dd>30 minutos</dd>
+              <dd>20 minutos</dd>
             </div>
             <div>
               <dt>Modalidad</dt>
