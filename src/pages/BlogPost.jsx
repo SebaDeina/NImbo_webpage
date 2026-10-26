@@ -99,6 +99,48 @@ export default function BlogPost() {
                 isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
                 mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.nimbodata.com/blog/${post.slug}` },
               },
+              ...(post.slug === 'agentes-de-ia-para-pymes-como-implementarlos'
+                ? [
+                    {
+                      '@type': 'FAQPage',
+                      '@id': 'https://www.nimbodata.com/blog/agentes-de-ia-para-pymes-como-implementarlos#faq',
+                      mainEntity: [
+                        {
+                          '@type': 'Question',
+                          name: '¿Un agente de IA reemplaza a una persona?',
+                          acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'No necesariamente. Su mejor uso en una pyme es resolver tareas repetitivas y preparar información para que las personas se concentren en excepciones, decisiones y relaciones con clientes.',
+                          },
+                        },
+                        {
+                          '@type': 'Question',
+                          name: '¿Puede trabajar con WhatsApp y los sistemas que ya usamos?',
+                          acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'Puede integrarse con WhatsApp, correo, planillas, CRM y sistemas de gestión cuando esas herramientas ofrecen una forma segura de conexión. La viabilidad se revisa durante el diagnóstico.',
+                          },
+                        },
+                        {
+                          '@type': 'Question',
+                          name: '¿Qué pasa si no sabe responder?',
+                          acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'Debe reconocer el límite y derivar la conversación con el contexto disponible. Inventar una respuesta no es una salida aceptable.',
+                          },
+                        },
+                        {
+                          '@type': 'Question',
+                          name: '¿Por dónde conviene empezar?',
+                          acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'Por una tarea frecuente, repetitiva y medible. Resolver bien un solo proceso permite comprobar el resultado antes de ampliar el agente a otras áreas.',
+                          },
+                        },
+                      ],
+                    },
+                  ]
+                : []),
               {
                 '@type': 'BreadcrumbList',
                 '@id': `https://www.nimbodata.com/blog/${post.slug}#breadcrumb`,

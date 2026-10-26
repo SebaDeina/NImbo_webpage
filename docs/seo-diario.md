@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-26
+- **Mostrar proyectos relacionados en la landing de desarrollo web** (contenido) — Vincular páginas web y aplicaciones publicadas aporta evidencia concreta del servicio y crea enlaces internos descriptivos hacia el portfolio.  
+  Archivos: `public/sitemap.xml`, `src/pages/ServicioDesarrolloWeb.jsx`
+- **Sumar ejemplos verificables a la landing de automatización con IA** (contenido) — Los proyectos publicados permiten demostrar qué significa aplicar agentes, automatización e integraciones sin agregar resultados ni métricas inventadas.  
+  Archivos: `public/sitemap.xml`, `src/pages/Automatizaciones.jsx`
+- **Declarar las preguntas frecuentes de la guía de agentes de IA** (datos-estructurados) — La guía ya responde cuatro preguntas completas. Marcarlas como FAQPage facilita que buscadores y asistentes extraigan respuestas sobre implementación, integraciones, límites y derivación humana.  
+  Archivos: `public/sitemap.xml`, `src/pages/BlogPost.jsx`
+
 ## 2026-10-25
 - **Consolidar los servicios de IA y desarrollo web en sus landings** (datos-estructurados) — El grafo global todavía identifica ambos servicios con fragmentos de la home, aunque ya tienen páginas específicas. Usar los mismos identificadores que las landings evita entidades duplicadas y relaciona cada oferta con su URL comercial principal.  
   Archivos: `index.html`, `public/sitemap.xml`

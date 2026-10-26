@@ -273,6 +273,42 @@ export default function Automatizaciones() {
         </div>
       </section>
 
+      <section className="nd-sec">
+        <div className="nd-wrap">
+          <div className="nd-sec-top">
+            <div>
+              <span className="nd-eyebrow">Experiencia aplicada</span>
+              <h2 className="nd-h2">Agentes y automatizaciones que ya construimos</h2>
+              <p>Ejemplos publicados de sistemas que conectan atención, datos y tareas operativas.</p>
+            </div>
+            <a href="/proyectos" className="nd-link">Ver todos los proyectos →</a>
+          </div>
+          <div className="nd-grid-3">
+            <article className="nd-card">
+              <div className="nd-card-copy">
+                <h3>Asistente con IA</h3>
+                <p>Consulta datos del negocio en lenguaje natural y devuelve respuestas con gráficos y números reales.</p>
+                <a href="/proyectos#asistente-ia" className="nd-more">Ver proyecto →</a>
+              </div>
+            </article>
+            <article className="nd-card">
+              <div className="nd-card-copy">
+                <h3>WODSI</h3>
+                <p>Plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp.</p>
+                <a href="/proyectos#wodsi" className="nd-more">Ver proyecto →</a>
+              </div>
+            </article>
+            <article className="nd-card">
+              <div className="nd-card-copy">
+                <h3>Prospección con agentes</h3>
+                <p>Sistema interno que analiza presencia digital y prepara propuestas con aprobación humana.</p>
+                <a href="/proyectos#prospeccion-ia" className="nd-more">Ver proyecto →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="proceso" className="nd-sec">
         <div className="nd-wrap">
           <h2 className="nd-h2">De la primera charla a tu agente andando, en semanas</h2>
