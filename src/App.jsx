@@ -10,6 +10,8 @@ import NdHeader from './components/nd/NdHeader'
 import { NdFloat, useNdPage } from './components/nd/Nd'
 import { DiagnosticoProvider } from './components/nd/DiagnosticoForm'
 import { AgendarProvider } from './components/nd/AgendarPopup'
+import { metaPageView } from './lib/metaPixel'
+import { captureAttribution } from './lib/attribution'
 import './styles/automatizaciones.css'
 import './styles/nd-site.css'
 
@@ -50,6 +52,16 @@ function RobotsRoute() {
     if (away) window.location.replace('https://robots.nimbodata.com/')
   }, [away])
   return away ? null : <Robots />
+}
+
+// Meta Pixel: un PageView por ruta (SPA) y guardar utm_* / fbclid / gclid para la reserva
+function MetaPageViews() {
+  const { pathname, search } = useLocation()
+  useEffect(() => {
+    captureAttribution()
+    metaPageView()
+  }, [pathname, search])
+  return null
 }
 
 function ScrollManager() {
@@ -107,6 +119,7 @@ export default function App() {
         <div className={`app-shell${isSite ? ' nd' : ''}`}>
           {isReport && <GDefs />}
           <ScrollManager />
+          <MetaPageViews />
           {isSite && !isAuto && <NdHeader />}
           <Suspense fallback={null}>
             <Routes>

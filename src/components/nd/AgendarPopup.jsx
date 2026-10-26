@@ -1,6 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { IconArrowLeft, IconArrowRight, IconCalendar } from '../Icons'
 import { Cloud, WaLink } from './Nd'
+import { getAttribution } from '../../lib/attribution'
+import { metaBooking } from '../../lib/metaPixel'
 
 /*
   Agendador de llamadas en un popup al estilo Cal.com: todo en una ventana, sin scroll.
@@ -238,10 +240,11 @@ function Booking({ source, onClose }) {
       // si no tocó "No soy un robot", se verifica solo al confirmar
       const pow = proof ?? (await verify())
       if (!pow) return setError('No pudimos verificar que no seas un robot. Tocá "No soy un robot" de nuevo.')
+      const eventId = window.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
       const res = await fetch('/api/agendar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...d, start: slot, pow, source, elapsed: Date.now() - shownAt.current }),
+        body: JSON.stringify({ ...d, start: slot, pow, source, elapsed: Date.now() - shownAt.current, attribution: getAttribution(), eventId }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
@@ -258,6 +261,8 @@ function Booking({ source, onClose }) {
         }
         return
       }
+      // el honeypot responde ok sin start: ahí no se cuenta conversión
+      if (data.start) metaBooking(eventId)
       setDone({ ...data, start: data.start || slot })
     } catch {
       setError('No se pudo agendar. Probá de nuevo o escribinos por WhatsApp.')

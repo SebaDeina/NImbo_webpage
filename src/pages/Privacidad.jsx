@@ -14,8 +14,10 @@ const SECCIONES = [
   {
     t: 'Qué datos tratamos',
     l: [
-      'Sitio web: medimos visitas sin cookies y sin guardar tu dirección IP. Registramos qué páginas se ven, de qué sitio llegaste (y los parámetros utm del link, si los tiene), si tocaste un botón de contacto (WhatsApp, mail o agenda) y cuál de los botones de la página fue (por ejemplo, el del inicio o el de un servicio), el tipo de dispositivo (móvil o escritorio) y un identificador que cambia todos los días y no permite reconocerte de un día para el otro. Respetamos la opción «No rastrear» de tu navegador.',
+      'Sitio web: con nuestro contador propio medimos visitas sin cookies y sin guardar tu dirección IP. Registramos qué páginas se ven, de qué sitio llegaste (y los parámetros utm del link, si los tiene), si tocaste un botón de contacto (WhatsApp, mail o agenda) y cuál de los botones de la página fue (por ejemplo, el del inicio o el de un servicio), el tipo de dispositivo (móvil o escritorio) y un identificador que cambia todos los días y no permite reconocerte de un día para el otro. Respetamos la opción «No rastrear» de tu navegador.',
       'En tu dispositivo: el idioma y el tema (claro u oscuro) que elegís quedan guardados solo en tu navegador. Las tipografías del sitio se cargan desde Google Fonts, por lo que Google recibe tu dirección IP cuando abrís una página.',
+      'Publicidad en Meta (Facebook e Instagram): el sitio usa el Píxel de Meta, que guarda cookies propias (como _fbp y, si llegaste desde un anuncio, _fbc) y le informa a Meta qué páginas visitás. Cuando agendás una llamada le avisamos a Meta que hubo una reserva, junto con tu mail, tu teléfono y tu nombre convertidos en un código irreversible (hash SHA-256), tu dirección IP y tu navegador, para saber qué anuncio la generó. En las páginas de nuestros anuncios en ChatGPT se usa además el píxel de anuncios de OpenAI, que registra la visita y si tocaste el botón de WhatsApp.',
+      'Agenda de llamadas (/agendar): nombre, mail, WhatsApp y empresa (opcionales), el tema y el horario elegido, y de qué anuncio o link llegaste (parámetros utm, fbclid o gclid y la página de entrada). Se guardan en nuestro Google Calendar y nos llegan a un canal interno de avisos del equipo.',
       'Formulario y chat de contacto: nombre, mail, teléfono y empresa (opcionales), tema, rango de presupuesto y tu mensaje. Nos llegan por mail y a un canal interno de avisos del equipo.',
       'WhatsApp y mail: lo que nos escribís (tu nombre o número y tu mensaje) para poder responderte.',
       'Instagram (@nimbodata): los comentarios y mensajes directos que nos enviás, tu nombre de usuario, tu identificador de usuario de Instagram, la fecha y el texto, más una nota interna con el motivo por el que respondimos (o no) y las respuestas que enviamos, para poder atenderte.',
@@ -23,7 +25,13 @@ const SECCIONES = [
   },
   {
     t: 'Para qué los usamos',
-    p: ['Para responder tus consultas, atender pedidos de información sobre nuestros servicios y mejorar el sitio. No usamos tus datos para publicidad ni los vendemos ni los cedemos a terceros para sus propios fines. Sí usamos proveedores de servicios que tratan datos por cuenta nuestra y solo para prestarnos el servicio (por ejemplo, de inteligencia artificial, de alojamiento y de avisos al equipo, como se describe más abajo).'],
+    p: ['Para responder tus consultas, atender pedidos de información sobre nuestros servicios, mejorar el sitio y medir qué anuncios nos traen consultas. Los datos que compartimos con Meta y OpenAI son solo para medir y optimizar nuestras campañas; no vendemos tus datos ni los cedemos a terceros para sus propios fines. Sí usamos proveedores de servicios que tratan datos por cuenta nuestra y solo para prestarnos el servicio (por ejemplo, de inteligencia artificial, de alojamiento y de avisos al equipo, como se describe más abajo).'],
+  },
+  {
+    t: 'Cookies y cómo desactivarlas',
+    p: [
+      'Usamos cookies de Meta (_fbp, _fbc y las que Meta pone desde facebook.com) para medir nuestros anuncios. Meta las trata según su propia política (facebook.com/privacy/policy) y puede usarlas para mostrarte publicidad. Podés borrarlas o bloquearlas desde la configuración de tu navegador, usar un bloqueador de rastreo o configurar tus preferencias de anuncios en tu cuenta de Facebook o Instagram (Centro de cuentas → Preferencias de anuncios). Si las bloqueás, el sitio y la agenda funcionan igual.',
+    ],
   },
   {
     t: 'Respuestas con asistentes virtuales',
@@ -74,14 +82,14 @@ function conMail(texto) {
 export default function Privacidad() {
   useSeo({
     title: 'Política de privacidad — Nimbo',
-    description: 'Qué datos trata Nimbo en su sitio web y en Instagram, para qué, cuánto tiempo los conserva y cómo pedir que los eliminemos.',
+    description: 'Qué datos trata Nimbo en su sitio web (incluidas las cookies de Meta), en la agenda y en Instagram, para qué, cuánto tiempo los conserva y cómo pedir que los eliminemos.',
     path: '/privacidad',
   })
 
   return (
     <main className="nd-page-main">
       <NdPageHero eyebrow="Legal" title="Política de privacidad">
-        <p>Última actualización: 2 de octubre de 2026.</p>
+        <p>Última actualización: 26 de octubre de 2026.</p>
       </NdPageHero>
       <div className="nd-wrap">
         <article className="nd-art">
