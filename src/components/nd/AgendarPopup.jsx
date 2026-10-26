@@ -384,7 +384,7 @@ function Booking({ source, onClose }) {
         <p className="ag-lead">Vemos tu caso y qué se puede automatizar. Sin cargo.</p>
         <ul className="ag-meta">
           <li>
-            <IconClock /> 30 minutos
+            <IconClock /> 20 minutos
           </li>
           <li>
             <IconVideo /> Google Meet
