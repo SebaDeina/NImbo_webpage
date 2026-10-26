@@ -9,6 +9,7 @@ import { GDefs } from './components/g/Art'
 import NdHeader from './components/nd/NdHeader'
 import { NdFloat, useNdPage } from './components/nd/Nd'
 import { DiagnosticoProvider } from './components/nd/DiagnosticoForm'
+import { AgendarProvider } from './components/nd/AgendarPopup'
 import './styles/automatizaciones.css'
 import './styles/nd-site.css'
 
@@ -101,6 +102,7 @@ export default function App() {
     <LangProvider>
       <ContactProvider>
         <DiagnosticoProvider>
+        <AgendarProvider>
         {!ready && !isSite && <SplashScreen onDone={onSplashDone} />}
         <div className={`app-shell${isSite ? ' nd' : ''}`}>
           {isReport && <GDefs />}
@@ -133,6 +135,7 @@ export default function App() {
           {!isLanding && <Footer />}
           {isSite && !isAuto && <NdFloat />}
         </div>
+        </AgendarProvider>
         </DiagnosticoProvider>
       </ContactProvider>
     </LangProvider>

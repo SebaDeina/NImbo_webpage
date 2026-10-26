@@ -157,6 +157,36 @@ export default function ServicioDesarrolloWeb() {
 
       <section className='nd-sec'>
         <div className='nd-wrap'>
+          <div className='nd-sec-top'>
+            <div>
+              <span className='nd-eyebrow'>Proyectos publicados</span>
+              <h2 className='nd-h2'>Webs y aplicaciones desarrolladas por Nimbo</h2>
+              <p>Estos proyectos muestran distintos tipos de soluciones: sitios públicos, plataformas y aplicaciones para operaciones internas.</p>
+            </div>
+            <Link to='/proyectos' className='nd-link'>Ver todos los proyectos →</Link>
+          </div>
+          <div className='nd-cols'>
+            <article className='nd-col'>
+              <h3>WODSI</h3>
+              <p>Plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp.</p>
+              <Link to='/proyectos#wodsi' className='nd-more'>Ver proyecto →</Link>
+            </article>
+            <article className='nd-col'>
+              <h3>psi.frantadioli</h3>
+              <p>Sitio web para una psicóloga, diseñado para celulares y con flujo de agendamiento de turnos.</p>
+              <Link to='/proyectos#psifrantadioli' className='nd-more'>Ver proyecto →</Link>
+            </article>
+            <article className='nd-col'>
+              <h3>Gestión agropecuaria</h3>
+              <p>Aplicación web que centraliza producción, sanidad, clima, tareas y stock.</p>
+              <Link to='/proyectos#gestion-agro' className='nd-more'>Ver proyecto →</Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className='nd-sec'>
+        <div className='nd-wrap'>
           <h2 className='nd-h2'>Qué priorizamos en cada proyecto</h2>
           <div className='nd-cols'>
             <div className='nd-col'>

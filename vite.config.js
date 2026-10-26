@@ -26,7 +26,7 @@ function apiPlugin(env) {
     'POST /api/contact': handleContactRequest,
     'POST /api/chat': handleChatRequest,
     'GET /api/agendar': (query) => handleSlotsRequest(query, env),
-    'POST /api/agendar': (body, _env, req) => handleBookingRequest(body, env, { ip: req.socket.remoteAddress }),
+    'POST /api/agendar': (body) => handleBookingRequest(body, env),
   }
 
   return {
@@ -39,7 +39,7 @@ function apiPlugin(env) {
 
         try {
           const payload = req.method === 'GET' ? Object.fromEntries(url.searchParams) : await readJsonBody(req)
-          const result = await handler(payload, env, req)
+          const result = await handler(payload, env)
           res.statusCode = 200
           res.setHeader('Content-Type', 'application/json')
           res.end(JSON.stringify(result))
