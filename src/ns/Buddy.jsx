@@ -410,7 +410,7 @@ export default function Buddy({ path }) {
 
       <button ref={self} type="button" className="bself" onClick={tap}
         onPointerEnter={() => setHappy(true)} onPointerLeave={() => setHappy(false)} aria-label={open ? 'Cerrar el chat' : 'Abrir el chat con Nimbo'}>
-        {client && <Player component={Mascot} inputProps={{ look: open ? [-0.7, -0.9] : look, talking: talking && !angry, wave, happy: happy && !angry, angry }}
+        {client && <Player numberOfSharedAudioTags={0} component={Mascot} inputProps={{ look: open ? [-0.7, -0.9] : look, talking: talking && !angry, wave, happy: happy && !angry, angry }}
           durationInFrames={MASCOT.durationInFrames} fps={MASCOT.fps} compositionWidth={MASCOT.width} compositionHeight={MASCOT.height}
           autoPlay loop controls={false} clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false}
           style={{ width: '100%', height: '100%' }} />}

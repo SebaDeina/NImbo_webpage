@@ -87,7 +87,7 @@ export function LiveEngraving({ className }) {
   return (
     <div ref={box} className={className}>
       {size && (
-        <Player ref={player} component={Hero} inputProps={{ cssScale: size.k }} durationInFrames={HERO.durationInFrames}
+        <Player ref={player} numberOfSharedAudioTags={0} component={Hero} inputProps={{ cssScale: size.k }} durationInFrames={HERO.durationInFrames}
           fps={HERO.fps} compositionWidth={size.w} compositionHeight={size.h} autoPlay loop controls={false}
           clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false}
           style={{ width: '100%', height: '100%' }} />

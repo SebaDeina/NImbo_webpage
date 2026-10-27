@@ -27,7 +27,7 @@ export default function Fig({ component, meta, width = 800, height = 600, classN
   }
   return (
     <div ref={box} className={className} onClick={replay}>
-      {client && <Player ref={player} component={component} inputProps={inputProps} durationInFrames={meta.durationInFrames} fps={meta.fps}
+      {client && <Player ref={player} numberOfSharedAudioTags={0} component={component} inputProps={inputProps} durationInFrames={meta.durationInFrames} fps={meta.fps}
         compositionWidth={width} compositionHeight={height} loop autoPlay={still == null} initialFrame={still ?? 0} controls={false} clickToPlay={false}
         doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false} style={{ width: '100%', height: '100%' }} />}
     </div>
