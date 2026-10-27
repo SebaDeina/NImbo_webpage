@@ -67,7 +67,7 @@ const SERVICIOS = [
     usos: ['Sistemas de gestión', 'Portales', 'Apps internas', 'Webs con lógica de negocio'],
     v: 'nd-v-ink',
     demo: <WebDemo />,
-    mas: ['/desarrollo-web-pymes', 'Ver desarrollo web para pymes'],
+    mas: ['/paginas-web-pymes', 'Ver páginas web para pymes'],
   },
 ]
 

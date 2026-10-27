@@ -8,6 +8,7 @@ import Testimonials from './Testimonials'
 import Trust, { Tecnologias } from './Trust'
 import { Arrow, Final, Icon, LiveEngraving } from './ui'
 import { Words } from './motion'
+import { LANDINGS } from '../lib/landings'
 
 export default function Home() {
   return (
@@ -51,6 +52,17 @@ export default function Home() {
               </div>
             </article>
           ))}
+          {LANDINGS.some((l) => l.home) && (
+            <div className="others ld-home">
+              {LANDINGS.filter((l) => l.home).map((l, i) => (
+                <a key={l.path} href={l.path} className="other ld-other" data-reveal style={{ '--d': `${i * 80}ms` }}>
+                  <h4>{l.name}</h4>
+                  <p>{l.summary}</p>
+                  <span className="other-go">Ver más <Arrow /></span>
+                </a>
+              ))}
+            </div>
+          )}
         </section>
 
         <section id="rubros" className="sec wrap" data-buddy="¿Tu negocio es de estos? Te cuento qué le automatizaríamos.">

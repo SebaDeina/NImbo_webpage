@@ -71,7 +71,7 @@ export default function Footer() {
             <Link to="/automatizaciones">IA y agentes para pymes</Link>
             <Link to="/#cap-II">Automatización e integración</Link>
             <Link to="/#cap-IV">Datos y BI</Link>
-            <Link to="/desarrollo-web-pymes">Desarrollo web y software a medida</Link>
+            <Link to="/paginas-web-pymes">Páginas web para pymes</Link>
             <Link to="/#precios">Formas de trabajar</Link>
             <h4 className="nf-sub">Producto propio</h4>
             <Link to="/display">Nimbo Display</Link>

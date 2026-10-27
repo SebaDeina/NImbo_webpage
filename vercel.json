@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/desarrollo-web-pymes", "destination": "/paginas-web-pymes", "statusCode": 301 }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|.*\\.(?:png|jpg|jpeg|webp|svg|ico|woff2?|css|js|txt|xml)$).*)",
