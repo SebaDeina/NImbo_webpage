@@ -44,7 +44,8 @@ Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base e
 
 - [Inicio](https://www.nimbodata.com/): presentación general de Nimbo y sus servicios
 - [Automatizaciones y agentes de IA](https://www.nimbodata.com/automatizaciones): soluciones para pymes y proceso de implementación
-- [Desarrollo web para pymes](https://www.nimbodata.com/desarrollo-web-pymes): páginas web, aplicaciones internas, portales y sistemas de gestión desde Buenos Aires para empresas de Argentina
+- [Mejora de procesos para pymes](https://www.nimbodata.com/mejora-de-procesos-pymes): relevamiento del proceso real, simplificación y digitalización antes de automatizar, con abono mensual de mejora continua
+- [Páginas web para pymes](https://www.nimbodata.com/paginas-web-pymes): webs rápidas, pensadas para el celular, con SEO local de base y conectadas a WhatsApp, formularios y CRM, desde Buenos Aires para toda Argentina
 - [Nimbo Display](https://www.nimbodata.com/display): cartelería digital, planes y demo
 - [Diagnóstico gratis](https://www.nimbodata.com/diagnostico): pedido de reunión de diagnóstico sin cargo
 - [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo

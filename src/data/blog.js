@@ -1061,7 +1061,7 @@ No alcanza con tener cualquier web. Hay características básicas que hacen la d
 
 En Nimbo diseñamos y desarrollamos páginas web para pymes, además de aplicaciones internas, portales y sistemas de gestión cuando el negocio necesita algo a medida. Trabajamos desde Buenos Aires de forma remota con empresas de todo el país.
 
-Una web para una pyme tiene que explicar con claridad qué ofrece, funcionar bien desde el celular, cargar rápido y facilitar el contacto. Podés conocer el enfoque de **[desarrollo web y software a medida de Nimbo](/desarrollo-web-pymes)** o **[contarnos tu proyecto](/contacto)** para revisar qué tipo de solución necesitás.
+Una web para una pyme tiene que explicar con claridad qué ofrece, funcionar bien desde el celular, cargar rápido y facilitar el contacto. Podés conocer el enfoque de **[páginas web para pymes de Nimbo](/paginas-web-pymes)** o **[contarnos tu proyecto](/contacto)** para revisar qué tipo de solución necesitás.
 
 ---
 

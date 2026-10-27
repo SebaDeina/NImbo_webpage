@@ -26,6 +26,12 @@ La página de automatizaciones menciona además comercios y retail e industria c
 
 ## Servicios
 
+### Mejora de procesos
+
+Antes de automatizar, releva cómo se trabaja hoy (pasos, tiempos, errores y responsables), saca la doble carga y las planillas paralelas y ordena la información en un solo lugar. Después automatiza lo que conviene. Se trabaja con una puesta en marcha y un abono mensual de mejora continua.
+
+Página del servicio: https://www.nimbodata.com/mejora-de-procesos-pymes
+
 ### Automatización de procesos
 
 Automatiza tareas repetitivas, recordatorios, carga de datos, facturación, reportes y flujos entre las herramientas que una pyme ya usa.
@@ -40,11 +46,11 @@ Implementa agentes para atención al cliente, ventas y tareas operativas. Pueden
 
 Conecta herramientas y sistemas para que la información viaje sin copiarla manualmente. El sitio menciona WhatsApp, Gmail, Google Sheets, CRM y sistemas de gestión con facturación electrónica, sujetos a revisión en el diagnóstico.
 
-### Desarrollo web y productos digitales
+### Páginas web y productos digitales
 
-Diseña y desarrolla sitios web, tiendas online, aplicaciones y plataformas para negocios. El enfoque declarado incluye velocidad, uso desde celulares y conversión de visitantes en clientes.
+Diseña y desarrolla páginas web para pymes (institucionales, landings, catálogos, webs con turnos y portales), aplicaciones y plataformas. El enfoque declarado incluye velocidad, uso desde celulares y conversión de visitantes en clientes, con SEO local de base y consultas conectadas a WhatsApp, formularios y CRM. El mantenimiento entra en un abono mensual.
 
-Página del servicio: https://www.nimbodata.com/desarrollo-web-pymes
+Página del servicio: https://www.nimbodata.com/paginas-web-pymes
 
 ### Datos
 

@@ -769,3 +769,31 @@ html.has-cursor input, html.has-cursor textarea, html.has-cursor [contenteditabl
 }
 
 @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
+/* ---------- páginas de contenido (src/pages/Landing.jsx) ---------- */
+.ld-hero h1 { max-width: 20ch; }
+.ld-crumbs a { color: inherit; }
+.ld-crumbs a:hover { color: var(--ink); }
+.ld-answer { margin: 28px auto 30px; max-width: 64ch; text-align: left; padding: 20px 24px; border: 1px solid var(--line);
+  border-left: 3px solid var(--acc); border-radius: 12px; background: var(--soft); }
+.ld-answer p { margin-top: 10px; font-size: 17px; line-height: 1.6; color: var(--text); }
+.ld-sec { display: grid; grid-template-columns: 1fr 1.6fr; gap: 72px; align-items: start; }
+.ld-head .mono { display: block; margin-bottom: 14px; }
+.ld-head h2 { max-width: 16ch; }
+.ld-body > p { font-size: 17px; line-height: 1.7; color: var(--text); max-width: 62ch; }
+.ld-body > p + p, .ld-body > ul + p { margin-top: 16px; }
+.ld-body > p + ul { margin-top: 26px; }
+.ld-items { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.ld-items li { border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px 22px; background: #fff; }
+.ld-items h4, .ld-steps h4 { margin: 0 0 8px; line-height: 1.25; }
+.ld-items p, .ld-steps p { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.ld-steps { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.ld-steps li { display: grid; grid-template-columns: 44px 1fr; column-gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.ld-steps li .mono { grid-row: span 2; padding-top: 4px; }
+.ld-other { grid-template-columns: 1fr; }
+.ld-other p { margin-top: 12px; }
+@media (max-width: 900px) {
+  .ld-sec { grid-template-columns: 1fr; gap: 28px; }
+  .ld-items { grid-template-columns: 1fr; }
+}
+.ld-home { margin-top: 64px; }
