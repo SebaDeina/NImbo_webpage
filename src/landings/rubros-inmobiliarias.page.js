@@ -8,7 +8,7 @@ export default {
   service: {
     name: 'Agente de IA y automatización para inmobiliarias',
     type: 'Agentes de IA',
-    description: 'Agente de IA que responde consultas de portales inmobiliarios, WhatsApp e Instagram, califica interesados, agenda visitas por asesor, envía avisos de vencimientos, renovaciones y cobros de alquileres, y tablero de gestión por asesor para inmobiliarias de Argentina.',
+    description: 'Agente de IA que responde consultas de portales inmobiliarios como Zonaprop y Argenprop, WhatsApp e Instagram, califica interesados, agenda visitas por asesor, envía avisos de vencimientos, renovaciones y cobros de alquileres, y tablero de gestión por asesor para inmobiliarias de Argentina.',
   },
   sections: [
     {
@@ -23,7 +23,7 @@ export default {
       id: 'agente',
       h2: 'Un agente que responde y filtra a los interesados.',
       paras: [
-        'El [agente de IA](/agentes-de-ia) conoce cada propiedad publicada: precio, expensas, ambientes, requisitos y disponibilidad. Responde al instante y con información correcta, a cualquier hora, en WhatsApp e Instagram, y reúne en un solo lugar las consultas que llegan de los portales.',
+        'El [agente de IA](/agentes-de-ia) conoce cada propiedad publicada: precio, expensas, ambientes, requisitos y disponibilidad. Responde al instante y con información correcta, a cualquier hora, en WhatsApp e Instagram, y reúne en un solo lugar las consultas que llegan de portales como Zonaprop y Argenprop.',
         'Además, hace las preguntas que haría un asesor para saber si el interés es real: para cuándo se necesita, con qué garantía cuenta, si es para vivir o invertir, cuál es el presupuesto. Con esas respuestas, el asesor recibe solo a los interesados en serio, con un resumen de la conversación, y no pierde tiempo con quien estaba mirando por curiosidad.',
         'Si el agente no sabe algo o la consulta necesita criterio, como una negociación o un reclamo, le pasa la conversación a una persona. Nunca inventa datos de una propiedad.',
       ],
@@ -77,7 +77,7 @@ export default {
   ],
   faq: [
     ['¿El agente puede dar información equivocada de una propiedad?', 'Responde solo con los datos que cargamos de cada propiedad. Si le preguntan algo que no figura, lo dice y le pasa la consulta a un asesor en vez de inventar.'],
-    ['¿Sirve para las consultas que llegan de los portales?', 'Sí, en la medida en que el portal permita recibir las consultas por mail, por WhatsApp o por integración. Lo revisamos en el diagnóstico según los portales que uses.'],
+    ['¿Sirve para las consultas que llegan de Zonaprop y Argenprop?', 'Sí. Integramos Zonaprop y Argenprop, así las consultas que llegan de esos portales entran al mismo lugar que las de WhatsApp e Instagram y el agente las responde y las filtra igual. Si usás otro portal, lo revisamos en el diagnóstico.'],
     ['¿Cada asesor sigue atendiendo a sus clientes?', 'Sí. El agente hace la primera respuesta y el filtro, y después le pasa el interesado al asesor que corresponde, con el resumen de la conversación.'],
     ['¿Funciona para alquileres y para ventas?', 'Sí. Las preguntas de filtro y los avisos se configuran según el tipo de operación: no se le pregunta lo mismo a quien busca alquilar que a quien quiere comprar.'],
     ['¿Qué pasa con los datos de los clientes?', 'Usamos solo los datos necesarios para la gestión, limitamos los accesos y te explicamos qué información pasa por cada servicio, teniendo en cuenta la Ley 25.326 de protección de datos personales.'],
