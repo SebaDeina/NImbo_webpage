@@ -2,7 +2,7 @@
 // (src/data/projects.js del sitio). Las imágenes están copiadas en public/.
 
 export const WA = 'https://wa.me/5491124036836?text=' + encodeURIComponent('¡Hola! Vi el sitio de Nimbo y quiero contarles un proceso de mi empresa.')
-export const PROYECTOS_URL = '/proyectos'
+export const PROYECTOS_URL = '/casos'
 
 // `url` solo en los que tienen ficha en nimbodata.com/proyectos; los mockups de apps (public/mockups) no
 const P = {
@@ -122,7 +122,7 @@ export const AREAS = [
     slug: 'software-a-medida', fig: 'software',
     icon: 'M3 4h18v14H3z M3 8h18 M9 21h6',
     t: 'Software a medida',
-    d: 'Sistemas de gestión, portales y webs con lógica de negocio cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
+    d: 'Sistemas de gestión, portales y webs con lógica de negocio cuando lo que necesitás no existe hecho. Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.',
     checks: ['Stock, pedidos y turnos en un solo lugar', 'Pensado para cómo trabaja tu equipo'],
     page: {
       title: 'Software a medida para cómo trabaja tu equipo.',

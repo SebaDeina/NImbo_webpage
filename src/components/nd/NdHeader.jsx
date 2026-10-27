@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { useDiagnostico } from './DiagnosticoForm'
+import { MENU, MENU_CTA } from '../../lib/menu'
 import { Cloud, useScrolled } from './Nd'
 
-/* Encabezado blanco del sitio (todas las páginas salvo /automatizaciones, que tiene el suyo). */
+/* Encabezado blanco de las páginas viejas (nosotros, display, diagnóstico, agendar…). Los links son los mismos
+   del sitio nuevo (src/lib/menu.js): un solo menú en todo el sitio. */
 
-const NAV = [
-  ['/#servicios', 'Soluciones'],
-  ['/automatizaciones', 'IA y automatización'],
-  ['/desarrollo-web-pymes', 'Desarrollo web'],
-  ['/#casos', 'Casos de éxito'],
-  ['/#proceso', 'Cómo trabajamos'],
-  ['/nosotros', 'Nosotros'],
-]
+const NAV = MENU
 
 function NavLinks() {
   return NAV.map(([to, label]) =>
@@ -30,7 +24,6 @@ function NavLinks() {
 
 export default function NdHeader() {
   const scrolled = useScrolled()
-  const openDiagnostico = useDiagnostico()
   const [open, setOpen] = useState(false)
   const { pathname, hash } = useLocation()
   useEffect(() => setOpen(false), [pathname, hash])
@@ -52,9 +45,9 @@ export default function NdHeader() {
           <NavLinks />
         </nav>
         <div className="nd-head-cta">
-          <button type="button" className="nd-btn nd-btn-sm" onClick={() => openDiagnostico('menu')}>
-            Solicitar diagnóstico
-          </button>
+          <Link to={MENU_CTA[0]} className="nd-btn nd-btn-sm">
+            {MENU_CTA[1]}
+          </Link>
           <button
             type="button"
             className="hm-burger"
@@ -72,11 +65,7 @@ export default function NdHeader() {
         <div id="hm-sheet" className="hm-sheet">
           <div className="nd-wrap">
             <NavLinks />
-            <Link to="/proyectos">Todos los proyectos</Link>
-            <Link to="/blog">Ideas y recursos</Link>
-            <button type="button" className="nd-btn" onClick={() => openDiagnostico('menu-celular')}>
-              Solicitar diagnóstico
-            </button>
+            <Link to="/contacto">Contacto</Link>
           </div>
         </div>
       )}

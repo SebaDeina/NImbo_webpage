@@ -2,6 +2,7 @@ export const posts = [
   {
     slug: 'agentes-de-ia-para-pymes-como-implementarlos',
     title: 'Agentes de IA para pymes: qué hacen y cómo implementarlos',
+    seoTitle: 'Agentes de IA para pymes: cómo implementarlos',
     description:
       'Guía para entender qué puede hacer un agente de IA en una pyme, cuándo conviene implementarlo y qué controles necesita para trabajar con clientes y sistemas.',
     date: '2026-10-17',
@@ -139,6 +140,7 @@ En Nimbo diseñamos e implementamos agentes, integraciones y automatizaciones pa
   {
     slug: 'velocidad-de-carga-web-por-que-importa',
     title: 'Velocidad de carga web: por qué importa (y cómo mejorarla sin ser programador)',
+    seoTitle: 'Velocidad de carga web: por qué importa',
     description:
       'Si tu web tarda en abrir, perdés clientes antes de que vean lo que vendés. Te explicamos qué mide Google, cómo testear tu sitio gratis en 5 minutos y qué arreglar primero.',
     date: '2026-07-24',
@@ -257,6 +259,7 @@ En Nimbo diseñamos y optimizamos webs para pymes argentinas pensando desde el p
   {
     slug: 'como-medir-el-roi-de-una-automatizacion',
     title: 'Cómo medir el ROI de una automatización (sin planillas imposibles)',
+    seoTitle: 'Cómo medir el ROI de una automatización',
     description:
       '¿Vale la pena automatizar? Te mostramos cómo calcular el retorno (ROI) de una automatización en tu pyme, paso a paso y con un ejemplo, para saber si te conviene antes de gastar un peso.',
     date: '2026-07-13',
@@ -386,6 +389,7 @@ En Nimbo automatizamos negocios argentinos con IA a medida y te ayudamos a hacer
   {
     slug: 'automatiza-tu-negocio-con-ia',
     title: 'Automatizá tu negocio con IA: la guía práctica para pymes argentinas',
+    seoTitle: 'Automatizá tu negocio con IA: guía para pymes',
     description:
       '¿Querés automatizar tu negocio con IA pero no sabés por dónde empezar? Guía práctica para pymes en Argentina: qué se puede automatizar, cómo hacerlo paso a paso y cuánto cuesta, sin vueltas.',
     date: '2026-07-06',
@@ -484,6 +488,7 @@ En Nimbo automatizamos negocios argentinos con IA a medida: atención, turnos, v
   {
     slug: 'agentes-de-ia-vs-chatbots',
     title: 'Agentes de IA vs. Chatbots: qué son, en qué se diferencian y cómo atienden a tus clientes 24/7',
+    seoTitle: 'Agentes de IA vs. chatbots: en qué se diferencian',
     description:
       '¿Chatbot o agente de IA? Te explicamos qué son, en qué se diferencian y cómo un agente puede atender, filtrar y agendar a tus clientes las 24 horas, sin que se pierda ni un mensaje.',
     date: '2026-07-06',
@@ -587,6 +592,7 @@ En Nimbo implementamos **agentes de IA a medida** para negocios argentinos: los 
   {
     slug: 'que-es-un-crm-y-por-que-tu-pyme-lo-necesita',
     title: 'Qué es un CRM y por qué tu pyme lo necesita (aunque creas que no)',
+    seoTitle: 'Qué es un CRM y por qué tu pyme lo necesita',
     description:
       'Si guardás a tus clientes en la cabeza, en un cuaderno y en el WhatsApp, estás perdiendo ventas sin darte cuenta. Te explicamos qué es un CRM, cómo saber si ya lo necesitás y cómo empezar sin marearte.',
     date: '2026-07-06',
@@ -697,6 +703,7 @@ En Nimbo ayudamos a pymes argentinas a ordenar sus clientes y automatizar el seg
   {
     slug: 'transformacion-digital-pymes-argentina',
     title: 'Transformación digital para pymes en Argentina: por dónde empezar en 2026',
+    seoTitle: 'Transformación digital en pymes: por dónde empezar',
     description:
       'Transformación digital no es comprar tecnología: es rediseñar cómo trabaja tu negocio. Te mostramos los pasos concretos para empezar en tu pyme sin frustrarte ni gastar de más.',
     date: '2026-07-05',
@@ -720,7 +727,7 @@ Hace unos años, digitalizar un proceso en una pyme argentina era caro y complej
 En 2026, una pyme puede automatizar su atención al cliente, sus turnos y su seguimiento post-venta por menos de lo que cuesta un empleado part-time. La barrera ya no es el dinero: es saber por dónde empezar.
 
 :::bar
-{ "title": "Adopción de IA en pymes argentinas, por sector (2025)", "unit": "%", "highlightIndex": 0, "data": [["Software / IT", 85.4], ["Textil", 47.4], ["Metalmecánica", 40.6], ["Madera y papel", 35.1], ["Química y plástico", 34.7], ["Alimentos", 29.9], ["Minerales", 16.3]], "note": "En promedio, el 41,6% de las pymes argentinas ya usa alguna herramienta de IA, y más del 85% empezó entre 2024 y 2025. Fuente: Encuesta Nacional de Adopción de IA en PyMEs — nadIA (CEPE-UTDT y Fundar, con apoyo del BID), 2025." }
+{ "title": "Adopción de IA en pymes argentinas, por sector (2025)", "unit": "%", "highlightIndex": 0, "data": [["Software / IT", 85.4], ["Textil", 47.4], ["Metalmecánica", 40.6], ["Madera y papel", 35.1], ["Química y plástico", 34.7], ["Alimentos", 29.9], ["Minerales", 16.3]], "note": "En promedio, el 41,6% de las pymes encuestadas ya usa al menos una herramienta de IA, y más del 85% de ellas empezó entre 2024 y 2025. Fuente: Encuesta nacional sobre adopción de IA en pymes de la Argentina — nadIA (CEPE Di Tella y Fundar), abril de 2026; 402 pymes industriales y de software relevadas entre noviembre y diciembre de 2025." }
 :::
 
 ---
@@ -796,6 +803,7 @@ En Nimbo acompañamos a pymes argentinas en ese camino: automatización, IA, web
   {
     slug: 'automatizar-pyme-ia-chatbot-whatsapp',
     title: 'Cómo automatizar tu pyme con IA y un chatbot de WhatsApp',
+    seoTitle: 'Cómo automatizar tu pyme con IA y WhatsApp',
     description:
       'Un chatbot de WhatsApp bien hecho responde la mayoría de las consultas solo. Te explicamos cómo automatizar la atención al cliente y las tareas repetitivas de tu negocio con IA.',
     date: '2026-07-03',
@@ -904,6 +912,7 @@ En Nimbo armamos automatizaciones y chatbots de WhatsApp a medida para pymes arg
   {
     slug: 'como-escribir-prompts-chatgpt',
     title: 'Cómo escribir buenas prompts para ChatGPT: guía práctica con ejemplos',
+    seoTitle: 'Cómo escribir buenos prompts para ChatGPT',
     description:
       'La diferencia entre una respuesta mediocre y una excelente de ChatGPT está en cómo pedís. Aprendé a escribir prompts efectivos con una fórmula simple y ejemplos reales.',
     date: '2026-07-01',
@@ -979,6 +988,7 @@ En Nimbo ayudamos a pymes argentinas a llevar la IA de "probé ChatGPT" a "tengo
   {
     slug: 'por-que-tu-negocio-necesita-una-pagina-web',
     title: '¿Por qué tu negocio necesita una página web profesional en 2026?',
+    seoTitle: 'Por qué tu negocio necesita una página web',
     description:
       'Tener solo Instagram ya no alcanza. Te explicamos por qué una página web propia es la base de cualquier negocio que quiera crecer en serio.',
     date: '2026-06-10',
@@ -1077,8 +1087,9 @@ En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en 
   {
     slug: 'ia-para-pymes-argentinas-guia-2026',
     title: 'IA para pymes argentinas: cómo automatizar tu negocio sin gastar una fortuna',
+    seoTitle: 'IA para pymes argentinas: guía para empezar',
     description:
-      'El 41,6% de las pymes argentinas ya usa IA, y la mayoría empezó en el último año. Te mostramos qué herramientas existen, cuáles sirven de verdad para pymes, y cómo empezar sin riesgos.',
+      'Según la encuesta nadIA, el 41,6% de las pymes encuestadas ya usa IA y la mayoría empezó en 2024 o 2025. Qué herramientas sirven y cómo empezar sin riesgos.',
     date: '2026-06-17',
     updated: '2026-10-27',
     category: 'Automatización & IA',
@@ -1086,7 +1097,9 @@ En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en 
     content: `
 ## Ya no es ciencia ficción
 
-Hace tres años, hablar de inteligencia artificial para una pyme argentina sonaba a algo lejano, caro o directamente innecesario. Hoy la foto es completamente distinta: el 41,6% de las pymes argentinas ya usa alguna herramienta de IA —y más del 85% empezó entre 2024 y 2025—, y el costo de implementar un sistema básico bajó drásticamente.
+Hace tres años, hablar de inteligencia artificial para una pyme argentina sonaba a algo lejano, caro o directamente innecesario. Hoy la foto es completamente distinta: el 41,6% de las pymes encuestadas ya usa al menos una herramienta de IA —y más del 85% de ellas empezó entre 2024 y 2025—, y el costo de implementar un sistema básico bajó drásticamente.
+
+*Fuente: [Encuesta nacional sobre adopción de IA en pymes de la Argentina](https://nadia.ar/investigacion/encuesta-pymes.html), de nadIA (CEPE Di Tella y Fundar), publicada en abril de 2026. Relevó 402 pymes industriales y de software de 10 a 249 personas entre noviembre y diciembre de 2025.*
 
 En 2026, una PyME puede tener un sistema de IA funcional por menos de 100 dólares mensuales. Lo que antes requería un equipo de tecnología, hoy se puede configurar en días.
 
@@ -1194,6 +1207,7 @@ En Nimbo diseñamos automatizaciones y agentes de IA para pymes argentinas. Pod�
   {
     slug: 'seo-local-argentina-como-aparecer-en-google',
     title: 'SEO local en Argentina: cómo aparecer en Google cuando te buscan cerca',
+    seoTitle: 'SEO local en Argentina: cómo aparecer en Google',
     description:
       'Las búsquedas locales vienen creciendo fuerte en Argentina. Si tenés un negocio con presencia física o trabajás por zona, esta guía es para vos.',
     date: '2026-06-23',

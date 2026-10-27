@@ -1,5 +1,5 @@
 // Lo que acredita a Nimbo y las herramientas con las que trabaja, en dos secciones separadas del inicio:
-//   Partners y certificaciones: partner oficial de Tiendanube, certificaciones de HubSpot y Make, y la Guía de
+//   Partners y certificaciones: partner de Tiendanube, certificaciones de HubSpot y Make, y la Guía de
 //   Buenos Aires. Solo lo verificable (GoodFirms sale hasta que la ficha esté publicada; n8n va como herramienta
 //   hasta confirmar la certificación).
 //   Tecnologías con las que trabajamos: herramientas, no alianzas (por eso no van en la grilla de partners).
@@ -17,7 +17,7 @@ import twilio from './logos/twilio.svg?raw'
 import zapier from './logos/zapier.svg?raw'
 
 const SELLOS = [
-  { name: 'Tiendanube', svg: tiendanube, wide: true, tag: 'Partner oficial' },
+  { name: 'Tiendanube', svg: tiendanube, wide: true, tag: 'Partner' },
   { name: 'HubSpot', svg: hubspot, tag: 'Certificaciones' },
   { name: 'Make', svg: make, tag: 'Certificación' },
   { name: 'Guía de Buenos Aires', tag: 'Empresa publicada' },

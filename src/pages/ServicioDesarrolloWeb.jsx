@@ -131,7 +131,7 @@ export default function ServicioDesarrolloWeb() {
           <Link to='/contacto' className='nd-btn'>
             Contanos tu proyecto
           </Link>
-          <Link to='/proyectos' className='nd-btn nd-btn-soft'>
+          <Link to='/casos' className='nd-btn nd-btn-soft'>
             Ver proyectos
           </Link>
         </div>
@@ -168,23 +168,23 @@ export default function ServicioDesarrolloWeb() {
               <h2 className='nd-h2'>Webs y aplicaciones desarrolladas por Nimbo</h2>
               <p>Estos proyectos muestran distintos tipos de soluciones: sitios públicos, plataformas y aplicaciones para operaciones internas.</p>
             </div>
-            <Link to='/proyectos' className='nd-link'>Ver todos los proyectos →</Link>
+            <Link to='/casos' className='nd-link'>Ver todos los proyectos →</Link>
           </div>
           <div className='nd-cols'>
             <article className='nd-col'>
               <h3>WODSI</h3>
               <p>Plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp.</p>
-              <Link to='/proyectos#wodsi' className='nd-more'>Ver proyecto →</Link>
+              <Link to='/casos#wodsi' className='nd-more'>Ver proyecto →</Link>
             </article>
             <article className='nd-col'>
               <h3>psi.frantadioli</h3>
               <p>Sitio web para una psicóloga, diseñado para celulares y con flujo de agendamiento de turnos.</p>
-              <Link to='/proyectos#psifrantadioli' className='nd-more'>Ver proyecto →</Link>
+              <Link to='/casos#psifrantadioli' className='nd-more'>Ver proyecto →</Link>
             </article>
             <article className='nd-col'>
               <h3>Gestión agropecuaria</h3>
               <p>Aplicación web que centraliza producción, sanidad, clima, tareas y stock.</p>
-              <Link to='/proyectos#gestion-agro' className='nd-more'>Ver proyecto →</Link>
+              <Link to='/casos#gestion-agro' className='nd-more'>Ver proyecto →</Link>
             </article>
           </div>
         </div>

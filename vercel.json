@@ -1,9 +1,14 @@
 {
+  "redirects": [
+    { "source": "/proyectos", "destination": "/casos", "statusCode": 301 },
+    { "source": "/trabajos/:slug", "destination": "/casos", "statusCode": 301 }
+  ],
   "rewrites": [
-    {
-      "source": "/((?!api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|.*\\.(?:png|jpg|jpeg|webp|svg|ico|woff2?|css|js|txt|xml)$).*)",
-      "destination": "/_spa.html"
-    }
+    { "source": "/propuesta", "destination": "/_spa.html" },
+    { "source": "/propuesta/:path*", "destination": "/_spa.html" },
+    { "source": "/robots", "destination": "/_spa.html" },
+    { "source": "/diagnostico-ia", "destination": "/_spa.html" },
+    { "source": "/sistemas-conectados", "destination": "/_spa.html" }
   ],
   "headers": [
     {

@@ -2,11 +2,12 @@
 import { Player } from '@remotion/player'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { MENU, MENU_CTA } from '../lib/menu'
 import { AREAS, WA } from './data'
 import { Hero, HERO } from './scenes/Hero'
 import './styles.css'
 
-const LINKS = [['/#servicios', 'Servicios'], ['/casos', 'Casos'], ['/blog', 'Blog'], ['/beta', 'Beta']]
+const LINKS = MENU
 
 // En el celular los links van en un menú desplegable (botón "Menú"); se cierra al elegir, al tocar afuera o con Escape.
 export function Nav() {
@@ -32,7 +33,7 @@ export function Nav() {
         <button type="button" className="nav-menu" aria-expanded={open} aria-controls="nav-sheet" onClick={() => setOpen((o) => !o)}>
           <span aria-hidden="true"><i /><i /></span>{open ? 'Cerrar' : 'Menú'}
         </button>
-        <a href="/contacto" className="btn btn-acc btn-sm">Hablemos</a>
+        <a href={MENU_CTA[0]} className="btn btn-acc btn-sm">{MENU_CTA[1]}</a>
       </div>
       <div id="nav-sheet" className="nav-sheet" hidden={!open}>
         {LINKS.map(([href, t]) => <a key={href} href={href} onClick={() => setOpen(false)}>{t}</a>)}
@@ -68,10 +69,10 @@ export function Footer() {
         <a href="/" className="logo"><Logo /> nimbo</a>
         <p>IA, automatización y software a medida para pymes. Un equipo chico de Buenos Aires.</p>
       </div>
-      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}</div>
-      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/#equipo">Equipo</a></div>
-      <div><h5>Nimbo</h5><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
-      <p className="foot-trust">Partner oficial de Tiendanube · Certificaciones HubSpot y Make · En la Guía de Buenos Aires</p>
+      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}<a href="/desarrollo-web-pymes">Páginas web</a><a href="/display">Nimbo Display</a></div>
+      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/nosotros">Nosotros</a></div>
+      <div><h5>Nimbo</h5><a href="/diagnostico">Diagnóstico gratis</a><a href="/agendar">Agendar una llamada</a><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
+      <p className="foot-trust">Partner de Tiendanube · Certificaciones HubSpot y Make · En la Guía de Buenos Aires</p>
       <p className="foot-bottom">© 2026 Nimbo. Hecho en Argentina.</p>
     </footer>
   )

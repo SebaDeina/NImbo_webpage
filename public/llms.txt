@@ -6,7 +6,7 @@ Nimbo ayuda a dueños y equipos de pymes a reducir tareas manuales, conectar sus
 
 Nimbo Consulting fue fundada en 2026 por Sebastian Deina, que hace proyectos de automatización, datos e IA desde 2024.
 
-Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base en Buenos Aires y fundada en 2026. No tiene relación con Nimbo Consulting SL (España) ni con Nimbo Tecnología SAS.
+Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base en Buenos Aires y fundada en 2026. No tiene relación con Nimbo Consulting SL (España), Nimbo Tecnología SAS, nimbo-x.com ni nimbo.ar.
 
 ## Rubros en los que se especializa
 
@@ -27,14 +27,10 @@ Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base e
 - Datos y business intelligence: dashboards, integración de fuentes, SQL, indicadores de gestión y alertas
 - Software a medida: aplicaciones internas, portales, sistemas de gestión y webs con lógica de negocio
 
-## Precios de referencia (ARS, octubre 2026)
+## Cómo se cobra
 
-- Agente IA básico, un canal: implementación desde $350.000 + $120.000 por mes
-- Nimbo Managed AI (agente empresarial, hasta 2 canales): implementación desde $650.000 + $200.000 por mes
-- Automatización entre sistemas: desde $400.000 + desde $90.000 por mes
-- Dashboard empresarial: desde $500.000 + desde $100.000 por mes
-- Aplicación o sistema a medida: desde $1.200.000, abono a cotizar
-- Consultoría y diagnóstico técnico: desde $150.000, bonificable si se contrata la implementación
+- Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.
+- El diagnóstico inicial de 20 minutos es sin cargo.
 
 ## Productos
 
@@ -45,9 +41,14 @@ Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base e
 - [Inicio](https://www.nimbodata.com/): presentación general de Nimbo y sus servicios
 - [Automatizaciones y agentes de IA](https://www.nimbodata.com/automatizaciones): soluciones para pymes y proceso de implementación
 - [Desarrollo web para pymes](https://www.nimbodata.com/desarrollo-web-pymes): páginas web, aplicaciones internas, portales y sistemas de gestión desde Buenos Aires para empresas de Argentina
+- [Agentes de IA](https://www.nimbodata.com/agentes-de-ia): agentes que atienden WhatsApp e Instagram, toman pedidos y turnos y derivan a una persona
+- [Automatización e integración](https://www.nimbodata.com/automatizacion-e-integracion): WhatsApp, Gmail, planillas, CRM y facturación conectados
+- [Datos y tableros](https://www.nimbodata.com/datos-y-tableros): ventas, stock y cobranzas en tableros que se actualizan solos
+- [Software a medida](https://www.nimbodata.com/software-a-medida): sistemas de gestión, portales y apps internas
 - [Nimbo Display](https://www.nimbodata.com/display): cartelería digital, planes y demo
 - [Diagnóstico gratis](https://www.nimbodata.com/diagnostico): pedido de reunión de diagnóstico sin cargo
-- [Proyectos](https://www.nimbodata.com/proyectos): productos y trabajos desarrollados por Nimbo
+- [Agendar](https://www.nimbodata.com/agendar): reservar el diagnóstico gratis de 20 minutos
+- [Casos](https://www.nimbodata.com/casos): proyectos y productos desarrollados por Nimbo, con la ficha de cada uno (reemplaza a /proyectos)
 - [Nosotros](https://www.nimbodata.com/nosotros): quiénes son y cómo trabajan
 - [Blog](https://www.nimbodata.com/blog): guías sobre automatización, IA, transformación digital y desarrollo web
 - [Contacto](https://www.nimbodata.com/contacto): canales para conversar sobre un proyecto
@@ -64,5 +65,7 @@ Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base e
 ## Contacto
 
 - Sitio oficial: https://www.nimbodata.com/
+- Nombre: Nimbo
 - Correo: contacto@nimbodata.com
-- Ubicación: Buenos Aires, Argentina
+- Teléfono y WhatsApp: +54 9 11 2403-6836
+- Ubicación: Buenos Aires, trabajamos de forma remota con toda Argentina (sin dirección física de atención al público)

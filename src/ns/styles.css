@@ -324,6 +324,17 @@ h4 { font-size: 22px; line-height: 1.2; letter-spacing: -0.04em; }
 .cs-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
 .cs-card:hover .cs-img img { transform: scale(1.025); }
 .cs-copy { display: flex; justify-content: space-between; align-items: start; gap: 20px; margin-top: 20px; }
+/* fichas de /casos (antes /proyectos) */
+.cs-fichas { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cs-ficha { border: 1px solid var(--line); border-radius: 12px; padding: 26px 26px 28px; background: #fff; scroll-margin-top: 110px; }
+.cs-ficha:target { border-color: var(--acc); }
+.cs-ficha h3 { margin: 10px 0 4px; }
+.cs-ficha p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-top: 10px; }
+.cs-ficha .cs-ficha-type { font-size: 13px; margin-top: 0; }
+.cs-ficha .cs-ficha-who { margin-top: 0; color: var(--text); }
+.cs-ficha .cs-ficha-sum { color: var(--ink); }
+.cs-ficha .cs-tags { margin: 16px 0; }
+@media (max-width: 760px) { .cs-fichas { grid-template-columns: 1fr; } }
 .cs-copy h2 { font-size: 28px; margin-bottom: 8px; }
 .cs-copy p { color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 48ch; }
 .cs-go { flex: none; width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--line); display: grid; place-items: center; transition: background .3s, border-color .3s; }

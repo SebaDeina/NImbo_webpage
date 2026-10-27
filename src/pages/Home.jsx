@@ -63,7 +63,7 @@ const SERVICIOS = [
     n: '04',
     cta: 'servicio-web',
     t: 'Desarrollo web y software a medida',
-    d: 'Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
+    d: 'Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes cuando lo que necesitás no existe hecho. Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.',
     usos: ['Sistemas de gestión', 'Portales', 'Apps internas', 'Webs con lógica de negocio'],
     v: 'nd-v-ink',
     demo: <WebDemo />,
@@ -217,19 +217,19 @@ export default function Home() {
               <span className="nd-eyebrow">Experiencia aplicada</span>
               <h2 className="nd-h2">Soluciones que ya están funcionando.</h2>
             </div>
-            <Link to="/proyectos" className="nd-link">Ver todos los proyectos →</Link>
+            <Link to="/casos" className="nd-link">Ver todos los proyectos →</Link>
           </div>
           <div className="nd-grid-3 hm-case-grid">
             {CASOS.map((story, index) => (
               <article key={story.slug} className="hm-case-card">
-                <Link to={`/proyectos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
+                <Link to={`/casos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
                   <img src={story.project.cover} alt={`Captura de ${story.project.title}`} loading="lazy" />
                 </Link>
                 <div className="hm-case-copy">
                   <span className="nd-mono hm-type">{story.label} · Caso 0{index + 1}</span>
                   <h3>{story.project.title}</h3>
                   <p>{story.resumen}</p>
-                  <Link to={`/proyectos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
+                  <Link to={`/casos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
                 </div>
               </article>
             ))}

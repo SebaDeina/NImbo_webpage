@@ -68,17 +68,18 @@ export default function Footer() {
           </div>
           <div className="nf-col">
             <h4>Servicios</h4>
-            <Link to="/automatizaciones">IA y agentes para pymes</Link>
-            <Link to="/#cap-II">Automatización e integración</Link>
-            <Link to="/#cap-IV">Datos y BI</Link>
-            <Link to="/desarrollo-web-pymes">Desarrollo web y software a medida</Link>
-            <Link to="/#precios">Formas de trabajar</Link>
+            <Link to="/agentes-de-ia">Agentes de IA</Link>
+            <Link to="/automatizacion-e-integracion">Automatización e integración</Link>
+            <Link to="/datos-y-tableros">Datos y tableros</Link>
+            <Link to="/software-a-medida">Software a medida</Link>
+            <Link to="/desarrollo-web-pymes">Desarrollo web</Link>
+            <Link to="/#proceso">Cómo trabajamos</Link>
             <h4 className="nf-sub">Producto propio</h4>
             <Link to="/display">Nimbo Display</Link>
           </div>
           <div className="nf-col">
             <h4>Nimbo</h4>
-            <Link to="/proyectos">Proyectos</Link>
+            <Link to="/casos">Casos</Link>
             <Link to="/nosotros">Nosotros</Link>
             <Link to="/blog">Blog</Link>
             <Link to="/contacto">Contacto</Link>
