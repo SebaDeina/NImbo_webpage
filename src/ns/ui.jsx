@@ -69,9 +69,9 @@ export function Footer() {
         <a href="/" className="logo"><Logo /> nimbo</a>
         <p>IA, automatización y software a medida para pymes. Un equipo chico de Buenos Aires.</p>
       </div>
-      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}</div>
-      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/#equipo">Equipo</a></div>
-      <div><h5>Nimbo</h5><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
+      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}<a href="/desarrollo-web-pymes">Páginas web</a><a href="/display">Nimbo Display</a></div>
+      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/nosotros">Nosotros</a></div>
+      <div><h5>Nimbo</h5><a href="/diagnostico">Diagnóstico gratis</a><a href="/agendar">Agendar una llamada</a><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
       <p className="foot-trust">Partner oficial de Tiendanube · Certificaciones HubSpot y Make · En la Guía de Buenos Aires</p>
       <p className="foot-bottom">© 2026 Nimbo. Hecho en Argentina.</p>
     </footer>
