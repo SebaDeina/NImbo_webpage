@@ -21,8 +21,8 @@ const WA_NUM = '5491124036836'
 const KEY = 'nimbo-nube'
 const INSCRIPCION = 'https://somosbeta.net/eventos/encuentro-1/inscripcion/'
 
-const RUBROS = ['Comercio', 'Gastronomía', 'Salud o consultorio', 'Servicios profesionales', 'Distribuidora', 'Otro']
-const PLURAL = { Comercio: 'comercios', 'Salud o consultorio': 'consultorios', 'Servicios profesionales': 'servicios profesionales', Distribuidora: 'distribuidoras' }
+const RUBROS = ['Inmobiliaria', 'Distribuidora', 'Comercio', 'Servicios profesionales', 'Salud o consultorio', 'Otro']
+const PLURAL = { Comercio: 'comercios', 'Salud o consultorio': 'consultorios', 'Servicios profesionales': 'servicios profesionales', Distribuidora: 'distribuidoras', Inmobiliaria: 'inmobiliarias' }
 const DOLORES = {
   whatsapp: { l: 'Responder WhatsApp', to: '/agentes-de-ia',
     p: 'Lo resuelve un agente de IA: contesta WhatsApp e Instagram a cualquier hora con la información de tu negocio y te pasa solo lo que necesita una persona. Lo hicimos para unos locales de entretenimiento: el bot atiende de madrugada y a la mañana el equipo encuentra todo derivado.' },

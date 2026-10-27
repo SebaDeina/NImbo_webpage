@@ -1,11 +1,11 @@
 import Fig from './Fig'
 import { PostRow } from './Blog'
 import { POSTS } from './blog-posts'
-import { AREAS, EQUIPO, FAQ, PASOS } from './data'
+import { AREAS, EQUIPO, FAQ, PASOS, RUBROS } from './data'
 import { FIGS } from './scenes'
 import Showcase from './Showcase'
 import Testimonials from './Testimonials'
-import Trust from './Trust'
+import Trust, { Tecnologias } from './Trust'
 import { Arrow, Final, Icon, LiveEngraving } from './ui'
 import { Words } from './motion'
 
@@ -53,6 +53,29 @@ export default function Home() {
           ))}
         </section>
 
+        <section id="rubros" className="sec wrap" data-buddy="¿Tu negocio es de estos? Te cuento qué le automatizaríamos.">
+          <div className="sec-head" data-reveal>
+            <div>
+              <h2>Para quién trabajamos.</h2>
+              <p className="lead">Pymes de 15 a 70 personas, con mucho ida y vuelta por WhatsApp y planillas. Estos son los rubros donde más rinde.</p>
+            </div>
+          </div>
+          <div className="rubros">
+            {RUBROS.map((r, i) => (
+              <a key={r.slug} className="rubro" href={`/contacto?r=${r.slug}`} data-reveal style={{ '--d': `${i * 100}ms` }}>
+                <div className="row-title">
+                  <span className="chip"><Icon d={r.icon} /></span>
+                  <h3>{r.t}</h3>
+                </div>
+                <p>{r.d}</p>
+                <ul className="checks">{r.checks.map((c) => <li key={c}>{c}</li>)}</ul>
+                <span className="btn btn-acc">Contanos tu caso <Arrow /></span>
+              </a>
+            ))}
+          </div>
+          <p className="rubros-more" data-reveal>También trabajamos con estudios y servicios profesionales, comercios y salud. <a href="/contacto">Contanos tu caso →</a></p>
+        </section>
+
         <Showcase />
 
         <Testimonials />
@@ -89,6 +112,8 @@ export default function Home() {
             ))}
           </ol>
         </section>
+
+        <Tecnologias />
 
         <section id="blog" className="sec wrap">
           <div className="sec-head" data-reveal>

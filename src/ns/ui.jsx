@@ -49,7 +49,7 @@ export function Footer() {
       <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}</div>
       <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/#equipo">Equipo</a></div>
       <div><h5>Nimbo</h5><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
-      <p className="foot-trust">Partner oficial de Tiendanube · Certificados HubSpot · En GoodFirms y la Guía de Buenos Aires · Google Cloud · Meta</p>
+      <p className="foot-trust">Partner oficial de Tiendanube · Certificaciones HubSpot y Make · En la Guía de Buenos Aires</p>
       <p className="foot-bottom">© 2026 Nimbo. Hecho en Argentina.</p>
     </footer>
   )

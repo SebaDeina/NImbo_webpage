@@ -70,7 +70,7 @@ export default function Service({ area }) {
           <div data-reveal>
             <h2>Cómo trabajamos y cómo se cotiza.</h2>
             <div className="price">
-              <b>Precio y plazo</b>
+              <b>Cómo se paga</b>
               <p>{p.precio}</p>
             </div>
           </div>

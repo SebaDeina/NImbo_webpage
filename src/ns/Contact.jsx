@@ -5,7 +5,7 @@
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { submitContact } from '../lib/cms'
-import { AREAS } from './data'
+import { AREAS, RUBROS } from './data'
 import { Arrow, Icon, LiveEngraving } from './ui'
 import { Words } from './motion'
 
@@ -24,7 +24,9 @@ const TEMAS = [
 const PASOS = ['Vos', 'Contacto', 'Tu caso']
 
 export default function Contact() {
-  const pre = new URLSearchParams(useLocation().search).get('s')
+  const params = new URLSearchParams(useLocation().search)
+  const pre = params.get('s')
+  const rubro = RUBROS.find((x) => x.slug === params.get('r')) // ?r=…: viene de "Para quién trabajamos"
   const temas = pre === 'beta' ? [...TEMAS, ['beta', 'Sumarme a BETA']] : TEMAS
   const [step, setStep] = useState(0)
   const [d, setD] = useState({
@@ -57,7 +59,8 @@ export default function Contact() {
       await submitContact({
         firstName, lastName: rest.join(' '), company: d.company.trim(), email: d.email.trim(),
         countryCode: d.phone.trim() ? d.cc : '', phone: d.phone.trim(), topics: d.temas, topic: d.temas[0] || 'otro',
-        message: d.msg.trim(), source: 'form', page: pre ? `/contacto?s=${pre}` : '/contacto', lang: 'es',
+        message: d.msg.trim(), source: 'form', page: pre ? `/contacto?s=${pre}` : rubro ? `/contacto?r=${rubro.slug}` : '/contacto',
+        rubro: rubro ? rubro.t : '', lang: 'es',
       })
       setSent(true)
     } catch {
@@ -73,7 +76,7 @@ export default function Contact() {
     d.msg.trim(),
   ].filter(Boolean).join(' ')
   const waLink = `https://wa.me/${WA_NUM}?text=${encodeURIComponent(sent ? resumen : '¡Hola! Vi el sitio de Nimbo y quiero contarles un proceso de mi empresa.')}`
-  const servicio = pre === 'beta' ? { t: 'BETA' } : AREAS.find((a) => a.slug === pre)
+  const servicio = pre === 'beta' ? { t: 'BETA' } : AREAS.find((a) => a.slug === pre) || rubro
 
   return (
     <>
@@ -182,7 +185,7 @@ export default function Contact() {
         <ol className="steps steps-3" data-reveal>
           <li><span className="mono">01</span><h4>Te respondemos</h4><p>En menos de 24 h, por el canal que elegiste.</p></li>
           <li><span className="mono">02</span><h4>Charla de 20 minutos</h4><p>Nos contás cómo trabajan y dónde se traba.</p></li>
-          <li><span className="mono">03</span><h4>Propuesta cerrada</h4><p>Qué entra, cuánto cuesta y cuándo está, por escrito.</p></li>
+          <li><span className="mono">03</span><h4>Propuesta por escrito</h4><p>Qué incluye, la puesta en marcha y el abono mensual.</p></li>
         </ol>
       </section>
     </>

@@ -37,7 +37,7 @@ const P = {
 
 export const PASOS_SERVICIO = [
   ['Una charla de 20 minutos', 'Qué se hace hoy, quién lo hace y dónde se traba. Sin cargo y sin compromiso.'],
-  ['Una propuesta cerrada', 'Qué entra, qué no, cuánto cuesta y cuándo está. Por escrito, antes de arrancar.'],
+  ['Una propuesta por escrito', 'Qué incluye, la puesta en marcha, el abono mensual y los tiempos. Antes de arrancar.'],
   ['Entregas por partes', 'Empezamos por lo que más te duele. Cada semana ves algo funcionando y lo probás con tu equipo.'],
   ['Puesta en marcha', 'Lo dejamos andando con tu equipo y lo seguimos ajustando con el uso real.'],
 ]
@@ -65,7 +65,7 @@ export const AREAS = [
         ['Consultorio', 'El paciente escribe para sacar turno. El agente ofrece los horarios libres, agenda, manda el recordatorio el día anterior y reprograma si cancela.'],
         ['Locales de entretenimiento', 'Preguntan por eventos, promos y reservas a la madrugada. El bot responde con la información de cada local y lo que no sabe queda como derivación para el equipo a la mañana.'],
       ],
-      precio: 'Implementación con precio cerrado y un abono mensual que cubre operación, monitoreo y ajustes. El consumo de IA y los cargos de Meta van aparte y te los mostramos antes de arrancar.',
+      precio: 'Una puesta en marcha y un abono mensual que cubre operación, monitoreo y ajustes. El consumo de IA y los cargos de Meta van aparte y te los mostramos antes de arrancar.',
     },
   },
   {
@@ -90,7 +90,7 @@ export const AREAS = [
         ['Comercio', 'Cada venta confirmada descuenta stock, emite la factura en ARCA y le manda el comprobante al cliente por WhatsApp.'],
         ['Equipo de ventas', 'Cada consulta nueva entra al CRM con su origen, se asigna a un vendedor y, si nadie responde en 24 h, llega un aviso.'],
       ],
-      precio: 'Precio cerrado por automatización, según cuántos sistemas haya que conectar. El abono mensual cubre el monitoreo y los ajustes cuando cambia alguna de tus herramientas.',
+      precio: 'Una puesta en marcha según cuántos sistemas haya que conectar y un abono mensual que cubre el monitoreo y los ajustes cuando cambia alguna de tus herramientas.',
     },
   },
   {
@@ -115,7 +115,7 @@ export const AREAS = [
         ['Distribuidora', 'Stock, rotación y cobranzas pendientes por cliente, con alerta cuando un producto está por quedarse sin stock.'],
         ['Salas de entretenimiento', 'Las cámaras que ya estaban cuentan personas y miden la ocupación por zona; el tablero muestra qué horarios y sectores rinden más.'],
       ],
-      precio: 'Precio cerrado según cuántas fuentes haya que conectar y cuántos tableros armemos. El abono mensual mantiene los datos al día y suma indicadores nuevos.',
+      precio: 'Una puesta en marcha según cuántas fuentes haya que conectar y cuántos tableros armemos, y un abono mensual que mantiene los datos al día y suma indicadores nuevos.',
     },
   },
   {
@@ -140,7 +140,7 @@ export const AREAS = [
         ['Gimnasio o box', 'Atletas, planes y cuotas en un solo lugar, con avisos automáticos por WhatsApp cuando vence una cuota. Es lo que resuelve WODSI.'],
         ['Productor que vende por encargo', 'Ventas del mostrador, encargos de la semana y fiado anotados desde el celular, con aviso cuando el stock no alcanza para cumplir. Es El Reencuentro.'],
       ],
-      precio: 'Se cotiza por proyecto, con precio cerrado y entregas parciales. Si ya tenés hosting o servicios contratados, los usamos; si no, nos encargamos y te cobramos su costo más la gestión.',
+      precio: 'Un desarrollo con entregas parciales y un abono mensual que cubre hosting, soporte y mejoras. Si ya tenés hosting o servicios contratados, los usamos; si no, nos encargamos y te cobramos su costo más la gestión.',
     },
   },
 ]
@@ -169,16 +169,43 @@ export const EQUIPO = [
     bio: 'Identidad, interfaces y piezas de marca para que cada sistema se vea claro y se use sin manual.' },
 ]
 
+// "Para quién trabajamos" (inicio): los rubros prioritarios de Nimbo, con lo que les resolvemos. Cada tarjeta lleva
+// al contacto con el rubro marcado (/contacto?r=…).
+export const RUBROS = [
+  {
+    slug: 'inmobiliaria', t: 'Inmobiliarias',
+    icon: 'M3 11l9-7 9 7 M5 10v10h14V10 M10 20v-6h4v6',
+    d: 'Consultas por portales, WhatsApp e Instagram a toda hora, visitas que coordinar y contratos que vencen.',
+    checks: [
+      'Un agente responde por cada propiedad y te pasa solo a los interesados en serio',
+      'Las visitas quedan agendadas en el calendario de cada asesor',
+      'Avisos automáticos de vencimientos, renovaciones y cobros de alquileres',
+      'Un tablero con consultas, visitas y operaciones por asesor',
+    ],
+  },
+  {
+    slug: 'distribuidora', t: 'Distribuidoras y mayoristas',
+    icon: 'M3 7h11v9H3z M14 10h4l3 3v3h-7 M7 19.5a1.5 1.5 0 1 0 0-.01 M17 19.5a1.5 1.5 0 1 0 0-.01',
+    d: 'Pedidos por WhatsApp a cualquier hora, listas de precios que cambian y cobranzas que se escapan.',
+    checks: [
+      'Pedidos tomados por WhatsApp con precio y stock, listos para preparar',
+      'Listas de precios actualizadas que les llegan solas a tus clientes',
+      'Stock, rotación y cuentas corrientes por cliente, con alertas',
+      'El pedido pasa al sistema de gestión y a la factura sin cargarlo dos veces',
+    ],
+  },
+]
+
 export const PASOS = [
   ['Diagnóstico', 'Entendemos el proceso y dónde se pierde tiempo.'],
-  ['Propuesta', 'Alcance, tiempos y precio cerrado, por escrito.'],
+  ['Propuesta', 'Alcance, tiempos, puesta en marcha y abono mensual, por escrito.'],
   ['Implementación', 'Lo construimos y lo probamos con casos reales.'],
   ['Evolución', 'Medimos, mantenemos y ajustamos cada mes.'],
 ]
 
 export const FAQ = [
   ['¿El diagnóstico tiene costo?', 'La primera reunión es sin cargo. Si hace falta un relevamiento técnico detallado, lo cotizamos antes de avanzar.'],
-  ['¿Cuánto cuesta?', 'Depende del alcance. Después del diagnóstico te mandamos una propuesta cerrada, en pesos y a precio fijo, con tiempos y resultados esperados.'],
+  ['¿Cuánto cuesta?', 'Trabajamos con un abono mensual: una puesta en marcha al principio y después una cuota por mes que cubre la operación, el soporte y las mejoras. Después del diagnóstico te mandamos la propuesta en pesos, con lo que incluye y los tiempos.'],
   ['¿Qué incluye el abono mensual?', 'La operación del servicio, monitoreo, soporte y ajustes. Integraciones nuevas y costos de terceros (modelos de IA, Meta, licencias) se proponen aparte.'],
   ['¿Funciona con lo que ya usamos?', 'En la mayoría de los casos sí: WhatsApp, Gmail, Google Sheets, CRMs y sistemas de gestión con facturación electrónica.'],
   ['No sé qué necesito, ¿igual podemos hablar?', 'Sí. Para eso es el diagnóstico: nos contás cómo trabajan y te decimos qué conviene automatizar primero, y qué no.'],

@@ -1,9 +1,10 @@
-// Partners, certificaciones, directorios y plataformas: una sola grilla de logos en un solo color con una
-// etiqueta abajo que dice qué es cada uno (las plataformas que usamos no son partners: lo aclara la etiqueta).
-// Primero lo que acredita a Nimbo y después las plataformas. Solo lo que es verdad: las plataformas
-// son las que ya nombra el sitio (Make, n8n, Zapier, OpenAI, Twilio, WhatsApp) más Google Cloud y Claude.
-// Logos: Tiendanube sale de su sitio; el resto de simple-icons. GoodFirms y la Guía de Buenos Aires van con el
-// nombre escrito hasta tener sus sellos oficiales.
+// Lo que acredita a Nimbo y las herramientas con las que trabaja, en dos secciones separadas del inicio:
+//   Partners y certificaciones: partner oficial de Tiendanube, certificaciones de HubSpot y Make, y la Guía de
+//   Buenos Aires. Solo lo verificable (GoodFirms sale hasta que la ficha esté publicada; n8n va como herramienta
+//   hasta confirmar la certificación).
+//   Tecnologías con las que trabajamos: herramientas, no alianzas (por eso no van en la grilla de partners).
+// Logos en un solo color: Tiendanube sale de su sitio; el resto de simple-icons. La Guía de Buenos Aires va con el
+// nombre escrito hasta tener su sello oficial.
 import claude from './logos/claude.svg?raw'
 import googlecloud from './logos/googlecloud.svg?raw'
 import hubspot from './logos/hubspot.svg?raw'
@@ -19,16 +20,25 @@ const SELLOS = [
   { name: 'Tiendanube', svg: tiendanube, wide: true, tag: 'Partner oficial' },
   { name: 'HubSpot', svg: hubspot, tag: 'Certificaciones' },
   { name: 'Make', svg: make, tag: 'Certificación' },
-  { name: 'n8n', svg: n8n, tag: 'Certificación' },
-  { name: 'GoodFirms', tag: 'Directorio' },
   { name: 'Guía de Buenos Aires', tag: 'Empresa publicada' },
+]
+
+const TECNOLOGIAS = [
   { name: 'Google Cloud', svg: googlecloud, tag: 'Infraestructura' },
   { name: 'Meta', svg: meta, tag: 'WhatsApp e Instagram' },
   { name: 'OpenAI', svg: openai, tag: 'Modelos de IA' },
   { name: 'Claude', svg: claude, tag: 'Modelos de IA' },
+  { name: 'n8n', svg: n8n, tag: 'Automatización' },
   { name: 'Zapier', svg: zapier, tag: 'Integraciones' },
   { name: 'Twilio', svg: twilio, tag: 'Mensajería' },
 ]
+
+const Mark = ({ s }) => (
+  <span className={`logo-mark${s.wide ? ' wide' : ''}`} role="img" aria-label={s.name}>
+    {s.svg ? <i dangerouslySetInnerHTML={{ __html: s.svg }} /> : null}
+    {!s.wide && <b>{s.name}</b>}
+  </span>
+)
 
 export default function Trust() {
   return (
@@ -36,18 +46,30 @@ export default function Trust() {
       <div className="sec-head" data-reveal>
         <div>
           <h2>Partners y certificaciones.</h2>
-          <p className="lead">Las plataformas con las que trabajamos todos los días y los programas en los que nos formamos.</p>
+          <p className="lead">Los programas en los que nos formamos y los lugares donde Nimbo está registrada.</p>
         </div>
       </div>
       <ul className="logos" data-reveal>
         {SELLOS.map((s) => (
-          <li key={s.name}>
-            <span className={`logo-mark${s.wide ? ' wide' : ''}`} role="img" aria-label={s.name}>
-              {s.svg ? <i dangerouslySetInnerHTML={{ __html: s.svg }} /> : null}
-              {!s.wide && <b>{s.name}</b>}
-            </span>
-            <span className="mono">{s.tag}</span>
-          </li>
+          <li key={s.name}><Mark s={s} /><span className="mono">{s.tag}</span></li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+export function Tecnologias() {
+  return (
+    <section className="sec wrap" id="tecnologias">
+      <div className="sec-head" data-reveal>
+        <div>
+          <h2>Tecnologías con las que trabajamos.</h2>
+          <p className="lead">Elegimos la herramienta según tu caso. Estas son las que más usamos.</p>
+        </div>
+      </div>
+      <ul className="tech" data-reveal>
+        {TECNOLOGIAS.map((s) => (
+          <li key={s.name}><Mark s={s} /><span className="mono">{s.tag}</span></li>
         ))}
       </ul>
     </section>
