@@ -77,7 +77,7 @@ export default function BlogPost() {
   useSeo(
     post
       ? {
-          title: `${post.title} | Nimbo`,
+          title: `${post.seoTitle || post.title} | Nimbo`,
           description: post.description,
           path: `/blog/${post.slug}`,
           type: 'article',

@@ -10,8 +10,9 @@
   Rutas = reactSnap.include de package.json + sitemap.xml + todos los artículos del blog.
   /propuesta queda afuera siempre (landing privada de prospectos).
 
-  En el navegador, main.jsx hidrata el HTML si es de la misma ruta; las rutas que no tienen
-  archivo propio caen en _spa.html (el index sin prerender) por el rewrite de vercel.json.
+  En el navegador, main.jsx hidrata el HTML si es de la misma ruta. Las rutas que existen solo en
+  la SPA (/propuesta, /robots, /diagnostico-ia, /sistemas-conectados) caen en _spa.html (el index
+  sin prerender) por los rewrites de vercel.json; cualquier otra URL recibe dist/404.html con 404.
 */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -21,6 +22,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
 const SSR_ENTRY = path.join(ROOT, 'dist-ssr', 'entry-server.js')
 const EXCLUDE = [/^\/propuesta(\/|$)/]
+// la página 404 (ruta "*" de App.jsx) se escribe en dist/404.html: Vercel la sirve con estado 404
+// a toda URL que no tenga archivo propio ni esté en los rewrites de vercel.json
+const NOT_FOUND = '/404'
 
 const { render, posts, seoTags } = await import(pathToFileURL(SSR_ENTRY).href)
 
@@ -37,7 +41,7 @@ function routeList() {
   const fromSitemap = [...sitemap.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => new URL(m[1]).pathname)
   const fromBlog = posts.map((p) => `/blog/${p.slug}`)
   const all = [...fromSnap, ...fromSitemap, ...fromBlog].map((r) => r.replace(/\/+$/, '') || '/')
-  return [...new Set(all)].filter((r) => !EXCLUDE.some((re) => re.test(r)))
+  return [...new Set([...all, NOT_FOUND])].filter((r) => !EXCLUDE.some((re) => re.test(r)))
 }
 
 /* ---------- head ---------- */
@@ -116,6 +120,7 @@ const ROUTES = [...APP_SRC.matchAll(/<Route\s+path="([^"]+)"\s+element=\{([\s\S]
   .filter(Boolean)
 
 function pageFile(route) {
+  if (route === NOT_FOUND) return 'src/pages/NotFound.jsx'
   const hit = ROUTES.find((r) => r.re.test(route))
   if (hit) return hit.file
   // respaldo: /algo → src/pages/Algo.jsx, /algo-mas → src/pages/AlgoMas.jsx
@@ -191,7 +196,10 @@ for (const route of routes) {
   if (!rendered.trim()) throw new Error(`prerender ${route}: la página salió vacía`)
   if (!seo) console.warn(`prerender ${route}: la página no llama a useSeo`)
   const page = bodyFor(headFor(template, route, seo), route, rendered)
-  const file = route === '/' ? path.join(DIST, 'index.html') : path.join(DIST, route.slice(1), 'index.html')
+  const file =
+    route === '/' ? path.join(DIST, 'index.html')
+    : route === NOT_FOUND ? path.join(DIST, '404.html')
+    : path.join(DIST, route.slice(1), 'index.html')
   fs.mkdirSync(path.dirname(file), { recursive: true })
   fs.writeFileSync(file, page)
   console.log(`prerender ${route} → ${path.relative(ROOT, file)} (${(page.length / 1024).toFixed(1)} kB)`)

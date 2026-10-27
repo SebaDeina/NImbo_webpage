@@ -60,21 +60,11 @@ export default function Automatizaciones() {
           inLanguage: 'es-AR',
           isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
           about: { '@id': 'https://www.nimbodata.com/#business' },
-          mainEntity: { '@id': 'https://www.nimbodata.com/automatizaciones#service' },
+          // el servicio es el mismo de /automatizacion-e-integracion (definido en index.html y en esa página):
+          // un solo nodo Service de automatización en todo el sitio
+          mainEntity: { '@id': 'https://www.nimbodata.com/automatizacion-e-integracion#service' },
           hasPart: { '@id': 'https://www.nimbodata.com/automatizaciones#faq' },
           breadcrumb: { '@id': 'https://www.nimbodata.com/automatizaciones#breadcrumb' },
-        },
-        {
-          '@type': 'Service',
-          '@id': 'https://www.nimbodata.com/automatizaciones#service',
-          name: 'Agentes de IA y automatización de procesos para pymes',
-          description:
-            'Implementación y acompañamiento de agentes de IA, integraciones y automatización de procesos para pymes de Argentina.',
-          url: 'https://www.nimbodata.com/automatizaciones',
-          provider: { '@id': 'https://www.nimbodata.com/#business' },
-          areaServed: { '@type': 'Country', name: 'Argentina' },
-          audience: { '@type': 'BusinessAudience', audienceType: 'Pymes de Argentina' },
-          serviceType: 'Automatización de procesos con IA',
         },
         {
           '@type': 'FAQPage',
@@ -281,28 +271,28 @@ export default function Automatizaciones() {
               <h2 className="nd-h2">Agentes y automatizaciones que ya construimos</h2>
               <p>Ejemplos publicados de sistemas que conectan atención, datos y tareas operativas.</p>
             </div>
-            <a href="/proyectos" className="nd-link">Ver todos los proyectos →</a>
+            <a href="/casos" className="nd-link">Ver todos los proyectos →</a>
           </div>
           <div className="nd-grid-3">
             <article className="nd-card">
               <div className="nd-card-copy">
                 <h3>Asistente con IA</h3>
                 <p>Consulta datos del negocio en lenguaje natural y devuelve respuestas con gráficos y números reales.</p>
-                <a href="/proyectos#asistente-ia" className="nd-more">Ver proyecto →</a>
+                <a href="/casos#asistente-ia" className="nd-more">Ver proyecto →</a>
               </div>
             </article>
             <article className="nd-card">
               <div className="nd-card-copy">
                 <h3>WODSI</h3>
                 <p>Plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp.</p>
-                <a href="/proyectos#wodsi" className="nd-more">Ver proyecto →</a>
+                <a href="/casos#wodsi" className="nd-more">Ver proyecto →</a>
               </div>
             </article>
             <article className="nd-card">
               <div className="nd-card-copy">
                 <h3>Prospección con agentes</h3>
                 <p>Sistema interno que analiza presencia digital y prepara propuestas con aprobación humana.</p>
-                <a href="/proyectos#prospeccion-ia" className="nd-more">Ver proyecto →</a>
+                <a href="/casos#prospeccion-ia" className="nd-more">Ver proyecto →</a>
               </div>
             </article>
           </div>

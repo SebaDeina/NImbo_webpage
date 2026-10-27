@@ -1,4 +1,6 @@
 // /casos · "Últimos proyectos": página aparte con todo lo que está funcionando, como shipperslab.tech/casos.
+// Abajo van las fichas de cada proyecto (antes en /proyectos, que ahora redirige acá): cada tarjeta lleva a /casos#slug.
+import { PROJECTS } from '../data/projects'
 import { CASOS } from './data'
 import Testimonials from './Testimonials'
 import { Arrow } from './ui'
@@ -27,6 +29,30 @@ export default function Cases() {
                   <span className="cs-go" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3.5 8.5l5-5M4.5 3.5h4v4" /></svg></span>
                 </div>
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="sec wrap" id="fichas" aria-labelledby="fichas-t">
+          <div className="sec-head">
+            <div>
+              <h2 id="fichas-t" data-reveal>Ficha de cada proyecto.</h2>
+              <p className="lead" data-reveal>Qué es, para quién lo hicimos y qué resuelve. Los que están publicados tienen el link para verlos funcionando.</p>
+            </div>
+          </div>
+          <div className="cs-fichas">
+            {PROJECTS.map((p) => (
+              <article key={p.slug} id={p.slug} className="cs-ficha" data-reveal>
+                <p className="cs-ficha-type">{p.type || p.category?.es}{p.year ? ` · ${p.year}` : ''}</p>
+                <h3>{p.title}</h3>
+                {p.client && <p className="cs-ficha-who">{p.client}</p>}
+                {p.summary?.es && <p className="cs-ficha-sum">{p.summary.es}</p>}
+                {p.description?.es?.[0] && <p>{p.description.es[0]}</p>}
+                {p.services?.length > 0 && <ul className="cs-tags">{p.services.map((t) => <li key={t}>{t}</li>)}</ul>}
+                {p.live
+                  ? <a className="link" href={p.live} target="_blank" rel="noopener noreferrer">Ver en vivo ↗</a>
+                  : <p className="cs-ficha-status">{p.status || 'Próximamente online'}</p>}
+              </article>
             ))}
           </div>
         </section>

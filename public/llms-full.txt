@@ -10,7 +10,7 @@ Su propuesta es reunir estas disciplinas en un solo equipo para convertir ideas 
 
 Sebastian Deina hace proyectos de automatización, datos e IA desde 2024; en 2025 llegaron los primeros clientes, como WODSI. Nimbo Consulting fue fundada en 2026, cuando se formalizó como consultora.
 
-Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base en Buenos Aires y fundada en 2026. No tiene relación con Nimbo Consulting SL (España) ni con Nimbo Tecnología SAS.
+Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base en Buenos Aires y fundada en 2026. No tiene relación con Nimbo Consulting SL (España), Nimbo Tecnología SAS, nimbo-x.com ni nimbo.ar.
 
 ## Para quién trabaja
 
@@ -60,7 +60,7 @@ El proceso presentado por Nimbo comienza con una charla o diagnóstico, continú
 
 ## Proyectos publicados
 
-La página de proyectos reúne, entre otros:
+La página de casos reúne, entre otros:
 
 - Nimbo Display: cartelería digital administrada desde un panel
 - WODSI: plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp
@@ -73,7 +73,7 @@ La página de proyectos reúne, entre otros:
 - Gestión agropecuaria: aplicación para producción, sanidad, clima, tareas y stock
 - Prospección con agentes: análisis de presencia digital y preparación de propuestas con aprobación humana
 
-Fuente principal: https://www.nimbodata.com/proyectos
+Fuente principal: https://www.nimbodata.com/casos
 
 ## Guías del blog
 

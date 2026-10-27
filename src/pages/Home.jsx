@@ -217,19 +217,19 @@ export default function Home() {
               <span className="nd-eyebrow">Experiencia aplicada</span>
               <h2 className="nd-h2">Soluciones que ya están funcionando.</h2>
             </div>
-            <Link to="/proyectos" className="nd-link">Ver todos los proyectos →</Link>
+            <Link to="/casos" className="nd-link">Ver todos los proyectos →</Link>
           </div>
           <div className="nd-grid-3 hm-case-grid">
             {CASOS.map((story, index) => (
               <article key={story.slug} className="hm-case-card">
-                <Link to={`/proyectos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
+                <Link to={`/casos#${story.slug}`} className="hm-case-media" aria-label={`Ver caso ${story.project.title}`}>
                   <img src={story.project.cover} alt={`Captura de ${story.project.title}`} loading="lazy" />
                 </Link>
                 <div className="hm-case-copy">
                   <span className="nd-mono hm-type">{story.label} · Caso 0{index + 1}</span>
                   <h3>{story.project.title}</h3>
                   <p>{story.resumen}</p>
-                  <Link to={`/proyectos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
+                  <Link to={`/casos#${story.slug}`} className="nd-more">Ver el proyecto →</Link>
                 </div>
               </article>
             ))}

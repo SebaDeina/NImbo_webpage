@@ -12,7 +12,7 @@ import { AgendarProvider } from './components/nd/AgendarPopup'
 import './styles/automatizaciones.css'
 import './styles/nd-site.css'
 
-const Proyectos = lazy(() => import('./pages/Proyectos'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
 const Propuesta = lazy(() => import('./pages/Propuesta'))
 const Links = lazy(() => import('./pages/Links'))
@@ -43,10 +43,15 @@ const NS_PATH = /^\/(casos|beta|contacto|blog(\/[^/]+)?|agentes-de-ia|automatiza
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
-/* Las fichas viejas /trabajos/:slug ahora viven dentro de /proyectos. */
+/* Las fichas viejas /trabajos/:slug y /proyectos ahora viven dentro de /casos (en Vercel, 301 en vercel.json;
+   esto cubre la navegación dentro de la app y el desarrollo local). */
 function LegacyProject() {
   const { slug } = useParams()
-  return <Navigate to={`/proyectos#${slug}`} replace />
+  return <Navigate to={`/casos#${slug}`} replace />
+}
+function ProyectosRedirect() {
+  const { hash } = useLocation()
+  return <Navigate to={`/casos${hash}`} replace />
 }
 
 /* El informe de robots vive en robots.nimbodata.com (VPS): sus videos no están en git ni en Vercel.
@@ -131,7 +136,7 @@ export default function App() {
               <Route path="/software-a-medida" element={<Servicio slug="software-a-medida" />} />
               <Route path="/casos" element={<Casos />} />
               <Route path="/beta" element={<BetaPage />} />
-              <Route path="/proyectos" element={<Proyectos />} />
+              <Route path="/proyectos" element={<ProyectosRedirect />} />
               <Route path="/trabajos/:slug" element={<LegacyProject />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Empecemos />} />
@@ -149,7 +154,7 @@ export default function App() {
               <Route path="/desarrollo-web-pymes" element={<ServicioDesarrolloWeb />} />
               <Route path="/diagnostico-ia" element={<Anuncio />} />
               <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             </Frame>
           </Suspense>

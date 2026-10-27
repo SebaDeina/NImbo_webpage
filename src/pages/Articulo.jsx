@@ -1,19 +1,26 @@
 // /blog/<slug> del sitio nuevo (src/ns/BlogPost.jsx), con el mismo SEO que tenía el artículo.
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getPost } from '../data/blog'
 import { useSeo } from '../hooks/useSeo'
 import BlogPost from '../ns/BlogPost'
+import NotFound from './NotFound'
 
 const SITE = 'https://www.nimbodata.com'
 
+// un slug que no existe muestra la 404 (en Vercel ya llega con estado 404: no hay archivo prerenderado)
 export default function Articulo() {
   const { slug } = useParams()
+  return getPost(slug) ? <Post key={slug} slug={slug} /> : <NotFound ns />
+}
+
+function Post({ slug }) {
   const post = getPost(slug)
   const url = `${SITE}/blog/${slug}`
   useSeo(
     post
       ? {
-          title: `${post.title} | Nimbo`,
+          // <title> de 60 caracteres como máximo: seoTitle (src/data/blog.js); el H1 sigue siendo title
+          title: `${post.seoTitle || post.title} | Nimbo`,
           description: post.description,
           path: `/blog/${post.slug}`,
           type: 'article',
@@ -49,6 +56,5 @@ export default function Articulo() {
         }
       : {},
   )
-  if (!post) return <Navigate to="/blog" replace />
-  return <BlogPost key={slug} slug={slug} />
+  return <BlogPost slug={slug} />
 }
