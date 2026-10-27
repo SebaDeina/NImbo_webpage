@@ -253,48 +253,6 @@ export const PROJECTS = [
     ]
   },
   {
-    "slug": "tour360",
-    "title": "Recorridos 360",
-    "client": "Producto propio de Nimbo",
-    "year": "2026",
-    "cover": "/proyectos/tour360.jpg",
-    "live": null,
-    "status": "Online · demo a pedido",
-    "category": {
-      "es": "Recorridos virtuales",
-      "en": "Recorridos virtuales"
-    },
-    "summary": {
-      "es": "Recorridos virtuales navegables con fotos 360, listos para embeber en cualquier web.",
-      "en": "Recorridos virtuales navegables con fotos 360, listos para embeber en cualquier web."
-    },
-    "description": {
-      "es": [
-        "Subís las fotos 360 desde el celular y se arma un recorrido con flechas entre ambientes, etiquetas y plano del lugar. Se integra en tu sitio con una línea de código."
-      ],
-      "en": [
-        "Subís las fotos 360 desde el celular y se arma un recorrido con flechas entre ambientes, etiquetas y plano del lugar. Se integra en tu sitio con una línea de código."
-      ]
-    },
-    "services": [
-      "Producto digital",
-      "Web App"
-    ],
-    "tags": [
-      "360",
-      "Embebible",
-      "Mobile"
-    ],
-    "type": "App · Producto propio",
-    "areas": [
-      "Apps y plataformas",
-      "Webs"
-    ],
-    "gallery": [
-      "/proyectos/tour360.jpg"
-    ]
-  },
-  {
     "slug": "asistente-ia",
     "title": "Asistente con IA",
     "client": "Salas de juego",
@@ -395,45 +353,47 @@ export const PROJECTS = [
     ]
   },
   {
-    "slug": "nimbo-tax",
-    "title": "Nimbo Tax",
+    "slug": "mandarina",
+    "title": "Mandarina",
     "client": "Producto propio de Nimbo",
     "year": "2026",
-    "cover": "/proyectos/nimbo-tax.jpg",
+    "cover": "/proyectos/mandarina-calendario.jpg",
     "live": "https://tax.nimbodata.com",
     "status": "En pruebas",
     "category": {
-      "es": "Facturación automática",
-      "en": "Facturación automática"
+      "es": "Gestor de redes sociales",
+      "en": "Gestor de redes sociales"
     },
     "summary": {
-      "es": "Facturación para monotributistas conectada a ARCA, con facturas recurrentes que se mandan solas.",
-      "en": "Facturación para monotributistas conectada a ARCA, con facturas recurrentes que se mandan solas."
+      "es": "Gestor de redes sociales con IA: calendario de publicaciones para varias marcas y Mandi, un asistente que arma el plan de la semana.",
+      "en": "Gestor de redes sociales con IA: calendario de publicaciones para varias marcas y Mandi, un asistente que arma el plan de la semana."
     },
     "description": {
       "es": [
-        "Emite Factura C y notas de crédito, programa facturas mensuales recurrentes y se las envía por mail a cada cliente. Varias cuentas y acceso con Google."
+        "Un solo lugar para planificar, aprobar y publicar en Instagram, TikTok y YouTube. Mandi detecta huecos en el calendario, propone piezas según lo que mejor rindió, responde mensajes y arma los informes de resultados."
       ],
       "en": [
-        "Emite Factura C y notas de crédito, programa facturas mensuales recurrentes y se las envía por mail a cada cliente. Varias cuentas y acceso con Google."
+        "Un solo lugar para planificar, aprobar y publicar en Instagram, TikTok y YouTube. Mandi detecta huecos en el calendario, propone piezas según lo que mejor rindió, responde mensajes y arma los informes de resultados."
       ]
     },
     "services": [
       "Producto digital",
-      "Automatización"
+      "Agentes de IA"
     ],
     "tags": [
-      "ARCA",
-      "Facturación",
+      "Redes sociales",
+      "IA",
       "SaaS"
     ],
     "type": "App · SaaS propio",
     "areas": [
       "Apps y plataformas",
-      "Automatización"
+      "IA y agentes",
+      "Marketing"
     ],
     "gallery": [
-      "/proyectos/nimbo-tax.jpg"
+      "/proyectos/mandarina-calendario.jpg",
+      "/proyectos/mandarina-mandi.jpg"
     ]
   },
   {

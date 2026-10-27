@@ -80,6 +80,9 @@ h4 { font-size: 22px; line-height: 1.2; letter-spacing: -0.04em; }
 @keyframes sheet { from { opacity: 0; transform: translateY(-6px); } }
 .hero-art { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); height: clamp(220px, 44svh, 460px);
   background: #fff url(/cielo-lineas.jpg) center / cover no-repeat; } /* la imagen fija tapa el segundo que tarda el cielo vivo */
+.hero-photo { background: #4646e0; }
+.hero-photo > div, .hero-photo img { width: 100%; height: 100%; }
+.hero-photo img { display: block; object-fit: cover; object-position: 50% 40%; }
 .hero-row { display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: end; padding: 36px 0 40px; }
 .hero-row .lead { margin-bottom: 26px; color: var(--text); }
 

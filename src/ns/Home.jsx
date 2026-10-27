@@ -6,14 +6,17 @@ import { FIGS } from './scenes'
 import Showcase from './Showcase'
 import Testimonials from './Testimonials'
 import Trust, { Tecnologias } from './Trust'
-import { Arrow, Final, Icon, LiveEngraving } from './ui'
+import { Arrow, Final, Icon } from './ui'
 import { Words } from './motion'
 
 export default function Home() {
   return (
     <>
       <section className="hero wrap" id="top">
-        <LiveEngraving className="hero-art" />
+        {/* cielo grabado fijo (el vivo sigue en contacto y en el cierre) */}
+        <div className="hero-art hero-photo">
+          <div><img src="/cielo-grabado.webp" alt="" width="1736" height="906" fetchPriority="high" /></div>
+        </div>
         <div className="hero-row">
           <h1 data-reveal>Automatizamos lo que frena a tu empresa.</h1>
           <div data-reveal style={{ '--d': '120ms' }}>

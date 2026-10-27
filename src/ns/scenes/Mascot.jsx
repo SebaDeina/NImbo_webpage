@@ -1,5 +1,5 @@
 // Nimbo, la nube del logo con vida: línea fina como las figuras isométricas, rayado de grabado abajo como
-// el cielo del hero y una cara mínima (dos ojos en píldora). El carácter está en el movimiento: flota,
+// el cielo del hero y una cara simple (ojos ovalados y sonrisa en U). El carácter está en el movimiento: flota,
 // respira estirándose y aplastándose, parpadea, sigue el mouse con la mirada, rebota al saludar y abre la
 // boca solo mientras habla. Si lo tocan muchas veces se enoja: frunce las cejas, tiembla, se pone rosado y
 // le sale vapor. Composición de Remotion en loop; el estado llega por inputProps.
@@ -48,14 +48,18 @@ export function Mascot({ look = [0, 0], talking = false, wave = false, happy = f
           </g>
           <path d={CLOUD} fill="none" stroke={INK} strokeWidth={3 / K} strokeLinejoin="round" />
         </g>
-        {/* cara mínima */}
+        {/* cara: ojos ovalados grandes y una sonrisa chiquita en U entre los dos; al mirar a un costado,
+            el ojo de ese lado crece un poco, como si girara la cabeza */}
         <g transform={`translate(${angry ? 0 : ex} ${angry ? 0 : ey})`}>
-          {angry ? <Angry /> : [96, 124].map((x) => (happy
-            ? <path key={x} d={`M${x - 5} 110 q5 -6 10 0`} stroke={INK} strokeWidth={3} fill="none" strokeLinecap="round" />
-            : <rect key={x} x={x - 3} y={102 + (1 - blink) * 6} width={6} height={13 * blink} rx={3} fill={INK} />))}
+          {angry ? <Angry /> : [[93, -1], [127, 1]].map(([x, side]) => {
+            const k = 1 + side * Math.max(-1, Math.min(1, lx)) * 0.14
+            return happy
+              ? <path key={x} d={`M${x - 6.5 * k} 109 q${6.5 * k} -8 ${13 * k} 0`} stroke={INK} strokeWidth={3.4} fill="none" strokeLinecap="round" />
+              : <ellipse key={x} cx={x} cy={107} rx={6.2 * k} ry={8.6 * k * blink} fill={INK} />
+          })}
           {angry ? null : mouth > 0
-            ? <rect x={104} y={121} width={12} height={mouth} rx={mouth / 2} fill={INK} />
-            : <line x1={106} x2={114} y1={122} y2={122} stroke={INK} strokeWidth={2.4} strokeLinecap="round" />}
+            ? <path d={`M103.5 116 q6.5 ${2.4 + mouth * 1.7} 13 0 z`} fill={INK} stroke={INK} strokeWidth={2.6} strokeLinejoin="round" />
+            : <path d="M104.5 115 q5.5 7.5 11 0" stroke={INK} strokeWidth={3.8} fill="none" strokeLinecap="round" />}
         </g>
       </g>
     </svg>

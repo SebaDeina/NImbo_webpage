@@ -66,10 +66,9 @@ La página de proyectos reúne, entre otros:
 - WODSI: plataforma para coaches con gestión de atletas, planificación y automatización por WhatsApp
 - Analítica de video: conteo de personas, recorridos, mapas de calor y ocupación
 - Marketing automático: sistema de agentes para producir contenido listo para revisar
-- Recorridos 360: recorridos virtuales navegables
 - Asistente con IA: consultas en lenguaje natural sobre datos del negocio
 - Dashboard a medida: métricas, alertas y datos operativos
-- Nimbo Tax: facturación para monotributistas conectada a ARCA
+- Mandarina: gestor de redes sociales con IA para planificar, publicar y medir varias marcas
 - Gestión agropecuaria: aplicación para producción, sanidad, clima, tareas y stock
 - Prospección con agentes: análisis de presencia digital y preparación de propuestas con aprobación humana
 
