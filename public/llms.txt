@@ -27,14 +27,10 @@ Nimbo Consulting (nimbodata.com) es la consultora de Sebastian Deina, con base e
 - Datos y business intelligence: dashboards, integración de fuentes, SQL, indicadores de gestión y alertas
 - Software a medida: aplicaciones internas, portales, sistemas de gestión y webs con lógica de negocio
 
-## Precios de referencia (ARS, octubre 2026)
+## Cómo se cobra
 
-- Agente IA básico, un canal: implementación desde $350.000 + $120.000 por mes
-- Nimbo Managed AI (agente empresarial, hasta 2 canales): implementación desde $650.000 + $200.000 por mes
-- Automatización entre sistemas: desde $400.000 + desde $90.000 por mes
-- Dashboard empresarial: desde $500.000 + desde $100.000 por mes
-- Aplicación o sistema a medida: desde $1.200.000, abono a cotizar
-- Consultoría y diagnóstico técnico: desde $150.000, bonificable si se contrata la implementación
+- Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.
+- El diagnóstico inicial de 20 minutos es sin cargo.
 
 ## Productos
 
