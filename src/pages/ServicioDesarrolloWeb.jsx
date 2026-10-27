@@ -18,6 +18,11 @@ const SOLUCIONES = [
     description:
       'Software diseñado alrededor del proceso real de tu empresa cuando una solución estándar no alcanza o no se integra con lo que ya usás.',
   },
+  {
+    title: 'Tiendas online',
+    description:
+      'Sitios para presentar productos, recibir ventas y construir un canal digital propio, adaptado a la identidad y la operación de la pyme.',
+  },
 ]
 
 const PROCESS = [
@@ -30,7 +35,7 @@ const PROCESS = [
 const FAQ = [
   [
     '¿Qué desarrolla Nimbo?',
-    'Desarrollamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes. La solución se define según el objetivo y el proceso que necesite mejorar la empresa.',
+    'Desarrollamos páginas web, tiendas online, aplicaciones internas, portales y sistemas de gestión para pymes. La solución se define según el objetivo y el proceso que necesite mejorar la empresa.',
   ],
   [
     '¿Necesito una página web o un sistema a medida?',
@@ -54,7 +59,7 @@ export default function ServicioDesarrolloWeb() {
   useSeo({
     title: 'Desarrollo web para pymes en Buenos Aires | Nimbo',
     description:
-      'Diseño y desarrollo de páginas web, aplicaciones internas, portales y sistemas de gestión para pymes. Nimbo trabaja desde Buenos Aires con empresas de toda Argentina.',
+      'Desarrollo de páginas web, tiendas online, aplicaciones internas, portales y sistemas de gestión para pymes desde Buenos Aires, Argentina.',
     path: '/desarrollo-web-pymes',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -78,7 +83,7 @@ export default function ServicioDesarrolloWeb() {
           name: 'Desarrollo web y software a medida para pymes',
           serviceType: 'Desarrollo web y software a medida',
           description:
-            'Diseño y desarrollo de páginas web, aplicaciones internas, portales y sistemas de gestión alrededor de la operación de cada pyme.',
+            'Diseño y desarrollo de páginas web, tiendas online, aplicaciones internas, portales y sistemas de gestión alrededor de la operación de cada pyme.',
           url: 'https://www.nimbodata.com/desarrollo-web-pymes',
           provider: { '@id': 'https://www.nimbodata.com/#business' },
           areaServed: { '@type': 'Country', name: 'Argentina' },
@@ -119,8 +124,8 @@ export default function ServicioDesarrolloWeb() {
     <main className='nd-page-main'>
       <NdPageHero eyebrow='Desarrollo web y software a medida' title='Desarrollo web para pymes en Buenos Aires'>
         <p>
-          Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes. Trabajamos desde
-          Buenos Aires de forma remota con empresas de toda Argentina.
+          Diseñamos páginas web, tiendas online, aplicaciones internas, portales y sistemas de gestión para pymes.
+          Trabajamos desde Buenos Aires de forma remota con empresas de toda Argentina.
         </p>
         <div className='nd-btns'>
           <Link to='/contacto' className='nd-btn'>

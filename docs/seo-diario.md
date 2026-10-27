@@ -2,6 +2,14 @@
 
 Lo escribe la rutina diaria `seo-diario` (OpenClaw, repo Openclaw, carpeta `seo/`): una entrada por día con cambios, la más nueva arriba. No editar a mano lo de abajo de esta línea.
 
+## 2026-10-27
+- **Incorporar tiendas online a la landing de desarrollo web** (contenido) — Los resultados para desarrollo web de pymes destacan tiendas online junto con sitios y aplicaciones. Nimbo ya declara ese servicio en el sitio, por lo que sumarlo a la landing amplía su correspondencia con la búsqueda sin inventar una oferta nueva.  
+  Archivos: `public/sitemap.xml`, `src/pages/ServicioDesarrolloWeb.jsx`
+- **Agregar migas de pan al índice del blog** (datos-estructurados) — El índice ya se declara como CollectionPage e ItemList, pero no explicita su posición dentro del sitio. BreadcrumbList completa ese grafo y facilita que buscadores relacionen cada guía con el blog y la página principal.  
+  Archivos: `public/sitemap.xml`, `src/pages/Blog.jsx`
+- **Conectar la guía de IA para pymes con el contenido y servicio actuales** (enlaces) — Las búsquedas de automatización y agentes están dominadas por guías prácticas. Enlazar la guía de 2026 con el artículo específico de agentes y la landing comercial distribuye relevancia hacia las páginas actuales sin crear contenido duplicado.  
+  Archivos: `public/sitemap.xml`, `src/data/blog.js`
+
 ## 2026-10-26
 - **Mostrar proyectos relacionados en la landing de desarrollo web** (contenido) — Vincular páginas web y aplicaciones publicadas aporta evidencia concreta del servicio y crea enlaces internos descriptivos hacia el portfolio.  
   Archivos: `public/sitemap.xml`, `src/pages/ServicioDesarrolloWeb.jsx`

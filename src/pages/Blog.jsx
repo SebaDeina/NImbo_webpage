@@ -41,6 +41,7 @@ export default function Blog() {
           isPartOf: { '@id': 'https://www.nimbodata.com/#website' },
           about: { '@id': 'https://www.nimbodata.com/#business' },
           mainEntity: { '@id': 'https://www.nimbodata.com/blog#articles' },
+          breadcrumb: { '@id': 'https://www.nimbodata.com/blog#breadcrumb' },
         },
         {
           '@type': 'ItemList',
@@ -62,6 +63,24 @@ export default function Blog() {
               publisher: { '@id': 'https://www.nimbodata.com/#business' },
             },
           })),
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.nimbodata.com/blog#breadcrumb',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Inicio',
+              item: 'https://www.nimbodata.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Blog',
+              item: 'https://www.nimbodata.com/blog',
+            },
+          ],
         },
       ],
     },

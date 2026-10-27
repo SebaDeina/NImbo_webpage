@@ -1080,6 +1080,7 @@ En Nimbo diseñamos páginas web para negocios argentinos que quieren crecer en 
     description:
       'El 41,6% de las pymes argentinas ya usa IA, y la mayoría empezó en el último año. Te mostramos qué herramientas existen, cuáles sirven de verdad para pymes, y cómo empezar sin riesgos.',
     date: '2026-06-17',
+    updated: '2026-10-27',
     category: 'Automatización & IA',
     readTime: '7 min',
     content: `
@@ -1090,6 +1091,8 @@ Hace tres años, hablar de inteligencia artificial para una pyme argentina sonab
 En 2026, una PyME puede tener un sistema de IA funcional por menos de 100 dólares mensuales. Lo que antes requería un equipo de tecnología, hoy se puede configurar en días.
 
 Pero hay una brecha enorme entre "implementar IA de verdad" y "usar ChatGPT para escribir emails". En este artículo te mostramos qué es lo que realmente funciona para negocios chicos y medianos en Argentina.
+
+Si necesitás entender cómo un sistema interpreta pedidos, consulta información y ejecuta tareas, leé la guía sobre **[agentes de IA para pymes](/blog/agentes-de-ia-para-pymes-como-implementarlos)**. Para conocer cómo Nimbo lleva esos casos a producción, visitá **[automatización con IA para pymes en Argentina](/automatizaciones)**.
 
 ---
 
@@ -1185,7 +1188,7 @@ La IA no es el futuro. Es el presente. Y en Argentina, las pymes que están apro
 
 Lo importante no es implementar la tecnología más sofisticada. Es identificar dónde perdés tiempo todos los días y resolver eso primero.
 
-En Nimbo diseñamos automatizaciones a medida para negocios argentinos. Si querés saber qué podríamos automatizar en tu caso específico, **[escribinos por WhatsApp](https://wa.me/5491124036836)** y lo analizamos juntos.
+En Nimbo diseñamos automatizaciones y agentes de IA para pymes argentinas. Podés conocer **[qué implementamos y cómo trabajamos](/automatizaciones)** o **[pedir un diagnóstico](/diagnostico)** para revisar qué proceso conviene resolver primero.
     `.trim(),
   },
   {
