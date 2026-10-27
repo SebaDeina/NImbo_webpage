@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Cloud, NdFinal, NdPageHero } from '../components/nd/Nd'
 import { PROJECTS } from '../data/projects'
 import { useSeo } from '../hooks/useSeo'
+// las etiquetas de usos (hm-usos/hm-tag) venían con la home vieja, que ya no se carga
+import '../styles/home.css'
 
 const FILTERS = ['Todos', 'Apps y plataformas', 'Webs', 'Automatización', 'IA y agentes', 'Datos', 'Visión', 'Marketing']
 // fondo del panel de cada proyecto (se alterna)

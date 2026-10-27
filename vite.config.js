@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { handleChatRequest } from './lib/chat-handler.js'
 import { handleContactRequest } from './lib/contact-handler.js'
 import { handleBookingRequest, handleSlotsRequest } from './lib/booking-handler.js'
+import { guardOldCss, scopeNsCss } from './scripts/scope-ns-css.mjs'
 
 function readJsonBody(req) {
   return new Promise((resolve, reject) => {
@@ -53,17 +54,33 @@ function apiPlugin(env) {
   }
 }
 
+// El sitio nuevo (src/ns) y las páginas viejas conviven: el CSS nuevo se encierra bajo .ns y el viejo deja de
+// aplicar dentro de .ns, así ninguno pisa al otro (ver scripts/scope-ns-css.mjs). blog-scenes.css queda igual:
+// las portadas del blog las usan los dos.
+const OLD_CSS = /\/src\/(index\.css|styles\/(grabado|home|nd-site|anuncio|robots|automatizaciones)\.css|components\/legacy-ui\.css)$/
+function nsScopePlugin() {
+  return {
+    name: 'ns-scope-css',
+    enforce: 'pre',
+    transform(code, id) {
+      const file = id.split('?')[0]
+      if (file.endsWith('/src/ns/styles.css')) return { code: scopeNsCss(code), map: null }
+      if (OLD_CSS.test(file)) return { code: guardOldCss(code), map: null }
+    },
+  }
+}
+
 export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
   // `vite build --ssr` arma la entrada de servidor que usa scripts/prerender.mjs (corre en Node, no se publica)
   if (isSsrBuild) {
     return {
-      plugins: [react()],
+      plugins: [nsScopePlugin(), react()],
       build: { outDir: 'dist-ssr', emptyOutDir: true, target: 'node18' },
     }
   }
   return {
-    plugins: [react(), apiPlugin(env)],
+    plugins: [nsScopePlugin(), react(), apiPlugin(env)],
     build: {
       target: ['chrome72', 'es2019'],
       // el prerender lo lee para poner el CSS de cada página en su <head>; después lo borra

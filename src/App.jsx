@@ -4,7 +4,6 @@ import { LangProvider } from './i18n/LangContext'
 import { ContactProvider } from './contexts/ContactContext'
 import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
-import Home from './pages/Home'
 import { GDefs } from './components/g/Art'
 import NdHeader from './components/nd/NdHeader'
 import { NdFloat, useNdPage } from './components/nd/Nd'
@@ -15,10 +14,7 @@ import './styles/nd-site.css'
 
 const Proyectos = lazy(() => import('./pages/Proyectos'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
-const Contacto = lazy(() => import('./pages/Contacto'))
 const Propuesta = lazy(() => import('./pages/Propuesta'))
-const Blog = lazy(() => import('./pages/Blog'))
-const BlogPost = lazy(() => import('./pages/BlogPost'))
 const Links = lazy(() => import('./pages/Links'))
 const Privacidad = lazy(() => import('./pages/Privacidad'))
 const Robots = lazy(() => import('./pages/Robots'))
@@ -28,11 +24,22 @@ const Diagnostico = lazy(() => import('./pages/Diagnostico'))
 const Agendar = lazy(() => import('./pages/Agendar'))
 const ServicioDesarrolloWeb = lazy(() => import('./pages/ServicioDesarrolloWeb'))
 const Anuncio = lazy(() => import('./pages/Anuncio'))
+// sitio nuevo (src/ns): inicio, servicios, casos, blog, BETA y contacto, con su propio marco
+const Shell = lazy(() => import('./ns/Shell'))
+const Inicio = lazy(() => import('./pages/Inicio'))
+const Servicio = lazy(() => import('./pages/Servicio'))
+const Casos = lazy(() => import('./pages/Casos'))
+const BetaPage = lazy(() => import('./pages/Beta'))
+const BlogIndice = lazy(() => import('./pages/BlogIndice'))
+const Articulo = lazy(() => import('./pages/Articulo'))
+const Empecemos = lazy(() => import('./pages/Empecemos'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
 const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('robots.')
 // automatizaciones.nimbodata.com muestra la landing de automatizaciones en la raíz.
 const IS_AUTO_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('automatizaciones.')
+// rutas del sitio nuevo: van dentro de su marco (src/ns/Shell.jsx) en lugar del encabezado y el pie de antes
+const NS_PATH = /^\/(casos|beta|contacto|blog(\/[^/]+)?|agentes-de-ia|automatizacion-e-integracion|datos-y-tableros|software-a-medida)?\/?$/
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -50,6 +57,11 @@ function RobotsRoute() {
     if (away) window.location.replace('https://robots.nimbodata.com/')
   }, [away])
   return away ? null : <Robots />
+}
+
+// las páginas del sitio nuevo van dentro de su marco; las demás, tal cual
+function Frame({ isNew, children }) {
+  return isNew ? <Shell>{children}</Shell> : children
 }
 
 function ScrollManager() {
@@ -92,6 +104,7 @@ export default function App() {
     (IS_AUTO_HOST && pathname === '/')
   // El resto del sitio usa el diseño blanco ("Nimbodata Landing v2"): encabezado, botón flotante y pie blancos.
   const isSite = !isLanding && !isReport
+  const isNew = !IS_ROBOTS_HOST && !IS_AUTO_HOST && NS_PATH.test(pathname)
   useNdPage(isSite)
   // si el splash índigo de index.html quedó (p. ej. /robots redirigido a la home), en el sitio blanco no va
   useEffect(() => {
@@ -104,21 +117,28 @@ export default function App() {
         <DiagnosticoProvider>
         <AgendarProvider>
         {!ready && !isSite && <SplashScreen onDone={onSplashDone} />}
-        <div className={`app-shell${isSite ? ' nd' : ''}`}>
+        <div className={`app-shell${isSite && !isNew ? ' nd' : ''}`}>
           {isReport && <GDefs />}
           <ScrollManager />
-          {isSite && !isAuto && <NdHeader />}
+          {isSite && !isAuto && !isNew && <NdHeader />}
           <Suspense fallback={null}>
+            <Frame isNew={isNew}>
             <Routes>
-              <Route path="/" element={IS_ROBOTS_HOST ? <Robots /> : IS_AUTO_HOST ? <Automatizaciones /> : <Home />} />
+              <Route path="/" element={IS_ROBOTS_HOST ? <Robots /> : IS_AUTO_HOST ? <Automatizaciones /> : <Inicio />} />
+              <Route path="/agentes-de-ia" element={<Servicio slug="agentes-de-ia" />} />
+              <Route path="/automatizacion-e-integracion" element={<Servicio slug="automatizaciones" />} />
+              <Route path="/datos-y-tableros" element={<Servicio slug="datos-y-tableros" />} />
+              <Route path="/software-a-medida" element={<Servicio slug="software-a-medida" />} />
+              <Route path="/casos" element={<Casos />} />
+              <Route path="/beta" element={<BetaPage />} />
               <Route path="/proyectos" element={<Proyectos />} />
               <Route path="/trabajos/:slug" element={<LegacyProject />} />
               <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/contacto" element={<Empecemos />} />
               <Route path="/propuesta/:slug" element={<Propuesta />} />
               <Route path="/propuesta" element={<Propuesta />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/blog" element={<BlogIndice />} />
+              <Route path="/blog/:slug" element={<Articulo />} />
               <Route path="/links" element={<Links />} />
               <Route path="/privacidad" element={<Privacidad />} />
               <Route path="/robots" element={<RobotsRoute />} />
@@ -131,9 +151,10 @@ export default function App() {
               <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+            </Frame>
           </Suspense>
-          {!isLanding && <Footer />}
-          {isSite && !isAuto && <NdFloat />}
+          {!isLanding && !isNew && <Footer />}
+          {isSite && !isAuto && !isNew && <NdFloat />}
         </div>
         </AgendarProvider>
         </DiagnosticoProvider>
