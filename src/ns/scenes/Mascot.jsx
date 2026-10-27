@@ -48,15 +48,11 @@ export function Mascot({ look = [0, 0], talking = false, wave = false, happy = f
           </g>
           <path d={CLOUD} fill="none" stroke={INK} strokeWidth={3 / K} strokeLinejoin="round" />
         </g>
-        {/* cara: ojos ovalados grandes y una sonrisa chiquita en U entre los dos; al mirar a un costado,
-            el ojo de ese lado crece un poco, como si girara la cabeza */}
+        {/* cara: ojos ovalados grandes (los dos iguales) y una sonrisa chiquita en U entre los dos */}
         <g transform={`translate(${angry ? 0 : ex} ${angry ? 0 : ey})`}>
-          {angry ? <Angry /> : [[93, -1], [127, 1]].map(([x, side]) => {
-            const k = 1 + side * Math.max(-1, Math.min(1, lx)) * 0.14
-            return happy
-              ? <path key={x} d={`M${x - 6.5 * k} 109 q${6.5 * k} -8 ${13 * k} 0`} stroke={INK} strokeWidth={3.4} fill="none" strokeLinecap="round" />
-              : <ellipse key={x} cx={x} cy={107} rx={6.2 * k} ry={8.6 * k * blink} fill={INK} />
-          })}
+          {angry ? <Angry /> : [93, 127].map((x) => (happy
+            ? <path key={x} d={`M${x - 6.5} 109 q6.5 -8 13 0`} stroke={INK} strokeWidth={3.4} fill="none" strokeLinecap="round" />
+            : <ellipse key={x} cx={x} cy={107} rx={6.2} ry={8.6 * blink} fill={INK} />))}
           {angry ? null : mouth > 0
             ? <path d={`M103.5 116 q6.5 ${2.4 + mouth * 1.7} 13 0 z`} fill={INK} stroke={INK} strokeWidth={2.6} strokeLinejoin="round" />
             : <path d="M104.5 115 q5.5 7.5 11 0" stroke={INK} strokeWidth={3.8} fill="none" strokeLinecap="round" />}
