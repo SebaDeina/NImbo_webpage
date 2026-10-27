@@ -18,8 +18,8 @@ Nimbo trabaja con dueños y equipos de pymes que necesitan reducir tareas repeti
 
 Se especializa en tres rubros:
 
-- Inmobiliarias
-- Distribuidoras y mayoristas
+- Inmobiliarias (https://www.nimbodata.com/rubros/inmobiliarias)
+- Distribuidoras y mayoristas (https://www.nimbodata.com/rubros/distribuidoras)
 - Servicios profesionales
 
 La página de automatizaciones menciona además comercios y retail e industria como sectores posibles.

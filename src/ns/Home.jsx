@@ -8,6 +8,7 @@ import Testimonials from './Testimonials'
 import Trust, { Tecnologias } from './Trust'
 import { Arrow, Final, Icon, LiveEngraving } from './ui'
 import { Words } from './motion'
+import { LANDINGS } from '../lib/landings'
 
 export default function Home() {
   return (
@@ -51,6 +52,17 @@ export default function Home() {
               </div>
             </article>
           ))}
+          {LANDINGS.some((l) => l.home) && (
+            <div className="others ld-home">
+              {LANDINGS.filter((l) => l.home).map((l, i) => (
+                <a key={l.path} href={l.path} className="other ld-other" data-reveal style={{ '--d': `${i * 80}ms` }}>
+                  <h4>{l.name}</h4>
+                  <p>{l.summary}</p>
+                  <span className="other-go">Ver más <Arrow /></span>
+                </a>
+              ))}
+            </div>
+          )}
         </section>
 
         <section id="rubros" className="sec wrap" data-buddy="¿Tu negocio es de estos? Te cuento qué le automatizaríamos.">
@@ -62,18 +74,18 @@ export default function Home() {
           </div>
           <div className="rubros">
             {RUBROS.map((r, i) => (
-              <a key={r.slug} className="rubro" href={`/contacto?r=${r.slug}`} data-reveal style={{ '--d': `${i * 100}ms` }}>
+              <a key={r.slug} className="rubro" href={r.path ?? `/contacto?r=${r.slug}`} data-reveal style={{ '--d': `${i * 100}ms` }}>
                 <div className="row-title">
                   <span className="chip"><Icon d={r.icon} /></span>
                   <h3>{r.t}</h3>
                 </div>
                 <p>{r.d}</p>
                 <ul className="checks">{r.checks.map((c) => <li key={c}>{c}</li>)}</ul>
-                <span className="btn btn-acc">Contanos tu caso <Arrow /></span>
+                <span className="btn btn-acc">{r.path ? 'Ver cómo lo resolvemos' : 'Contanos tu caso'} <Arrow /></span>
               </a>
             ))}
           </div>
-          <p className="rubros-more" data-reveal>También trabajamos con estudios y servicios profesionales, comercios y salud. <a href="/contacto">Contanos tu caso →</a></p>
+          <p className="rubros-more" data-reveal>También trabajamos con estudios y servicios profesionales, comercios y salud. Si estás en la Ciudad, mirá <a href="/caba">pymes de CABA</a>. <a href="/contacto">Contanos tu caso →</a></p>
         </section>
 
         <Showcase />
