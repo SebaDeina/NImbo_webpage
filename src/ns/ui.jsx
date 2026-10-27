@@ -1,21 +1,43 @@
 // Piezas compartidas entre la home y las páginas de servicio.
 import { Player } from '@remotion/player'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { AREAS, WA } from './data'
 import { Hero, HERO } from './scenes/Hero'
 import './styles.css'
 
+const LINKS = [['/#servicios', 'Servicios'], ['/casos', 'Casos'], ['/blog', 'Blog'], ['/beta', 'Beta']]
+
+// En el celular los links van en un menú desplegable (botón "Menú"); se cierra al elegir, al tocar afuera o con Escape.
 export function Nav() {
+  const [open, setOpen] = useState(false)
+  const nav = useRef(null)
+  const { pathname, hash } = useLocation()
+  useEffect(() => setOpen(false), [pathname, hash])
+  useEffect(() => {
+    if (!open) return
+    const out = (e) => { if (!nav.current?.contains(e.target)) setOpen(false) }
+    const esc = (e) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('pointerdown', out)
+    document.addEventListener('keydown', esc)
+    return () => { document.removeEventListener('pointerdown', out); document.removeEventListener('keydown', esc) }
+  }, [open])
   return (
-    <nav className="nav">
+    <nav ref={nav} className={`nav${open ? ' open' : ''}`}>
       <a href="/" className="logo"><Logo /> nimbo</a>
       <div className="nav-links">
-        <a href="/#servicios">Servicios</a>
-        <a href="/casos">Casos</a>
-        <a href="/blog">Blog</a>
-        <a href="/beta">Beta</a>
+        {LINKS.map(([href, t]) => <a key={href} href={href}>{t}</a>)}
       </div>
-      <a href="/contacto" className="btn btn-acc btn-sm">Hablemos</a>
+      <div className="nav-end">
+        <button type="button" className="nav-menu" aria-expanded={open} aria-controls="nav-sheet" onClick={() => setOpen((o) => !o)}>
+          <span aria-hidden="true"><i /><i /></span>{open ? 'Cerrar' : 'Menú'}
+        </button>
+        <a href="/contacto" className="btn btn-acc btn-sm">Hablemos</a>
+      </div>
+      <div id="nav-sheet" className="nav-sheet" hidden={!open}>
+        {LINKS.map(([href, t]) => <a key={href} href={href} onClick={() => setOpen(false)}>{t}</a>)}
+        <a href="/contacto" onClick={() => setOpen(false)}>Contacto</a>
+      </div>
     </nav>
   )
 }
