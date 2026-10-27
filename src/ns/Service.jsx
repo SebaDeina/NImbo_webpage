@@ -66,6 +66,15 @@ export default function Service({ area }) {
           <Negocios list={p.negocios} icon={area.icon} />
         </section>
 
+        {(p.mas ?? []).map(([h, paras]) => (
+          <section key={h} className="sec wrap ld-sec">
+            <div className="ld-head" data-reveal><h2>{h}</h2></div>
+            <div className="ld-body" data-reveal style={{ '--d': '100ms' }}>
+              {paras.map((t) => <p key={t.slice(0, 40)}><Linked text={t} /></p>)}
+            </div>
+          </section>
+        ))}
+
         <section className="sec wrap sv-split">
           <div data-reveal>
             <h2>Cómo trabajamos y cómo se cotiza.</h2>
@@ -80,6 +89,22 @@ export default function Service({ area }) {
             ))}
           </ol>
         </section>
+
+        {p.faq && (
+          <section id="faq" className="sec wrap">
+            <div className="faq-grid">
+              <div data-reveal>
+                <h2 className="faq-title">Preguntas frecuentes.</h2>
+                <p className="lead">¿Te quedó otra? <a className="link" href={`/contacto?s=${area.slug}`}>Escribinos</a> o <a className="link" href="/agendar">agendá 20 minutos</a>.</p>
+              </div>
+              <div className="faq" data-reveal style={{ '--d': '100ms' }}>
+                {p.faq.map(([q, a], i) => (
+                  <details key={q} open={i === 0}><summary>{q}</summary><p><Linked text={a} /></p></details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="sec wrap">
           <div className="sec-head" data-reveal><div><h2>Otros servicios.</h2></div></div>
@@ -157,4 +182,12 @@ function Negocios({ list, icon }) {
       </div>
     </div>
   )
+}
+
+// Texto con enlaces en formato [texto](/ruta), para las secciones extra y las preguntas frecuentes.
+export function Linked({ text }) {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    return m ? <a key={i} className="link" href={m[2]}>{m[1]}</a> : part
+  })
 }

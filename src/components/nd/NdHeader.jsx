@@ -7,7 +7,7 @@ import { Cloud, useScrolled } from './Nd'
 
 const NAV = [
   ['/#servicios', 'Soluciones'],
-  ['/automatizaciones', 'IA y automatización'],
+  ['/automatizacion-de-procesos', 'IA y automatización'],
   ['/desarrollo-web-pymes', 'Desarrollo web'],
   ['/#casos', 'Casos de éxito'],
   ['/#proceso', 'Cómo trabajamos'],

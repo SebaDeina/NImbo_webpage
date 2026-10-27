@@ -66,6 +66,29 @@ export const AREAS = [
         ['Locales de entretenimiento', 'Preguntan por eventos, promos y reservas a la madrugada. El bot responde con la información de cada local y lo que no sabe queda como derivación para el equipo a la mañana.'],
       ],
       precio: 'Una puesta en marcha y un abono mensual que cubre operación, monitoreo y ajustes. El consumo de IA y los cargos de Meta van aparte y te los mostramos antes de arrancar.',
+      seoTitle: 'Agentes de IA para pymes en Argentina | Nimbo',
+      meta: 'Agentes de IA para pymes en Argentina: atienden WhatsApp e Instagram a toda hora, toman pedidos y turnos y derivan a una persona si hace falta. Abono mensual.',
+      mas: [
+        ['Qué es un agente de IA y en qué se diferencia de un bot.', [
+          'Un bot clásico sigue un menú fijo: “marcá 1 para precios, 2 para horarios”. Si el cliente escribe algo fuera del guion, se traba. Un agente de IA entiende lo que le escriben con sus propias palabras, consulta la información de tu negocio y puede hacer tareas concretas, como tomar un pedido, reservar un turno o registrar un reclamo.',
+          'La diferencia práctica es que el cliente no tiene que adaptarse al sistema. Escribe como le escribiría a una persona y recibe una respuesta útil al instante. Lo explicamos en detalle en [agentes de IA vs. chatbots](/blog/agentes-de-ia-vs-chatbots).',
+        ]],
+        ['Cómo trabaja un agente con tu equipo.', [
+          'El agente no reemplaza a tu equipo: se ocupa de lo repetitivo para que ellos atiendan lo que necesita criterio. Responde las consultas de siempre, toma los datos del cliente y, cuando aparece un reclamo, un pedido especial o una pregunta que no sabe responder, le pasa la conversación a una persona con un resumen del caso.',
+          'Solo puede hacer las acciones que definimos juntos, como consultar stock, agendar o cargar un pedido, y nunca toca tu base de datos libremente. Cada conversación queda registrada, así podés revisar qué respondió y ajustar lo que haga falta. En BZ, una empresa de entretenimiento con dos salas, el agente responde por WhatsApp con el tono de la marca, toma reservas de eventos y deriva al equipo lo que no puede resolver.',
+        ]],
+        ['Dónde encaja dentro de tu negocio.', [
+          'Un agente rinde más cuando está conectado al resto de tus herramientas. El pedido que toma puede pasar solo al sistema de gestión y a la factura con una [automatización de procesos](/automatizacion-de-procesos), y las consultas pueden alimentar un tablero que te muestre qué se pregunta y qué se vende.',
+          'Si todavía no sabés si tu caso necesita un agente, un asistente interno u otra cosa, empezá por la [consultoría en inteligencia artificial](/consultoria-inteligencia-artificial) o pedí el [diagnóstico gratis de 20 minutos](/diagnostico). Estamos en Buenos Aires y trabajamos de forma remota con toda Argentina.',
+        ]],
+      ],
+      faq: [
+        ['¿El agente puede inventar respuestas?', 'Lo configuramos para que responda solo con la información de tu negocio: precios, horarios, stock y políticas. Si le preguntan algo que no sabe, lo dice y avisa a tu equipo en vez de inventar.'],
+        ['¿Sirve para WhatsApp e Instagram a la vez?', 'Sí. El mismo agente puede atender WhatsApp e Instagram con la misma información, y todas las conversaciones quedan registradas en un solo lugar.'],
+        ['¿Qué pasa si el cliente quiere hablar con una persona?', 'El agente le pasa la conversación a tu equipo con un resumen de lo que se habló, para que nadie tenga que preguntar todo de nuevo.'],
+        ['¿Cuánto cuesta un agente de IA?', 'Hay una puesta en marcha y un abono mensual que cubre operación, monitoreo y ajustes. El consumo del modelo de IA y los cargos de Meta van aparte y te los estimamos antes de arrancar.'],
+        ['¿Cuánto tarda en estar funcionando?', 'Depende de cuántos canales y sistemas haya que conectar. Arrancamos con las consultas más frecuentes, lo probás con casos reales y después sumamos tareas. Los tiempos van por escrito en la propuesta.'],
+      ],
     },
   },
   {

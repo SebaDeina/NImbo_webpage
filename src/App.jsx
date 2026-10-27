@@ -11,6 +11,7 @@ import { DiagnosticoProvider } from './components/nd/DiagnosticoForm'
 import { AgendarProvider } from './components/nd/AgendarPopup'
 import './styles/automatizaciones.css'
 import './styles/nd-site.css'
+import { isLandingPath, LANDINGS } from './lib/landings'
 
 const Proyectos = lazy(() => import('./pages/Proyectos'))
 const Nosotros = lazy(() => import('./pages/Nosotros'))
@@ -22,7 +23,6 @@ const Automatizaciones = lazy(() => import('./pages/Automatizaciones'))
 const Display = lazy(() => import('./pages/Display'))
 const Diagnostico = lazy(() => import('./pages/Diagnostico'))
 const Agendar = lazy(() => import('./pages/Agendar'))
-const ServicioDesarrolloWeb = lazy(() => import('./pages/ServicioDesarrolloWeb'))
 const Anuncio = lazy(() => import('./pages/Anuncio'))
 // sitio nuevo (src/ns): inicio, servicios, casos, blog, BETA y contacto, con su propio marco
 const Shell = lazy(() => import('./ns/Shell'))
@@ -33,12 +33,14 @@ const BetaPage = lazy(() => import('./pages/Beta'))
 const BlogIndice = lazy(() => import('./pages/BlogIndice'))
 const Articulo = lazy(() => import('./pages/Articulo'))
 const Empecemos = lazy(() => import('./pages/Empecemos'))
+const Landing = lazy(() => import('./pages/Landing'))
 
 // robots.nimbodata.com (VPS) publica este mismo build y muestra el informe en la raíz.
 const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('robots.')
 // automatizaciones.nimbodata.com muestra la landing de automatizaciones en la raíz.
 const IS_AUTO_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('automatizaciones.')
 // rutas del sitio nuevo: van dentro de su marco (src/ns/Shell.jsx) en lugar del encabezado y el pie de antes
+// …y las páginas de contenido de src/landings (pilares, zonas y rubros), que salen de src/lib/landings.js
 const NS_PATH = /^\/(casos|beta|contacto|blog(\/[^/]+)?|agentes-de-ia|automatizacion-e-integracion|datos-y-tableros|software-a-medida)?\/?$/
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
@@ -104,7 +106,7 @@ export default function App() {
     (IS_AUTO_HOST && pathname === '/')
   // El resto del sitio usa el diseño blanco ("Nimbodata Landing v2"): encabezado, botón flotante y pie blancos.
   const isSite = !isLanding && !isReport
-  const isNew = !IS_ROBOTS_HOST && !IS_AUTO_HOST && NS_PATH.test(pathname)
+  const isNew = !IS_ROBOTS_HOST && !IS_AUTO_HOST && (NS_PATH.test(pathname) || isLandingPath(pathname))
   useNdPage(isSite)
   // si el splash índigo de index.html quedó (p. ej. /robots redirigido a la home), en el sitio blanco no va
   useEffect(() => {
@@ -142,13 +144,14 @@ export default function App() {
               <Route path="/links" element={<Links />} />
               <Route path="/privacidad" element={<Privacidad />} />
               <Route path="/robots" element={<RobotsRoute />} />
-              <Route path="/automatizaciones" element={<Automatizaciones />} />
+              <Route path="/automatizaciones" element={<Navigate to="/automatizacion-de-procesos" replace />} />
               <Route path="/display" element={<Display />} />
               <Route path="/diagnostico" element={<Diagnostico />} />
               <Route path="/agendar" element={<Agendar />} />
-              <Route path="/desarrollo-web-pymes" element={<ServicioDesarrolloWeb />} />
+              <Route path="/desarrollo-web-pymes" element={<Navigate to="/paginas-web-pymes" replace />} />
               <Route path="/diagnostico-ia" element={<Anuncio />} />
               <Route path="/sistemas-conectados" element={<Anuncio variante="sistemas" />} />
+              {LANDINGS.map((l) => <Route key={l.path} path={l.path} element={<Landing path={l.path} />} />)}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             </Frame>

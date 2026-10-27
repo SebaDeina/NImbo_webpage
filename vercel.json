@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/automatizaciones", "destination": "/automatizacion-de-procesos", "statusCode": 301 }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|robots\\.txt|sitemap\\.xml|favicon\\.svg|.*\\.(?:png|jpg|jpeg|webp|svg|ico|woff2?|css|js|txt|xml)$).*)",
