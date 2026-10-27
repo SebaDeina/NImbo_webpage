@@ -93,7 +93,7 @@ export default function BlogPost() {
                 dateModified: post.updated || post.date,
                 articleSection: post.category,
                 inLanguage: 'es-AR',
-                image: 'https://www.nimbodata.com/og-nimbo-v2.jpg',
+                image: 'https://www.nimbodata.com/og-nimbo-v3.jpg',
                 author: { '@id': 'https://www.nimbodata.com/#business' },
                 publisher: { '@id': 'https://www.nimbodata.com/#business' },
                 isPartOf: { '@id': 'https://www.nimbodata.com/#website' },

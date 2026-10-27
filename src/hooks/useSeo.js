@@ -17,7 +17,7 @@ import { createContext, useContext, useEffect } from 'react'
 export const SeoContext = createContext(null)
 
 const SITE_URL = 'https://www.nimbodata.com'
-const DEFAULT_IMAGE = `${SITE_URL}/og-nimbo-v2.jpg`
+const DEFAULT_IMAGE = `${SITE_URL}/og-nimbo-v3.jpg`
 const DEFAULT_TITLE =
   'Nimbo — Transformación Digital para Pymes: Automatización, IA y Web'
 const DEFAULT_DESCRIPTION =

@@ -29,7 +29,7 @@ export default function Articulo() {
                 dateModified: post.updated || post.date,
                 articleSection: post.category,
                 inLanguage: 'es-AR',
-                image: `${SITE}/og-nimbo-v2.jpg`,
+                image: `${SITE}/og-nimbo-v3.jpg`,
                 author: { '@id': `${SITE}/#business` },
                 publisher: { '@id': `${SITE}/#business` },
                 isPartOf: { '@id': `${SITE}/#website` },
