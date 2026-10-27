@@ -170,10 +170,10 @@ export const EQUIPO = [
 ]
 
 // "Para quién trabajamos" (inicio): los rubros prioritarios de Nimbo, con lo que les resolvemos. Cada tarjeta lleva
-// al contacto con el rubro marcado (/contacto?r=…).
+// a la página del rubro (src/landings/rubros-*.page.js), que cierra en el contacto con el rubro marcado (/contacto?r=…).
 export const RUBROS = [
   {
-    slug: 'inmobiliaria', t: 'Inmobiliarias',
+    slug: 'inmobiliaria', t: 'Inmobiliarias', path: '/rubros/inmobiliarias',
     icon: 'M3 11l9-7 9 7 M5 10v10h14V10 M10 20v-6h4v6',
     d: 'Consultas por portales, WhatsApp e Instagram a toda hora, visitas que coordinar y contratos que vencen.',
     checks: [
@@ -184,7 +184,7 @@ export const RUBROS = [
     ],
   },
   {
-    slug: 'distribuidora', t: 'Distribuidoras y mayoristas',
+    slug: 'distribuidora', t: 'Distribuidoras y mayoristas', path: '/rubros/distribuidoras',
     icon: 'M3 7h11v9H3z M14 10h4l3 3v3h-7 M7 19.5a1.5 1.5 0 1 0 0-.01 M17 19.5a1.5 1.5 0 1 0 0-.01',
     d: 'Pedidos por WhatsApp a cualquier hora, listas de precios que cambian y cobranzas que se escapan.',
     checks: [
