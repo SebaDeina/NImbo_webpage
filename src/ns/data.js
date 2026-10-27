@@ -122,7 +122,7 @@ export const AREAS = [
     slug: 'software-a-medida', fig: 'software',
     icon: 'M3 4h18v14H3z M3 8h18 M9 21h6',
     t: 'Software a medida',
-    d: 'Sistemas de gestión, portales y webs con lógica de negocio cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
+    d: 'Sistemas de gestión, portales y webs con lógica de negocio cuando lo que necesitás no existe hecho. Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.',
     checks: ['Stock, pedidos y turnos en un solo lugar', 'Pensado para cómo trabaja tu equipo'],
     page: {
       title: 'Software a medida para cómo trabaja tu equipo.',

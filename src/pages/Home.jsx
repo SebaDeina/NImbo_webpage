@@ -63,7 +63,7 @@ const SERVICIOS = [
     n: '04',
     cta: 'servicio-web',
     t: 'Desarrollo web y software a medida',
-    d: 'Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
+    d: 'Diseñamos páginas web, aplicaciones internas, portales y sistemas de gestión para pymes cuando lo que necesitás no existe hecho. Las páginas web tienen precio fijo. Las automatizaciones se cotizan según el proyecto, después del diagnóstico gratuito, y se mantienen con un abono mensual que cubre soporte y mejoras.',
     usos: ['Sistemas de gestión', 'Portales', 'Apps internas', 'Webs con lógica de negocio'],
     v: 'nd-v-ink',
     demo: <WebDemo />,
