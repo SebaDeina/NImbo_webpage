@@ -74,7 +74,7 @@ export default {
       h2: 'Programas públicos que pueden ayudar.',
       paras: [
         'El Ministerio de Economía de la Nación tiene el programa [Kit 4.0](https://www.argentina.gob.ar/economia/industria-y-economia-del-conocimiento/kit-40), que cofinancia hasta el 50% del valor de kits estandarizados de digitalización para pymes (gestión, comercio, calidad y otros). Los kits los implementan proveedores inscriptos de la Economía del Conocimiento y hay requisitos de elegibilidad, montos máximos y un trámite por TAD.',
-        'No depende de nosotros ni te podemos asegurar que tu empresa califique. Si te interesa, revisá las bases en el sitio oficial y lo charlamos en el diagnóstico para ver si tu proceso encaja con algún kit.',
+        'Es un programa público con sus propias bases: no depende de nosotros ni te podemos asegurar que tu empresa califique. Si te interesa, revisá los requisitos y la lista de proveedores en el sitio oficial.',
       ],
     },
     {

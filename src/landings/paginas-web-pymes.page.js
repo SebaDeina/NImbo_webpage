@@ -49,7 +49,7 @@ export default {
       h2: 'Mantenimiento y mejoras dentro del abono mensual.',
       paras: [
         'Una web que nadie actualiza envejece rápido: cambian los precios, los servicios y las fotos, y Google premia a los sitios que se mantienen al día. Por eso no la entregamos y desaparecemos.',
-        'Trabajamos con una puesta en marcha, que cubre el diseño y el desarrollo, y un abono mensual que cubre el hosting, el soporte, las actualizaciones de seguridad y los cambios que vayas necesitando. Si ya tenés hosting o servicios contratados, los usamos; si no, nos encargamos nosotros. Antes de arrancar te pasamos por escrito qué incluye y cuánto cuesta. Y si un mes aparece algo nuevo, como un servicio, una promoción o una sucursal, lo sumamos dentro del mismo esquema.',
+        'La web tiene un precio fijo, que cubre el diseño y el desarrollo, y después sigue con un abono mensual para el soporte, las actualizaciones de seguridad y los cambios que vayas necesitando. Los cambios los hacemos nosotros: nos escribís y quedan publicados, sin que tengas que aprender a usar un panel. Antes de arrancar te pasamos por escrito qué incluye y cuánto cuesta. Y si un mes aparece algo nuevo, como un servicio, una promoción o una sucursal, lo sumamos dentro del mismo esquema.',
       ],
     },
     {
@@ -74,11 +74,11 @@ export default {
   ],
   faq: [
     ['¿Cuánto tarda hacer una página web?', 'Depende del tipo de web y de cuánto contenido haya que armar. Una landing lleva menos que un portal. En la propuesta te damos los tiempos por escrito y vas viendo avances cada semana.'],
-    ['¿Puedo editarla yo?', 'Los cambios están incluidos en el abono: nos escribís y los hacemos. Si hay algo que cambiás seguido, como precios o productos, vemos en la propuesta cómo dejarlo para que lo puedas actualizar vos.'],
-    ['¿Incluye dominio y hosting?', 'El hosting entra en el abono mensual. Si ya tenés dominio, hosting o servicios contratados, los usamos; si no, nos encargamos de contratarlos y te cobramos su costo más la gestión.'],
+    ['¿Puedo editarla yo?', 'No hace falta: los cambios los hacemos nosotros. Nos escribís qué querés cambiar, como un precio, un servicio o una foto, y lo publicamos dentro del abono mensual. Así la web no se rompe y queda siempre prolija.'],
+    ['¿Incluye dominio y hosting?', 'Depende del proyecto. Si ya tenés dominio o hosting, los usamos; si no, vemos juntos qué conviene contratar. En la propuesta queda por escrito qué está incluido y qué no.'],
     ['¿Me ayudan a aparecer en Google?', 'Sí. Toda web sale con SEO local de base: títulos, descripciones, datos estructurados, velocidad y una página por servicio. Además te ayudamos con el Perfil de Empresa de Google. No prometemos un puesto, porque eso no lo controla nadie.'],
     ['¿Trabajan solo en Buenos Aires?', 'Estamos en Buenos Aires y trabajamos de forma remota con pymes de toda Argentina. Las reuniones son por videollamada y el avance lo ves en un link de prueba que se actualiza a medida que trabajamos.'],
-    ['¿Cuánto cuesta una página web?', 'Trabajamos con una puesta en marcha y un abono mensual. El monto depende del tipo de web y de qué haya que conectar; te lo pasamos por escrito después del [diagnóstico gratis de 20 minutos](/diagnostico).'],
+    ['¿Cuánto cuesta una página web?', 'La web tiene un precio fijo, que depende del tipo de web y de qué haya que conectar, y después un abono mensual para el soporte y los cambios. Te lo pasamos por escrito después del [diagnóstico gratis de 20 minutos](/diagnostico).'],
   ],
   related: ['/mejora-de-procesos-pymes', '/automatizacion-e-integracion', '/agentes-de-ia'],
   posts: ['por-que-tu-negocio-necesita-una-pagina-web', 'velocidad-de-carga-web-por-que-importa', 'seo-local-argentina-como-aparecer-en-google'],
