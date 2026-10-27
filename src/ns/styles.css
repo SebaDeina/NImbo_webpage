@@ -709,6 +709,7 @@ html.has-cursor input, html.has-cursor textarea, html.has-cursor [contenteditabl
   .wrap { width: calc(100% - 32px); }
   .nav-links { display: none; }
   .nav-menu { display: inline-flex; }
+  .nav-end > .btn { display: none; } /* en el celular, Hablemos va dentro del menú (Contacto) */
   .hero { padding-top: 76px; margin-bottom: 0; }
   .hero-art { height: clamp(200px, calc(100svh - 420px), 420px); }
   .hero-row, .row, .row:nth-of-type(even), .faq-grid, .team { grid-template-columns: 1fr; gap: 28px; }
