@@ -22,7 +22,7 @@ Se especializa en tres rubros:
 - Distribuidoras y mayoristas
 - Servicios profesionales
 
-La página de automatizaciones menciona además comercios y retail e industria como sectores posibles.
+La página de automatización de procesos menciona además comercios y retail e industria como sectores posibles.
 
 ## Servicios
 
@@ -30,11 +30,13 @@ La página de automatizaciones menciona además comercios y retail e industria c
 
 Automatiza tareas repetitivas, recordatorios, carga de datos, facturación, reportes y flujos entre las herramientas que una pyme ya usa.
 
-Más información: https://www.nimbodata.com/automatizaciones
+Más información: https://www.nimbodata.com/automatizacion-de-procesos
 
 ### Agentes de inteligencia artificial
 
 Implementa agentes para atención al cliente, ventas y tareas operativas. Pueden responder consultas, trabajar con información del negocio, ejecutar acciones y derivar casos delicados a una persona.
+
+Páginas del servicio: https://www.nimbodata.com/agentes-de-ia y, para definir por dónde empezar con IA, https://www.nimbodata.com/consultoria-inteligencia-artificial
 
 ### Integraciones
 

@@ -26,7 +26,7 @@ const PLURAL = { Comercio: 'comercios', 'Salud o consultorio': 'consultorios', '
 const DOLORES = {
   whatsapp: { l: 'Responder WhatsApp', to: '/agentes-de-ia',
     p: 'Lo resuelve un agente de IA: contesta WhatsApp e Instagram a cualquier hora con la información de tu negocio y te pasa solo lo que necesita una persona. Lo hicimos para unos locales de entretenimiento: el bot atiende de madrugada y a la mañana el equipo encuentra todo derivado.' },
-  carga: { l: 'Cargar datos a mano', to: '/automatizacion-e-integracion',
+  carga: { l: 'Cargar datos a mano', to: '/automatizacion-de-procesos',
     p: 'Se puede automatizar: conectamos las herramientas que ya usás para que cada dato se cargue una sola vez y llegue solo a la planilla, al CRM o a la factura. Con Nimbo Tax, por ejemplo, las facturas recurrentes se emiten y se mandan solas.' },
   reportes: { l: 'Armar reportes', to: '/datos-y-tableros',
     p: 'Se arregla con un tablero que se actualiza solo: ventas, stock y cobranzas a la vista, con aviso cuando algo se sale de lo normal. Lo armamos para unas salas: indicadores por sala y alertas que dicen qué hacer.' },

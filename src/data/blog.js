@@ -70,7 +70,7 @@ Para una explicación más detallada, podés leer **[agentes de IA vs. chatbots]
 ] }
 :::
 
-En Nimbo este trabajo empieza con un diagnóstico del proceso y continúa con la implementación, las pruebas y el acompañamiento. Podés ver el enfoque completo en **[automatizaciones y agentes de IA para pymes](/automatizaciones)**.
+En Nimbo este trabajo empieza con un diagnóstico del proceso y continúa con la implementación, las pruebas y el acompañamiento. Podés ver el enfoque completo en **[automatización de procesos para pymes](/automatizacion-de-procesos)**.
 
 ---
 
@@ -133,7 +133,7 @@ Por una tarea frecuente, repetitiva y medible. Resolver bien un solo proceso per
 
 Un agente de IA para pymes no es solamente un chat que responde: es una pieza de software capaz de entender pedidos, consultar información y ejecutar tareas dentro de reglas claras. Funciona mejor cuando empieza con un proceso concreto, datos ordenados, permisos limitados y derivación humana.
 
-En Nimbo diseñamos e implementamos agentes, integraciones y automatizaciones para pymes de Argentina. **[Conocé cómo trabajamos y pedí un diagnóstico](/automatizaciones)** para revisar qué tarea conviene resolver primero en tu empresa.
+En Nimbo diseñamos e implementamos agentes, integraciones y automatizaciones para pymes de Argentina. **[Conocé cómo trabajamos y pedí un diagnóstico](/automatizacion-de-procesos)** para revisar qué tarea conviene resolver primero en tu empresa.
     `.trim(),
   },
   {
@@ -1092,7 +1092,7 @@ En 2026, una PyME puede tener un sistema de IA funcional por menos de 100 dólar
 
 Pero hay una brecha enorme entre "implementar IA de verdad" y "usar ChatGPT para escribir emails". En este artículo te mostramos qué es lo que realmente funciona para negocios chicos y medianos en Argentina.
 
-Si necesitás entender cómo un sistema interpreta pedidos, consulta información y ejecuta tareas, leé la guía sobre **[agentes de IA para pymes](/blog/agentes-de-ia-para-pymes-como-implementarlos)**. Para conocer cómo Nimbo lleva esos casos a producción, visitá **[automatización con IA para pymes en Argentina](/automatizaciones)**.
+Si necesitás entender cómo un sistema interpreta pedidos, consulta información y ejecuta tareas, leé la guía sobre **[agentes de IA para pymes](/blog/agentes-de-ia-para-pymes-como-implementarlos)**. Para conocer cómo Nimbo lleva esos casos a producción, visitá **[consultoría en inteligencia artificial para pymes](/consultoria-inteligencia-artificial)**.
 
 ---
 
@@ -1188,7 +1188,7 @@ La IA no es el futuro. Es el presente. Y en Argentina, las pymes que están apro
 
 Lo importante no es implementar la tecnología más sofisticada. Es identificar dónde perdés tiempo todos los días y resolver eso primero.
 
-En Nimbo diseñamos automatizaciones y agentes de IA para pymes argentinas. Podés conocer **[qué implementamos y cómo trabajamos](/automatizaciones)** o **[pedir un diagnóstico](/diagnostico)** para revisar qué proceso conviene resolver primero.
+En Nimbo diseñamos automatizaciones y agentes de IA para pymes argentinas. Podés conocer **[qué implementamos y cómo trabajamos](/automatizacion-de-procesos)** o **[pedir un diagnóstico](/diagnostico)** para revisar qué proceso conviene resolver primero.
     `.trim(),
   },
   {

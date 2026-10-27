@@ -33,7 +33,7 @@ const SERVICIOS = [
     tareas: ['Responder WhatsApp e Instagram', 'Turnos y reservas'],
     v: 'nd-v-sand',
     demo: <AgentDemo />,
-    mas: ['/automatizaciones', 'Ver agentes de IA para pymes'],
+    mas: ['/agentes-de-ia', 'Ver agentes de IA para pymes'],
   },
   {
     id: 'cap-II',
@@ -45,7 +45,7 @@ const SERVICIOS = [
     tareas: ['Carga de datos y planillas'],
     v: 'nd-v-lilac',
     demo: <FlowDemo />,
-    mas: ['/automatizaciones', 'Ver automatizaciones para pymes'],
+    mas: ['/automatizacion-de-procesos', 'Ver automatizaciones para pymes'],
   },
   {
     id: 'cap-IV',
