@@ -3,6 +3,7 @@ import { Player } from '@remotion/player'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AREAS, WA } from './data'
+import { LANDINGS } from '../lib/landings'
 import { Hero, HERO } from './scenes/Hero'
 import './styles.css'
 
@@ -43,7 +44,7 @@ export function Nav() {
 }
 
 // `s` deja marcado el servicio en el formulario de contacto
-export function Final({ title = 'Dejá de hacerlo a mano.', s }) {
+export function Final({ title = 'Dejá de hacerlo a mano.', s, href }) {
   return (
     <section className="wrap" id="cierre">
       <div className="final" data-reveal>
@@ -51,7 +52,7 @@ export function Final({ title = 'Dejá de hacerlo a mano.', s }) {
           <h2>{title}</h2>
           <p className="lead">Contanos qué proceso le come las horas a tu equipo y te decimos cómo lo resolveríamos. La primera charla no tiene costo.</p>
           <div className="btns">
-            <a className="btn btn-acc" href={s ? `/contacto?s=${s}` : '/contacto'}>Empecemos <Arrow /></a>
+            <a className="btn btn-acc" href={href ?? (s ? `/contacto?s=${s}` : '/contacto')}>Empecemos <Arrow /></a>
             <a className="btn" href="/casos">Ver casos <Arrow /></a>
           </div>
         </div>
@@ -68,8 +69,8 @@ export function Footer() {
         <a href="/" className="logo"><Logo /> nimbo</a>
         <p>IA, automatización y software a medida para pymes. Un equipo chico de Buenos Aires.</p>
       </div>
-      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}</div>
-      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/#equipo">Equipo</a></div>
+      <div><h5>Servicios</h5>{AREAS.map((a) => <a key={a.slug} href={a.path}>{a.t}</a>)}{LANDINGS.filter((l) => l.foot === 'servicios').map((l) => <a key={l.path} href={l.path}>{l.name}</a>)}</div>
+      <div><h5>Explorar</h5><a href="/casos">Casos</a><a href="/blog">Blog</a><a href="/beta">BETA</a><a href="/#proceso">Cómo trabajamos</a><a href="/#equipo">Equipo</a>{LANDINGS.filter((l) => l.foot === 'explorar').map((l) => <a key={l.path} href={l.path}>{l.name}</a>)}</div>
       <div><h5>Nimbo</h5><a href="/contacto">Contacto</a><a href={WA}>WhatsApp</a><a href="https://instagram.com/nimbodata">Instagram</a><a href="https://linkedin.com/company/nimboconsulting">LinkedIn</a></div>
       <p className="foot-trust">Partner oficial de Tiendanube · Certificaciones HubSpot y Make · En la Guía de Buenos Aires</p>
       <p className="foot-bottom">© 2026 Nimbo. Hecho en Argentina.</p>

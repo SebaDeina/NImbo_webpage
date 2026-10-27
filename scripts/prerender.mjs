@@ -7,7 +7,8 @@
   Corre después de `vite build` (cliente) y `vite build --ssr` (dist-ssr/entry-server.js).
   Sin navegador: React renderiza en Node, así que anda en cualquier container (node:24).
 
-  Rutas = reactSnap.include de package.json + sitemap.xml + todos los artículos del blog.
+  Rutas = reactSnap.include de package.json + sitemap.xml + todos los artículos del blog + las páginas
+  de contenido de src/landings.
   /propuesta queda afuera siempre (landing privada de prospectos).
 
   En el navegador, main.jsx hidrata el HTML si es de la misma ruta; las rutas que no tienen
@@ -22,7 +23,7 @@ const DIST = path.join(ROOT, 'dist')
 const SSR_ENTRY = path.join(ROOT, 'dist-ssr', 'entry-server.js')
 const EXCLUDE = [/^\/propuesta(\/|$)/]
 
-const { render, posts, seoTags } = await import(pathToFileURL(SSR_ENTRY).href)
+const { render, posts, seoTags, LANDING_PATHS = [] } = await import(pathToFileURL(SSR_ENTRY).href)
 
 const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8')
 const manifestPath = path.join(DIST, '.vite', 'manifest.json')
@@ -36,7 +37,7 @@ function routeList() {
   const sitemap = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8')
   const fromSitemap = [...sitemap.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => new URL(m[1]).pathname)
   const fromBlog = posts.map((p) => `/blog/${p.slug}`)
-  const all = [...fromSnap, ...fromSitemap, ...fromBlog].map((r) => r.replace(/\/+$/, '') || '/')
+  const all = [...fromSnap, ...fromSitemap, ...fromBlog, ...LANDING_PATHS].map((r) => r.replace(/\/+$/, '') || '/')
   return [...new Set(all)].filter((r) => !EXCLUDE.some((re) => re.test(r)))
 }
 
@@ -116,6 +117,8 @@ const ROUTES = [...APP_SRC.matchAll(/<Route\s+path="([^"]+)"\s+element=\{([\s\S]
   .filter(Boolean)
 
 function pageFile(route) {
+  // las páginas de contenido de src/landings se arman todas con Landing.jsx (sus <Route> salen de un .map)
+  if (LANDING_PATHS.includes(route)) return 'src/pages/Landing.jsx'
   const hit = ROUTES.find((r) => r.re.test(route))
   if (hit) return hit.file
   // respaldo: /algo → src/pages/Algo.jsx, /algo-mas → src/pages/AlgoMas.jsx

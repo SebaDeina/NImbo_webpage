@@ -47,3 +47,5 @@ export function render(url) {
 /* Las rutas de los artículos salen de los datos del blog: un artículo nuevo se prerenderiza solo. */
 export { posts } from './data/blog'
 export { seoTags } from './hooks/useSeo'
+/* Las páginas de contenido (src/landings) también se prerenderizan solas. */
+export { LANDING_PATHS } from './lib/landings'
