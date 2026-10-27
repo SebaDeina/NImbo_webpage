@@ -70,7 +70,7 @@ export default function Footer() {
             <h4>Servicios</h4>
             <Link to="/automatizacion-de-procesos">Automatización de procesos</Link>
             <Link to="/consultoria-inteligencia-artificial">Consultoría en IA para pymes</Link>
-            <Link to="/#cap-II">Automatización e integración</Link>
+            <Link to="/automatizacion-de-procesos">Automatización de procesos</Link>
             <Link to="/#cap-IV">Datos y BI</Link>
             <Link to="/desarrollo-web-pymes">Desarrollo web y software a medida</Link>
             <Link to="/#precios">Formas de trabajar</Link>

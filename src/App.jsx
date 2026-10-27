@@ -41,7 +41,7 @@ const IS_ROBOTS_HOST = typeof window !== 'undefined' && window.location.hostname
 const IS_AUTO_HOST = typeof window !== 'undefined' && window.location.hostname.startsWith('automatizaciones.')
 // rutas del sitio nuevo: van dentro de su marco (src/ns/Shell.jsx) en lugar del encabezado y el pie de antes
 // …y las páginas de contenido de src/landings (pilares, zonas y rubros), que salen de src/lib/landings.js
-const NS_PATH = /^\/(casos|beta|contacto|blog(\/[^/]+)?|agentes-de-ia|automatizacion-e-integracion|datos-y-tableros|software-a-medida)?\/?$/
+const NS_PATH = /^\/(casos|beta|contacto|blog(\/[^/]+)?|agentes-de-ia|datos-y-tableros|software-a-medida)?\/?$/
 
 /* Al navegar entre páginas: ir arriba. Si hay #hash (links del nav a
    secciones de la home), scrollear a la sección. */
@@ -128,7 +128,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={IS_ROBOTS_HOST ? <Robots /> : IS_AUTO_HOST ? <Automatizaciones /> : <Inicio />} />
               <Route path="/agentes-de-ia" element={<Servicio slug="agentes-de-ia" />} />
-              <Route path="/automatizacion-e-integracion" element={<Servicio slug="automatizaciones" />} />
+              <Route path="/automatizacion-e-integracion" element={<Navigate to="/automatizacion-de-procesos" replace />} />
               <Route path="/datos-y-tableros" element={<Servicio slug="datos-y-tableros" />} />
               <Route path="/software-a-medida" element={<Servicio slug="software-a-medida" />} />
               <Route path="/casos" element={<Casos />} />

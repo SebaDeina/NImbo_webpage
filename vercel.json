@@ -1,6 +1,7 @@
 {
   "redirects": [
-    { "source": "/automatizaciones", "destination": "/automatizacion-de-procesos", "statusCode": 301 }
+    { "source": "/automatizaciones", "destination": "/automatizacion-de-procesos", "statusCode": 301 },
+    { "source": "/automatizacion-e-integracion", "destination": "/automatizacion-de-procesos", "statusCode": 301 }
   ],
   "rewrites": [
     {

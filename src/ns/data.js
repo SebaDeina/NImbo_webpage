@@ -168,7 +168,7 @@ export const AREAS = [
   },
 ]
 // la página de cada servicio; automatizaciones va aparte porque /automatizaciones es la landing de campañas
-AREAS.forEach((a) => { a.path = a.slug === 'automatizaciones' ? '/automatizacion-e-integracion' : `/${a.slug}` })
+AREAS.forEach((a) => { a.path = a.slug === 'automatizaciones' ? '/automatizacion-de-procesos' : `/${a.slug}` })
 
 // /casos: primero los mockups de apps, después el resto del portfolio (src/data/projects.js del sitio)
 export const CASOS = [

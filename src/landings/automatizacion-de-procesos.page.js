@@ -37,7 +37,7 @@ export default {
         ['ERP y sistemas de gestión', 'Pedidos, stock y clientes que entran y salen del sistema que ya usás, si tiene una forma de conectarse.'],
         ['Facturación electrónica', 'Comprobantes emitidos en ARCA a partir de los datos del pedido o de la venta, sin cargarlos dos veces.'],
       ],
-      after: ['Qué se puede conectar depende de cada sistema. Lo revisamos en el diagnóstico y te lo decimos antes de proponer nada. El detalle técnico está en [automatización e integración](/automatizacion-e-integracion).'],
+      after: ['Qué se puede conectar depende de cada sistema. Lo revisamos en el diagnóstico y te lo decimos antes de proponer nada. Si querés ver ejemplos de procesos que ya automatizamos, están en [casos](/casos).'],
     },
     {
       id: 'como',
@@ -84,7 +84,7 @@ export default {
     ['¿Hace falta IA para automatizar?', 'No. Muchas automatizaciones son reglas simples: si llega esto, hacé aquello. La IA suma cuando hay que entender texto libre, leer documentos o responder consultas. Si querés ver por dónde empezar con IA, mirá la [consultoría en inteligencia artificial](/consultoria-inteligencia-artificial).'],
     ['¿Trabajan con pymes de todo el país?', 'Sí. Estamos en Buenos Aires y trabajamos de forma remota con toda Argentina.'],
   ],
-  related: ['/consultoria-inteligencia-artificial', '/agentes-de-ia', '/mejora-de-procesos-pymes', '/paginas-web-pymes', '/automatizacion-e-integracion', '/datos-y-tableros'],
+  related: ['/consultoria-inteligencia-artificial', '/agentes-de-ia', '/mejora-de-procesos-pymes', '/paginas-web-pymes', '/datos-y-tableros', '/software-a-medida'],
   posts: ['como-medir-el-roi-de-una-automatizacion', 'automatizar-pyme-ia-chatbot-whatsapp', 'automatiza-tu-negocio-con-ia'],
   final: 'Contanos qué tarea querés sacarte de encima.',
   contacto: '/contacto?s=automatizaciones',

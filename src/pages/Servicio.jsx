@@ -1,4 +1,4 @@
-// Página de cada servicio del sitio nuevo (src/ns/Service.jsx): /agentes-de-ia, /automatizacion-e-integracion,
+// Página de cada servicio del sitio nuevo (src/ns/Service.jsx): /agentes-de-ia,
 // /datos-y-tableros y /software-a-medida.
 import { useSeo } from '../hooks/useSeo'
 import { AREAS } from '../ns/data'
