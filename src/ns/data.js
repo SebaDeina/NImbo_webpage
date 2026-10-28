@@ -46,7 +46,7 @@ export const PASOS_SERVICIO = [
 export const AREAS = [
   {
     slug: 'agentes-de-ia', fig: 'agentes',
-    icon: 'M4 5h16v11H9l-5 4z M8 10h8 M8 13h5',
+    icon: 'M7 4h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-6l-4 3.5V17a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z M8.5 9.5h7 M8.5 12.5h4',
     t: 'Agentes de IA',
     d: 'Atienden WhatsApp e Instagram a cualquier hora, toman pedidos y turnos, y te avisan cuando hace falta una persona.',
     checks: ['Turnos y pedidos sin estar pegado al celular', 'Asistentes internos para tu equipo'],
@@ -121,7 +121,7 @@ export const AREAS = [
   },
   {
     slug: 'software-a-medida', fig: 'software',
-    icon: 'M3 4h18v14H3z M3 8h18 M9 21h6',
+    icon: 'M6 4h12a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z M3 8.5h18 M9 21h6',
     t: 'Software a medida',
     d: 'Sistemas de gestión, portales y webs con lógica de negocio cuando lo que necesitás no existe hecho. Se cotiza por proyecto.',
     checks: ['Stock, pedidos y turnos en un solo lugar', 'Pensado para cómo trabaja tu equipo'],
@@ -175,7 +175,7 @@ export const EQUIPO = [
 export const RUBROS = [
   {
     slug: 'inmobiliaria', t: 'Inmobiliarias',
-    icon: 'M3 11l9-7 9 7 M5 10v10h14V10 M10 20v-6h4v6',
+    icon: 'M4 10.5 12 4l8 6.5 M6 9v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9 M10 20v-4a2 2 0 0 1 4 0v4',
     d: 'Consultas por portales, WhatsApp e Instagram a toda hora, visitas que coordinar y contratos que vencen.',
     checks: [
       'Un agente responde por cada propiedad y te pasa solo a los interesados en serio',
@@ -186,7 +186,7 @@ export const RUBROS = [
   },
   {
     slug: 'distribuidora', t: 'Distribuidoras y mayoristas',
-    icon: 'M3 7h11v9H3z M14 10h4l3 3v3h-7 M7 19.5a1.5 1.5 0 1 0 0-.01 M17 19.5a1.5 1.5 0 1 0 0-.01',
+    icon: 'M5 6h7a2 2 0 0 1 2 2v8H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z M14 10h3.2a2 2 0 0 1 1.6.8l1.8 2.4a2 2 0 0 1 .4 1.2V16h-7 M7 19.5a1.5 1.5 0 1 0 0-.01 M17 19.5a1.5 1.5 0 1 0 0-.01',
     d: 'Pedidos por WhatsApp a cualquier hora, listas de precios que cambian y cobranzas que se escapan.',
     checks: [
       'Pedidos tomados por WhatsApp con precio y stock, listos para preparar',

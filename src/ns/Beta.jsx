@@ -10,11 +10,11 @@ const SITE = 'https://somosbeta.net'
 const INSCRIPCION = `${SITE}/eventos/encuentro-1/inscripcion/`
 
 const IDEAS = [
-  { icon: 'M4 6h16v14H4z M4 10h16 M8 3v4 M16 3v4', t: 'Encuentro #1: conocernos y conectar', open: true,
+  { icon: 'M7 5h10a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z M4 10h16 M8 3v4 M16 3v4', t: 'Encuentro #1: conocernos y conectar', open: true,
     d: 'El primero. Nos presentamos, contamos qué hace cada uno y armamos una dinámica para conectar. Lugar y fecha a definir en Bera.' },
   { icon: 'M12 3v3 M12 18v3 M3 12h3 M18 12h3 M12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6', t: 'IA en la práctica',
     d: 'Charlas cortas de gente de la zona: qué está usando, qué le funcionó y qué no. Casos reales, contados por ellos.' },
-  { icon: 'M14 4l6 6-9 9H5v-6z M12 6l6 6', t: 'Workshops',
+  { icon: 'M14.5 4.5a2.1 2.1 0 0 1 3 0l2 2a2.1 2.1 0 0 1 0 3L10 19H5v-5z M12.5 6.5l5 5', t: 'Workshops',
     d: 'Talleres para armar algo paso a paso: un agente, una automatización o un tablero, con la compu abierta.' },
   { icon: 'M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z M6 11a6 6 0 0 0 12 0 M12 17v4', t: 'Demo nights',
     d: 'Noches para mostrar lo que estás armando y recibir feedback de gente que también construye.' },
@@ -28,7 +28,7 @@ const PIEZAS = [
   [['ropa', 'Remeras y buzos', 1.346, 1], ['stickers', 'Stickers', 1.5, -1.2]],
 ]
 const PARTNERS = [
-  ['M4 20V8l8-5 8 5v12 M9 20v-6h6v6', 'Espacios', 'Una oficina, un local, un cowork o cualquier lugar de la zona donde juntarnos.'],
+  ['M4 18V9.2a2 2 0 0 1 .9-1.7l6-3.8a2 2 0 0 1 2.2 0l6 3.8a2 2 0 0 1 .9 1.7V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z M9.5 20v-4a2.5 2.5 0 0 1 5 0v4', 'Espacios', 'Una oficina, un local, un cowork o cualquier lugar de la zona donde juntarnos.'],
   ['M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z', 'Sponsors', 'Herramientas, créditos o premios para la gente que presenta y participa.'],
   ['M8 11a3 3 0 1 0 0-6a3 3 0 1 0 0 6 M16 11a3 3 0 1 0 0-6a3 3 0 1 0 0 6 M3 20c0-3 2.5-5 5-5s5 2 5 5 M11 20c0-3 2.5-5 5-5s5 2 5 5', 'Una mano organizando', 'Difusión, logística o tiempo para que cada encuentro salga bien.'],
   ['M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z M16 10h1.5a2.5 2.5 0 0 1 0 5H16', 'Comida y café', 'Café, algo para comer, merch o lo que quieras ofrecer en el encuentro.'],

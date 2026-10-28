@@ -148,7 +148,7 @@ export default function Contact() {
                 <div className="form-foot">
                   {step > 0
                     ? <button type="button" className="back" onClick={() => { setErr(''); setStep(step - 1) }}>← Atrás</button>
-                    : <a className="cal" href={AGENDAR}><Icon d="M4 6h16v14H4z M4 10h16 M8 3v4 M16 3v4" />Agendá una llamada</a>}
+                    : <a className="cal" href={AGENDAR}><Icon d="M7 5h10a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z M4 10h16 M8 3v4 M16 3v4" />Agendá una llamada</a>}
                   <button type="submit" className="btn btn-acc" disabled={sending}>{step < 2 ? 'Siguiente' : sending ? 'Enviando…' : 'Enviar'} <Arrow /></button>
                 </div>
               </form>
@@ -167,17 +167,17 @@ export default function Contact() {
         </div>
         <div className="others">
           <a className="other" href={waLink} data-reveal>
-            <span className="chip chip-sm"><Icon d="M4 5h16v11H9l-5 4z" /></span>
+            <span className="chip chip-sm"><Icon d="M7 4h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-6l-4 3.5V17a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" /></span>
             <h4>WhatsApp</h4><p>+54 9 11 2403-6836 · respondemos el mismo día.</p>
             <span className="other-go">Escribir <Arrow /></span>
           </a>
           <a className="other" href={`mailto:${MAIL}`} data-reveal style={{ '--d': '80ms' }}>
-            <span className="chip chip-sm"><Icon d="M3 6h18v12H3z M3 7l9 6 9-6" /></span>
+            <span className="chip chip-sm"><Icon d="M6 5h12a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z M4 8l8 5.5L20 8" /></span>
             <h4>Mail</h4><p>{MAIL}</p>
             <span className="other-go">Escribir <Arrow /></span>
           </a>
           <a className="other" href={AGENDAR} data-reveal style={{ '--d': '160ms' }}>
-            <span className="chip chip-sm"><Icon d="M4 6h16v14H4z M4 10h16 M8 3v4 M16 3v4" /></span>
+            <span className="chip chip-sm"><Icon d="M7 5h10a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3z M4 10h16 M8 3v4 M16 3v4" /></span>
             <h4>Videollamada</h4><p>Elegí un horario de 20 minutos en el calendario.</p>
             <span className="other-go">Agendar <Arrow /></span>
           </a>

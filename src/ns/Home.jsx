@@ -137,7 +137,7 @@ export default function Home() {
               <span className="pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17h.01" /></svg>Preguntas frecuentes</span>
               <h2 className="faq-title">Lo que nos preguntan antes de escribir.</h2>
               <div className="ask">
-                <span className="chip chip-sq"><Icon d="M4 5h16v11H9l-5 4z" /></span>
+                <span className="chip chip-sq"><Icon d="M7 4h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-6l-4 3.5V17a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" /></span>
                 <div><b>¿Te quedó alguna duda?</b><span>Escribinos y te responde alguien del equipo.</span></div>
                 <a className="btn btn-wide" href="/contacto">Hablemos <Arrow /></a>
               </div>
