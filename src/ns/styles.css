@@ -508,11 +508,13 @@ a.ev-card:hover { transform: translateY(-3px); border-color: #d6d3ea; box-shadow
 .rubros-more { margin-top: 22px; color: var(--muted); font-size: 15px; }
 .rubros-more a { color: var(--acc); }
 
-/* ——— testimonios: grilla; las dos primeras (empresas con equipo) más grandes ——— */
-.tm-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
-.tm-grid .tm-card { grid-column: span 2; }
-.tm-grid .tm-big { grid-column: span 3; }
-.tm-big blockquote { font-size: 19px; line-height: 1.55; }
+/* ——— testimonios: cinta que pasa sola (margen a la derecha en vez de gap para que el -50% cierre justo) ——— */
+.tm-track { overflow: hidden; margin-inline: -8px; padding-inline: 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.tm-row { display: flex; width: max-content; padding: 6px 0 18px; animation: tm 60s linear infinite; }
+.tm-track:hover .tm-row { animation-play-state: paused; }
+@keyframes tm { to { transform: translateX(-50%); } }
+.tm-row .tm-card { flex: none; width: 400px; margin-right: 18px; }
 .tm-card { margin: 0; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #fff;
   border: 1px solid var(--line); border-radius: 14px; transition: border-color .3s, box-shadow .3s; }
 .tm-card:hover { border-color: #d6d3ea; box-shadow: 0 18px 40px -26px rgba(20, 19, 58, .3); }
@@ -594,6 +596,9 @@ html.has-cursor input, html.has-cursor textarea, html.has-cursor [contenteditabl
   [data-reveal], [data-reveal] .w, .fig[data-reveal] { opacity: 1; transform: none; filter: none; clip-path: none; transition: none; }
   h1[data-reveal], [data-reveal] > h1, .sec-head[data-reveal] h2, h2[data-reveal] { background-position: 0% 50%; transition: none; }
   .hero-art > div { transform: none; }
+  .tm-row { animation: none; }
+  .tm-row > [aria-hidden="true"] { display: none; }
+  .tm-track { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }
 
 /* selector de tipografía (solo para la prueba) */
@@ -761,9 +766,8 @@ html.has-cursor input, html.has-cursor textarea, html.has-cursor [contenteditabl
   .show-points li { padding: 16px 0; }
   .rubros { grid-template-columns: 1fr; }
   .rubro { padding: 22px; }
-  .tm-grid { grid-template-columns: 1fr; }
-  .tm-grid .tm-card, .tm-grid .tm-big { grid-column: auto; padding: 20px; }
-  .tm-big blockquote { font-size: 17px; }
+  .tm-row .tm-card { width: 290px; padding: 20px; margin-right: 14px; }
+  .tm-row { animation-duration: 45s; }
   .bl-feat { padding: 24px; margin-bottom: 40px; }
   .bl-row a { grid-template-columns: 1fr auto; gap: 8px 16px; padding: 22px 0; }
   .bl-row a > div { grid-column: 1 / -1; grid-row: 2; }

@@ -43,13 +43,13 @@ export function Nav() {
 }
 
 // `s` deja marcado el servicio en el formulario de contacto
-export function Final({ title = 'Dejá de hacerlo a mano.', s }) {
+export function Final({ title = 'Hagamos más simple lo que hoy te frena.', s }) {
   return (
     <section className="wrap" id="cierre">
       <div className="final" data-reveal>
         <div className="final-copy">
           <h2>{title}</h2>
-          <p className="lead">Contanos qué proceso le come las horas a tu equipo y te decimos cómo lo resolveríamos. La primera charla no tiene costo.</p>
+          <p className="lead">Contanos cómo trabaja tu empresa. Te ayudamos a encontrar una solución posible.</p>
           <div className="btns">
             <a className="btn btn-acc" href={s ? `/contacto?s=${s}` : '/contacto'}>Empecemos <Arrow /></a>
             <a className="btn" href="/casos">Ver casos <Arrow /></a>
